@@ -1,0 +1,387 @@
+html {
+  height: 100vh;
+  width: 100vw;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: rgb(255, 255, 255);
+  font-family: "Varela Round", sans-serif;
+
+  align-items: center;
+
+  /*blue skies*/
+  background: linear-gradient(
+    167deg,
+    rgba(204, 204, 127, 10.764) 0%,
+    rgba(2, 2, 154, 10.764) 23.6%,
+    rgba(17, 17, 188, 10.764) 76.4%,
+    rgba(10, 100, 224, 10.764) 100%
+  );
+  /* dark*/
+  /* background: linear-gradient(
+      167deg,
+      rgba(0, 9, 24, 1) 0%,
+      rgba(2, 18, 44, 1) 23.6%,
+      rgba(17, 18, 54, 1) 76.4%,
+      rgba(4, 27, 74, 1) 100%
+      ); */
+}
+
+html > * {
+  text-shadow: -0.1em 0 0.125em black, 0 0.1em 0.125em black,
+    0.1em 0 0.125em black, 0 -0.1em 0.125em black;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+
+  min-width: 350px;
+  max-width: 635px;
+}
+
+nav {
+  height: auto;
+  width: 100%;
+}
+
+h1 {
+  grid-column: span 5;
+  text-align: center;
+  color: #ff9400;
+}
+
+.window {
+  margin: 1px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+  border: 3px solid black;
+  border-radius: 8px;
+  box-shadow: 5px 3px 8px -3px rgba(0, 0, 0, 1.5);
+}
+
+.main.window {
+  width: 97%;
+}
+
+.Header__not-logged-in {
+  text-align: center;
+}
+
+.RegistrationForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Header__logged-in {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputs {
+  margin-top: 0.5em;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 85%;
+  line-height: 1.5em;
+  z-index: 999;
+}
+
+.addStock {
+  width: 80%;
+  font-size: 0.8em;
+}
+
+a {
+  color: #ff9400;
+  text-decoration: none;
+}
+
+.alert {
+  grid-column: span 5;
+}
+
+.Input {
+  grid-column-start: 2;
+  grid-column: span 2;
+}
+
+p {
+  color: white;
+}
+
+label {
+  color: white;
+  border: 1px solid black;
+}
+
+.Button {
+  align-self: center;
+  width: 40%;
+  margin: 1vh;
+  margin-top: 2vh;
+}
+
+.strategies {
+  height: 61.8%;
+  overflow-x: hidden;
+}
+
+.summary {
+  height: 38.1vh;
+  overflow-x: hidden;
+}
+
+footer {
+  text-align: center;
+  padding: 0.25em 0 0.25em 0;
+  font-size: 1em;
+  color: rgb(255, 55, 0);
+}
+
+h2 {
+  position: relative;
+}
+
+h3 {
+  height: 1em;
+}
+
+Input {
+  font-size: 1em;
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.summaryPanel {
+  display: flex;
+  align-content: center;
+}
+
+.hide {
+  display: none;
+}
+
+.smGraph {
+  width: 12em;
+  height: 12em;
+  font-size: 1em;
+}
+
+h4 {
+  text-align: center;
+  font-size: 0.8em;
+  margin: 0.25em;
+}
+
+.Form {
+  width: 97%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 2vh;
+}
+
+.addStockButton {
+  margin-top: 3vh;
+}
+
+.shader {
+  position: absolute;
+  top: 1em;
+  bottom: 2em;
+  left: 1em;
+  right: 1em;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.recharts-default-legend {
+  height: 6vh;
+  font-size: 0.5em;
+  overflow-x: hidden;
+}
+
+.stockDetails {
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.strategiesWindow {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.AddStrategy {
+  align-self: center;
+  width: 80%;
+}
+
+.AddStock {
+  margin: 1em 1em 2em 1em;
+}
+
+.accordion {
+  height: auto;
+  padding: 0.5em 0 0.5em 0;
+  text-align: center;
+}
+
+.stock {
+  padding: 0.2em;
+  text-align: center;
+  align-content: center;
+  margin: 0.5em;
+  position: relative;
+}
+
+.buttons {
+  align-self: center;
+  width: 40%;
+  margin: 1vh;
+  margin-top: 2vh;
+}
+
+.hide {
+  display: none;
+}
+
+.stockHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  padding: 0.1em 0 0.1em 0;
+}
+
+.swatch {
+  width: 1em;
+  position: absolute;
+  top: 0.15em;
+  left: 0.15em;
+}
+
+.delete {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75em;
+  position: absolute;
+  top: 0.2em;
+  right: 0em;
+  padding: 0.02em;
+  border-radius: 50px;
+  z-index: 999;
+}
+
+.confirm {
+  border-radius: 50px;
+  border: 2px solid black;
+}
+
+.editColor {
+  position: absolute;
+  right: 0.2em;
+}
+
+.error {
+  margin: 0.125em 2em 0 2em;
+}
+
+.critical {
+  text-align: center;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description {
+  margin: 1em;
+}
+
+@media screen and (min-width: 600px) {
+  .App {
+    display: grid;
+    grid-template-rows: auto 84vh auto;
+    grid-template-columns: 3fr 1fr;
+    justify-content: center;
+    width: 650px;
+  }
+
+  .main.window {
+    width: auto;
+  }
+  .strategies {
+    grid-row: 2;
+    grid-column: 1;
+    height: auto;
+  }
+
+  .summary {
+    grid-row: 2;
+    grid-column: 3;
+  }
+
+  footer {
+    width: 100%;
+    grid-column: span 2;
+    height: 2em;
+  }
+
+  nav {
+    grid-column: span 2;
+  }
+
+  .summaryPanel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .smGraph {
+    width: 97%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1em auto;
+    height: 23.5vh;
+  }
+
+  .recharts-legend-wrapper {
+    width: 1em;
+  }
+
+  h4 {
+    height: 1em;
+  }
+
+  h3 {
+    height: 1em;
+  }
+
+  .recharts-responsive-container {
+    grid-column: span 2;
+  }
+}
