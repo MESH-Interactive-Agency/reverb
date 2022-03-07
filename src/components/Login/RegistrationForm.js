@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import AuthApiService from "../../services/auth-api-service";
-import { Button, Input, Required } from "../../utils/utils";
+import AuthApiService from '../../services/auth-api-service';
+import { Button, Input, Required } from '../../utils/utils';
 
 export default class RegistrationForm extends Component {
   static defaultProps = {
@@ -15,6 +15,13 @@ export default class RegistrationForm extends Component {
     ev.preventDefault();
     const { full_name, nick_name, user_name, password } = ev.target;
 
+    console.log(
+      user_name.value,
+      password.value,
+      full_name.value,
+      nick_name.value
+    );
+
     this.setState({ error: null });
     AuthApiService.postUser({
       user_name: user_name.value,
@@ -23,10 +30,10 @@ export default class RegistrationForm extends Component {
       nickname: nick_name.value,
     })
       .then((user) => {
-        full_name.value = "";
-        nick_name.value = "";
-        user_name.value = "";
-        password.value = "";
+        full_name.value = '';
+        nick_name.value = '';
+        user_name.value = '';
+        password.value = '';
         this.props.onRegistrationSuccess();
       })
       .catch((res) => {

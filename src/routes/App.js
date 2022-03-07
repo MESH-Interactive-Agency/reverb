@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
 import ErrorBoundary from "../components/Tools/ErrorBoundary";
 
 import NavWindow from "../routes/NavWindow";
@@ -20,11 +20,11 @@ export default class App extends Component {
     return (
       <main className="App">
         <ErrorBoundary>
-                    <Route path="/" component={NavWindow} />
-            <Route path="/" component={MainWindow} />
-            <Route path="/" component={DetailsWindow} />
-            <Route path="/" component={Footer} />
-                 </ErrorBoundary>
+          <Route path="/" component={NavWindow} />
+          <Route path="/" component={MainWindow} />
+          <Route path="/" component={DetailsWindow} />
+          <Route path="/" component={Footer} />
+        </ErrorBoundary>
       </main>
     );
   }

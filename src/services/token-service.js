@@ -1,5 +1,5 @@
-import config from "../config";
-import jwt_decode from "jwt-decode";
+import config from '../config';
+import jwt_decode from 'jwt-decode';
 
 const TokenService = {
   saveAuthToken(token) {
@@ -20,8 +20,9 @@ const TokenService = {
 
   getUsernameFromToken() {
     if (this.getAuthToken()) {
+      console.log(jwt_decode(this.getAuthToken()).sub);
       return jwt_decode(this.getAuthToken()).sub;
-    } else return "guest";
+    } else return 'guest';
   },
 };
 
