@@ -19,22 +19,33 @@ export default class App extends Component {
     customerName: '',
     projectName: '',
     date: '',
+    length: 0,
+    width: 0,
+    height: 0,
   };
 
   updateCustomerName = (name) => {
     this.setState({ customerName: name });
-    console.log('name updated: ', name);
   };
 
   updateProjectName = (name) => {
     this.setState({ projectName: name });
-
-    console.log('project updated: ', name);
   };
 
   updateDate = (date) => {
     this.setState({ date: date });
-    console.log('date updated: ', date);
+  };
+
+  updateHeight = (height) => {
+    this.setState({ height: height });
+  };
+
+  updateWidth = (width) => {
+    this.setState({ width: width });
+  };
+
+  updateLength = (length) => {
+    this.setState({ length: length });
   };
 
   static contextType = Context;
@@ -44,9 +55,15 @@ export default class App extends Component {
       customerName: this.state.customerName,
       projectName: this.state.projectName,
       date: this.state.date,
+      height: this.state.height,
+      width: this.state.width,
+      length: this.state.length,
       updateCustomerName: this.updateCustomerName,
       updateProjectName: this.updateProjectName,
       updateDate: this.updateDate,
+      updateHeight: this.updateHeight,
+      updateWidth: this.updateWidth,
+      updateLength: this.updateLength,
     };
 
     return (

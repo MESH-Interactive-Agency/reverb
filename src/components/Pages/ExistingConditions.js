@@ -1,18 +1,86 @@
 import React from 'react';
-
-import Context from '../../contexts/ApiContext';
-
+import { Button } from '../../utils/utils';
+import Context from '../../contexts/ReverbContext';
 export default class ExistingConditions extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      length: 0,
+      width: 0,
+      height: 0,
+    };
+  }
+
   static contextType = Context;
 
-  render() {
-    return <div className="light window">
-      <h2>Existing Conditions Page</h2>
-      <form>
+  updateLength(length) {
+    this.setState({ length: length });
+    this.context.updateLength(length);
+    return length;
+  }
+  updateWidth(width) {
+    this.setState({ width: width });
+    this.context.updateWidth(width);
+    return width;
+  }
+  updateHeight(height) {
+    this.setState({ height: height });
+    this.context.updateHeight(height);
+    return height;
+  }
 
-        
-      </form>
-    
-    </div>;
+  clearData() {
+    this.setState({
+      length: 0,
+      width: 0,
+      height: 0,
+    });
+  }
+
+  render() {
+    return (
+      <div className="light window">
+        <h2>Existing Conditions</h2>
+        <br></br>
+        <form onSubmit={this.handleSubmit}>
+          <div className="inputs">
+            <label htmlFor="length">Length</label>
+            <input
+              type="length"
+              onChange={(e) => {
+                this.updateLength(e.currentTarget.value);
+              }}
+              id="length"
+              name="length"
+            ></input>
+          </div>
+
+          <div className="inputs">
+            <label htmlFor="width">Width:</label>
+            <input
+              type="text"
+              onChange={(e) => {
+                this.updateWidth(e.currentTarget.value);
+              }}
+              id="width"
+              name="width"
+            />
+          </div>
+          <div className="inputs">
+            <label htmlFor="height">Height:</label>
+            <input
+              type="text"
+              onChange={(e) => {
+                this.updateHeight(e.currentTarget.value);
+              }}
+              id="height"
+              name="height"
+            />
+          </div>
+
+          <Button onClick={this.clearData}>Clear Data</Button>
+        </form>
+      </div>
+    );
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Input } from '../../utils/utils';
+import { Button} from '../../utils/utils';
 import Context from '../../contexts/ReverbContext';
 
 export default class Cover extends React.Component {
@@ -14,16 +14,9 @@ export default class Cover extends React.Component {
 
   static contextType = Context;
 
-  static defaultProps = {
-    history: {
-      push: () => {},
-    },
-  };
-
   updateCustomerName(name) {
     this.setState({ customerName: name });
     this.context.updateCustomerName(name);
-    console.log('context updated: ', this.context.customerName);
     return name;
   }
   updateProjectName(name) {
@@ -37,11 +30,15 @@ export default class Cover extends React.Component {
     return date;
   }
 
-  render() {
-    let customerName = this.state.customerName;
-    let projectName = this.state.projectName;
-    let date = this.state.date;
+  clearData() {
+    this.setState({
+      date: '',
+      customerName: '',
+      projectName: '',
+    });
+  }
 
+  render() {
     return (
       <div className="light window">
         <h2>Cover Page</h2>
@@ -82,18 +79,7 @@ export default class Cover extends React.Component {
             />
           </div>
 
-          <Button>Clear-NYI</Button>
-          {/* <button
-            className="red window buttons"
-            type="submit"
-            onClick={(e) => {
-              customerName = this.updateCustomerName(customerName);
-              date = this.state.date;
-              this.handleSubmit(e, customerName);
-            }}
-          >
-            Submit
-          </button> */}
+          <Button onClick={this.clearData}>Clear Data</Button>
         </form>
       </div>
     );
