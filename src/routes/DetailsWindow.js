@@ -19,8 +19,7 @@ export default class DetailsWindow extends React.Component {
           can display this info any way you want.
         </p>
         <br></br>
-        <p>-----------</p>
-        <br></br>
+
         <Results></Results>
       </aside>
     );

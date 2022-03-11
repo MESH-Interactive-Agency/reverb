@@ -22,10 +22,6 @@ export default class MainWindow extends React.Component {
         around as easily as I can move a paragraph. Very flexible.
         <br></br>
         <br></br>
-        <p>
-          -------------------------------------------------------------------
-        </p>
-        <br></br>
         <Cover></Cover>
         <ExistingConditions></ExistingConditions>
         <SeeYourSpace></SeeYourSpace>
