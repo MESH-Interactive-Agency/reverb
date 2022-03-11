@@ -31,7 +31,7 @@ export default class Cover extends React.Component {
             <label htmlFor="LoginForm__project_name">Project name:</label>
             <Input required name="user_name" id="LoginForm__user_name"></Input>
           </div>
-          <Button>Clear (NYI)</Button>
+          <Button>Clear-NYI</Button>
         </form>
       </div>
     );

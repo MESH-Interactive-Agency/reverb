@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Context from '../../contexts/ApiContext';
+import Context from '../../contexts/ReverbContext';
 
 export default class Results extends React.Component {
   static contextType = Context;
@@ -9,7 +9,7 @@ export default class Results extends React.Component {
     return (
       <div className="light window">
         <h2>Results Page</h2>
-                        
+          Name: <span>{this.context.name}</span>
       </div>
     );
   }
