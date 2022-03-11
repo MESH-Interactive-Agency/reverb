@@ -1,10 +1,10 @@
-import React from "react";
-import { Link, Route } from "react-router-dom";
+import React from 'react';
+import { Link, Route } from 'react-router-dom';
 
-import TokenService from "../services/token-service";
+import TokenService from '../services/token-service';
 //import Context from "../contexts/ApiContext";
-import RegistrationPage from "./RegistrationPage";
-import LoginPage from "./LoginPage";
+import RegistrationPage from './RegistrationPage';
+import LoginPage from './LoginPage';
 
 export default class NavWindow extends React.Component {
   static defaultProps = {
@@ -21,14 +21,18 @@ export default class NavWindow extends React.Component {
     this.context.setLogin(false);
 
     const { location, history } = this.props;
-    const destination = (location.state || {}).from || "/";
+    const destination = (location.state || {}).from || '/';
     history.push(destination);
   };
 
   renderLogoutLink() {
     return (
       <div className="Header__logged-in">
-        <h2 className="welcome">Welcome, {this.context.loggedInUser}</h2>
+        <h2 className="welcome">
+          Welcome! Don't bother trying to log in yet. It's currently only
+          connected to my local server. This will be implemented remotely soon.{' '}
+          {this.context.loggedInUser}
+        </h2>
         <Link onClick={this.handleLogoutClick} to="/">
           Logout
         </Link>
@@ -39,18 +43,18 @@ export default class NavWindow extends React.Component {
   renderLoginLink() {
     return (
       <div className="Header__not-logged-in">
-        <Route exact path={"/"}>
+        <Route exact path={'/'}>
           <Link to="/login">Log In</Link>
         </Route>
-        <Route path={"/register"} component={RegistrationPage} />
-        <Route path={"/login"} component={LoginPage} />
+        <Route path={'/register'} component={RegistrationPage} />
+        <Route path={'/login'} component={LoginPage} />
       </div>
     );
   }
 
   handleLoginSuccess = () => {
     const { location, history } = this.props;
-    const destination = (location.state || {}).from || "/";
+    const destination = (location.state || {}).from || '/';
     history.push(destination);
   };
 
