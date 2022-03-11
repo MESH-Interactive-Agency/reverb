@@ -1,7 +1,12 @@
 import React from 'react';
 
 const ReverbContext = React.createContext({
-  name: 'test',
+  customerName: '',
+  projectName: '',
+  date: '',
+  updateCustomerName: () => {},
+  updateProjectName: () => {},
+  updateDate: () => {},
 });
 
 export default ReverbContext;

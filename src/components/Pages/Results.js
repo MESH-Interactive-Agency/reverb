@@ -9,7 +9,13 @@ export default class Results extends React.Component {
     return (
       <div className="light window">
         <h2>Results Page</h2>
-          Name: <span>{this.context.name}</span>
+        {this.context.date.length > 0 && <span>Date: {this.context.date}</span>}
+        {this.context.customerName.length > 0 && (
+          <span>Customer Name: {this.context.customerName}</span>
+        )}
+        {this.context.projectName.length > 0 && (
+          <span>Project Name: {this.context.projectName}</span>
+        )}
       </div>
     );
   }

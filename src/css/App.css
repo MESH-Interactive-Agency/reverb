@@ -9,13 +9,16 @@ html {
 
   align-items: center;
 
-  background: linear-gradient(
+  /* background: linear-gradient(
     167deg,
     rgba(0, 9, 24, 1) 0%,
     rgba(2, 18, 44, 1) 23.6%,
     rgba(17, 18, 54, 1) 76.4%,
     rgba(4, 27, 74, 1) 100%
-  );
+  ); */
+
+  background-color: rgb(24, 26, 27);
+  color: rgb(232, 226, 220);
 }
 
 html > * {
@@ -51,7 +54,7 @@ h1 {
   margin: 1px;
   margin-right: 3px;
   margin-bottom: 5px;
-  border: 3px solid black;
+  border: 3px solid rgb(105, 97, 86);
   border-radius: 8px;
   box-shadow: 5px 3px 8px -3px rgba(0, 0, 0, 1.5);
   padding: 2px;
