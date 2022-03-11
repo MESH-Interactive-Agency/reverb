@@ -28,7 +28,7 @@ export default class Cover extends React.Component {
   }
   updateProjectName(name) {
     this.setState({ projectName: name });
-    this.context.updatetProjectName(name);
+    this.context.updateProjectName(name);
     return name;
   }
   updateDate(date) {
@@ -49,8 +49,16 @@ export default class Cover extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className="inputs">
             <label htmlFor="LoginForm__user_name">Date:</label>
-            <input type="date" id="date" name="project-date"></input>
+            <input
+              type="date"
+              onChange={(e) => {
+                this.updateDate(e.currentTarget.value);
+              }}
+              id="date"
+              name="project-date"
+            ></input>
           </div>
+
           <div className="inputs">
             <label htmlFor="LoginForm__customer_name">Customer name:</label>
             <input
@@ -64,8 +72,16 @@ export default class Cover extends React.Component {
           </div>
           <div className="inputs">
             <label htmlFor="LoginForm__project_name">Project name:</label>
-            <Input required name="user_name" id="LoginForm__user_name"></Input>
+            <input
+              type="text"
+              onChange={(e) => {
+                this.updateProjectName(e.currentTarget.value);
+              }}
+              id="project-name"
+              name="project-name"
+            />
           </div>
+
           <Button>Clear-NYI</Button>
           {/* <button
             className="red window buttons"

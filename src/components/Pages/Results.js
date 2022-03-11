@@ -11,10 +11,10 @@ export default class Results extends React.Component {
         <h2>Results Page</h2>
         {this.context.date.length > 0 && <span>Date: {this.context.date}</span>}
         {this.context.customerName.length > 0 && (
-          <span>Customer Name: {this.context.customerName}</span>
+          <p>Customer Name: {this.context.customerName}</p>
         )}
         {this.context.projectName.length > 0 && (
-          <span>Project Name: {this.context.projectName}</span>
+          <p>Project Name: {this.context.projectName}</p>
         )}
       </div>
     );

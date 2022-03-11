@@ -28,10 +28,13 @@ export default class App extends Component {
 
   updateProjectName = (name) => {
     this.setState({ projectName: name });
+
+    console.log('project updated: ', name);
   };
 
   updateDate = (date) => {
     this.setState({ date: date });
+    console.log('date updated: ', date);
   };
 
   static contextType = Context;
