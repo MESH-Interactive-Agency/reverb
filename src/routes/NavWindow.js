@@ -28,11 +28,7 @@ export default class NavWindow extends React.Component {
   renderLogoutLink() {
     return (
       <div className="Header__logged-in">
-        <h2 className="welcome">
-          Welcome! Don't bother trying to log in yet. It's currently only
-          connected to my local server. This will be implemented remotely soon.{' '}
-          {this.context.loggedInUser}
-        </h2>
+        <h2 className="welcome">Welcome! {this.context.loggedInUser}</h2>
         <Link onClick={this.handleLogoutClick} to="/">
           Logout
         </Link>
@@ -45,6 +41,9 @@ export default class NavWindow extends React.Component {
       <div className="Header__not-logged-in">
         <Route exact path={'/'}>
           <Link to="/login">Log In</Link>
+          <p>
+            Don't try to log in yet, it only connects to my local server for now
+          </p>
         </Route>
         <Route path={'/register'} component={RegistrationPage} />
         <Route path={'/login'} component={LoginPage} />
