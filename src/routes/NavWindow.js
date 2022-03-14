@@ -59,7 +59,7 @@ export default class NavWindow extends React.Component {
 
   render() {
     return (
-      <nav className="dark main window">
+      <nav className="dark window">
         <h1 className="dark">Reverb</h1>
 
         {TokenService.hasAuthToken()

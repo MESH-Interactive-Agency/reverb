@@ -51,6 +51,7 @@ h1 {
 }
 
 .window {
+  width: 97%;
   margin: 1px;
   margin-right: 3px;
   margin-bottom: 5px;
@@ -61,7 +62,7 @@ h1 {
 }
 
 .main.window {
-  width: 97%;
+  overflow: scroll;
 }
 
 .Header__not-logged-in {
@@ -95,6 +96,10 @@ h1 {
   width: 100%;
   line-height: 1.5em;
   z-index: 999;
+}
+
+.center-text {
+  text-align: center;
 }
 
 .addStock {

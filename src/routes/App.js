@@ -22,6 +22,16 @@ export default class App extends Component {
     length: 0,
     width: 0,
     height: 0,
+    cLength: 0,
+    cWidth: 0,
+  };
+
+  updateCeilingWidth = (w) => {
+    this.setState({ cWidth: w });
+  };
+
+  updateCeilingLength = (l) => {
+    this.setState({ cLength: l });
   };
 
   updateCustomerName = (name) => {
@@ -64,6 +74,8 @@ export default class App extends Component {
       updateHeight: this.updateHeight,
       updateWidth: this.updateWidth,
       updateLength: this.updateLength,
+      updateCeilingLength: this.updateCeilingLength,
+      updateCeilingWidth: this.updateCeilingWidth,
     };
 
     return (
