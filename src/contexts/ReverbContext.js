@@ -23,6 +23,12 @@ const ReverbContext = React.createContext({
   updateCeilingWidth: () => {},
   updateWall1Height: () => {},
   updateWall1Length: () => {},
+  updateWall2Height: () => {},
+  updateWall2Length: () => {},
+  updateWall3Height: () => {},
+  updateWall3Length: () => {},
+  updateWall4Height: () => {},
+  updateWall4Length: () => {},
 });
 
 export default ReverbContext;
