@@ -14,7 +14,15 @@ export default class OpeningsSummary extends Component {
     let opening2 = this.context.opening2;
     let other = this.context.other;
 
-    return this.context.length * this.context.width * this.context.height;
+    return (
+      door1.l * door1.w * door1.qty +
+      door2.l * door2.w * door2.qty +
+      window1.l * window1.w * window1.qty +
+      window2.l * window2.w * window2.qty +
+      opening1.l * opening1.w * opening1.qty +
+      opening2.l * opening2.w * opening2.qty +
+      other.l * other.w * other.qty
+    );
   };
 
   render() {
@@ -94,13 +102,9 @@ export default class OpeningsSummary extends Component {
             </div>
           )}
 
-          {this.context.length > 0 &&
-            this.context.height > 0 &&
-            this.context.width > 0 && (
-              <div className="window">
-                Total Volume: {this.calculateVolume()}
-              </div>
-            )}
+          {this.calculateVolume() > 0 && (
+            <div className="window">Total Volume: {this.calculateVolume()}</div>
+          )}
         </div>
       </div>
     );
