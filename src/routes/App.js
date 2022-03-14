@@ -24,6 +24,17 @@ export default class App extends Component {
     height: 0,
     cLength: 0,
     cWidth: 0,
+    wall1: { l: 0, h: 0 },
+    wall2: { l: 0, h: 0 },
+    wall3: { l: 0, h: 0 },
+    wall4: { l: 0, h: 0 },
+  };
+
+  updateWall1Height = (h) => {
+    this.setState({ wall1: { l: this.state.wall1.l, h: h } });
+  };
+  updateWall1Length = (l) => {
+    this.setState({ wall1: { l: l, h: this.state.wall1.h } });
   };
 
   updateCeilingWidth = (cWidth) => {
@@ -70,6 +81,10 @@ export default class App extends Component {
       length: this.state.length,
       cWidth: this.state.cWidth,
       cLength: this.state.cLength,
+      wall1: this.state.wall1,
+      wall2: this.state.wall2,
+      wall3: this.state.wall3,
+      wall4: this.state.wall4,
       updateCustomerName: this.updateCustomerName,
       updateProjectName: this.updateProjectName,
       updateDate: this.updateDate,
@@ -78,6 +93,8 @@ export default class App extends Component {
       updateLength: this.updateLength,
       updateCeilingLength: this.updateCeilingLength,
       updateCeilingWidth: this.updateCeilingWidth,
+      updateWall1Height: this.updateWall1Height,
+      updateWall1Length: this.updateWall1Length,
     };
 
     return (

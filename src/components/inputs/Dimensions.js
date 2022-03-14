@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Button } from '../../utils/utils';
 import Context from '../../contexts/ReverbContext';
 
 export default class ExistingConditions extends React.Component {
@@ -91,8 +90,6 @@ export default class ExistingConditions extends React.Component {
             name="height"
           />
         </div>
-
-        {/* <Button onClick={this.clearData}>Clear Data</Button> */}
       </form>
     );
   }

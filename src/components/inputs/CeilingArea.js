@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
-//import { Button } from '../../utils/utils';
 import Context from '../../contexts/ReverbContext';
 
 export default class CeilingArea extends Component {
@@ -62,15 +61,14 @@ export default class CeilingArea extends Component {
           <input
             type="number"
             onChange={(e) => {
-              cWidth=
-              this.updateCeilingWidth(this.removeSpecialChars(e.currentTarget.value));
+              cWidth = this.updateCeilingWidth(
+                this.removeSpecialChars(e.currentTarget.value)
+              );
             }}
             id="c-width"
             name="c-width"
           />
         </div>
-
-        {/* <Button onClick={this.clearData}>Clear Data</Button> */}
       </form>
     );
   }

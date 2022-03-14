@@ -98,6 +98,10 @@ h1 {
   z-index: 999;
 }
 
+.short {
+  width: 30%;
+}
+
 .center-text {
   text-align: center;
 }

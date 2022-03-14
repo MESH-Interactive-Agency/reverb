@@ -1,6 +1,7 @@
 import React from 'react';
 import DimensionSummary from '../outputs/DimensionSummary';
 import CeilingSummary from '../outputs/CeilingSummary';
+import WallSummary from '../outputs/WallSummary';
 import Title from '../outputs/Title';
 
 import Context from '../../contexts/ReverbContext';
@@ -15,6 +16,7 @@ export default class Results extends React.Component {
         <Title></Title>
         <DimensionSummary></DimensionSummary>
         <CeilingSummary></CeilingSummary>
+        <WallSummary></WallSummary>
       </div>
     );
   }
