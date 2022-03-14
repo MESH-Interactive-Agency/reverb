@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
-import { Button } from '../../utils/utils';
+//import { Button } from '../../utils/utils';
 import Context from '../../contexts/ReverbContext';
 
 export default class CeilingArea extends Component {
@@ -12,6 +13,10 @@ export default class CeilingArea extends Component {
   }
 
   static contextType = Context;
+
+  removeSpecialChars(num) {
+    return num.replace(/[^0-9.]/g, '');
+  }
 
   updateCeilingLength(length) {
     this.setState({ cLength: length });
@@ -32,30 +37,36 @@ export default class CeilingArea extends Component {
   }
 
   render() {
+    let cWidth = this.state.cWidth;
+    let cLength = this.state.cLength;
+
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>ENTER Ceiling Areas</h2>
         <div className="inputs">
           <label htmlFor="length">Length</label>
           <input
-            type="length"
+            type="number"
             onChange={(e) => {
-              this.updateCeilingLength(e.currentTarget.value);
+              cLength = this.updateCeilingLength(
+                this.removeSpecialChars(e.currentTarget.value)
+              );
             }}
-            id="length"
-            name="length"
+            id="c-length"
+            name="c-length"
           ></input>
         </div>
 
         <div className="inputs">
           <label htmlFor="width">Width:</label>
           <input
-            type="text"
+            type="number"
             onChange={(e) => {
-              this.updateCeilingWidth(e.currentTarget.value);
+              cWidth=
+              this.updateCeilingWidth(this.removeSpecialChars(e.currentTarget.value));
             }}
-            id="width"
-            name="width"
+            id="c-width"
+            name="c-width"
           />
         </div>
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Button } from '../../utils/utils';
 import Context from '../../contexts/ReverbContext';
@@ -10,6 +11,10 @@ export default class ExistingConditions extends React.Component {
       width: 0,
       height: 0,
     };
+  }
+
+  removeSpecialChars(num) {
+    return num.replace(/[^0-9.]/g, '');
   }
 
   static contextType = Context;
@@ -39,15 +44,21 @@ export default class ExistingConditions extends React.Component {
   }
 
   render() {
+    let length = this.state.length;
+    let width = this.state.width;
+    let height = this.state.height;
+
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>ENTER Floor & Room Area (Room Volume)</h2>
         <div className="inputs">
           <label htmlFor="length">Length</label>
           <input
-            type="length"
+            type="number"
             onChange={(e) => {
-              this.updateLength(e.currentTarget.value);
+              length = this.updateLength(
+                this.removeSpecialChars(e.currentTarget.value)
+              );
             }}
             id="length"
             name="length"
@@ -57,9 +68,11 @@ export default class ExistingConditions extends React.Component {
         <div className="inputs">
           <label htmlFor="width">Width:</label>
           <input
-            type="text"
+            type="number"
             onChange={(e) => {
-              this.updateWidth(e.currentTarget.value);
+              width = this.updateWidth(
+                this.removeSpecialChars(e.currentTarget.value)
+              );
             }}
             id="width"
             name="width"
@@ -68,9 +81,11 @@ export default class ExistingConditions extends React.Component {
         <div className="inputs">
           <label htmlFor="height">Height:</label>
           <input
-            type="text"
+            type="number"
             onChange={(e) => {
-              this.updateHeight(e.currentTarget.value);
+              height = this.updateHeight(
+                this.removeSpecialChars(e.currentTarget.value)
+              );
             }}
             id="height"
             name="height"

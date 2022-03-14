@@ -3,6 +3,7 @@ import Context from '../../contexts/ReverbContext';
 
 export default class DimensionSummary extends Component {
   static contextType = Context;
+
   calculateVolume = () => {
     return this.context.length * this.context.width * this.context.height;
   };
@@ -10,7 +11,7 @@ export default class DimensionSummary extends Component {
   render() {
     return (
       <div className="window">
-        <h3>Dimensions:</h3>
+        <h3>Floor/Wall Dimensions:</h3>
         {(this.context.length > 0 ||
           this.context.height > 0 ||
           this.context.width > 0) && (
