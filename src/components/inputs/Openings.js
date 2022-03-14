@@ -121,7 +121,7 @@ export default class Openings extends Component {
               door1 = this.updateDoor1({
                 l: door1.l,
                 w: door1.w,
-                2: this.removeSpecialChars(e.currentTarget.value),
+                qty: this.removeSpecialChars(e.currentTarget.value),
               });
             }}
             id="door1-qty"
@@ -167,7 +167,7 @@ export default class Openings extends Component {
               door2 = this.updateDoor2({
                 l: door2.l,
                 w: door2.w,
-                2: this.removeSpecialChars(e.currentTarget.value),
+                qty: this.removeSpecialChars(e.currentTarget.value),
               });
             }}
             id="door2-qty"
@@ -213,7 +213,7 @@ export default class Openings extends Component {
               window1 = this.updateWindow1({
                 l: window1.l,
                 w: window1.w,
-                2: this.removeSpecialChars(e.currentTarget.value),
+                qty: this.removeSpecialChars(e.currentTarget.value),
               });
             }}
             id="window1-qty"
@@ -259,7 +259,7 @@ export default class Openings extends Component {
               window2 = this.updateWindow2({
                 l: window2.l,
                 w: window2.w,
-                2: this.removeSpecialChars(e.currentTarget.value),
+                qty: this.removeSpecialChars(e.currentTarget.value),
               });
             }}
             id="window2-qty"
@@ -305,7 +305,7 @@ export default class Openings extends Component {
               opening1 = this.updateOpening1({
                 l: opening1.l,
                 w: opening1.w,
-                2: this.removeSpecialChars(e.currentTarget.value),
+                qty: this.removeSpecialChars(e.currentTarget.value),
               });
             }}
             id="opening1-qty"
@@ -351,7 +351,7 @@ export default class Openings extends Component {
               opening2 = this.updateOpening2({
                 l: opening2.l,
                 w: opening2.w,
-                2: this.removeSpecialChars(e.currentTarget.value),
+                qty: this.removeSpecialChars(e.currentTarget.value),
               });
             }}
             id="opening2-qty"
@@ -397,7 +397,7 @@ export default class Openings extends Component {
               other = this.updateOther({
                 l: other.l,
                 w: other.w,
-                2: this.removeSpecialChars(e.currentTarget.value),
+                qty: this.removeSpecialChars(e.currentTarget.value),
               });
             }}
             id="other-qty"
