@@ -3,6 +3,7 @@ import React from 'react';
 import Dimensions from '../inputs/Dimensions';
 import CeilingArea from '../inputs/CeilingArea';
 import WallSurfaces from '../inputs/WallSurfaces';
+import Openings from '../inputs/Openings';
 
 export default class ExistingConditions extends React.Component {
   render() {
@@ -13,6 +14,7 @@ export default class ExistingConditions extends React.Component {
         <Dimensions></Dimensions>
         <CeilingArea></CeilingArea>
         <WallSurfaces></WallSurfaces>
+        <Openings></Openings>
       </div>
     );
   }

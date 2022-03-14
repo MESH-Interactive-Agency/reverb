@@ -13,7 +13,6 @@ export default class WallSummary extends Component {
     );
   };
   render() {
-    console.log(this.context.wall1.l, this.context.wall1.h);
     return (
       <div className="window">
         <h3>Wall Dimensions:</h3>

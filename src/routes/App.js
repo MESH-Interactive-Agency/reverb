@@ -28,6 +28,38 @@ export default class App extends Component {
     wall2: { l: 0, h: 0 },
     wall3: { l: 0, h: 0 },
     wall4: { l: 0, h: 0 },
+    door1: { l: 0, w: 0, qty: 0 },
+    door2: { l: 0, w: 0, qty: 0 },
+    window1: { l: 0, w: 0, qty: 0 },
+    window2: { l: 0, w: 0, qty: 0 },
+    opening1: { l: 0, w: 0, qty: 0 },
+    opening2: { l: 0, w: 0, qty: 0 },
+    other: { l: 0, w: 0, qty: 0 },
+  };
+
+  updateDoor1 = (o) => {
+    this.setState({ door1: o });
+  };
+  updateDoor2 = (o) => {
+    this.setState({ door2: o });
+  };
+
+  updateWindow1 = (o) => {
+    this.setState({ window1: o });
+  };
+  updateWindow2 = (o) => {
+    this.setState({ window2: o });
+  };
+
+  updateOpening1 = (o) => {
+    this.setState({ opening1: o });
+  };
+  updateOpening2 = (o) => {
+    this.setState({ opening2: o });
+  };
+
+  updateOther = (o) => {
+    this.setState({ other: o });
   };
 
   updateWall1Height = (h) => {
@@ -106,6 +138,20 @@ export default class App extends Component {
       wall2: this.state.wall2,
       wall3: this.state.wall3,
       wall4: this.state.wall4,
+      door1: this.state.door1,
+      door2: this.state.door2,
+      window1: this.state.window1,
+      window2: this.state.window1,
+      opening1: this.state.opening1,
+      opening2: this.state.opening1,
+      other: this.state.other,
+      updateDoor1: this.updateDoor1,
+      updateDoor2: this.updateDoor2,
+      updateWindow1: this.updateWindow1,
+      updateWindow2: this.updateWindow2,
+      updateOpening1: this.updateOpening1,
+      updateOpening2: this.updateOpening2,
+      updateOther: this.updateOther,
       updateCustomerName: this.updateCustomerName,
       updateProjectName: this.updateProjectName,
       updateDate: this.updateDate,

@@ -101,6 +101,9 @@ h1 {
 .short {
   width: 30%;
 }
+.shorter {
+  width: 15%;
+}
 
 .center-text {
   text-align: center;
