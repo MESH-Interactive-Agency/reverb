@@ -1,4 +1,3 @@
-import { rgb } from 'd3-color';
 import React, { Component } from 'react';
 import {
   BarChart,
@@ -8,7 +7,6 @@ import {
   YAxis,
   CartesianGrid,
 } from 'recharts';
-import { Color } from 'three';
 
 import Context from '../../contexts/ReverbContext';
 
