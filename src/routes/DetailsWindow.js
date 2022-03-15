@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Results from '../components/Pages/Results';
+import SeeYourSpace from '../components/Pages/SeeYourSpace';
+import Charts from '../components/Pages/Charts';
 
 import Context from '../contexts/ApiContext';
 
@@ -10,15 +12,8 @@ export default class DetailsWindow extends React.Component {
   render() {
     return (
       <aside className="light main window">
-        <h2 className="dark">This window is serving as an output window.</h2>
-        <br></br>
-        <p>
-          For right now, this is just showing the processed results in
-          real-time. Again, just for demo purposes. I can display this info any
-          way you want.
-        </p>
-        <br></br>
-
+        <SeeYourSpace />
+        <Charts></Charts>
         <Results></Results>
       </aside>
     );

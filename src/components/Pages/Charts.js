@@ -1,15 +1,15 @@
 import React from 'react';
-import BoxSpace from '../visualizations/BoxSpace';
+import SurfaceAreaChart from '../visualizations/SurfaceAreaChart';
 
 import Context from '../../contexts/ApiContext';
 
-export default class SeeYourSpace extends React.Component {
+export default class Charts extends React.Component {
   static contextType = Context;
 
   render() {
     return (
       <div className="light window">
-        <BoxSpace></BoxSpace>
+        <SurfaceAreaChart />
       </div>
     );
   }

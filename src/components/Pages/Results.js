@@ -3,6 +3,8 @@ import DimensionSummary from '../outputs/DimensionSummary';
 import CeilingSummary from '../outputs/CeilingSummary';
 import WallSummary from '../outputs/WallSummary';
 import OpeningsSummary from '../outputs/OpeningsSummary';
+import Charts from './Charts';
+import BoxSpace from '../visualizations/BoxSpace';
 
 import Title from '../outputs/Title';
 

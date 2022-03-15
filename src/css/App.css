@@ -105,6 +105,12 @@ h1 {
   width: 15%;
 }
 
+.fill {
+  height: 25vh;
+  width: 100%;
+  border: 1px solid white;
+}
+
 .center-text {
   text-align: center;
 }
