@@ -1,76 +1,72 @@
-import TokenService from "./token-service";
-import config from "../config";
+import TokenService from './token-service';
+import config from '../config';
 
 const ApiService = {
-  getStrategies() {
-    return fetch(`${config.API_ENDPOINT}/strategy/`, {
+  getFloorMaterials() {
+    return fetch(`${config.API_ENDPOINT}/data/floor_materials`, {
       headers: {
-        "authorization": `bearer ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
 
-  getStocks() {
-    return fetch(`${config.API_ENDPOINT}/stock/`, {
+  getCeilingMaterials() {
+    return fetch(`${config.API_ENDPOINT}/data/ceiling_materials`, {
       headers: {
-        "authorization": `bearer ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
 
-  addStock(stock, strategyId) {
-    return fetch(`${config.API_ENDPOINT}/strategy`, {
-      method: "POST",
+  getWallMaterials() {
+    return fetch(`${config.API_ENDPOINT}/data/wall_materials`, {
       headers: {
-        "content-type": "application/json",
-        "authorization": `bearer ${TokenService.getAuthToken()}`,
-      },
-      body: JSON.stringify({
-        strategy_id: strategyId,
-        stock,
-      }),
-    }).then((res) =>
-      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
-    );
-  },
-
-  deleteStock(stockId) {
-    return fetch(`${config.API_ENDPOINT}/stock/${stockId}`, {
-      method: "DELETE",
-      headers: {
-        "content-type": "application/json",
-        "authorization": `bearer ${TokenService.getAuthToken()}`,
-      },
-    }).then((res) =>
-      !res.ok ? res.json().then((e) => Promise.reject(e)) : res
-    );
-  },
-
-  getStrategy(strategyId) {
-    return fetch(`${config.API_ENDPOINT}/strategy/${strategyId}`, {
-      headers: {
-        "authorization": `bearer ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
 
-  postStrategy(strategyId, text) {
-    return fetch(`${config.API_ENDPOINT}/strategy`, {
-      method: "POST",
+  getOtherMaterials() {
+    return fetch(`${config.API_ENDPOINT}/data/other_materials`, {
       headers: {
-        "content-type": "application/json",
-        "authorization": `bearer ${TokenService.getAuthToken()}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({
-        strategy_id: strategyId,
-        text,
-      }),
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
+  },
+
+  getCeilingProducts() {
+    return fetch(`${config.API_ENDPOINT}/data/ceiling_products`, {
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
+  },
+
+  getBaffleUnits() {
+    return fetch(`${config.API_ENDPOINT}/data/baffle_units`, {
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
+  },
+
+  getWallProducts() {
+    return fetch(`${config.API_ENDPOINT}/data/wall_productss`, {
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );

@@ -20,7 +20,6 @@ export default class MainWindow extends React.Component {
         <br></br>
         <Cover></Cover>
         <ExistingConditions></ExistingConditions>
-        
         <AcousticalTreatments></AcousticalTreatments>
       </div>
     );

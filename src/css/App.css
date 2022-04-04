@@ -36,7 +36,7 @@ html > * {
   width: 100vw;
 
   min-width: 350px;
-  max-width: 8 35px;
+  max-width: 835px;
 }
 
 nav {
@@ -336,13 +336,13 @@ h4 {
   margin: 1em;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1050px) {
   .App {
     display: grid;
     grid-template-rows: auto 84vh auto;
     grid-template-columns: 3fr 2fr;
     justify-content: center;
-    width: 650px;
+    width: 1050px;
   }
 
   .main.window {

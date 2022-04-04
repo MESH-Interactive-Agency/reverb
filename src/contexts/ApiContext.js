@@ -4,24 +4,19 @@ import TokenService from '../services/token-service';
 import ApiService from '../services/api-service';
 
 const ApiContext = React.createContext({
-  stocks: [],
-  strategies: [],
-  openStocks: [],
-  openStrat: {},
+  floorMaterials: [],
+  ceilingMaterials: [],
+  wallMaterials: [],
+  otherMaterials: [],
+  ceilingProducts: [],
+  baffleUnits: [],
+  wallProducts: [],
   loggedIn: TokenService.hasAuthToken(),
   loggedInUser: () => {},
   setLogin: () => {},
   setLogout: () => {},
   setError: () => {},
   clearError: () => {},
-  setStrategies: () => {},
-  clearStrategies: () => {},
-  setStocks: () => {},
-  clearStocks: () => {},
-  addStrategy: () => {},
-  addStock: () => {},
-  setOpenStrat: () => {},
-  deleteStock: () => {},
 });
 
 export default ApiContext;
@@ -37,47 +32,77 @@ export class ApiProvider extends Component {
     this.setState({
       loggedIn: bool,
       loggedInUser: TokenService.getUsernameFromToken(),
-      openStrat: {},
-      openStocks: [],
-      stocks: [],
-      strategies: [],
     });
+  };
 
-    ApiService.getStrategies()
+  setFloorMaterials = () => {
+    ApiService.getFloorMaterials()
       .then((res) => {
         this.setState({
-          strategies: res,
-        });
-      })
-      .catch(this.context.setError);
-    ApiService.getStocks()
-      .then((res) => {
-        this.setState({
-          stocks: res,
+          floorMaterials: res,
         });
       })
       .catch(this.context.setError);
   };
 
-  setOpenStrat = (stratName) => {
-    if (stratName !== '') {
-      const strat = this.state.strategies.find(
-        (strategy) => strategy.title === stratName
-      );
-      const stocks = this.state.stocks.filter(
-        (stock) => stock.strategy_id === strat.id
-      );
+  setCeilingMaterials = () => {
+    ApiService.getCeilingMaterials()
+      .then((res) => {
+        this.setState({
+          ceilingMaterials: res,
+        });
+      })
+      .catch(this.context.setError);
+  };
 
-      this.setState({
-        openStocks: stocks,
-        openStrat: strat,
-      });
-    } else {
-      this.setState({
-        openStocks: [],
-        openStrat: {},
-      });
-    }
+  setOtherMaterials = () => {
+    ApiService.getOtherMaterials()
+      .then((res) => {
+        this.setState({
+          otherMaterials: res,
+        });
+      })
+      .catch(this.context.setError);
+  };
+
+  setWallMaterials = () => {
+    ApiService.getWallMaterials()
+      .then((res) => {
+        this.setState({
+          wallMaterials: res,
+        });
+      })
+      .catch(this.context.setError);
+  };
+
+  setCeilingProducts = () => {
+    ApiService.getCeilingProducts()
+      .then((res) => {
+        this.setState({
+          ceilingProducts: res,
+        });
+      })
+      .catch(this.context.setError);
+  };
+
+  setBaffleUnits = () => {
+    ApiService.getBaffleUnits()
+      .then((res) => {
+        this.setState({
+          baffleUnits: res,
+        });
+      })
+      .catch(this.context.setError);
+  };
+
+  setWallProducts = () => {
+    ApiService.getWallProducts()
+      .then((res) => {
+        this.setState({
+          wallProducts: res,
+        });
+      })
+      .catch(this.context.setError);
   };
 
   setError = (error) => {
@@ -89,50 +114,6 @@ export class ApiProvider extends Component {
     this.setState({ error: null });
   };
 
-  setStrategies = (strategies) => {
-    this.setState({ strategies });
-  };
-
-  clearStrategies = () => {
-    this.setState({ strategies: [] });
-  };
-
-  setStocks = (stocks) => {
-    this.setState({ stocks });
-  };
-
-  clearStocks = () => {
-    this.setState({ stocks: [] });
-  };
-
-  handleAddStrategy = (strategy) => {
-    this.setState({
-      strategies: [...this.state.strategies, strategy],
-    });
-  };
-
-  handleAddStock = (stock) => {
-    this.setState({
-      stocks: [...this.state.stocks, stock],
-      openStocks: [...this.state.openStocks, stock],
-    });
-  };
-
-  handleDeleteStock = (stockId) => {
-    this.setState({
-      stocks: this.state.stocks.filter((stock) => stock.id !== stockId),
-      openStocks: this.state.openStocks.filter((stock) => stock.id !== stockId),
-    });
-  };
-
-  handleDeleteStrategy = (strategyId) => {
-    this.setState({
-      stocks: this.state.stocks.filter(
-        (stock) => stock.strategy_id !== strategyId
-      ),
-    });
-  };
-
   render() {
     const value = {
       loggedIn: this.state.loggedIn,
@@ -140,6 +121,13 @@ export class ApiProvider extends Component {
       setLogin: this.setLogin,
       setError: this.setError,
       clearError: this.clearError,
+      floorMaterials: this.state.floorMaterials,
+      ceilingMaterials: this.state.ceilingMaterials,
+      wallMaterials: this.state.wallMaterials,
+      otherMaterials: this.state.otherMaterials,
+      ceilingProducts: this.state.ceilingProducts,
+      baffleUnits: this.state.baffleUnits,
+      wallProducts: this.state.wallProducts,
     };
 
     return (
