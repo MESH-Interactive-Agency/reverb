@@ -6,6 +6,7 @@ import Cover from '../components/Pages/Cover';
 import ExistingConditions from '../components/Pages/ExistingConditions';
 import AcousticalTreatments from '../components/Pages/AcousticalTreatments';
 
+import Accordion from '../components/Tools/Accordion';
 export default class MainWindow extends React.Component {
   static contextType = Context;
 
@@ -18,9 +19,18 @@ export default class MainWindow extends React.Component {
 
         <br></br>
         <br></br>
-        <Cover></Cover>
-        <ExistingConditions></ExistingConditions>
-        <AcousticalTreatments></AcousticalTreatments>
+        {/* <Accordion> */}
+        <li>
+          <Cover></Cover>
+        </li>
+        <li>
+          <ExistingConditions></ExistingConditions>
+        </li>
+
+        <li>
+          <AcousticalTreatments></AcousticalTreatments>
+        </li>
+        {/* </Accordion> */}
       </div>
     );
   }

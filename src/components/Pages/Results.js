@@ -4,7 +4,6 @@ import CeilingSummary from '../outputs/CeilingSummary';
 import WallSummary from '../outputs/WallSummary';
 import OpeningsSummary from '../outputs/OpeningsSummary';
 
-
 import Title from '../outputs/Title';
 
 import Context from '../../contexts/ReverbContext';

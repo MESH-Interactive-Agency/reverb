@@ -63,7 +63,7 @@ const ApiService = {
   },
 
   getWallProducts() {
-    return fetch(`${config.API_ENDPOINT}/data/wall_productss`, {
+    return fetch(`${config.API_ENDPOINT}/data/wall_products`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },

@@ -33,6 +33,14 @@ export class ApiProvider extends Component {
       loggedIn: bool,
       loggedInUser: TokenService.getUsernameFromToken(),
     });
+
+    // this.setFloorMaterials();
+    // this.setCeilingMaterials();
+    // this.setWallMaterials();
+    // this.setBaffleUnits();
+    // this.setOtherMaterials();
+    // this.setCeilingProducts();
+    // this.setWallProducts();
   };
 
   setFloorMaterials = () => {
@@ -121,6 +129,7 @@ export class ApiProvider extends Component {
       setLogin: this.setLogin,
       setError: this.setError,
       clearError: this.clearError,
+      setFloorMaterials: this.setFloorMaterials,
       floorMaterials: this.state.floorMaterials,
       ceilingMaterials: this.state.ceilingMaterials,
       wallMaterials: this.state.wallMaterials,
