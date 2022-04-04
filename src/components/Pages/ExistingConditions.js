@@ -5,6 +5,9 @@ import CeilingArea from '../inputs/CeilingArea';
 import WallSurfaces from '../inputs/WallSurfaces';
 import Openings from '../inputs/Openings';
 import FloorMatsSelector from '../inputs/FloorMatsSelector';
+import CeilingMatsSelector from '../inputs/CeilingMatsSelector';
+import WallMatsSelector from '../inputs/WallMatsSelector';
+import OtherMatsSelector from '../inputs/OtherMatsSelector';
 
 export default class ExistingConditions extends React.Component {
   render() {
@@ -15,8 +18,21 @@ export default class ExistingConditions extends React.Component {
         <Dimensions />
         <FloorMatsSelector />
         <CeilingArea />
+        <CeilingMatsSelector />
         <WallSurfaces />
+        <WallMatsSelector />
+        <WallMatsSelector />
+        <WallMatsSelector />
+        <WallMatsSelector />
         <Openings />
+        <OtherMatsSelector />
+        <OtherMatsSelector />
+        <OtherMatsSelector />
+        <OtherMatsSelector />
+        <OtherMatsSelector />
+        <OtherMatsSelector />
+        <OtherMatsSelector />
+        <OtherMatsSelector />
       </div>
     );
   }

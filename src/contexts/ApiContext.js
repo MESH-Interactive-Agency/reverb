@@ -33,14 +33,6 @@ export class ApiProvider extends Component {
       loggedIn: bool,
       loggedInUser: TokenService.getUsernameFromToken(),
     });
-
-    // this.setFloorMaterials();
-    // this.setCeilingMaterials();
-    // this.setWallMaterials();
-    // this.setBaffleUnits();
-    // this.setOtherMaterials();
-    // this.setCeilingProducts();
-    // this.setWallProducts();
   };
 
   setFloorMaterials = () => {
@@ -130,6 +122,12 @@ export class ApiProvider extends Component {
       setError: this.setError,
       clearError: this.clearError,
       setFloorMaterials: this.setFloorMaterials,
+      setCeilingMaterials: this.setCeilingMaterials,
+      setWallMaterials: this.setWallMaterials,
+      setOtherMaterials: this.setOtherMaterials,
+      setCeilingProducts: this.setCeilingProducts,
+      setBaffleUnits: this.setBaffleUnits,
+      setWallProducts: this.setWallProducts,
       floorMaterials: this.state.floorMaterials,
       ceilingMaterials: this.state.ceilingMaterials,
       wallMaterials: this.state.wallMaterials,
