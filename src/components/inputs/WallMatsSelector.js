@@ -11,7 +11,7 @@ export default class WallMatsSelector extends Component {
   static contextType = Context;
 
   componentDidMount() {
-    this.context.setWallMaterials();
+    this.context.getWallMaterials();
   }
 
   updateSelection(selection) {

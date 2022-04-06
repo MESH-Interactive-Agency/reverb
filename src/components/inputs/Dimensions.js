@@ -21,16 +21,26 @@ export default class ExistingConditions extends React.Component {
   updateLength(length) {
     this.setState({ length: length });
     this.context.updateLength(length);
+    this.context.updateWall1Length(length);
+    this.context.updateWall3Length(length);
+    this.context.updateCeilingLength(length);
     return length;
   }
   updateWidth(width) {
     this.setState({ width: width });
     this.context.updateWidth(width);
+    this.context.updateWall2Length(width);
+    this.context.updateWall4Length(width);
+    this.context.updateCeilingWidth(width);
     return width;
   }
   updateHeight(height) {
     this.setState({ height: height });
     this.context.updateHeight(height);
+    this.context.updateWall1Height(height);
+    this.context.updateWall2Height(height);
+    this.context.updateWall3Height(height);
+    this.context.updateWall4Height(height);
     return height;
   }
 

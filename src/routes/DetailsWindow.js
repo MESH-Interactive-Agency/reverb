@@ -5,22 +5,22 @@ import SeeYourSpace from '../components/Pages/SeeYourSpace';
 import Charts from '../components/Pages/Charts';
 
 import Context from '../contexts/ApiContext';
-
-//import ApiService from '../services/data-api-service';
+import Title from '../components/outputs/Title';
+import FloorMatsSummary from '../components/outputs/FloorMatsSummary';
+import CeilingMatsSummary from '../components/outputs/CeilingMatsSummary';
 
 export default class DetailsWindow extends React.Component {
   static contextType = Context;
 
   render() {
-    //  let test = ApiService.getFloorMaterials();
-
-    let test = 'test';
     return (
       <aside className="light main window">
-        <p>test: {test}</p>
+        <Title />
         <SeeYourSpace />
-        <Charts></Charts>
-        <Results></Results>
+        <Charts />
+        <FloorMatsSummary />
+        <CeilingMatsSummary />
+        <Results />
       </aside>
     );
   }

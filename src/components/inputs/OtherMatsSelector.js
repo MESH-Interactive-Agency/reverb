@@ -11,7 +11,7 @@ export default class OtherMatsSelector extends Component {
   static contextType = Context;
 
   componentDidMount() {
-    this.context.setOtherMaterials();
+    this.context.getOtherMaterials();
   }
 
   updateSelection(selection) {

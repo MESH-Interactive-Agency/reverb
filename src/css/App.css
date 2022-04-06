@@ -340,7 +340,7 @@ h4 {
   .App {
     display: grid;
     grid-template-rows: auto 84vh auto;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 3fr 5fr;
     justify-content: center;
     width: 1050px;
   }

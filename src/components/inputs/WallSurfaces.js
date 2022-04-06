@@ -77,7 +77,7 @@ export default class WallSurfaces extends Component {
     let wall4 = this.state.wall4;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="hide">
         <h2>ENTER Wall Surfaces Dimensions</h2>
         <div className="inputs">
           <h3>Wall 1: </h3>

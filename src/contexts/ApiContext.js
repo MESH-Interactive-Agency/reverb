@@ -11,12 +11,19 @@ const ApiContext = React.createContext({
   ceilingProducts: [],
   baffleUnits: [],
   wallProducts: [],
+
+  selectedFloorMaterial: 0,
+  selectedCeilingMaterial: 0,
+
   loggedIn: TokenService.hasAuthToken(),
   loggedInUser: () => {},
   setLogin: () => {},
   setLogout: () => {},
   setError: () => {},
   clearError: () => {},
+
+  updateSelectedFloorMaterial: () => {},
+  updateSelectedCeilingMaterial: () => {},
 });
 
 export default ApiContext;
@@ -26,6 +33,8 @@ export class ApiProvider extends Component {
     loggedIn: TokenService.hasAuthToken(),
     loggedInUser: TokenService.getUsernameFromToken(),
     error: null,
+    selectedFloorMaterial: 0,
+    selectedCeilingMaterial: 0,
   };
 
   setLogin = (bool, userName) => {
@@ -35,7 +44,7 @@ export class ApiProvider extends Component {
     });
   };
 
-  setFloorMaterials = () => {
+  getFloorMaterials = () => {
     ApiService.getFloorMaterials()
       .then((res) => {
         this.setState({
@@ -45,7 +54,7 @@ export class ApiProvider extends Component {
       .catch(this.context.setError);
   };
 
-  setCeilingMaterials = () => {
+  getCeilingMaterials = () => {
     ApiService.getCeilingMaterials()
       .then((res) => {
         this.setState({
@@ -55,7 +64,7 @@ export class ApiProvider extends Component {
       .catch(this.context.setError);
   };
 
-  setOtherMaterials = () => {
+  getOtherMaterials = () => {
     ApiService.getOtherMaterials()
       .then((res) => {
         this.setState({
@@ -65,7 +74,7 @@ export class ApiProvider extends Component {
       .catch(this.context.setError);
   };
 
-  setWallMaterials = () => {
+  getWallMaterials = () => {
     ApiService.getWallMaterials()
       .then((res) => {
         this.setState({
@@ -75,7 +84,7 @@ export class ApiProvider extends Component {
       .catch(this.context.setError);
   };
 
-  setCeilingProducts = () => {
+  getCeilingProducts = () => {
     ApiService.getCeilingProducts()
       .then((res) => {
         this.setState({
@@ -85,7 +94,7 @@ export class ApiProvider extends Component {
       .catch(this.context.setError);
   };
 
-  setBaffleUnits = () => {
+  getBaffleUnits = () => {
     ApiService.getBaffleUnits()
       .then((res) => {
         this.setState({
@@ -95,7 +104,7 @@ export class ApiProvider extends Component {
       .catch(this.context.setError);
   };
 
-  setWallProducts = () => {
+  getWallProducts = () => {
     ApiService.getWallProducts()
       .then((res) => {
         this.setState({
@@ -114,6 +123,14 @@ export class ApiProvider extends Component {
     this.setState({ error: null });
   };
 
+  updateSelectedFloorMaterial = (mat) => {
+    this.setState({ selectedFloorMaterial: mat });
+  };
+
+  updateSelectedCeilingMaterial = (mat) => {
+    this.setState({ selectedCeilingMaterial: mat });
+  };
+
   render() {
     const value = {
       loggedIn: this.state.loggedIn,
@@ -121,13 +138,20 @@ export class ApiProvider extends Component {
       setLogin: this.setLogin,
       setError: this.setError,
       clearError: this.clearError,
-      setFloorMaterials: this.setFloorMaterials,
-      setCeilingMaterials: this.setCeilingMaterials,
-      setWallMaterials: this.setWallMaterials,
-      setOtherMaterials: this.setOtherMaterials,
-      setCeilingProducts: this.setCeilingProducts,
-      setBaffleUnits: this.setBaffleUnits,
-      setWallProducts: this.setWallProducts,
+      getFloorMaterials: this.getFloorMaterials,
+      getCeilingMaterials: this.getCeilingMaterials,
+      getWallMaterials: this.getWallMaterials,
+      getOtherMaterials: this.getOtherMaterials,
+      getCeilingProducts: this.getCeilingProducts,
+      getBaffleUnits: this.getBaffleUnits,
+      getWallProducts: this.getWallProducts,
+
+      updateSelectedFloorMaterial: this.updateSelectedFloorMaterial,
+      updateSelectedCeilingMaterial: this.updateSelectedCeilingMaterial,
+
+      selectedFloorMaterial: this.state.selectedFloorMaterial,
+      selectedCeilingMaterial: this.state.selectedCeilingMaterial,
+
       floorMaterials: this.state.floorMaterials,
       ceilingMaterials: this.state.ceilingMaterials,
       wallMaterials: this.state.wallMaterials,

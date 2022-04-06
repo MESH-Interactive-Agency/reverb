@@ -11,17 +11,16 @@ export default class FloorMatsSelector extends Component {
   static contextType = Context;
 
   componentDidMount() {
-    this.context.setFloorMaterials();
+    this.context.getFloorMaterials();
   }
 
   updateSelection(selection) {
-    this.setState({ selected: selection - 1 });
+    this.setState({ selected: selection });
+    this.context.updateSelectedFloorMaterial(selection - 1);
   }
 
   render() {
     let mats = this.context.floorMaterials;
-    let selected = this.state.selected;
-
     return (
       <div className="window">
         {!!mats && (
@@ -42,36 +41,6 @@ export default class FloorMatsSelector extends Component {
                 ))}
               </select>
             </div>
-
-            <table width="450px">
-              <caption> 'Absorption Coefficient @ Frequency - Hz </caption>
-
-              <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">125hz</th>
-                  <th scope="col">250hz</th>
-                  <th scope="col">500hz</th>
-                  <th scope="col">1000hz</th>
-                  <th scope="col">2000hz</th>
-                  <th scope="col">4000hz</th>
-                  <th scope="col">NRC</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <th> {mats[selected].id} </th>
-                  <th> {mats[selected].hz125} </th>
-                  <th> {mats[selected].hz250} </th>
-                  <th> {mats[selected].hz500} </th>
-                  <th> {mats[selected].hz1000} </th>
-                  <th> {mats[selected].hz2000} </th>
-                  <th> {mats[selected].hz4000} </th>
-                  <th> {mats[selected].nrc} </th>
-                </tr>
-              </tbody>
-            </table>
           </div>
         )}
       </div>

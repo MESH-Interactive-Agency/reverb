@@ -21,17 +21,7 @@ export default class ExistingConditions extends React.Component {
         <CeilingMatsSelector />
         <WallSurfaces />
         <WallMatsSelector />
-        <WallMatsSelector />
-        <WallMatsSelector />
-        <WallMatsSelector />
         <Openings />
-        <OtherMatsSelector />
-        <OtherMatsSelector />
-        <OtherMatsSelector />
-        <OtherMatsSelector />
-        <OtherMatsSelector />
-        <OtherMatsSelector />
-        <OtherMatsSelector />
         <OtherMatsSelector />
       </div>
     );

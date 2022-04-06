@@ -40,7 +40,7 @@ export default class CeilingArea extends Component {
     let cLength = this.state.cLength;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="hide">
         <h2>ENTER Ceiling Areas</h2>
         <div className="inputs">
           <label htmlFor="length">Length</label>

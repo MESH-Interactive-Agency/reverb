@@ -14,7 +14,6 @@ import '../css/setup.css';
 import '../css/App.css';
 import ReverbContext from '../contexts/ReverbContext';
 
-
 export default class App extends Component {
   state = {
     customerName: '',
@@ -169,6 +168,7 @@ export default class App extends Component {
       updateWall3Length: this.updateWall3Length,
       updateWall4Height: this.updateWall4Height,
       updateWall4Length: this.updateWall4Length,
+
     };
 
     return (

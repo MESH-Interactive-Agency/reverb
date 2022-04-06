@@ -11,16 +11,16 @@ export default class CeilingMatsSelector extends Component {
   static contextType = Context;
 
   componentDidMount() {
-    this.context.setCeilingMaterials();
+    this.context.getCeilingMaterials();
   }
 
   updateSelection(selection) {
     this.setState({ selected: selection - 1 });
+    this.context.updateSelectedCeilingMaterial(selection);
   }
 
   render() {
     let mats = this.context.ceilingMaterials;
-    let selected = this.state.selected;
 
     return (
       <div className="window">
@@ -42,36 +42,6 @@ export default class CeilingMatsSelector extends Component {
                 ))}
               </select>
             </div>
-
-            <table width="450px">
-              <caption> 'Absorption Coefficient @ Frequency - Hz </caption>
-
-              <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">125hz</th>
-                  <th scope="col">250hz</th>
-                  <th scope="col">500hz</th>
-                  <th scope="col">1000hz</th>
-                  <th scope="col">2000hz</th>
-                  <th scope="col">4000hz</th>
-                  <th scope="col">NRC</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <th> {mats[selected].id} </th>
-                  <th> {mats[selected].hz125} </th>
-                  <th> {mats[selected].hz250} </th>
-                  <th> {mats[selected].hz500} </th>
-                  <th> {mats[selected].hz1000} </th>
-                  <th> {mats[selected].hz2000} </th>
-                  <th> {mats[selected].hz4000} </th>
-                  <th> {mats[selected].nrc} </th>
-                </tr>
-              </tbody>
-            </table>
           </div>
         )}
       </div>
