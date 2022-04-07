@@ -128,7 +128,7 @@ export default class Openings extends Component {
             name="door1"
           ></input>
         </div>
-
+        {/*
         <div className="inputs">
           <h3>Door 2: </h3>
           <label htmlFor="door2-l">L:</label>
@@ -172,7 +172,7 @@ export default class Openings extends Component {
             }}
             id="door2-qty"
             name="door2"
-          ></input>
+          ></input> 
         </div>
 
         <div className="inputs">
@@ -402,8 +402,8 @@ export default class Openings extends Component {
             }}
             id="other-qty"
             name="other"
-          ></input>
-        </div>
+          ></input> 
+        </div>*/}
       </form>
     );
   }

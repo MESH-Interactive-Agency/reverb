@@ -13,12 +13,6 @@ export default class MainWindow extends React.Component {
   render() {
     return (
       <div className="light main window">
-        <h2 className="center-text">
-          Hello! This page is ugly. I will fix that later!
-        </h2>
-
-        <br></br>
-        <br></br>
         {/* <Accordion> */}
         <li>
           <Cover></Cover>
@@ -26,7 +20,6 @@ export default class MainWindow extends React.Component {
         <li>
           <ExistingConditions></ExistingConditions>
         </li>
-
         <li>
           <AcousticalTreatments></AcousticalTreatments>
         </li>

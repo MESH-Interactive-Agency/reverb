@@ -8,6 +8,11 @@ import Context from '../contexts/ApiContext';
 import Title from '../components/outputs/Title';
 import FloorMatsSummary from '../components/outputs/FloorMatsSummary';
 import CeilingMatsSummary from '../components/outputs/CeilingMatsSummary';
+import WallMatsSummary from '../components/outputs/WallMatsSummary';
+import OtherMatsSummary from '../components/outputs/OtherMatsSummary';
+import CeilingProdsSummary from '../components/outputs/CeilingProdsSummary';
+import BaffleUnitsSummary from '../components/outputs/BaffleUnitsSummary';
+import WallProdsSummary from '../components/outputs/WallProdsSummary';
 
 export default class DetailsWindow extends React.Component {
   static contextType = Context;
@@ -18,9 +23,20 @@ export default class DetailsWindow extends React.Component {
         <Title />
         <SeeYourSpace />
         <Charts />
-        <FloorMatsSummary />
-        <CeilingMatsSummary />
-        <Results />
+        <div className="window">
+          <h2 className="center-text">Existing Conditions</h2>
+          <FloorMatsSummary />
+          <CeilingMatsSummary />
+          <WallMatsSummary />
+          <OtherMatsSummary />
+        </div>
+        <div className="window">
+          <h2 className="center-text">Treatments</h2>
+          <CeilingProdsSummary />
+          <BaffleUnitsSummary />
+          <WallProdsSummary />
+        </div>
+        {/* <Results /> */}
       </aside>
     );
   }

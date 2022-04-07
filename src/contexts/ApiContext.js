@@ -14,6 +14,11 @@ const ApiContext = React.createContext({
 
   selectedFloorMaterial: 0,
   selectedCeilingMaterial: 0,
+  selectedWallMaterial: 0,
+  selectedOtherMaterial: 0,
+  selectedCeilingProduct: 0,
+  selectedBaffleUnit: 0,
+  selectedWallProduct: 0,
 
   loggedIn: TokenService.hasAuthToken(),
   loggedInUser: () => {},
@@ -24,6 +29,11 @@ const ApiContext = React.createContext({
 
   updateSelectedFloorMaterial: () => {},
   updateSelectedCeilingMaterial: () => {},
+  updateSelectedWallMaterial: () => {},
+  updateSelectedOtherMaterial: () => {},
+  updateSelectedCeilingProduct: () => {},
+  updateSelectedBaffleUnit: () => {},
+  updateSelectedWallProduct: () => {},
 });
 
 export default ApiContext;
@@ -35,6 +45,11 @@ export class ApiProvider extends Component {
     error: null,
     selectedFloorMaterial: 0,
     selectedCeilingMaterial: 0,
+    selectedWallMaterial: 0,
+    selectedOtherMaterial: 0,
+    selectedCeilingProduct: 0,
+    selectedBaffleUnit: 0,
+    selectedWallProduct: 0,
   };
 
   setLogin = (bool, userName) => {
@@ -131,6 +146,26 @@ export class ApiProvider extends Component {
     this.setState({ selectedCeilingMaterial: mat });
   };
 
+  updateSelectedWallMaterial = (mat) => {
+    this.setState({ selectedWallMaterial: mat });
+  };
+
+  updateSelectedOtherMaterial = (mat) => {
+    this.setState({ selectedOtherMaterial: mat });
+  };
+
+  updateSelectedCeilingProduct = (mat) => {
+    this.setState({ selectedCeilingProduct: mat });
+  };
+
+  updateSelectedBaffleUnit = (mat) => {
+    this.setState({ selectedBaffleUnit: mat });
+  };
+
+  updateSelectedWallProduct = (mat) => {
+    this.setState({ selectedWallProduct: mat });
+  };
+
   render() {
     const value = {
       loggedIn: this.state.loggedIn,
@@ -148,9 +183,19 @@ export class ApiProvider extends Component {
 
       updateSelectedFloorMaterial: this.updateSelectedFloorMaterial,
       updateSelectedCeilingMaterial: this.updateSelectedCeilingMaterial,
+      updateSelectedWallMaterial: this.updateSelectedWallMaterial,
+      updateSelectedOtherMaterial: this.updateSelectedOtherMaterial,
+      updateSelectedBaffleUnit: this.updateSelectedBaffleUnit,
+      updateSelectedCeilingProduct: this.updateSelectedCeilingProduct,
+      updateSelectedWallProduct: this.updateSelectedWallProduct,
 
       selectedFloorMaterial: this.state.selectedFloorMaterial,
       selectedCeilingMaterial: this.state.selectedCeilingMaterial,
+      selectedWallMaterial: this.state.selectedWallMaterial,
+      selectedOtherMaterial: this.state.selectedOtherMaterial,
+      selectedCeilingProduct: this.state.selectedCeilingProduct,
+      selectedBaffleUnit: this.state.selectedBaffleUnit,
+      selectedWallProduct: this.state.selectedWallProduct,
 
       floorMaterials: this.state.floorMaterials,
       ceilingMaterials: this.state.ceilingMaterials,

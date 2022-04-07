@@ -1,7 +1,7 @@
 import Context from '../../contexts/ApiContext';
 import React, { Component } from 'react';
 
-export default class CeilingMatsSelector extends Component {
+export default class WallProdsSelector extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,26 +11,27 @@ export default class CeilingMatsSelector extends Component {
   static contextType = Context;
 
   componentDidMount() {
-    this.context.getCeilingMaterials();
+    this.context.getWallProducts();
   }
 
   updateSelection(selection) {
     this.setState({ selected: selection - 1 });
-    this.context.updateSelectedCeilingMaterial(selection - 1);
+    this.context.updateSelectedWallProduct(selection - 1);
   }
 
   render() {
-    let mats = this.context.ceilingMaterials;
+    let mats = this.context.wallProducts;
+    let selected = this.state.selected;
 
     return (
       <div className="window">
         {!!mats && (
           <div>
             <div className="dropdown">
-              <label htmlFor="ceilingmats">Ceiling material:</label>
+              <label htmlFor="wallmats">Wall material:</label>
               <select
-                name="ceilingmats"
-                id="ceilingmats"
+                name="wallmats"
+                id="wallmats"
                 onClick={(e) => {
                   this.updateSelection(e.currentTarget.value);
                 }}

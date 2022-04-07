@@ -57,7 +57,7 @@ export default class Cover extends React.Component {
           </div>
 
           <div className="inputs">
-            <label htmlFor="LoginForm__customer_name">Customer name:</label>
+            <label htmlFor="LoginForm__customer_name">Customer:</label>
             <input
               type="text"
               onChange={(e) => {
@@ -68,7 +68,7 @@ export default class Cover extends React.Component {
             />
           </div>
           <div className="inputs">
-            <label htmlFor="LoginForm__project_name">Project name:</label>
+            <label htmlFor="LoginForm__project_name">Project:</label>
             <input
               type="text"
               onChange={(e) => {
