@@ -11,7 +11,9 @@ const ApiContext = React.createContext({
   ceilingProducts: [],
   baffleUnits: [],
   wallProducts: [],
+  recommendedReverbTimes: [],
 
+  selectedReverbTime: 0,
   selectedFloorMaterial: 0,
   selectedCeilingMaterial: 0,
   selectedWallMaterial: 0,
@@ -34,6 +36,7 @@ const ApiContext = React.createContext({
   updateSelectedCeilingProduct: () => {},
   updateSelectedBaffleUnit: () => {},
   updateSelectedWallProduct: () => {},
+  updateSelectedReverbTime: () => {},
 });
 
 export default ApiContext;
@@ -50,6 +53,7 @@ export class ApiProvider extends Component {
     selectedCeilingProduct: 0,
     selectedBaffleUnit: 0,
     selectedWallProduct: 0,
+    selectedReverbTime: 0,
   };
 
   setLogin = (bool, userName) => {
@@ -129,6 +133,16 @@ export class ApiProvider extends Component {
       .catch(this.context.setError);
   };
 
+  getRecommendedReverbTimes = () => {
+    ApiService.getRecommendedReverbTimes()
+      .then((res) => {
+        this.setState({
+          recommendedReverbTimes: res,
+        });
+      })
+      .catch(this.context.setError);
+  };
+
   setError = (error) => {
     console.error(error);
     this.setState({ error });
@@ -140,6 +154,10 @@ export class ApiProvider extends Component {
 
   updateSelectedFloorMaterial = (mat) => {
     this.setState({ selectedFloorMaterial: mat });
+  };
+
+  updateSelectedReverbTime = (num) => {
+    this.setState({ selectedReverbTime: num });
   };
 
   updateSelectedCeilingMaterial = (mat) => {
@@ -180,6 +198,7 @@ export class ApiProvider extends Component {
       getCeilingProducts: this.getCeilingProducts,
       getBaffleUnits: this.getBaffleUnits,
       getWallProducts: this.getWallProducts,
+      getRecommendedReverbTimes: this.getRecommendedReverbTimes,
 
       updateSelectedFloorMaterial: this.updateSelectedFloorMaterial,
       updateSelectedCeilingMaterial: this.updateSelectedCeilingMaterial,
@@ -188,6 +207,7 @@ export class ApiProvider extends Component {
       updateSelectedBaffleUnit: this.updateSelectedBaffleUnit,
       updateSelectedCeilingProduct: this.updateSelectedCeilingProduct,
       updateSelectedWallProduct: this.updateSelectedWallProduct,
+      updateSelectedReverbTime: this.updateSelectedReverbTime,
 
       selectedFloorMaterial: this.state.selectedFloorMaterial,
       selectedCeilingMaterial: this.state.selectedCeilingMaterial,
@@ -196,6 +216,7 @@ export class ApiProvider extends Component {
       selectedCeilingProduct: this.state.selectedCeilingProduct,
       selectedBaffleUnit: this.state.selectedBaffleUnit,
       selectedWallProduct: this.state.selectedWallProduct,
+      selectedReverbTime: this.state.selectedReverbTime,
 
       floorMaterials: this.state.floorMaterials,
       ceilingMaterials: this.state.ceilingMaterials,
@@ -204,6 +225,7 @@ export class ApiProvider extends Component {
       ceilingProducts: this.state.ceilingProducts,
       baffleUnits: this.state.baffleUnits,
       wallProducts: this.state.wallProducts,
+      recommendedReverbTimes: this.state.recommendedReverbTimes,
     };
 
     return (

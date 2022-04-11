@@ -7,23 +7,16 @@ import ExistingConditions from '../components/Pages/ExistingConditions';
 import AcousticalTreatments from '../components/Pages/AcousticalTreatments';
 
 import Accordion from '../components/Tools/Accordion';
+import AccordionSection from '../components/Tools/AccordionSection';
 export default class MainWindow extends React.Component {
   static contextType = Context;
 
   render() {
     return (
       <div className="light main window">
-        {/* <Accordion> */}
-        <li>
-          <Cover></Cover>
-        </li>
-        <li>
-          <ExistingConditions></ExistingConditions>
-        </li>
-        <li>
-          <AcousticalTreatments></AcousticalTreatments>
-        </li>
-        {/* </Accordion> */}
+        <Cover />
+        <ExistingConditions />
+        <AcousticalTreatments />
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import Context from '../../contexts/ApiContext';
 import React, { Component } from 'react';
 
-export default class BaffleUnitsSelector extends Component {
+export default class ReverbTime extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,26 +11,28 @@ export default class BaffleUnitsSelector extends Component {
   static contextType = Context;
 
   componentDidMount() {
-    this.context.getBaffleUnits();
+    this.context.getRecommendedReverbTimes();
   }
 
   updateSelection(selection) {
-    this.setState({ selected: selection });
-    this.context.updateSelectedBaffleUnit(selection - 1);
+    this.setState({ selected: selection - 1 });
+    this.context.updateSelectedReverbTime(selection - 1);
   }
 
   render() {
-    let mats = this.context.baffleUnits;
+    let mats = this.context.recommendedReverbTimes;
+    let selected = this.state.selected;
+
+    if (!!mats) console.log(mats, selected, mats[selected]);
     return (
-      <div className=" window">
+      <div className="window">
         {!!mats && (
           <div>
             <div className="dropdown">
-              <label htmlFor="baffleunits">Baffle Units:</label>
-              <br></br>
+              <label htmlFor="reverbtime">Recommended Reverb Times:</label>
               <select
-                name="baffleunits"
-                id="baffleunits"
+                name="reverbtime"
+                id="reverbtime"
                 onClick={(e) => {
                   this.updateSelection(e.currentTarget.value);
                 }}
@@ -41,6 +43,11 @@ export default class BaffleUnitsSelector extends Component {
                   </option>
                 ))}
               </select>
+
+              <span>
+                {' '}
+                {mats[selected].min} - {mats[selected].max}{' '}
+              </span>
             </div>
           </div>
         )}

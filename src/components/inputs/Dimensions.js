@@ -2,13 +2,14 @@
 import React from 'react';
 import Context from '../../contexts/ReverbContext';
 
-export default class ExistingConditions extends React.Component {
+export default class Dimensions extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       length: 0,
       width: 0,
       height: 0,
+      isOpen: true,
     };
   }
 
@@ -58,49 +59,78 @@ export default class ExistingConditions extends React.Component {
     let height = this.state.height;
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h2>ENTER Floor & Room Area (Room Volume)</h2>
-        <div className="inputs">
-          <label htmlFor="length">Length</label>
-          <input
-            type="number"
-            onChange={(e) => {
-              length = this.updateLength(
-                this.removeSpecialChars(e.currentTarget.value)
-              );
-            }}
-            id="length"
-            name="length"
-          ></input>
-        </div>
+      <div className="window">
+        {this.state.isOpen && (
+          <form onSubmit={this.handleSubmit}>
+            <h2>ENTER Floor & Room Area (Room Volume)</h2>
+            <div className="inputs">
+              <label htmlFor="length">Length</label>
+              <input
+                type="number"
+                onChange={(e) => {
+                  length = this.updateLength(
+                    this.removeSpecialChars(e.currentTarget.value)
+                  );
+                }}
+                id="length"
+                name="length"
+                value={this.state.length}
+              ></input>
+            </div>
 
-        <div className="inputs">
-          <label htmlFor="width">Width:</label>
-          <input
-            type="number"
-            onChange={(e) => {
-              width = this.updateWidth(
-                this.removeSpecialChars(e.currentTarget.value)
-              );
-            }}
-            id="width"
-            name="width"
-          />
-        </div>
-        <div className="inputs">
-          <label htmlFor="height">Height:</label>
-          <input
-            type="number"
-            onChange={(e) => {
-              height = this.updateHeight(
-                this.removeSpecialChars(e.currentTarget.value)
-              );
-            }}
-            id="height"
-            name="height"
-          />
-        </div>
-      </form>
+            <div className="inputs">
+              <label htmlFor="width">Width:</label>
+              <input
+                type="number"
+                onChange={(e) => {
+                  width = this.updateWidth(
+                    this.removeSpecialChars(e.currentTarget.value)
+                  );
+                }}
+                id="width"
+                name="width"
+                value={this.state.width}
+              />
+            </div>
+            <div className="inputs">
+              <label htmlFor="height">Height:</label>
+              <input
+                type="number"
+                onChange={(e) => {
+                  height = this.updateHeight(
+                    this.removeSpecialChars(e.currentTarget.value)
+                  );
+                }}
+                id="height"
+                name="height"
+                value={this.state.height}
+              />
+            </div>
+            <button
+              onClick={() => this.setState({ isOpen: !this.state.isOpen })}
+            >
+              Next
+            </button>
+          </form>
+        )}
+        {!this.state.isOpen && (
+          <div>
+            <button
+              onClick={() => this.setState({ isOpen: !this.state.isOpen })}
+            >
+              edit
+            </button>
+            <p>
+              L: {this.state.length} W: {this.state.width} H:{' '}
+              {this.state.height}
+            </p>
+            <p>
+              Total Volume:{' '}
+              {this.state.length * this.state.width * this.state.height}
+            </p>
+          </div>
+        )}
+      </div>
     );
   }
 }

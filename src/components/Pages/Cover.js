@@ -1,11 +1,13 @@
 import React from 'react';
-import { Button} from '../../utils/utils';
+import { Button } from '../../utils/utils';
 import Context from '../../contexts/ReverbContext';
+import ReverbTime from '../inputs/ReverbTime';
 
 export default class Cover extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isOpen: true,
       customerName: '',
       projectName: '',
       date: '',
@@ -40,47 +42,71 @@ export default class Cover extends React.Component {
 
   render() {
     return (
-      <div className="light window">
+      <div className="green window">
         <h2>Cover Page</h2>
         <br></br>
-        <form onSubmit={this.handleSubmit}>
-          <div className="inputs">
-            <label htmlFor="LoginForm__user_name">Date:</label>
-            <input
-              type="date"
-              onChange={(e) => {
-                this.updateDate(e.currentTarget.value);
-              }}
-              id="date"
-              name="project-date"
-            ></input>
-          </div>
 
-          <div className="inputs">
-            <label htmlFor="LoginForm__customer_name">Customer:</label>
-            <input
-              type="text"
-              onChange={(e) => {
-                this.updateCustomerName(e.currentTarget.value);
-              }}
-              id="customer-name"
-              name="customer-name"
-            />
-          </div>
-          <div className="inputs">
-            <label htmlFor="LoginForm__project_name">Project:</label>
-            <input
-              type="text"
-              onChange={(e) => {
-                this.updateProjectName(e.currentTarget.value);
-              }}
-              id="project-name"
-              name="project-name"
-            />
-          </div>
+        {this.state.isOpen && (
+          <form onSubmit={this.handleSubmit} className="light window">
+            <div className="inputs">
+              <label htmlFor="LoginForm__user_name">Date:</label>
+              <input
+                type="date"
+                onChange={(e) => {
+                  this.updateDate(e.currentTarget.value);
+                }}
+                id="date"
+                name="project-date"
+                value={this.state.date}
+              ></input>
+            </div>
 
-          <Button onClick={this.clearData}>Clear Data</Button>
-        </form>
+            <div className="inputs">
+              <label htmlFor="LoginForm__customer_name">Customer:</label>
+              <input
+                type="text"
+                onChange={(e) => {
+                  this.updateCustomerName(e.currentTarget.value);
+                }}
+                id="customer-name"
+                name="customer-name"
+                value={this.state.customerName}
+              />
+            </div>
+            <div className="inputs">
+              <label htmlFor="LoginForm__project_name">Project:</label>
+              <input
+                type="text"
+                onChange={(e) => {
+                  this.updateProjectName(e.currentTarget.value);
+                }}
+                id="project-name"
+                name="project-name"
+                value={this.state.projectName}
+              />
+            </div>
+            <button
+              onClick={() => this.setState({ isOpen: !this.state.isOpen })}
+            >
+              next
+            </button>
+            {/* <Button onClick={this.clearData}>Clear Data</Button> */}
+          </form>
+        )}
+        {!this.state.isOpen && (
+          <div className="">
+            <button
+              onClick={() => this.setState({ isOpen: !this.state.isOpen })}
+            >
+              edit
+            </button>
+            <p>Date: {this.state.date}</p>
+            <p>Customer Name: {this.state.customerName}</p>
+            <p>Project Name: {this.state.projectName}</p>
+          </div>
+        )}
+
+        <ReverbTime />
       </div>
     );
   }

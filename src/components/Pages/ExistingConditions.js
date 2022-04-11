@@ -12,7 +12,7 @@ import OtherMatsSelector from '../inputs/OtherMatsSelector';
 export default class ExistingConditions extends React.Component {
   render() {
     return (
-      <div className="light window">
+      <div className="yellow window">
         <h2>Existing Conditions</h2>
         <br></br>
         <Dimensions />

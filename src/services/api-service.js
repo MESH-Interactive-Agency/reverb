@@ -2,6 +2,16 @@ import TokenService from './token-service';
 import config from '../config';
 
 const ApiService = {
+  getRecommendedReverbTimes() {
+    return fetch(`${config.API_ENDPOINT}/data/recommended_reverb_times`, {
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
+  },
+
   getFloorMaterials() {
     return fetch(`${config.API_ENDPOINT}/data/floor_materials`, {
       headers: {

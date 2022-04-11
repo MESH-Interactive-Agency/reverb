@@ -181,6 +181,23 @@ Input {
   grid-row: span 1;
 }
 
+.half {
+  width: 50%;
+}
+
+.charts {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: [col] 50% [col] 50%;
+  grid-template-rows: [row] auto [row] auto [row];
+  background-color: #fff;
+  color: #444;
+}
+
+.mainChart {
+  grid-column: span 2;
+}
+
 .summaryPanel {
   display: flex;
   align-content: center;

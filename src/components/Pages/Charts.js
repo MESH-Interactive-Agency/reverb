@@ -1,6 +1,8 @@
 import React from 'react';
 import SurfaceAreaChart from '../visualizations/SurfaceAreaChart';
 import SabineChart from '../visualizations/SabineChart';
+import BoxSpace from '../visualizations/BoxSpace';
+import SeeYourSpace from './SeeYourSpace';
 
 import Context from '../../contexts/ApiContext';
 
@@ -9,8 +11,9 @@ export default class Charts extends React.Component {
 
   render() {
     return (
-      <div className="light window">
-        {/* <SurfaceAreaChart /> */}
+      <div className="light window charts">
+        <SeeYourSpace />
+        <SurfaceAreaChart />
         <SabineChart />
       </div>
     );

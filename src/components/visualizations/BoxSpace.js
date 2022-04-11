@@ -19,7 +19,7 @@ export default class BoxSpace extends Component {
 
   render() {
     return (
-      <div className="fill">
+      <div className="">
         <Canvas camera={{ position: [10, 10, 10], fov: 60 }}>
           <OrbitControls />
           <ambientLight intensity={0.5} />

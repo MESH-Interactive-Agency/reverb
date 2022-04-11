@@ -62,31 +62,21 @@ export default class SurfaceAreaChart extends Component {
   render() {
     const data = [
       {
-        name: 'Floor',
-        uv: this.calculateFloorArea(),
+        name: 'Total Required',
+        uv: 62.5,
       },
       {
-        name: 'Ceil',
-        uv: this.calculateCeilingArea(),
-      },
-      {
-        name: 'Wall',
-        uv: this.calculateWallArea(),
-      },
-      {
-        name: 'Open',
-        uv: this.calculateOpeningsArea(),
+        name: 'Added',
+        uv: 45,
         fill: '#880000',
       },
     ];
 
     return (
-      <div className="">
-        <h2 className="center-text">
-          Total Surface Area: {this.calculateTotalSurfaceArea()}
-        </h2>
+      <div className="window">
+        <h2 className="center-text">Treatment Required</h2>
         <br></br>
-        <ResponsiveContainer width="100%" height={150}>
+        <ResponsiveContainer width="90%" height={150}>
           <BarChart data={data}>
             <XAxis dataKey="name" tick={{ fontSize: 10 }} />
             <YAxis width={35} tick={{ fontSize: 12 }} />

@@ -20,7 +20,7 @@ export default class WallProdsSummary extends Component {
               const { selectedWallProduct, wallProducts } = apiContext;
               const mats = wallProducts;
               const selected = selectedWallProduct;
-              console.log(mats, selected, 'wall');
+
               const { length, width, height } = reverbContext;
               const area = width * height * 4;
               return (

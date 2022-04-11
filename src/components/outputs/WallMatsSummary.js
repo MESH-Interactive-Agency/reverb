@@ -21,7 +21,7 @@ export default class WallMatsSummary extends Component {
               const mats = wallMaterials;
               const selected = selectedWallMaterial;
               const { length, width, height } = reverbContext;
-              const area = width * height * 4;
+              const area = width * height * 2 + length * height * 2;
               return (
                 <div className="window">
                   {!!mats && (

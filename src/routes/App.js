@@ -10,7 +10,7 @@ import Footer from './Footer';
 import Context from '../contexts/ApiContext';
 
 import '../css/setup.css';
-//import "../css/gradients.css";
+import '../css/gradients.css';
 import '../css/App.css';
 import ReverbContext from '../contexts/ReverbContext';
 
@@ -168,7 +168,6 @@ export default class App extends Component {
       updateWall3Length: this.updateWall3Length,
       updateWall4Height: this.updateWall4Height,
       updateWall4Length: this.updateWall4Length,
-
     };
 
     return (
@@ -176,8 +175,10 @@ export default class App extends Component {
         <ErrorBoundary>
           <ReverbContext.Provider value={value}>
             <Route path="/" component={NavWindow} />
+
             <Route path="/" component={MainWindow} />
             <Route path="/" component={DetailsWindow} />
+
             <Route path="/" component={Footer} />
           </ReverbContext.Provider>
         </ErrorBoundary>
