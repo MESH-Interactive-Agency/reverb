@@ -184,8 +184,8 @@ export default class SabineChart extends Component {
               ];
 
               return (
-                <div className="window mainChart">
-                  <ResponsiveContainer width="100%" height={150}>
+                <div className="window sabine chart">
+                  <ResponsiveContainer height={200}>
                     <LineChart data={data}>
                       <XAxis dataKey="name" tick={{ fontSize: 10 }} />
                       <YAxis

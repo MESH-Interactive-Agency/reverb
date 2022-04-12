@@ -26,7 +26,7 @@ export default class CeilingProdsSelector extends Component {
         {!!mats && (
           <div>
             <div className="dropdown">
-              <label htmlFor="ceilingprods">Ceiling Products:</label>
+              <label className="inputCaptions" htmlFor="ceilingprods">Ceiling Products:</label>
               <select
                 name="ceilingprods"
                 id="ceilingprods"

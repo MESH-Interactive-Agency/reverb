@@ -29,7 +29,9 @@ export default class ReverbTime extends Component {
         {!!mats && (
           <div>
             <div className="dropdown">
-              <label htmlFor="reverbtime">Recommended Reverb Times:</label>
+              <label htmlFor="reverbtime " className="inputCaptions">
+                Recommended Reverb Times:
+              </label>
               <select
                 name="reverbtime"
                 id="reverbtime"

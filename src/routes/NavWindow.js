@@ -2,9 +2,10 @@ import React from 'react';
 import { Link, Route } from 'react-router-dom';
 
 import TokenService from '../services/token-service';
-import Context from "../contexts/ApiContext";
+import Context from '../contexts/ApiContext';
 import RegistrationPage from './RegistrationPage';
 import LoginPage from './LoginPage';
+import logo from '../images/Lamvin Logo.png';
 
 export default class NavWindow extends React.Component {
   static defaultProps = {
@@ -28,7 +29,9 @@ export default class NavWindow extends React.Component {
   renderLogoutLink() {
     return (
       <div className="Header__logged-in">
-        <h2 className="welcome">Welcome! {this.context.loggedInUser}</h2>
+        <h3 className="welcome center-text">
+          Welcome, {this.context.loggedInUser}
+        </h3>
         <Link onClick={this.handleLogoutClick} to="/">
           Logout
         </Link>
@@ -41,9 +44,6 @@ export default class NavWindow extends React.Component {
       <div className="Header__not-logged-in">
         <Route exact path={'/'}>
           <Link to="/login">Log In</Link>
-          <p>
-            Don't try to log in yet, it only connects to my local server for now
-          </p>
         </Route>
         <Route path={'/register'} component={RegistrationPage} />
         <Route path={'/login'} component={LoginPage} />
@@ -59,8 +59,9 @@ export default class NavWindow extends React.Component {
 
   render() {
     return (
-      <nav className="dark window">
-        <h1 className="dark">Reverb</h1>
+      <nav className="nav window">
+        <h1 className="">Reverb</h1>
+        <img src={logo} alt="Logo" className="logo" />
 
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()

@@ -62,7 +62,7 @@ export default class Dimensions extends React.Component {
       <div className="window">
         {this.state.isOpen && (
           <form onSubmit={this.handleSubmit}>
-            <h2>ENTER Floor & Room Area (Room Volume)</h2>
+            <h3>ENTER Floor & Room Area (Room Volume)</h3>
             <div className="inputs">
               <label htmlFor="length">Length</label>
               <input

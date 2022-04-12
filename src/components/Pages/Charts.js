@@ -11,7 +11,7 @@ export default class Charts extends React.Component {
 
   render() {
     return (
-      <div className="light window charts">
+      <div className="window charts sticky">
         <SeeYourSpace />
         <SurfaceAreaChart />
         <SabineChart />

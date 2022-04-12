@@ -3,6 +3,7 @@ import jwt_decode from 'jwt-decode';
 
 const TokenService = {
   saveAuthToken(token) {
+    console.log(config.TOKEN_KEY);
     window.localStorage.setItem(config.TOKEN_KEY, token);
   },
   getAuthToken() {

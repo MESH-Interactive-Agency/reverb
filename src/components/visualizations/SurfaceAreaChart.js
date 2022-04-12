@@ -73,7 +73,7 @@ export default class SurfaceAreaChart extends Component {
     ];
 
     return (
-      <div className="window">
+      <div className="window ">
         <h2 className="center-text">Treatment Required</h2>
         <br></br>
         <ResponsiveContainer width="90%" height={150}>

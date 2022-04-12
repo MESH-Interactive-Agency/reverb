@@ -26,7 +26,7 @@ export default class BaffleUnitsSelector extends Component {
         {!!mats && (
           <div>
             <div className="dropdown">
-              <label htmlFor="baffleunits">Baffle Units:</label>
+              <label className="inputCaptions" htmlFor="baffleunits inputCaptions">Baffle Units:</label>
               <br></br>
               <select
                 name="baffleunits"

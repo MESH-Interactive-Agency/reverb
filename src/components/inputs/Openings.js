@@ -82,9 +82,9 @@ export default class Openings extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <h2>ENTER Doors, Windows, Other & People</h2>
+        <h3>ENTER Doors, Windows, Other & People</h3>
         <div className="inputs">
-          <h3>Door 1:</h3>
+          <h4>Door 1:</h4>
           <label htmlFor="door1-l">L:</label>
           <input
             className="shorter"

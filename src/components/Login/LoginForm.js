@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { Button, Input } from "../../utils/utils";
-import TokenService from "../../services/token-service";
-import AuthApiService from "../../services/auth-api-service";
-import Context from "../../contexts/ApiContext";
+import { Button, Input } from '../../utils/utils';
+import TokenService from '../../services/token-service';
+import AuthApiService from '../../services/auth-api-service';
+import Context from '../../contexts/ApiContext';
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -26,8 +26,8 @@ export default class LoginForm extends Component {
       .then((res) => {
         TokenService.saveAuthToken(res.authToken);
         this.context.setLogin(true, user_name.value);
-        user_name.value = "";
-        password.value = "";
+        user_name.value = '';
+        password.value = '';
         this.props.onLoginSuccess();
       })
       .catch((res) => {
@@ -38,7 +38,10 @@ export default class LoginForm extends Component {
   render() {
     const { error } = this.state;
     return (
-      <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth}>
+      <form
+        className="LoginForm login-inputs"
+        onSubmit={this.handleSubmitJwtAuth}
+      >
         <div className="alert" role="alert">
           {error && <p className="red">{error}</p>}
         </div>
@@ -57,7 +60,8 @@ export default class LoginForm extends Component {
             id="LoginForm__password"
           ></Input>
         </div>
-        <Button className="red window" type="submit">
+        
+        <Button className="login-button" type="submit">
           Login
         </Button>
       </form>

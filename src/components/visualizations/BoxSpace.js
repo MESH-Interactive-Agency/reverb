@@ -19,7 +19,7 @@ export default class BoxSpace extends Component {
 
   render() {
     return (
-      <div className="">
+      <div className="boxVisualizer" width="33%">
         <Canvas camera={{ position: [10, 10, 10], fov: 60 }}>
           <OrbitControls />
           <ambientLight intensity={0.5} />

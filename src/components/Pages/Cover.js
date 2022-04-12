@@ -42,7 +42,7 @@ export default class Cover extends React.Component {
 
   render() {
     return (
-      <div className="green window">
+      <div className="green window sticky-top">
         <h2>Cover Page</h2>
         <br></br>
 
