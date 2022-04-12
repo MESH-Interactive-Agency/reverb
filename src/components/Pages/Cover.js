@@ -42,10 +42,8 @@ export default class Cover extends React.Component {
 
   render() {
     return (
-      <div className="green window sticky-top">
+      <div className="green window sticky-top cover-page">
         <h2>Cover Page</h2>
-        <br></br>
-
         {this.state.isOpen && (
           <form onSubmit={this.handleSubmit} className="light window">
             <div className="inputs">
@@ -96,6 +94,7 @@ export default class Cover extends React.Component {
         {!this.state.isOpen && (
           <div className="">
             <button
+              className="editButton"
               onClick={() => this.setState({ isOpen: !this.state.isOpen })}
             >
               edit
@@ -105,8 +104,6 @@ export default class Cover extends React.Component {
             <p>Project Name: {this.state.projectName}</p>
           </div>
         )}
-
-        <ReverbTime />
       </div>
     );
   }

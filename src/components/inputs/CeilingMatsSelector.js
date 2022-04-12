@@ -23,7 +23,7 @@ export default class CeilingMatsSelector extends Component {
     let mats = this.context.ceilingMaterials;
 
     return (
-      <div className="window">
+      <div className="">
         {!!mats && (
           <div>
             <div className="dropdown">

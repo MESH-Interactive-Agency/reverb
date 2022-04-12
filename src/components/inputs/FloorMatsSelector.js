@@ -22,11 +22,11 @@ export default class FloorMatsSelector extends Component {
   render() {
     let mats = this.context.floorMaterials;
     return (
-      <div className="window">
+      <div className="">
         {!!mats && (
           <div>
             <div className="dropdown">
-              <label htmlFor="floormats">Floor material:</label>
+              <label htmlFor="floormats"className="inputCaptions">Floor material:</label>
               <select
                 name="floormats"
                 id="floormats"

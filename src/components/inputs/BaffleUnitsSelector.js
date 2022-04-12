@@ -22,11 +22,16 @@ export default class BaffleUnitsSelector extends Component {
   render() {
     let mats = this.context.baffleUnits;
     return (
-      <div className=" window">
+      <div className="">
         {!!mats && (
           <div>
             <div className="dropdown">
-              <label className="inputCaptions" htmlFor="baffleunits inputCaptions">Baffle Units:</label>
+              <label
+                className="inputCaptions"
+                htmlFor="baffleunits inputCaptions"
+              >
+                Baffle Units:
+              </label>
               <br></br>
               <select
                 name="baffleunits"

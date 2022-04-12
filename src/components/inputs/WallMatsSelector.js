@@ -24,11 +24,11 @@ export default class WallMatsSelector extends Component {
     let selected = this.state.selected;
 
     return (
-      <div className="window">
+      <div className="">
         {!!mats && (
           <div>
             <div className="dropdown">
-              <label htmlFor="wallmats">Wall material:</label>
+              <label htmlFor="wallmats"className="inputCaptions">Wall material:</label>
               <select
                 name="wallmats"
                 id="wallmats"

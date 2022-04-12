@@ -25,7 +25,7 @@ export default class ReverbTime extends Component {
 
     if (!!mats) console.log(mats, selected, mats[selected]);
     return (
-      <div className="window">
+      <div className="">
         {!!mats && (
           <div>
             <div className="dropdown">

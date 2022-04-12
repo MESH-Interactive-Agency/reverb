@@ -22,11 +22,13 @@ export default class CeilingProdsSelector extends Component {
   render() {
     let mats = this.context.ceilingProducts;
     return (
-      <div className="window">
+      <div className="">
         {!!mats && (
           <div>
             <div className="dropdown">
-              <label className="inputCaptions" htmlFor="ceilingprods">Ceiling Products:</label>
+              <label className="inputCaptions" htmlFor="ceilingprods">
+                Ceiling Products:
+              </label>
               <select
                 name="ceilingprods"
                 id="ceilingprods"

@@ -2,6 +2,8 @@
 import React from 'react';
 import Context from '../../contexts/ReverbContext';
 
+import ReverbTime from './ReverbTime';
+
 export default class Dimensions extends React.Component {
   constructor(props) {
     super(props);
@@ -62,7 +64,7 @@ export default class Dimensions extends React.Component {
       <div className="window">
         {this.state.isOpen && (
           <form onSubmit={this.handleSubmit}>
-            <h3>ENTER Floor & Room Area (Room Volume)</h3>
+            <h2>Room Dimensions</h2>
             <div className="inputs">
               <label htmlFor="length">Length</label>
               <input
@@ -130,6 +132,7 @@ export default class Dimensions extends React.Component {
             </p>
           </div>
         )}
+        <ReverbTime />
       </div>
     );
   }

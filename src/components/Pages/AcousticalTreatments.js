@@ -11,7 +11,7 @@ export default class AcousticalTreatments extends React.Component {
   render() {
     return (
       <div className="orange window">
-        Acoustical Treatments Page
+        <h2>Acoustical Treatments</h2>
         <CeilingProdsSelector />
         <BaffleUnitsSelector />
         <WallProdsSelector />
