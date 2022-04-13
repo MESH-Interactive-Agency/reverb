@@ -42,10 +42,10 @@ export default class Cover extends React.Component {
 
   render() {
     return (
-      <div className="green window sticky-top cover-page">
+      <div className="sticky-top cover-page">
         <h2>Cover Page</h2>
         {this.state.isOpen && (
-          <form onSubmit={this.handleSubmit} className="light window">
+          <form onSubmit={this.handleSubmit} className="">
             <div className="inputs">
               <label htmlFor="LoginForm__user_name">Date:</label>
               <input

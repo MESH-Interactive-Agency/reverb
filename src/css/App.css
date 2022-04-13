@@ -34,11 +34,14 @@ h1 {
 
 .window {
   border: 1px solid black;
+  box-shadow: 3px 5px #aaaaaa55;
+  border-radius: 2px;
 }
 
 .main.window {
   overflow-y: scroll;
   overflow-x: hidden;
+  box-shadow: none;
 }
 
 .Header__not-logged-in {

@@ -11,7 +11,7 @@ export default class MainWindow extends React.Component {
 
   render() {
     return (
-      <div className="window main">
+      <div className="window main no-shadow">
         <Cover />
         <ExistingConditions />
         <AcousticalTreatments />

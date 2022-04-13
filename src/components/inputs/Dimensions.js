@@ -61,7 +61,7 @@ export default class Dimensions extends React.Component {
     let height = this.state.height;
 
     return (
-      <div className="window">
+      <div className="">
         {this.state.isOpen && (
           <form onSubmit={this.handleSubmit}>
             <h2>Room Dimensions</h2>

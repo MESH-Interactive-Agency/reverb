@@ -14,7 +14,7 @@ export default class WallSummary extends Component {
   };
   render() {
     return (
-      <div className="window">
+      <div className="">
         <h3>Wall Dimensions:</h3>
         {(this.context.wall1.l > 0 || this.context.wall1.h > 0) && (
           <div>
@@ -49,7 +49,7 @@ export default class WallSummary extends Component {
         )}
 
         {this.context.wall1.l > 0 && this.context.wall1.h > 0 && (
-          <div className="window">Total Wall Area: {this.calculateArea()}</div>
+          <div className="">Total Wall Area: {this.calculateArea()}</div>
         )}
       </div>
     );
