@@ -197,12 +197,24 @@ Input {
 }
 
 .charts {
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
+  display: grid;
+  grid-template-columns: 20vw 20vw 33vw;
+  grid-gap: 10px;
   background-color: #ffffff;
+  padding-left: 0.5em;
+}
+
+.boxVisualizer {
+  height: 220px;
 }
 
 .chart {
+  margin: 0.5em 0 0.5em 0;
+}
+
+.sabineChart {
   width: 55%;
 }
 
@@ -213,6 +225,11 @@ Input {
   padding: 2px;
   width: 45%;
   margin: 1em;
+}
+
+.tables {
+  display: flex;
+  justify-content: center;
 }
 
 table {

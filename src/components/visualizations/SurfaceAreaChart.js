@@ -73,10 +73,10 @@ export default class SurfaceAreaChart extends Component {
     ];
 
     return (
-      <div className="window ">
+      <div className="window chart ">
         <h2 className="center-text">Treatment Required</h2>
         <br></br>
-        <ResponsiveContainer width="90%" height={150}>
+        <ResponsiveContainer width="90%" height={180}>
           <BarChart data={data}>
             <XAxis dataKey="name" tick={{ fontSize: 10 }} />
             <YAxis width={35} tick={{ fontSize: 12 }} />

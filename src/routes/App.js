@@ -173,7 +173,7 @@ export default class App extends Component {
     };
 
     return (
-      <main className="App">
+      <main className="App ">
         <ErrorBoundary>
           <ReverbContext.Provider value={value}>
             <Route path="/" component={NavWindow} />

@@ -8,7 +8,7 @@ export default class SeeYourSpace extends React.Component {
 
   render() {
     return (
-      <div className="light window">
+      <div className="">
         <BoxSpace></BoxSpace>
       </div>
     );
