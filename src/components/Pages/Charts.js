@@ -12,9 +12,11 @@ export default class Charts extends React.Component {
   render() {
     return (
       <div className="charts sticky ">
+        <div></div>
         <BoxSpace />
         <SurfaceAreaChart />
         <SabineChart />
+        <div></div>
       </div>
     );
   }

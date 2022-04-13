@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '../../utils/utils';
 import Context from '../../contexts/ReverbContext';
 import ReverbTime from '../inputs/ReverbTime';
+import Dimensions from '../inputs/Dimensions';
 
 export default class Cover extends React.Component {
   constructor(props) {
@@ -42,11 +43,11 @@ export default class Cover extends React.Component {
 
   render() {
     return (
-      <div className="sticky-top cover-page">
-        <h2>Cover Page</h2>
+      <div className="sticky-top cover-page ">
+        <h2>Project Info</h2>
         {this.state.isOpen && (
           <form onSubmit={this.handleSubmit} className="">
-            <div className="inputs">
+            <div className="inputs cover-inputs">
               <label htmlFor="LoginForm__user_name">Date:</label>
               <input
                 type="date"
@@ -59,7 +60,7 @@ export default class Cover extends React.Component {
               ></input>
             </div>
 
-            <div className="inputs">
+            <div className="inputs cover-inputs">
               <label htmlFor="LoginForm__customer_name">Customer:</label>
               <input
                 type="text"
@@ -71,7 +72,7 @@ export default class Cover extends React.Component {
                 value={this.state.customerName}
               />
             </div>
-            <div className="inputs">
+            <div className="inputs cover-inputs">
               <label htmlFor="LoginForm__project_name">Project:</label>
               <input
                 type="text"
@@ -83,12 +84,14 @@ export default class Cover extends React.Component {
                 value={this.state.projectName}
               />
             </div>
+
+            <Dimensions />
             <button
+              className="cover-button"
               onClick={() => this.setState({ isOpen: !this.state.isOpen })}
             >
-              next
+              Next
             </button>
-            {/* <Button onClick={this.clearData}>Clear Data</Button> */}
           </form>
         )}
         {!this.state.isOpen && (
@@ -102,6 +105,14 @@ export default class Cover extends React.Component {
             <p>Date: {this.state.date}</p>
             <p>Customer Name: {this.state.customerName}</p>
             <p>Project Name: {this.state.projectName}</p>
+            <p>Room Dimensions:</p>
+            <p>Length: {this.context.length}</p>
+            <p>Width: {this.context.width}</p>
+            <p>Height: {this.context.height}</p>
+            <p>
+              Total Volume:{' '}
+              {this.context.legnth * this.context.width * this.context.height}
+            </p>
           </div>
         )}
       </div>

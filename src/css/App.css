@@ -4,7 +4,8 @@ html {
   align-items: center;
   font-family: 'Montserrat', sans-serif;
   background-color: black;
-  overflow: hidden;
+  overflow-y: hidden;
+  min-width: 1500px;
 }
 
 #root {
@@ -13,15 +14,11 @@ html {
 }
 
 .App {
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-  min-width: 350px;
-}
-
-nav {
-  height: auto;
-  width: 100%;
+  background-color: #f4f3ef;
+  display: grid;
+  grid-template-rows: 4.5em auto 1.5em;
+  grid-template-columns: 21em 73em;
+  justify-content: center;
 }
 
 h1 {
@@ -33,15 +30,23 @@ h1 {
 }
 
 .window {
-  border: 1px solid black;
-  box-shadow: 3px 5px #aaaaaa55;
-  border-radius: 2px;
+  border: 1px solid #4d5861;
+  box-shadow: 1px 2px 10px 1px #aaaaaa55;
 }
 
 .main.window {
-  overflow-y: scroll;
-  overflow-x: hidden;
   box-shadow: none;
+  height: 100%;
+  margin-top: 0px;
+  /* overflow-y: scroll; */
+}
+
+.card {
+  border: 1px solid #4d5861;
+  border-radius: 10px;
+  box-shadow: 1px 2px 10px 1px #aaaaaa55;
+  height: 100%;
+  background-color: white;
 }
 
 .Header__not-logged-in {
@@ -71,7 +76,7 @@ h1 {
   align-self: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: end;
   width: 100%;
   line-height: 1.5em;
   z-index: 999;
@@ -79,9 +84,9 @@ h1 {
 
 .login-inputs {
   color: white;
-  position: absolute;
-  top: 10px;
-  right: 80px;
+  position: relative;
+  top: -1.5em;
+  right: 5em;
 }
 
 .Button {
@@ -142,16 +147,37 @@ footer {
   padding: 0.25em 0 0.25em 0;
   font-size: 1em;
   color: white;
+  grid-column: span 2;
 }
 
 h2 {
+  padding: 5px;
+  margin-bottom: 2px;
   background-color: #0a2859;
   color: white;
-  padding: 1px;
+  margin-bottom: 2px;
+}
+
+h2.rounded {
+  border: 1px solid #4d5861;
+  border-radius: 10px 10px 0px 0px;
+  padding: 5px;
+  margin: -1px;
+}
+
+h2.shortRound {
+  border-radius: 2px 2px 0px 0px;
+  padding: 5px;
+  margin: -1px;
+}
+
+.bold {
+  font-weight: bolder;
 }
 
 caption {
   margin: 2px;
+  padding: 2px;
   color: white;
   background-color: #4d5861;
 }
@@ -159,7 +185,6 @@ caption {
 nav {
   grid-column: span 2;
   background-color: #4d5861;
-  width: 100%;
   height: auto;
   padding: 0;
 }
@@ -192,52 +217,95 @@ Input {
 
 .sticky {
   position: sticky;
-  top: 0;
+  top: 200;
+  align-self: start;
 }
 
 .cover-page {
-  height: 200px;
+  height: 220px;
+  z-index: 99;
+  background-color: white;
+  color: bl;
+}
+
+.cover-inputs {
+  margin-top: 0em;
+  margin-left: 5px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  line-height: 1.5em;
+  z-index: 999;
 }
 
 .charts {
   /* display: flex;
   flex-direction: row; */
+
   display: grid;
-  grid-template-columns: 20vw 20vw 33vw;
-  grid-gap: 10px;
-  background-color: #ffffff;
+  grid-template-columns: auto 18em 18em 32em auto;
+  grid-gap: 1em;
+  background-color: #f4f3ef;
   padding-left: 0.5em;
 }
 
 .boxVisualizer {
-  height: 220px;
+  height: 230px;
 }
 
 .chart {
   margin: 0.5em 0 0.5em 0;
+  background-color: white;
 }
 
-.sabineChart {
-  width: 55%;
+.sabine {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pink-border {
+  border: 1px solid pink;
+}
+
+.sabine-header {
+  margin-bottom: 1em;
+}
+
+.dropdown-groups {
+  height: 24em;
+}
+
+.scroll {
+  overflow-y: scroll;
+}
+
+.topMargin {
+  margin-top: 50px;
 }
 
 .outputTables {
   display: flex;
   flex-direction: column;
-
-  padding: 2px;
-  width: 45%;
+  width: 33em;
   margin: 1em;
 }
 
 .tables {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 table {
   width: 100%;
   font-size: 85%;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  padding-right: 2px;
+  /* background-color: white; */
 }
 
 .summaryPanel {
@@ -293,6 +361,10 @@ h4 {
   margin-top: 2vh;
 }
 
+.input-buttons {
+  background-color: #4d5861;
+}
+
 .editButton {
   position: relative;
   top: 0;
@@ -324,26 +396,6 @@ h4 {
 }
 
 @media screen and (min-width: 650px) {
-  .App {
-    display: grid;
-    grid-template-rows: auto 84vh auto;
-    grid-template-columns: 2fr 7fr;
-    justify-content: center;
-    width: 98%;
-  }
-
-  .main.window {
-    width: auto;
-  }
-
-  footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    grid-column: span 2;
-    height: 1em;
-  }
-
   .summaryPanel {
     display: flex;
     flex-direction: column;

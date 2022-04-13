@@ -24,7 +24,7 @@ export default class WallProdsSummary extends Component {
               const { length, width, height } = reverbContext;
               const area = width * height * 4;
               return (
-                <div className="window">
+                <div className="">
                   {!!mats && (
                     <div>
                       <table width="480px">
@@ -45,7 +45,7 @@ export default class WallProdsSummary extends Component {
 
                         <tbody>
                           <tr>
-                            <th>{mats[selected].descript.substring(0, 14)}</th>
+                            <th>{mats[selected].descript.substring(0, 16)}</th>
                             <th>{mats[selected].hz125}</th>
                             <th>{mats[selected].hz250}</th>
                             <th>{mats[selected].hz500}</th>
@@ -55,7 +55,7 @@ export default class WallProdsSummary extends Component {
                             <th>{mats[selected].nrc}</th>
                           </tr>
                           <tr>
-                            <th>{mats[selected].descript.substring(0, 14)}</th>
+                            <th>{mats[selected].descript.substring(0, 16)}</th>
                             <th>{mats[selected].hz125}</th>
                             <th>{mats[selected].hz250}</th>
                             <th>{mats[selected].hz500}</th>
@@ -65,7 +65,7 @@ export default class WallProdsSummary extends Component {
                             <th>{mats[selected].nrc}</th>
                           </tr>
                           <tr>
-                            <th>{mats[selected].descript.substring(0, 14)}</th>
+                            <th>{mats[selected].descript.substring(0, 16)}</th>
                             <th>{mats[selected].hz125}</th>
                             <th>{mats[selected].hz250}</th>
                             <th>{mats[selected].hz500}</th>
@@ -75,7 +75,7 @@ export default class WallProdsSummary extends Component {
                             <th>{mats[selected].nrc}</th>
                           </tr>
                           <tr>
-                            <th>{mats[selected].descript.substring(0, 14)}</th>
+                            <th>{mats[selected].descript.substring(0, 16)}</th>
                             <th>{mats[selected].hz125}</th>
                             <th>{mats[selected].hz250}</th>
                             <th>{mats[selected].hz500}</th>
@@ -85,7 +85,7 @@ export default class WallProdsSummary extends Component {
                             <th>{mats[selected].nrc}</th>
                           </tr>
                           <tr>
-                            <th>Total Sabines: </th>
+                            <th className="bold">Total Sabines: </th>
                             <th>{(mats[selected].hz125 * area).toFixed(1)}</th>
                             <th>{(mats[selected].hz250 * area).toFixed(1)}</th>
                             <th>{(mats[selected].hz500 * area).toFixed(1)}</th>

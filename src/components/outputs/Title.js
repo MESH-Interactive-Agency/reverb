@@ -6,7 +6,7 @@ export default class Title extends Component {
 
   render() {
     return (
-      <div className="window">
+      <div className="">
         <h2>Project Info:</h2>
         {this.context.date.length > 0 && <span>Date: {this.context.date}</span>}
         {this.context.customerName.length > 0 && (

@@ -35,7 +35,7 @@ export default class OpeningsSummary extends Component {
     let other = this.context.other;
 
     return (
-      <div className="window">
+      <div className="">
         <h3>Openings Dimensions:</h3>
         <div>
           {door1.l > 0 && (

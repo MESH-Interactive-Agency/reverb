@@ -13,8 +13,10 @@ export default class MainWindow extends React.Component {
     return (
       <div className="window main no-shadow">
         <Cover />
-        <ExistingConditions />
-        <AcousticalTreatments />
+        <div className="dropdown-groups">
+          <ExistingConditions />
+          <AcousticalTreatments />
+        </div>
       </div>
     );
   }

@@ -64,8 +64,8 @@ export default class Dimensions extends React.Component {
       <div className="">
         {this.state.isOpen && (
           <form onSubmit={this.handleSubmit}>
-            <h2>Room Dimensions</h2>
-            <div className="inputs">
+            <h4>Room Dimensions</h4>
+            <div className="inputs cover-inputs">
               <label htmlFor="length">Length</label>
               <input
                 type="number"
@@ -80,7 +80,7 @@ export default class Dimensions extends React.Component {
               ></input>
             </div>
 
-            <div className="inputs">
+            <div className="inputs cover-inputs">
               <label htmlFor="width">Width:</label>
               <input
                 type="number"
@@ -94,7 +94,7 @@ export default class Dimensions extends React.Component {
                 value={this.state.width}
               />
             </div>
-            <div className="inputs">
+            <div className="inputs cover-inputs">
               <label htmlFor="height">Height:</label>
               <input
                 type="number"
@@ -108,11 +108,6 @@ export default class Dimensions extends React.Component {
                 value={this.state.height}
               />
             </div>
-            <button
-              onClick={() => this.setState({ isOpen: !this.state.isOpen })}
-            >
-              Next
-            </button>
           </form>
         )}
         {!this.state.isOpen && (

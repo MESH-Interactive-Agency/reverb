@@ -185,16 +185,16 @@ export default class SabineChart extends Component {
 
               return (
                 <div className="window sabine chart ">
-                   <h2 className="center-text">Total Sabines</h2>
-                  <ResponsiveContainer height={200}>
+                   <h2 className="center-text shortRound sabine-header">Total Sabines</h2>
+                  <ResponsiveContainer height={200} >
                     <LineChart data={data}>
-                      <XAxis dataKey="name" tick={{ fontSize: 10 }} />
+                      <XAxis dataKey="name" height={20} tick={{ fontSize: 10 }} />
                       <YAxis
-                        width={35}
+                        width={22}
                         tick={{ fontSize: 12 }}
                         domain={[0, 3.5]}
                       />
-                      <CartesianGrid />
+                      <CartesianGrid strokeDasharray="5 5"/>
                       <Line dataKey="uv" fill="#8884d8" />
                       <Line
                         dataKey="recommended"

@@ -20,8 +20,8 @@ export default class BoxSpace extends Component {
   render() {
     return (
       <div className="boxVisualizer chart window ">
-        <h2 className="center-text">Box Model</h2>
-        <Canvas camera={{ position: [10, 10, 10], fov: 60 }}>
+        <h2 className="center-text shortRound">See Your Space</h2>
+        <Canvas camera={{ position: [10, 14, 10], fov: 60 }}>
           <OrbitControls />
           <ambientLight intensity={0.5} />
           <spotLight position={[10, 15, 10]} angle={0.3} />

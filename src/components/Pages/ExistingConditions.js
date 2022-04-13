@@ -12,10 +12,8 @@ import OtherMatsSelector from '../inputs/OtherMatsSelector';
 export default class ExistingConditions extends React.Component {
   render() {
     return (
-      <div className="">
-        {/* <h2>Existing Conditions</h2> */}
-        <Dimensions />
-        <h2 className="topMargin">Existing Materials</h2>
+      <div className=" topMargin ">
+        <h2 className="">Existing Materials</h2>
         <FloorMatsSelector />
         <CeilingArea />
         <CeilingMatsSelector />

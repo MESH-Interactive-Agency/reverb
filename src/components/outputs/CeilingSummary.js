@@ -10,7 +10,7 @@ export default class CeilingSummary extends Component {
 
   render() {
     return (
-      <div className="window">
+      <div className="">
         <h3>Ceiling Dimensions:</h3>
         {(this.context.cLength > 0 || this.context.cWidth > 0) && (
           <div>
@@ -19,7 +19,7 @@ export default class CeilingSummary extends Component {
 
             <br></br>
             {this.context.cLength > 0 && this.context.cWidth > 0 && (
-              <div className="window">Total Area: {this.calculateArea()}</div>
+              <div className="">Total Area: {this.calculateArea()}</div>
             )}
           </div>
         )}

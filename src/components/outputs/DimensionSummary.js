@@ -10,7 +10,7 @@ export default class DimensionSummary extends Component {
 
   render() {
     return (
-      <div className="window">
+      <div className="">
         <h3>Floor/Wall Dimensions:</h3>
         {(this.context.length > 0 ||
           this.context.height > 0 ||
@@ -23,7 +23,7 @@ export default class DimensionSummary extends Component {
             {this.context.length > 0 &&
               this.context.height > 0 &&
               this.context.width > 0 && (
-                <div className="window">
+                <div className="w">
                   Total Volume: {this.calculateVolume()}
                 </div>
               )}
