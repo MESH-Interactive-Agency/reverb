@@ -21,14 +21,14 @@ export default class DetailsWindow extends React.Component {
         <Charts />
         <div className=" tables">
           <div className="card outputTables">
-            <h2 className=" card-body">Existing Conditions</h2>
+            <h4 className=" ">Existing Conditions</h4>
             <FloorMatsSummary />
             <CeilingMatsSummary />
             <WallMatsSummary />
             <OtherMatsSummary />
           </div>
           <div className="card outputTables">
-            <h2 className="card-body" >Treatments</h2>
+            <h4 className="">Treatments</h4>
             <CeilingProdsSummary />
             <BaffleUnitsSummary />
             <WallProdsSummary />

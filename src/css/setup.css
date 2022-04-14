@@ -159,6 +159,10 @@ hr {
   padding: 0;
 }
 
+th {
+  font-weight: 400;
+}
+
 input,
 select {
   vertical-align: middle;

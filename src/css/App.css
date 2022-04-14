@@ -61,6 +61,7 @@ html {
 body {
   color: #2c2c2c;
   font-size: 14px;
+  font-weight: 300;
   font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -84,14 +85,6 @@ h1 {
   height: 100%;
   margin-top: 0px;
   /* overflow-y: scroll; */
-}
-
-p {
-  font-weight: bold;
-}
-
-label {
-  font-weight: bold;
 }
 
 .card {
@@ -350,10 +343,6 @@ h5,
   margin-bottom: 15px;
 }
 
-.bold {
-  font-weight: bolder;
-}
-
 caption {
   margin: 0px -1px 2px 0px;
   padding: 2px;
@@ -487,31 +476,61 @@ select {
   flex-direction: column;
   width: 38em;
   margin: 0.75em;
+  padding: 0.75em;
+}
+
+.lead-cell {
+  width: 12em;
 }
 
 .tables {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: .5em;
+  margin-top: 0.5em;
+  font-weight: 300;
 }
 
 table {
   width: 100%;
   font-size: 85%;
+  margin-top: 1em;
   margin-right: 2px;
   margin-bottom: 2px;
   padding-right: 2px;
   /* background-color: white; */
+  border-top: 1px solid #4d5861;
 }
 
-.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
   padding: 12px 7px;
   vertical-align: middle;
 }
 
+td {
+  display: table-cell;
+  vertical-align: inherit;
+}
 
+th {
+  padding-top: 0.25em;
+}
 
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+
+.bold {
+  font-weight: bold;
+}
 
 .summaryPanel {
   display: flex;
@@ -533,12 +552,6 @@ table {
   width: 12em;
   height: 12em;
   font-size: 1em;
-}
-
-h4 {
-  text-align: center;
-  font-size: 0.8em;
-  margin: 0.5em;
 }
 
 .Form {
@@ -630,8 +643,8 @@ h4 {
   }
 
   h4 {
-    font-size: 1.714em;
-    line-height: 1.45em;
+    font-size: 1.4em;
+    line-height: 1em;
     font-weight: 400;
   }
 
