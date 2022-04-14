@@ -152,59 +152,103 @@ export default class SabineChart extends Component {
 
               const data = [
                 {
-                  name: 'hz125',
+                  name: '125',
+                  altv: '1.5',
                   uv: sabines.hz125,
                   recommended: rec,
                 },
                 {
-                  name: 'hz250',
+                  name: '250',
+                  altv: '1.8',
                   uv: sabines.hz250,
                   recommended: rec,
                 },
                 {
-                  name: 'hz500',
+                  name: '500',
+                  altv: '1.6',
                   uv: sabines.hz500,
                   recommended: rec,
                 },
                 {
-                  name: 'hz1000',
+                  name: '1000',
+                  altv: '1.4',
                   uv: sabines.hz1000,
                   recommended: rec,
                 },
                 {
-                  name: 'hz2000',
+                  name: '2000',
+                  altv: '1',
                   uv: sabines.hz2000,
                   recommended: rec,
                 },
                 {
-                  name: 'hz4000',
+                  name: '4000',
+                  altv: '.5',
                   uv: sabines.hz4000,
                   recommended: rec,
                 },
               ];
 
               return (
-                <div className="window sabine chart ">
-                   <h2 className="center-text shortRound sabine-header">Total Sabines</h2>
-                  <ResponsiveContainer height={200} >
-                    <LineChart data={data}>
-                      <XAxis dataKey="name" height={20} tick={{ fontSize: 10 }} />
-                      <YAxis
-                        width={22}
-                        tick={{ fontSize: 12 }}
-                        domain={[0, 3.5]}
-                      />
-                      <CartesianGrid strokeDasharray="5 5"/>
-                      <Line dataKey="uv" fill="#8884d8" />
-                      <Line
-                        dataKey="recommended"
-                        strokeWidth={15}
-                        fill="#008888"
-                        stroke="#55555555"
+                <div className="card">
+                  <div className="card-header">
+                    <div class="row">
+                      <div class="col-sm-7">
+                        <div class="numbers pull-left">Total Sabines</div>
+                      </div>
+                      <div class="col-sm-5">
+                        <div class="pull-right">
+                          <span class="badge badge-pill badge-success">
+                            Avg Reverb Time - 0.5
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-body">
+                    <h6 className="big-title">
+                      <span className="green">Existing Conditions</span> /{' '}
+                      <span className="orange">With Treatment</span>
+                    </h6>
+                    <ResponsiveContainer height={180}>
+                      <LineChart data={data}>
+                        <XAxis
+                          dataKey="name"
+                          height={20}
+                          tick={{ fontSize: 8 }}
+                          axisLine={false}
+                          tickLine={false}
+                        />
+                        <YAxis
+                          width={22}
+                          tick={{ fontSize: 10 }}
+                          domain={[0, 3.5]}
+                          axisLine={false}
+                          tickLine={false}
+                        />
                         dot={false}
-                      />
-                    </LineChart>
-                  </ResponsiveContainer>
+                        <Line
+                          dot={false}
+                          dataKey="uv"
+                          stroke="#7f9e23"
+                          strokeWidth={3}
+                        />
+                        <Line
+                          dot={false}
+                          dataKey="altv"
+                          stroke="#de6d35"
+                          strokeWidth={3}
+                        />
+                        <Line
+                          dataKey="recommended"
+                          strokeWidth={15}
+                          fill="#008888"
+                          stroke="#22222222"
+                          dot={false}
+                        />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
                 </div>
               );
             }}

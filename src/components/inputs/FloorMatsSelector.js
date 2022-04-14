@@ -26,7 +26,7 @@ export default class FloorMatsSelector extends Component {
         {!!mats && (
           <div>
             <div className="dropdown">
-              <label htmlFor="floormats"className="inputCaptions">Floor material:</label>
+              <h4 htmlFor="floormats"className="inputCaptions">Floor material:</h4>
               <select
                 name="floormats"
                 id="floormats"

@@ -1,11 +1,9 @@
 import React from 'react';
 
-import Results from '../components/Pages/Results';
-import SeeYourSpace from '../components/Pages/SeeYourSpace';
 import Charts from '../components/Pages/Charts';
 
 import Context from '../contexts/ApiContext';
-import Title from '../components/outputs/Title';
+
 import FloorMatsSummary from '../components/outputs/FloorMatsSummary';
 import CeilingMatsSummary from '../components/outputs/CeilingMatsSummary';
 import WallMatsSummary from '../components/outputs/WallMatsSummary';
@@ -23,17 +21,18 @@ export default class DetailsWindow extends React.Component {
         <Charts />
         <div className=" tables">
           <div className="card outputTables">
-            <h2 className="center-text rounded">Existing Conditions</h2>
+            <h2 className=" card-body">Existing Conditions</h2>
             <FloorMatsSummary />
             <CeilingMatsSummary />
             <WallMatsSummary />
             <OtherMatsSummary />
           </div>
           <div className="card outputTables">
-            <h2 className="center-text rounded" >Treatments</h2>
+            <h2 className="card-body" >Treatments</h2>
             <CeilingProdsSummary />
             <BaffleUnitsSummary />
             <WallProdsSummary />
+            <BaffleUnitsSummary />
           </div>
         </div>
         {/* <Results /> */}

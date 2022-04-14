@@ -22,13 +22,15 @@ export default class ReverbTime extends Component {
   render() {
     let mats = this.context.recommendedReverbTimes;
     let selected = this.state.selected;
+    let value = 0;
 
+    if (!!mats) value = (mats[selected].min - mats[selected].max) / 2;
     if (!!mats) console.log(mats, selected, mats[selected]);
     return (
-      <div className="">
+      <div className="rec-times">
         {!!mats && (
           <div>
-            <div className="dropdown">
+            <div className="dropdown rec-drop">
               <h4>Recommended Reverb Times:</h4>
 
               <select
@@ -45,10 +47,10 @@ export default class ReverbTime extends Component {
                 ))}
               </select>
 
-              <span>
-                {' '}
-                {mats[selected].min} - {mats[selected].max}{' '}
-              </span>
+              <input
+                className="rec-reverb-input"
+                value={value.toFixed(1)}
+              ></input>
             </div>
           </div>
         )}

@@ -29,18 +29,7 @@ export default class BaffleUnitsSummary extends Component {
                       <table width="480px">
                         <caption> 'Baffle Units:</caption>
 
-                        <thead>
-                          <tr>
-                            <th scope="col"></th>
-                            <th scope="col">125hz</th>
-                            <th scope="col">250hz</th>
-                            <th scope="col">500hz</th>
-                            <th scope="col">1000hz</th>
-                            <th scope="col">2000hz</th>
-                            <th scope="col">4000hz</th>
-                            <th scope="col">NRC</th>
-                          </tr>
-                        </thead>
+
 
                         <tbody>
                           <tr>

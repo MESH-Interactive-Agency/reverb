@@ -14,7 +14,7 @@ export default class Results extends React.Component {
   render() {
     return (
       <div className=" ">
-        <h2 className="center-text">Live Summary</h2>
+        <h2 className="">Live Summary</h2>
         <Title></Title>
         <DimensionSummary></DimensionSummary>
         <CeilingSummary></CeilingSummary>

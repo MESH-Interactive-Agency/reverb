@@ -44,7 +44,7 @@ export default class Cover extends React.Component {
   render() {
     return (
       <div className="sticky-top cover-page ">
-        <h2>Project Info</h2>
+        <h5>Project Info</h5>
         {this.state.isOpen && (
           <form onSubmit={this.handleSubmit} className="">
             <div className="inputs cover-inputs">
@@ -86,12 +86,12 @@ export default class Cover extends React.Component {
             </div>
 
             <Dimensions />
-            <button
+            {/* <button
               className="cover-button"
               onClick={() => this.setState({ isOpen: !this.state.isOpen })}
             >
               Next
-            </button>
+            </button> */}
           </form>
         )}
         {!this.state.isOpen && (
@@ -111,7 +111,7 @@ export default class Cover extends React.Component {
             <p>Height: {this.context.height}</p>
             <p>
               Total Volume:{' '}
-              {this.context.legnth * this.context.width * this.context.height}
+              {this.context.length * this.context.width * this.context.height}
             </p>
           </div>
         )}

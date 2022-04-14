@@ -82,9 +82,7 @@ export default class Openings extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <h4 className="inputCaptions">ENTER Doors, Windows, Other & People</h4>
-        <div className="inputs">
-          <h4>Door 1:</h4>
+        <div className="dropdown-inputs doors">
           <label htmlFor="door1-l">L:</label>
           <input
             className="shorter"
@@ -127,6 +125,8 @@ export default class Openings extends Component {
             id="door1-qty"
             name="door1"
           ></input>
+
+          <button>+Add another door</button>
         </div>
         {/*
         <div className="inputs">

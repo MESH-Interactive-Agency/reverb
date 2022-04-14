@@ -28,7 +28,7 @@ export default class OtherMatsSelector extends Component {
         {!!mats && (
           <div>
             <div className="dropdown">
-              <label htmlFor="othermats">Other material:</label>
+              <h4 className="inputCaptions">Doors, Windows, Other:</h4>
               <select
                 name="othermats"
                 id="othermats"

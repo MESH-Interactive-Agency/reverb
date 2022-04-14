@@ -27,11 +27,10 @@ export default class FloorMatsSummary extends Component {
                   {!!mats && (
                     <div>
                       <table width="480px">
-                        <caption> 'Floor Materials:</caption>
-
+                       
                         <thead>
                           <tr>
-                            <th scope="col"></th>
+                            <th scope="col bold left">Floor Material</th>
                             <th scope="col">125hz</th>
                             <th scope="col">250hz</th>
                             <th scope="col">500hz</th>

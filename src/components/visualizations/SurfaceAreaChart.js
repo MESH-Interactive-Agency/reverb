@@ -64,26 +64,39 @@ export default class SurfaceAreaChart extends Component {
       {
         name: 'Total Required',
         uv: 62.5,
+        fill: '#7f9e23',
       },
       {
         name: 'Added',
         uv: 45,
-        fill: '#880000',
+        fill: '#de6d35',
       },
     ];
 
     return (
-      <div className="window chart ">
-        <h2 className="center-text shortRound">Treatment Required</h2>
-        <br></br>
-        <ResponsiveContainer width="90%" height={180}>
-          <BarChart data={data}>
-            <XAxis dataKey="name" height={15} tick={{ fontSize: 10 }} />
-            <YAxis width={35} tick={{ fontSize: 12 }} />
-            <CartesianGrid />
-            <Bar dataKey="uv" fill="#8884d8" />
-          </BarChart>
-        </ResponsiveContainer>
+      <div className="card  ">
+        <div className="card-header">
+          <div class="row">
+            <div class="col-sm-7">
+              <div class="numbers pull-left">Treatment</div>
+            </div>
+            <div class="col-sm-5"></div>
+          </div>
+        </div>
+        <div className="card-body">
+          <h6 className="big-title">
+            <span>Treatment Required</span>
+          </h6>
+
+          <ResponsiveContainer width="100%" height={180}>
+            <BarChart data={data}>
+              <XAxis dataKey="name" height={15} tick={{ fontSize: 10 }} />
+              <YAxis width={10} tick={{ fontSize: 12 }} />
+              {/* <CartesianGrid /> */}
+              <Bar dataKey="uv" fill="#8884d8" barSize={30}/>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     );
   }

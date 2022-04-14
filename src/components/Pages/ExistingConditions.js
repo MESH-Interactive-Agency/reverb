@@ -12,15 +12,17 @@ import OtherMatsSelector from '../inputs/OtherMatsSelector';
 export default class ExistingConditions extends React.Component {
   render() {
     return (
-      <div className=" topMargin ">
-        <h2 className="">Existing Materials</h2>
-        <FloorMatsSelector />
-        <CeilingArea />
-        <CeilingMatsSelector />
-        <WallSurfaces />
-        <WallMatsSelector />
-        <Openings />
-        <OtherMatsSelector />
+      <div className="card white ">
+        <h2 className="card-header">Existing Materials</h2>
+        <div className="">
+          <FloorMatsSelector />
+          <CeilingArea />
+          <CeilingMatsSelector />
+          <WallSurfaces />
+          <WallMatsSelector />
+          <OtherMatsSelector />
+          <Openings />
+        </div>
       </div>
     );
   }

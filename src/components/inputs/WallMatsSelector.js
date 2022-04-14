@@ -28,7 +28,7 @@ export default class WallMatsSelector extends Component {
         {!!mats && (
           <div>
             <div className="dropdown">
-              <label htmlFor="wallmats"className="inputCaptions">Wall material:</label>
+              <h4 htmlFor="wallmats"className="inputCaptions">Wall material:</h4>
               <select
                 name="wallmats"
                 id="wallmats"
