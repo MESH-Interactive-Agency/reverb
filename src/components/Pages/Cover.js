@@ -43,58 +43,99 @@ export default class Cover extends React.Component {
 
   render() {
     return (
-      <div className="sticky-top cover-page ">
-        <h5>Project Info</h5>
+      <div className=" card  cover-page">
+        <div className="card-header">
+          <h4 className="card-title">Project Info</h4>
+        </div>
         {this.state.isOpen && (
-          <form onSubmit={this.handleSubmit} className="">
-            <div className="inputs cover-inputs">
-              <label htmlFor="LoginForm__user_name">Date:</label>
-              <input
-                type="date"
-                onChange={(e) => {
-                  this.updateDate(e.currentTarget.value);
-                }}
-                id="date"
-                name="project-date"
-                value={this.state.date}
-              ></input>
-            </div>
+          <div className="card-body">
+            <form onSubmit={this.handleSubmit} className="form-horizontal">
+              <div className=" row">
+                <label
+                  className="col-md-3 col-form-label"
+                  htmlFor="LoginForm__user_name"
+                >
+                  Date:
+                </label>
+                <div className="form-group">
+                  <input
+                    type="date"
+                    className="form-control datepicker"
+                    onChange={(e) => {
+                      this.updateDate(e.currentTarget.value);
+                    }}
+                    id="date"
+                    name="project-date"
+                    value={this.state.date}
+                  ></input>
+                </div>
+              </div>
 
-            <div className="inputs cover-inputs">
-              <label htmlFor="LoginForm__customer_name">Customer:</label>
-              <input
-                type="text"
-                onChange={(e) => {
-                  this.updateCustomerName(e.currentTarget.value);
-                }}
-                id="customer-name"
-                name="customer-name"
-                value={this.state.customerName}
-              />
-            </div>
-            <div className="inputs cover-inputs">
-              <label htmlFor="LoginForm__project_name">Project:</label>
-              <input
-                type="text"
-                onChange={(e) => {
-                  this.updateProjectName(e.currentTarget.value);
-                }}
-                id="project-name"
-                name="project-name"
-                value={this.state.projectName}
-              />
-            </div>
+              <div className="row">
+                <label
+                  className="col-md-3 col-form-label"
+                  htmlFor="LoginForm__customer_name"
+                >
+                  Customer:
+                </label>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Customer Name"
+                    onChange={(e) => {
+                      this.updateCustomerName(e.currentTarget.value);
+                    }}
+                    id="customer-name"
+                    name="customer-name"
+                    value={this.state.customerName}
+                  />
+                </div>
+              </div>
 
-            <Dimensions />
-            {/* <button
+              <div className="row">
+                <label
+                  className="col-md-3 col-form-label"
+                  htmlFor="LoginForm__project_name"
+                >
+                  Project:
+                </label>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Project Name"
+                    onChange={(e) => {
+                      this.updateProjectName(e.currentTarget.value);
+                    }}
+                    id="project-name"
+                    name="project-name"
+                    value={this.state.projectName}
+                  />
+                </div>
+              </div>
+
+
+              {/* <div class="card-footer ">
+                <div class="row">
+                  <label class="col-md-3"></label>
+                  <div class="col-md-9">
+                    <button type="submit" class="btn btn-info btn-round">Submit</button>
+                  </div>
+                </div>
+              </div> */}
+
+
+              {/* <button
               className="cover-button"
               onClick={() => this.setState({ isOpen: !this.state.isOpen })}
             >
               Next
             </button> */}
-          </form>
+            </form>
+          </div>
         )}
-        {!this.state.isOpen && (
+        {/* {!this.state.isOpen && (
           <div className="">
             <button
               className="editButton"
@@ -114,7 +155,7 @@ export default class Cover extends React.Component {
               {this.context.length * this.context.width * this.context.height}
             </p>
           </div>
-        )}
+        )} */}
       </div>
     );
   }

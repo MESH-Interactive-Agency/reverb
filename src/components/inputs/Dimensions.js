@@ -61,56 +61,82 @@ export default class Dimensions extends React.Component {
     let height = this.state.height;
 
     return (
-      <div className="">
+      <div className="card dimensions-input">
+        <div className="card-header">
+          <h4 className="card-title">Room Dimensions</h4>
+        </div>
         {this.state.isOpen && (
-          <form onSubmit={this.handleSubmit}>
-            <h4>Room Dimensions</h4>
-            <div className="inputs cover-inputs">
-              <label htmlFor="length">Length</label>
-              <input
-                type="number"
-                onChange={(e) => {
-                  length = this.updateLength(
-                    this.removeSpecialChars(e.currentTarget.value)
-                  );
-                }}
-                id="length"
-                name="length"
-                value={this.state.length}
-              ></input>
-            </div>
+          <div className="card-body">
+            <form className="form-horizontal">
+              <div className="row">
+                <div className="form-group">
+                  <label className="col-md-3 col-form-label" htmlFor="length">
+                    Length
+                  </label>
+                  <div class="col-md-9">
+                    <input
+                      className="form-control"
+                      type="number"
+                      onChange={(e) => {
+                        length = this.updateLength(
+                          this.removeSpecialChars(e.currentTarget.value)
+                        );
+                      }}
+                      id="length"
+                      name="length"
+                      value={this.state.length}
+                    ></input>
+                  </div>
+                </div>
+              </div>
 
-            <div className="inputs cover-inputs">
-              <label htmlFor="width">Width:</label>
-              <input
-                type="number"
-                onChange={(e) => {
-                  width = this.updateWidth(
-                    this.removeSpecialChars(e.currentTarget.value)
-                  );
-                }}
-                id="width"
-                name="width"
-                value={this.state.width}
-              />
-            </div>
-            <div className="inputs cover-inputs">
-              <label htmlFor="height">Height:</label>
-              <input
-                type="number"
-                onChange={(e) => {
-                  height = this.updateHeight(
-                    this.removeSpecialChars(e.currentTarget.value)
-                  );
-                }}
-                id="height"
-                name="height"
-                value={this.state.height}
-              />
-            </div>
-          </form>
+              <div className="row">
+                <label className="col-md-3 col-form-label" htmlFor="width">
+                  Width:
+                </label>
+                <div class="col-md-9">
+                  <div className="form-group">
+                    <input
+                      className="form-control"
+                      type="number"
+                      onChange={(e) => {
+                        width = this.updateWidth(
+                          this.removeSpecialChars(e.currentTarget.value)
+                        );
+                      }}
+                      id="width"
+                      name="width"
+                      value={this.state.width}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="row">
+                <label className="col-md-3 col-form-label" htmlFor="height">
+                  Height:
+                </label>
+                <div class="col-md-9">
+                  <div className="form-group">
+                    <input
+                      className="form-control"
+                      type="number"
+                      onChange={(e) => {
+                        height = this.updateHeight(
+                          this.removeSpecialChars(e.currentTarget.value)
+                        );
+                      }}
+                      id="height"
+                      name="height"
+                      value={this.state.height}
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
         )}
-        {!this.state.isOpen && (
+        {/* {!this.state.isOpen && (
           <div>
             <button
               onClick={() => this.setState({ isOpen: !this.state.isOpen })}
@@ -126,8 +152,7 @@ export default class Dimensions extends React.Component {
               {this.state.length * this.state.width * this.state.height}
             </p>
           </div>
-        )}
-        <ReverbTime />
+        )} */}
       </div>
     );
   }

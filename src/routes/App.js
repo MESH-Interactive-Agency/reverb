@@ -13,6 +13,8 @@ import Context from '../contexts/ApiContext';
 import '../css/setup.css';
 //import '../css/gradients.css';
 import '../css/App.css';
+//import '../../src/paper-dashboard/assets/css/bootstrap.min.css'
+
 
 import ReverbContext from '../contexts/ReverbContext';
 

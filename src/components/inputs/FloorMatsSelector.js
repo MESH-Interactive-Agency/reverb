@@ -22,24 +22,29 @@ export default class FloorMatsSelector extends Component {
   render() {
     let mats = this.context.floorMaterials;
     return (
-      <div className="">
+      <div className="row">
         {!!mats && (
-          <div>
-            <div className="dropdown">
-              <h4 htmlFor="floormats"className="inputCaptions">Floor material:</h4>
-              <select
-                name="floormats"
-                id="floormats"
-                onClick={(e) => {
-                  this.updateSelection(e.currentTarget.value);
-                }}
-              >
-                {mats.map((material) => (
-                  <option value={material.id} key={material.id}>
-                    {material.descript}
-                  </option>
-                ))}
-              </select>
+          <div className="dropdown">
+            
+            <label className="col-md-3 col-form-label ">Floor material:</label>
+            
+            <div className="col-md-9">
+              <div className="form-group">
+                <select
+                className="lighter-border"
+                  name="floormats"
+                  id="floormats"
+                  onClick={(e) => {
+                    this.updateSelection(e.currentTarget.value);
+                  }}
+                >
+                  {mats.map((material) => (
+                    <option value={material.id} key={material.id}>
+                      {material.descript}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
         )}

@@ -24,24 +24,27 @@ export default class WallMatsSelector extends Component {
     let selected = this.state.selected;
 
     return (
-      <div className="">
+      <div className="row">
         {!!mats && (
-          <div>
-            <div className="dropdown">
-              <h4 htmlFor="wallmats"className="inputCaptions">Wall material:</h4>
-              <select
-                name="wallmats"
-                id="wallmats"
-                onClick={(e) => {
-                  this.updateSelection(e.currentTarget.value);
-                }}
-              >
-                {mats.map((material) => (
-                  <option value={material.id} key={material.id}>
-                    {material.descript}
-                  </option>
-                ))}
-              </select>
+          <div className="dropdown">
+            <label className="col-md-3 col-form-label ">Wall materials:</label>
+            <div className="col-md-9">
+              <div className="form-group">
+                <select
+                className="lighter-border"
+                  name="wallmats"
+                  id="wallmats"
+                  onClick={(e) => {
+                    this.updateSelection(e.currentTarget.value);
+                  }}
+                >
+                  {mats.map((material) => (
+                    <option value={material.id} key={material.id}>
+                      {material.descript}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
         )}

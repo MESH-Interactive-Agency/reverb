@@ -54,13 +54,13 @@ html {
   background-color: #f4f3ef;
   display: grid;
   grid-template-rows: 4.5em auto 1.5em;
-  grid-template-columns: 27em 80em;
+  grid-template-columns: 26em 80em;
   justify-content: center;
 }
 
 body {
   color: #2c2c2c;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 300;
   font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
@@ -249,11 +249,15 @@ h1 {
 
 .existing {
   padding: 0.3em;
+  height: 24em;
+}
+.accoustic-treatments {
+  padding: 0.3em;
+  height: 20em;
 }
 
 .rec-drop {
-  width: 100%;
-  margin: 1em;
+  height: 10em;
 }
 
 .rec-reverb-input {
@@ -384,16 +388,97 @@ Input {
 }
 
 .sticky {
-  position: sticky;
-  top: 200;
-  align-self: start;
+}
+
+.form-group .form-control,
+.input-group .form-control {
+  padding: 10px 10px 10px 10px;
+}
+
+.form-group {
+  margin: 0.25em;
+}
+
+.form-control {
+  width: 20em;
+  background-color: rgb(24, 26, 27);
+  border-color: rgb(58, 62, 65);
+  color: rgb(171, 164, 153);
+  box-shadow: none;
+}
+
+.form-control {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  color: #66615b;
+  line-height: normal;
+  height: auto;
+  font-size: 14px;
+  -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  -ms-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.lighter-border {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  color: #66615b;
+  height: 2em;
+}
+
+.door-dimensions {
+  margin-left: 5em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+}
+
+input {
+  writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  margin: 0em;
+  padding: 1px 2px;
+  border-width: 2px;
+  border-style: inset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
 }
 
 .cover-page {
-  height: 220px;
-  z-index: 99;
-  background-color: white;
-  color: black;
+  height: 19em;
+}
+
+.dimensions-input {
+  height: 19em;
 }
 
 .rec-times {
@@ -449,14 +534,14 @@ Input {
 }
 
 .dropdown-groups {
-  height: 32em;
+  height: 46em;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .dropdown {
-  margin: 0.5em;
-  width: 100%;
+  margin: 1em;
+  width: 90%;
 }
 
 .scroll {
@@ -475,7 +560,7 @@ select {
   display: flex;
   flex-direction: column;
   width: 38em;
-  margin: 0.75em;
+  margin: 0.5em;
   padding: 0.75em;
 }
 
@@ -487,7 +572,7 @@ select {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 0.5em;
+
   font-weight: 300;
 }
 
@@ -540,7 +625,9 @@ th {
 #floormats,
 #ceilingmats,
 #wallmats,
-#othermats {
+#othermats,
+#ceilingprods,
+#baffleunits {
   width: 93%;
 }
 
@@ -643,7 +730,7 @@ th {
   }
 
   h4 {
-    font-size: 1.4em;
+    font-size: 1.6em;
     line-height: 1em;
     font-weight: 400;
   }

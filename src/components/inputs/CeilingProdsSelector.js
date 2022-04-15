@@ -22,26 +22,30 @@ export default class CeilingProdsSelector extends Component {
   render() {
     let mats = this.context.ceilingProducts;
     return (
-      <div className="">
+      <div className="row">
         {!!mats && (
-          <div>
-            <div className="dropdown">
-              <label className="inputCaptions" htmlFor="ceilingprods">
-                Ceiling Products:
-              </label>
-              <select
-                name="ceilingprods"
-                id="ceilingprods"
-                onClick={(e) => {
-                  this.updateSelection(e.currentTarget.value);
-                }}
-              >
-                {mats.map((material) => (
-                  <option value={material.id} key={material.id}>
-                    {material.descript}
-                  </option>
-                ))}
-              </select>
+          <div className="dropdown">
+            <label className="col-md-3 col-form-label ">
+              Ceiling Products:
+            </label>
+
+            <div className="col-md-9">
+              <div className="form-group">
+                <select
+                  className="lighter-border"
+                  name="ceilingprods"
+                  id="ceilingprods"
+                  onClick={(e) => {
+                    this.updateSelection(e.currentTarget.value);
+                  }}
+                >
+                  {mats.map((material) => (
+                    <option value={material.id} key={material.id}>
+                      {material.descript}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
         )}

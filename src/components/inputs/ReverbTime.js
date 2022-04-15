@@ -27,30 +27,42 @@ export default class ReverbTime extends Component {
     if (!!mats) value = (mats[selected].min - mats[selected].max) / 2;
     if (!!mats) console.log(mats, selected, mats[selected]);
     return (
-      <div className="rec-times">
+      <div className="card rec-drop">
         {!!mats && (
           <div>
-            <div className="dropdown rec-drop">
-              <h4>Recommended Reverb Times:</h4>
-
-              <select
-                name="reverbtime"
-                id="reverbtime"
-                onClick={(e) => {
-                  this.updateSelection(e.currentTarget.value);
-                }}
-              >
-                {mats.map((material) => (
-                  <option value={material.id} key={material.id}>
-                    {material.descript}
-                  </option>
-                ))}
-              </select>
-
-              <input
-                className="rec-reverb-input"
-                value={value.toFixed(1)}
-              ></input>
+            <div className="card-header">
+              <h4 className="card-title">Target Reverb Time:</h4>
+              <div className="card-body">
+                <form className="form-horizontal">
+                  <div className="row>">
+                    <label class="col-md-3 col-form-label">
+                      Choose room type or enter value
+                    </label>
+                    <div class="col-md-9">
+                      <div className="form-group">
+                        <select
+                          className="lighter-border"
+                          name="reverbtime"
+                          id="reverbtime"
+                          onClick={(e) => {
+                            this.updateSelection(e.currentTarget.value);
+                          }}
+                        >
+                          {mats.map((material) => (
+                            <option value={material.id} key={material.id}>
+                              {material.descript}
+                            </option>
+                          ))}
+                        </select>
+                        <input
+                          className="rec-reverb-input lighter-border"
+                          value={value.toFixed(1)}
+                        ></input>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         )}
