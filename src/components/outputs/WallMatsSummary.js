@@ -17,11 +17,22 @@ export default class WallMatsSummary extends Component {
         {(reverbContext) => (
           <ApiContext.Consumer>
             {(apiContext) => {
-              const { selectedWallMaterial, wallMaterials } = apiContext;
+              const {
+                selectedWall1Material,
+                selectedWall2Material,
+                selectedWall3Material,
+                selectedWall4Material,
+                wallMaterials,
+              } = apiContext;
+
               const mats = wallMaterials;
-              const selected = selectedWallMaterial;
-              const { length, width, height } = reverbContext;
-              const area = width * height * 2 + length * height * 2;
+              const sel1 = selectedWall1Material;
+              const sel2 = selectedWall2Material;
+              const sel3 = selectedWall3Material;
+              const sel4 = selectedWall4Material;
+
+              const { wall1, wall2, wall3, wall4 } = reverbContext;
+
               return (
                 <div className="">
                   {!!mats && (
@@ -59,74 +70,109 @@ export default class WallMatsSummary extends Component {
                         <tbody>
                           <tr>
                             <th className="left">
-                              {mats[selected].descript.substring(0, 18)}
+                              {mats[sel1].descript.substring(0, 18)}
                             </th>
-                            <th className="right">{mats[selected].hz125}</th>
-                            <th className="right">{mats[selected].hz250}</th>
-                            <th className="right">{mats[selected].hz500}</th>
-                            <th className="right">{mats[selected].hz1000}</th>
-                            <th className="right">{mats[selected].hz2000}</th>
-                            <th className="right">{mats[selected].hz4000}</th>
-                            <th className="right">{mats[selected].nrc}</th>
+                            <th className="right">{mats[sel1].hz125}</th>
+                            <th className="right">{mats[sel1].hz250}</th>
+                            <th className="right">{mats[sel1].hz500}</th>
+                            <th className="right">{mats[sel1].hz1000}</th>
+                            <th className="right">{mats[sel1].hz2000}</th>
+                            <th className="right">{mats[sel1].hz4000}</th>
+                            <th className="right">{mats[sel1].nrc}</th>
                           </tr>
                           <tr>
                             <th className="left">
-                              {mats[selected].descript.substring(0, 18)}
+                              {mats[sel2].descript.substring(0, 18)}
                             </th>
-                            <th className="right">{mats[selected].hz125}</th>
-                            <th className="right">{mats[selected].hz250}</th>
-                            <th className="right">{mats[selected].hz500}</th>
-                            <th className="right">{mats[selected].hz1000}</th>
-                            <th className="right">{mats[selected].hz2000}</th>
-                            <th className="right">{mats[selected].hz4000}</th>
-                            <th className="right">{mats[selected].nrc}</th>
+                            <th className="right">{mats[sel2].hz125}</th>
+                            <th className="right">{mats[sel2].hz250}</th>
+                            <th className="right">{mats[sel2].hz500}</th>
+                            <th className="right">{mats[sel2].hz1000}</th>
+                            <th className="right">{mats[sel2].hz2000}</th>
+                            <th className="right">{mats[sel2].hz4000}</th>
+                            <th className="right">{mats[sel2].nrc}</th>
                           </tr>
                           <tr>
                             <th className="left">
-                              {mats[selected].descript.substring(0, 18)}
+                              {mats[sel3].descript.substring(0, 18)}
                             </th>
-                            <th className="right">{mats[selected].hz125}</th>
-                            <th className="right">{mats[selected].hz250}</th>
-                            <th className="right">{mats[selected].hz500}</th>
-                            <th className="right">{mats[selected].hz1000}</th>
-                            <th className="right">{mats[selected].hz2000}</th>
-                            <th className="right">{mats[selected].hz4000}</th>
-                            <th className="right">{mats[selected].nrc}</th>
+                            <th className="right">{mats[sel3].hz125}</th>
+                            <th className="right">{mats[sel3].hz250}</th>
+                            <th className="right">{mats[sel3].hz500}</th>
+                            <th className="right">{mats[sel3].hz1000}</th>
+                            <th className="right">{mats[sel3].hz2000}</th>
+                            <th className="right">{mats[sel3].hz4000}</th>
+                            <th className="right">{mats[sel3].nrc}</th>
                           </tr>
                           <tr>
                             <th className="left">
-                              {mats[selected].descript.substring(0, 18)}
+                              {mats[sel4].descript.substring(0, 18)}
                             </th>
-                            <th className="right">{mats[selected].hz125}</th>
-                            <th className="right">{mats[selected].hz250}</th>
-                            <th className="right">{mats[selected].hz500}</th>
-                            <th className="right">{mats[selected].hz1000}</th>
-                            <th className="right">{mats[selected].hz2000}</th>
-                            <th className="right">{mats[selected].hz4000}</th>
-                            <th className="right">{mats[selected].nrc}</th>
+                            <th className="right">{mats[sel4].hz125}</th>
+                            <th className="right">{mats[sel4].hz250}</th>
+                            <th className="right">{mats[sel4].hz500}</th>
+                            <th className="right">{mats[sel4].hz1000}</th>
+                            <th className="right">{mats[sel4].hz2000}</th>
+                            <th className="right">{mats[sel4].hz4000}</th>
+                            <th className="right">{mats[sel4].nrc}</th>
                           </tr>
                           <tr>
                             <th className="bold left">Total Sabines: </th>
                             <th className="bold right">
-                              {(mats[selected].hz125 * area).toFixed(1)}
+                              {(
+                                mats[sel1].hz125 * wall1.l * wall1.h +
+                                mats[sel2].hz125 * wall2.l * wall2.h +
+                                mats[sel3].hz125 * wall3.l * wall3.h +
+                                mats[sel4].hz125 * wall4.l * wall4.h
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz250 * area).toFixed(1)}
+                              {(
+                                mats[sel1].hz250 * wall1.l * wall1.h +
+                                mats[sel2].hz250 * wall2.l * wall2.h +
+                                mats[sel3].hz250 * wall3.l * wall3.h +
+                                mats[sel4].hz250 * wall4.l * wall4.h
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz500 * area).toFixed(1)}
+                              {(
+                                mats[sel1].hz500 * wall1.l * wall1.h +
+                                mats[sel2].hz500 * wall2.l * wall2.h +
+                                mats[sel3].hz500 * wall3.l * wall3.h +
+                                mats[sel4].hz500 * wall4.l * wall4.h
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz1000 * area).toFixed(2)}
+                              {(
+                                mats[sel1].hz1000 * wall1.l * wall1.h +
+                                mats[sel2].hz1000 * wall2.l * wall2.h +
+                                mats[sel3].hz1000 * wall3.l * wall3.h +
+                                mats[sel4].hz1000 * wall4.l * wall4.h
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz2000 * area).toFixed(1)}
+                              {(
+                                mats[sel1].hz2000 * wall1.l * wall1.h +
+                                mats[sel2].hz2000 * wall2.l * wall2.h +
+                                mats[sel3].hz2000 * wall3.l * wall3.h +
+                                mats[sel4].hz2000 * wall4.l * wall4.h
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz4000 * area).toFixed(1)}
+                              {(
+                                mats[sel1].hz4000 * wall1.l * wall1.h +
+                                mats[sel2].hz4000 * wall2.l * wall2.h +
+                                mats[sel3].hz4000 * wall3.l * wall3.h +
+                                mats[sel4].hz4000 * wall4.l * wall4.h
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].nrc * area).toFixed(1)}
+                              {(
+                                mats[sel1].nrc * wall1.l * wall1.h +
+                                mats[sel2].nrc * wall2.l * wall2.h +
+                                mats[sel3].nrc * wall3.l * wall3.h +
+                                mats[sel4].nrc * wall4.l * wall4.h
+                              ).toFixed(1)}
                             </th>
                           </tr>
                         </tbody>

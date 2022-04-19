@@ -76,11 +76,11 @@ export default class SurfaceAreaChart extends Component {
     return (
       <div className="card  ">
         <div className="card-header">
-          <div class="row">
-            <div class="col-sm-7">
-              <div class="numbers pull-left">Treatment</div>
+          <div className="row">
+            <div className="col-sm-7">
+              <div className="numbers pull-left">Treatment</div>
             </div>
-            <div class="col-sm-5"></div>
+            <div className="col-sm-5"></div>
           </div>
         </div>
         <div className="card-body">

@@ -53,16 +53,26 @@ export default class SabineChart extends Component {
   };
 
   render() {
-    let sabines = { hz125: 100, hz250: 50 };
+    let sabines = {};
+    let treatment = {};
     let rec = 0;
     return (
       <ReverbContext.Consumer>
         {(reverbContext) => (
           <ApiContext.Consumer>
             {(apiContext) => {
-              const { length, width, height } = reverbContext;
-              const wallArea = width * height * 2 + length * height * 2;
+              const { length, width, height, wall1, wall2, wall3, wall4 } =
+                reverbContext;
+
+              const wall1Area = wall1.l * wall1.h;
+              const wall2Area = wall2.l * wall2.h;
+              const wall3Area = wall3.l * wall3.h;
+              const wall4Area = wall4.l * wall4.h;
+
+              const wallArea = wall1Area + wall2Area + wall3Area + wall4Area;
+
               const floorArea = length * width;
+
               const volume = length * width * height * 0.049;
 
               const {
@@ -70,12 +80,21 @@ export default class SabineChart extends Component {
                 floorMaterials,
                 selectedCeilingMaterial,
                 ceilingMaterials,
-                selectedWallMaterial,
+                selectedWall1Material,
+                selectedWall2Material,
+                selectedWall3Material,
+                selectedWall4Material,
                 wallMaterials,
                 selectedOtherMaterial,
                 otherMaterials,
                 recommendedReverbTimes,
                 selectedReverbTime,
+                ceilingProducts,
+                selectedCeilingProduct,
+                wallProducts,
+                selectedWallProduct,
+                baffleUnits,
+                selectedBaffleUnit,
               } = apiContext;
 
               if (
@@ -83,24 +102,21 @@ export default class SabineChart extends Component {
                 !!ceilingMaterials &&
                 !!wallMaterials &&
                 !!otherMaterials &&
+                !!ceilingProducts &&
+                !!wallProducts &&
+                !!baffleUnits &&
                 !!recommendedReverbTimes
               ) {
-                console.log(
-                  volume,
-                  floorMaterials[selectedFloorMaterial].hz125 * floorArea +
-                    ceilingMaterials[selectedCeilingMaterial].hz125 *
-                      floorArea +
-                    wallMaterials[selectedWallMaterial].hz125 * wallArea +
-                    otherMaterials[selectedOtherMaterial].hz125
-                );
-
                 sabines = {
                   hz125:
                     volume /
                     (floorMaterials[selectedFloorMaterial].hz125 * floorArea +
                       ceilingMaterials[selectedCeilingMaterial].hz125 *
                         floorArea +
-                      wallMaterials[selectedWallMaterial].hz125 * wallArea +
+                      wallMaterials[selectedWall1Material].hz125 * wall1Area +
+                      wallMaterials[selectedWall2Material].hz125 * wall2Area +
+                      wallMaterials[selectedWall3Material].hz125 * wall3Area +
+                      wallMaterials[selectedWall4Material].hz125 * wall4Area +
                       otherMaterials[selectedOtherMaterial].hz125),
 
                   hz250:
@@ -108,7 +124,10 @@ export default class SabineChart extends Component {
                     (floorMaterials[selectedFloorMaterial].hz250 * floorArea +
                       ceilingMaterials[selectedCeilingMaterial].hz250 *
                         floorArea +
-                      wallMaterials[selectedWallMaterial].hz250 * wallArea +
+                      wallMaterials[selectedWall1Material].hz250 * wall1Area +
+                      wallMaterials[selectedWall2Material].hz250 * wall2Area +
+                      wallMaterials[selectedWall3Material].hz250 * wall3Area +
+                      wallMaterials[selectedWall4Material].hz250 * wall4Area +
                       otherMaterials[selectedOtherMaterial].hz250),
 
                   hz500:
@@ -116,7 +135,10 @@ export default class SabineChart extends Component {
                     (floorMaterials[selectedFloorMaterial].hz500 * floorArea +
                       ceilingMaterials[selectedCeilingMaterial].hz500 *
                         floorArea +
-                      wallMaterials[selectedWallMaterial].hz500 * wallArea +
+                      wallMaterials[selectedWall1Material].hz500 * wall1Area +
+                      wallMaterials[selectedWall2Material].hz500 * wall2Area +
+                      wallMaterials[selectedWall3Material].hz500 * wall3Area +
+                      wallMaterials[selectedWall4Material].hz500 * wall4Area +
                       otherMaterials[selectedOtherMaterial].hz500),
 
                   hz1000:
@@ -124,7 +146,10 @@ export default class SabineChart extends Component {
                     (floorMaterials[selectedFloorMaterial].hz1000 * floorArea +
                       ceilingMaterials[selectedCeilingMaterial].hz1000 *
                         floorArea +
-                      wallMaterials[selectedWallMaterial].hz1000 * wallArea +
+                      wallMaterials[selectedWall1Material].hz1000 * wall1Area +
+                      wallMaterials[selectedWall2Material].hz1000 * wall2Area +
+                      wallMaterials[selectedWall3Material].hz1000 * wall3Area +
+                      wallMaterials[selectedWall4Material].hz1000 * wall4Area +
                       otherMaterials[selectedOtherMaterial].hz1000),
 
                   hz2000:
@@ -132,7 +157,10 @@ export default class SabineChart extends Component {
                     (floorMaterials[selectedFloorMaterial].hz2000 * floorArea +
                       ceilingMaterials[selectedCeilingMaterial].hz2000 *
                         floorArea +
-                      wallMaterials[selectedWallMaterial].hz2000 * wallArea +
+                      wallMaterials[selectedWall1Material].hz2000 * wall1Area +
+                      wallMaterials[selectedWall2Material].hz2000 * wall2Area +
+                      wallMaterials[selectedWall3Material].hz2000 * wall3Area +
+                      wallMaterials[selectedWall4Material].hz2000 * wall4Area +
                       otherMaterials[selectedOtherMaterial].hz2000),
 
                   hz4000:
@@ -140,50 +168,151 @@ export default class SabineChart extends Component {
                     (floorMaterials[selectedFloorMaterial].hz4000 * floorArea +
                       ceilingMaterials[selectedCeilingMaterial].hz4000 *
                         floorArea +
-                      wallMaterials[selectedWallMaterial].hz4000 * wallArea +
+                      wallMaterials[selectedWall1Material].hz4000 * wall1Area +
+                      wallMaterials[selectedWall2Material].hz4000 * wall2Area +
+                      wallMaterials[selectedWall3Material].hz4000 * wall3Area +
+                      wallMaterials[selectedWall4Material].hz4000 * wall4Area +
                       otherMaterials[selectedOtherMaterial].hz4000),
                 };
 
-                rec =
-                  (recommendedReverbTimes[selectedReverbTime].min +
-                    recommendedReverbTimes[selectedReverbTime].max) /
-                  2;
+                rec = selectedReverbTime;
+
+                console.log(rec);
+
+                treatment = {
+                  hz125:
+                    volume /
+                    (ceilingProducts[selectedCeilingProduct].hz125 * floorArea +
+                      wallProducts[selectedWallProduct].hz125 * wallArea +
+                      baffleUnits[selectedBaffleUnit].hz125 +
+                      (floorMaterials[selectedFloorMaterial].hz125 * floorArea +
+                        ceilingMaterials[selectedCeilingMaterial].hz125 *
+                          floorArea +
+                        wallMaterials[selectedWall1Material].hz125 * wall1Area +
+                        wallMaterials[selectedWall2Material].hz125 * wall2Area +
+                        wallMaterials[selectedWall3Material].hz125 * wall3Area +
+                        wallMaterials[selectedWall4Material].hz125 * wall4Area +
+                        otherMaterials[selectedOtherMaterial].hz125)),
+
+                  hz250:
+                    volume /
+                    (ceilingProducts[selectedCeilingProduct].hz250 * floorArea +
+                      wallProducts[selectedWallProduct].hz250 * wallArea +
+                      baffleUnits[selectedBaffleUnit].hz250 +
+                      (floorMaterials[selectedFloorMaterial].hz250 * floorArea +
+                        ceilingMaterials[selectedCeilingMaterial].hz250 *
+                          floorArea +
+                        wallMaterials[selectedWall1Material].hz250 * wall1Area +
+                        wallMaterials[selectedWall2Material].hz250 * wall2Area +
+                        wallMaterials[selectedWall3Material].hz250 * wall3Area +
+                        wallMaterials[selectedWall4Material].hz250 * wall4Area +
+                        otherMaterials[selectedOtherMaterial].hz250)),
+
+                  hz500:
+                    volume /
+                    (ceilingProducts[selectedCeilingProduct].hz500 * floorArea +
+                      wallProducts[selectedWallProduct].hz500 * wallArea +
+                      baffleUnits[selectedBaffleUnit].hz500 +
+                      (floorMaterials[selectedFloorMaterial].hz500 * floorArea +
+                        ceilingMaterials[selectedCeilingMaterial].hz500 *
+                          floorArea +
+                        wallMaterials[selectedWall1Material].hz500 * wall1Area +
+                        wallMaterials[selectedWall2Material].hz500 * wall2Area +
+                        wallMaterials[selectedWall3Material].hz500 * wall3Area +
+                        wallMaterials[selectedWall4Material].hz500 * wall4Area +
+                        otherMaterials[selectedOtherMaterial].hz500)),
+
+                  hz1000:
+                    volume /
+                    (ceilingProducts[selectedCeilingProduct].hz1000 *
+                      floorArea +
+                      wallProducts[selectedWallProduct].hz1000 * wallArea +
+                      baffleUnits[selectedBaffleUnit].hz1000 +
+                      (floorMaterials[selectedFloorMaterial].hz1000 *
+                        floorArea +
+                        ceilingMaterials[selectedCeilingMaterial].hz1000 *
+                          floorArea +
+                        wallMaterials[selectedWall1Material].hz1000 *
+                          wall1Area +
+                        wallMaterials[selectedWall2Material].hz1000 *
+                          wall2Area +
+                        wallMaterials[selectedWall3Material].hz1000 *
+                          wall3Area +
+                        wallMaterials[selectedWall4Material].hz1000 *
+                          wall4Area +
+                        otherMaterials[selectedOtherMaterial].hz1000)),
+
+                  hz2000:
+                    volume /
+                    (ceilingProducts[selectedCeilingProduct].hz2000 *
+                      floorArea +
+                      wallProducts[selectedWallProduct].hz2000 * wallArea +
+                      baffleUnits[selectedBaffleUnit].hz2000 +
+                      (floorMaterials[selectedFloorMaterial].hz2000 *
+                        floorArea +
+                        ceilingMaterials[selectedCeilingMaterial].hz2000 *
+                          floorArea +
+                        wallMaterials[selectedWall1Material].hz2000 *
+                          wall1Area +
+                        wallMaterials[selectedWall2Material].hz2000 *
+                          wall2Area +
+                        wallMaterials[selectedWall3Material].hz2000 *
+                          wall3Area +
+                        wallMaterials[selectedWall4Material].hz2000 *
+                          wall4Area +
+                        otherMaterials[selectedOtherMaterial].hz2000)),
+
+                  hz4000:
+                    volume /
+                    (ceilingProducts[selectedCeilingProduct].hz4000 *
+                      floorArea +
+                      wallProducts[selectedWallProduct].hz4000 * wallArea +
+                      baffleUnits[selectedBaffleUnit].hz4000 +
+                      floorMaterials[selectedFloorMaterial].hz4000 * floorArea +
+                      ceilingMaterials[selectedCeilingMaterial].hz4000 *
+                        floorArea +
+                      wallMaterials[selectedWall1Material].hz4000 * wall1Area +
+                      wallMaterials[selectedWall2Material].hz4000 * wall2Area +
+                      wallMaterials[selectedWall3Material].hz4000 * wall3Area +
+                      wallMaterials[selectedWall4Material].hz4000 * wall4Area +
+                      otherMaterials[selectedOtherMaterial].hz4000),
+                };
               }
 
               const data = [
                 {
                   name: '125',
-                  altv: '1.5',
+                  altv: treatment.hz125,
                   uv: sabines.hz125,
                   recommended: rec,
                 },
                 {
                   name: '250',
-                  altv: '1.8',
+                  altv: treatment.hz250,
                   uv: sabines.hz250,
                   recommended: rec,
                 },
                 {
                   name: '500',
-                  altv: '1.6',
+                  altv: treatment.hz500,
                   uv: sabines.hz500,
                   recommended: rec,
                 },
                 {
                   name: '1000',
-                  altv: '1.4',
+                  altv: treatment.hz1000,
                   uv: sabines.hz1000,
                   recommended: rec,
                 },
                 {
                   name: '2000',
-                  altv: '1',
+                  altv: treatment.hz2000,
                   uv: sabines.hz2000,
                   recommended: rec,
                 },
                 {
                   name: '4000',
-                  altv: '.5',
+                  altv: treatment.hz4000,
                   uv: sabines.hz4000,
                   recommended: rec,
                 },
@@ -192,13 +321,13 @@ export default class SabineChart extends Component {
               return (
                 <div className="card">
                   <div className="card-header">
-                    <div class="row">
-                      <div class="col-sm-7">
-                        <div class="numbers pull-left">Total Sabines</div>
+                    <div className="row">
+                      <div className="col-sm-7">
+                        <div className="numbers pull-left">Total Sabines</div>
                       </div>
-                      <div class="col-sm-5">
-                        <div class="pull-right">
-                          <span class="badge badge-pill badge-success">
+                      <div className="col-sm-5">
+                        <div className="pull-right">
+                          <span className="badge badge-pill badge-success">
                             Avg Reverb Time - 0.5
                           </span>
                         </div>

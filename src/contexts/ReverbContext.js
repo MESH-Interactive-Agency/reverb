@@ -13,6 +13,7 @@ const ReverbContext = React.createContext({
   wall2: { l: 0, h: 0 },
   wall3: { l: 0, h: 0 },
   wall4: { l: 0, h: 0 },
+  openings: [],
   door1: { l: 0, w: 0, qty: 0 },
   door2: { l: 0, w: 0, qty: 0 },
   window1: { l: 0, w: 0, qty: 0 },

@@ -16,11 +16,18 @@ const ApiContext = React.createContext({
   selectedReverbTime: 0,
   selectedFloorMaterial: 0,
   selectedCeilingMaterial: 0,
-  selectedWallMaterial: 0,
+
+  selectedWall1Material: 0,
+  selectedWall2Material: 0,
+  selectedWall3Material: 0,
+  selectedWall4Material: 0,
+
   selectedOtherMaterial: 0,
   selectedCeilingProduct: 0,
   selectedBaffleUnit: 0,
   selectedWallProduct: 0,
+
+  selectedTreatments: [],
 
   loggedIn: TokenService.hasAuthToken(),
   loggedInUser: () => {},
@@ -35,8 +42,15 @@ const ApiContext = React.createContext({
   updateSelectedOtherMaterial: () => {},
   updateSelectedCeilingProduct: () => {},
   updateSelectedBaffleUnit: () => {},
-  updateSelectedWallProduct: () => {},
   updateSelectedReverbTime: () => {},
+
+  updateSelectedWall1Product: () => {},
+  updateSelectedWall2Product: () => {},
+  updateSelectedWall3Product: () => {},
+  updateSelectedWall4Product: () => {},
+
+  updateSelectedTreatments: () => {},
+  clearSelectedTreatments: () => {},
 });
 
 export default ApiContext;
@@ -48,12 +62,30 @@ export class ApiProvider extends Component {
     error: null,
     selectedFloorMaterial: 0,
     selectedCeilingMaterial: 0,
-    selectedWallMaterial: 0,
+    selectedWall1Material: 0,
+    selectedWall2Material: 0,
+    selectedWall3Material: 0,
+    selectedWall4Material: 0,
     selectedOtherMaterial: 0,
     selectedCeilingProduct: 0,
     selectedBaffleUnit: 0,
     selectedWallProduct: 0,
     selectedReverbTime: 0,
+
+    selectedTreatments: [],
+  };
+
+  updateSelectedTreatments = () => {
+    let updatedTreatments = [];
+    this.setState({
+      selectedTreatments: updatedTreatments,
+    });
+  };
+
+  clearSelectedTreatments = () => {
+    this.setState({
+      selectedTreatments: [],
+    });
   };
 
   setLogin = (bool, userName) => {
@@ -164,8 +196,17 @@ export class ApiProvider extends Component {
     this.setState({ selectedCeilingMaterial: mat });
   };
 
-  updateSelectedWallMaterial = (mat) => {
-    this.setState({ selectedWallMaterial: mat });
+  updateSelectedWall1Material = (mat) => {
+    this.setState({ selectedWall1Material: mat });
+  };
+  updateSelectedWall2Material = (mat) => {
+    this.setState({ selectedWall2Material: mat });
+  };
+  updateSelectedWall3Material = (mat) => {
+    this.setState({ selectedWall3Material: mat });
+  };
+  updateSelectedWall4Material = (mat) => {
+    this.setState({ selectedWall4Material: mat });
   };
 
   updateSelectedOtherMaterial = (mat) => {
@@ -202,7 +243,10 @@ export class ApiProvider extends Component {
 
       updateSelectedFloorMaterial: this.updateSelectedFloorMaterial,
       updateSelectedCeilingMaterial: this.updateSelectedCeilingMaterial,
-      updateSelectedWallMaterial: this.updateSelectedWallMaterial,
+      updateSelectedWall1Material: this.updateSelectedWall1Material,
+      updateSelectedWall2Material: this.updateSelectedWall2Material,
+      updateSelectedWall3Material: this.updateSelectedWall3Material,
+      updateSelectedWall4Material: this.updateSelectedWall4Material,
       updateSelectedOtherMaterial: this.updateSelectedOtherMaterial,
       updateSelectedBaffleUnit: this.updateSelectedBaffleUnit,
       updateSelectedCeilingProduct: this.updateSelectedCeilingProduct,
@@ -211,7 +255,12 @@ export class ApiProvider extends Component {
 
       selectedFloorMaterial: this.state.selectedFloorMaterial,
       selectedCeilingMaterial: this.state.selectedCeilingMaterial,
-      selectedWallMaterial: this.state.selectedWallMaterial,
+
+      selectedWall1Material: this.state.selectedWall1Material,
+      selectedWall2Material: this.state.selectedWall2Material,
+      selectedWall3Material: this.state.selectedWall3Material,
+      selectedWall4Material: this.state.selectedWall4Material,
+
       selectedOtherMaterial: this.state.selectedOtherMaterial,
       selectedCeilingProduct: this.state.selectedCeilingProduct,
       selectedBaffleUnit: this.state.selectedBaffleUnit,
@@ -226,6 +275,10 @@ export class ApiProvider extends Component {
       baffleUnits: this.state.baffleUnits,
       wallProducts: this.state.wallProducts,
       recommendedReverbTimes: this.state.recommendedReverbTimes,
+
+      selectedTreatments: this.selectedTreatments,
+      updateSelectedTreatments: this.updateSelectedTreatments,
+      clearTreatments: this.clearTreatments,
     };
 
     return (

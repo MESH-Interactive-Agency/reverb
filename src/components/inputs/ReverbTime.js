@@ -6,6 +6,7 @@ export default class ReverbTime extends Component {
     super(props);
     this.state = {
       selected: 0,
+      avg: 0,
     };
   }
   static contextType = Context;
@@ -14,18 +15,38 @@ export default class ReverbTime extends Component {
     this.context.getRecommendedReverbTimes();
   }
 
+  updateAvg(avg) {
+    this.setState({
+      avg: avg,
+      selected: 0,
+    });
+
+    this.context.updateSelectedReverbTime(avg);
+    return avg;
+  }
+
   updateSelection(selection) {
-    this.setState({ selected: selection - 1 });
-    this.context.updateSelectedReverbTime(selection - 1);
+    let value = 0;
+
+    let mats = this.context.recommendedReverbTimes;
+
+    if (!!mats) value = (mats[selection - 1].min + mats[selection - 1].max) / 2;
+
+    this.setState({
+      selected: selection - 1,
+      avg: value,
+      min: mats[selection].min,
+      max: mats[selection].max,
+    });
+
+    this.context.updateSelectedReverbTime(value);
   }
 
   render() {
     let mats = this.context.recommendedReverbTimes;
-    let selected = this.state.selected;
-    let value = 0;
 
-    if (!!mats) value = (mats[selected].min - mats[selected].max) / 2;
-    if (!!mats) console.log(mats, selected, mats[selected]);
+    let avg = this.state.avg;
+
     return (
       <div className="card rec-drop">
         {!!mats && (
@@ -33,12 +54,17 @@ export default class ReverbTime extends Component {
             <div className="card-header">
               <h4 className="card-title">Target Reverb Time:</h4>
               <div className="card-body">
-                <form className="form-horizontal">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                  }}
+                  className="form-horizontal"
+                >
                   <div className="row>">
-                    <label class="col-md-3 col-form-label">
+                    <label className="col-md-3 col-form-label">
                       Choose room type or enter value
                     </label>
-                    <div class="col-md-9">
+                    <div className="col-md-9">
                       <div className="form-group">
                         <select
                           className="lighter-border"
@@ -55,8 +81,11 @@ export default class ReverbTime extends Component {
                           ))}
                         </select>
                         <input
+                          onChange={(e) => {
+                            avg = this.updateAvg(e.currentTarget.value);
+                          }}
                           className="rec-reverb-input lighter-border"
-                          value={value.toFixed(1)}
+                          value={avg}
                         ></input>
                       </div>
                     </div>

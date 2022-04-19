@@ -21,17 +21,17 @@ export default class BoxSpace extends Component {
     return (
       <div className=" card ">
         <div className="card-header">
-          <div class="row">
-            <div class="col-sm-7">
-              <div class="numbers pull-left">Dimensions</div>
+          <div className="row">
+            <div className="col-sm-7">
+              <div className="numbers pull-left">Dimensions</div>
             </div>
-            <div class="col-sm-5">
-              <div class="pull-right"></div>
+            <div className="col-sm-5">
+              <div className="pull-right"></div>
             </div>
           </div>
         </div>
         <div className="card-body">
-        <h6 class="big-title">Visualize your space</h6>
+        <h6 className="big-title">Visualize your space</h6>
           <div className="">
             <Canvas camera={{ position: [10, 14, 10], fov: 60 }}>
               <OrbitControls />

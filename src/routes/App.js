@@ -28,6 +28,7 @@ export default class App extends Component {
     height: 0,
     cLength: 0,
     cWidth: 0,
+    openings: [],
     wall1: { l: 0, h: 0 },
     wall2: { l: 0, h: 0 },
     wall3: { l: 0, h: 0 },
@@ -40,6 +41,13 @@ export default class App extends Component {
     opening2: { l: 0, w: 0, qty: 0 },
     other: { l: 0, w: 0, qty: 0 },
   };
+
+  updateOpenings = (o) => {
+
+    
+
+    this.setState({openings: o})
+  }
 
   updateDoor1 = (o) => {
     this.setState({ door1: o });

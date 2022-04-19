@@ -30,7 +30,6 @@ export default class DetailsWindow extends React.Component {
           <div className="card outputTables">
             <h4 className="">Treatments</h4>
             <CeilingProdsSummary />
-            <BaffleUnitsSummary />
             <WallProdsSummary />
             <BaffleUnitsSummary />
           </div>

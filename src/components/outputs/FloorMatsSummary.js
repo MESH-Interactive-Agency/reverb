@@ -31,7 +31,7 @@ export default class FloorMatsSummary extends Component {
                           <tr>
                             <th scope="col" className="bold left lead-cell">
                               Floor Material
-                            </th>{' '}
+                            </th>
                             <th scope="col" className="bold right">
                               125hz
                             </th>

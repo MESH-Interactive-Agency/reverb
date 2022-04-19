@@ -5,7 +5,11 @@ export default class WallMatsSelector extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: 0,
+      wall1: 0,
+      wall2: 0,
+      wall3: 0,
+      wall4: 0,
+      hidden: true,
     };
   }
   static contextType = Context;
@@ -14,14 +18,31 @@ export default class WallMatsSelector extends Component {
     this.context.getWallMaterials();
   }
 
-  updateSelection(selection) {
-    this.setState({ selected: selection - 1 });
-    this.context.updateSelectedWallMaterial(selection - 1);
+  updateWall1Selection(selection) {
+    this.setState({ wall1: selection - 1 });
+    this.context.updateSelectedWall1Material(selection - 1);
+
+    if (this.state.hidden === true) {
+      this.updateWall2Selection(selection);
+      this.updateWall3Selection(selection);
+      this.updateWall4Selection(selection);
+    }
+  }
+  updateWall2Selection(selection) {
+    this.setState({ wall2: selection - 1 });
+    this.context.updateSelectedWall2Material(selection - 1);
+  }
+  updateWall3Selection(selection) {
+    this.setState({ wall3: selection - 1 });
+    this.context.updateSelectedWall3Material(selection - 1);
+  }
+  updateWall4Selection(selection) {
+    this.setState({ wall4: selection - 1 });
+    this.context.updateSelectedWall4Material(selection - 1);
   }
 
   render() {
     let mats = this.context.wallMaterials;
-    let selected = this.state.selected;
 
     return (
       <div className="row">
@@ -31,11 +52,55 @@ export default class WallMatsSelector extends Component {
             <div className="col-md-9">
               <div className="form-group">
                 <select
-                className="lighter-border"
+                  className="lighter-border"
                   name="wallmats"
                   id="wallmats"
                   onClick={(e) => {
-                    this.updateSelection(e.currentTarget.value);
+                    this.updateWall1Selection(e.currentTarget.value);
+                  }}
+                >
+                  {mats.map((material) => (
+                    <option value={material.id} key={material.id}>
+                      {material.descript}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  className="lighter-border"
+                  name="wallmats"
+                  id="wallmats"
+                  onClick={(e) => {
+                    this.updateWall2Selection(e.currentTarget.value);
+                  }}
+                >
+                  {mats.map((material) => (
+                    <option value={material.id} key={material.id}>
+                      {material.descript}
+                    </option>
+                  ))}
+                </select>
+
+                <select
+                  className="lighter-border"
+                  name="wallmats"
+                  id="wallmats"
+                  onClick={(e) => {
+                    this.updateWall3Selection(e.currentTarget.value);
+                  }}
+                >
+                  {mats.map((material) => (
+                    <option value={material.id} key={material.id}>
+                      {material.descript}
+                    </option>
+                  ))}
+                </select>
+
+                <select
+                  className="lighter-border"
+                  name="wallmats"
+                  id="wallmats"
+                  onClick={(e) => {
+                    this.updateWall4Selection(e.currentTarget.value);
                   }}
                 >
                   {mats.map((material) => (

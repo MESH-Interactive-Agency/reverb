@@ -73,7 +73,7 @@ export default class Dimensions extends React.Component {
                   <label className="col-md-3 col-form-label" htmlFor="length">
                     Length
                   </label>
-                  <div class="col-md-9">
+                  <div className="col-md-9">
                     <input
                       className="form-control"
                       type="number"
@@ -94,7 +94,7 @@ export default class Dimensions extends React.Component {
                 <label className="col-md-3 col-form-label" htmlFor="width">
                   Width:
                 </label>
-                <div class="col-md-9">
+                <div className="col-md-9">
                   <div className="form-group">
                     <input
                       className="form-control"
@@ -116,7 +116,7 @@ export default class Dimensions extends React.Component {
                 <label className="col-md-3 col-form-label" htmlFor="height">
                   Height:
                 </label>
-                <div class="col-md-9">
+                <div className="col-md-9">
                   <div className="form-group">
                     <input
                       className="form-control"

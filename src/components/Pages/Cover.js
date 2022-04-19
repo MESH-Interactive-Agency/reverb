@@ -33,13 +33,13 @@ export default class Cover extends React.Component {
     return date;
   }
 
-  clearData() {
-    this.setState({
-      date: '',
-      customerName: '',
-      projectName: '',
-    });
-  }
+  // clearData() {
+  //   this.setState({
+  //     date: '',
+  //     customerName: '',
+  //     projectName: '',
+  //   });
+  // }
 
   render() {
     return (
@@ -115,16 +115,14 @@ export default class Cover extends React.Component {
                 </div>
               </div>
 
-
-              {/* <div class="card-footer ">
-                <div class="row">
-                  <label class="col-md-3"></label>
-                  <div class="col-md-9">
-                    <button type="submit" class="btn btn-info btn-round">Submit</button>
+              {/* <div className="card-footer ">
+                <div className="row">
+                  <label className="col-md-3"></label>
+                  <div className="col-md-9">
+                    <button type="submit" className="btn btn-info btn-round">Submit</button>
                   </div>
                 </div>
               </div> */}
-
 
               {/* <button
               className="cover-button"
