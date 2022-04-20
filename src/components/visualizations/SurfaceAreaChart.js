@@ -8,11 +8,10 @@ import {
   CartesianGrid,
 } from 'recharts';
 
-import Context from '../../contexts/ReverbContext';
+import ReverbContext from '../../contexts/ReverbContext';
+import ApiContext from '../../contexts/ApiContext';
 
 export default class SurfaceAreaChart extends Component {
-  static contextType = Context;
-
   calculateWallArea = () => {
     return (
       this.context.wall1.l * this.context.wall1.h +
@@ -74,30 +73,63 @@ export default class SurfaceAreaChart extends Component {
     ];
 
     return (
-      <div className="card  ">
-        <div className="card-header">
-          <div className="row">
-            <div className="col-sm-7">
-              <div className="numbers pull-left">Treatment</div>
-            </div>
-            <div className="col-sm-5"></div>
-          </div>
-        </div>
-        <div className="card-body">
-          <h6 className="big-title">
-            <span>Treatment Required</span>
-          </h6>
+      <ReverbContext.Consumer>
+        {(reverbContext) => (
+          <ApiContext.Consumer>
+            {(apiContext) => {
+              const {
+                selectedFloorMaterial,
+                floorMaterials,
+                ceilingMaterials,
+                selectedCeilingMaterial,
+                wallMaterials,
+                selectedWall1Material,
+                selectedWall2Material,
+                selectedWall3Material,
+                selectedWall4Material,
+                getExistingSabines,
+              } = apiContext;
+              const mats = floorMaterials;
+              const selected = selectedFloorMaterial;
+              const { length, width } = reverbContext;
+              const area = length * width;
 
-          <ResponsiveContainer width="100%" height={180}>
-            <BarChart data={data}>
-              <XAxis dataKey="name" height={15} tick={{ fontSize: 10 }} />
-              <YAxis width={10} tick={{ fontSize: 12 }} />
-              {/* <CartesianGrid /> */}
-              <Bar dataKey="uv" fill="#8884d8" barSize={30}/>
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
+              const existingSabines = 0;
+
+              return (
+                <div className="card  ">
+                  <div className="card-header">
+                    <div className="row">
+                      <div className="col-sm-7">
+                        <div className="numbers pull-left">Treatment</div>
+                      </div>
+                      <div className="col-sm-5"></div>
+                    </div>
+                  </div>
+                  <div className="card-body">
+                    <h6 className="big-title">
+                      <span>Treatment Required</span>
+                    </h6>
+
+                    <ResponsiveContainer width="100%" height={180}>
+                      <BarChart data={data}>
+                        <XAxis
+                          dataKey="name"
+                          height={15}
+                          tick={{ fontSize: 10 }}
+                        />
+                        <YAxis width={10} tick={{ fontSize: 12 }} />
+                        {/* <CartesianGrid /> */}
+                        <Bar dataKey="uv" fill="#8884d8" barSize={30} />
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+                </div>
+              );
+            }}
+          </ApiContext.Consumer>
+        )}
+      </ReverbContext.Consumer>
     );
   }
 }

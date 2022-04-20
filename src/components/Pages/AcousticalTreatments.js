@@ -4,10 +4,27 @@ import BaffleUnitsSelector from '../inputs/BaffleUnitsSelector';
 import WallProdsSelector from '../inputs/WallProdsSelector';
 import Openings from '../inputs/Openings';
 
+import SabineChart from '../visualizations/SabineChart';
+import FinalSummary from './FinalSummary';
+
+
 import Context from '../../contexts/ApiContext';
 
 export default class AcousticalTreatments extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+    };
+  }
+
   static contextType = Context;
+
+  printWindow = (e) => {
+    e.preventDefault();
+    this.setState({ isOpen: !this.state.isOpen });
+    console.log(e);
+  };
 
   render() {
     return (
@@ -20,6 +37,15 @@ export default class AcousticalTreatments extends React.Component {
           <BaffleUnitsSelector />
           <WallProdsSelector />
           <Openings />
+
+          {this.state.isOpen && (
+            <div className="printWindow">
+              <FinalSummary />
+              <button onClick={this.printWindow}> Close</button>
+            </div>
+          )}
+
+          <button onClick={this.printWindow}>Print Report</button>
         </form>
       </div>
     );

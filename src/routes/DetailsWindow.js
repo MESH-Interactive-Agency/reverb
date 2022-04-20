@@ -12,6 +12,8 @@ import CeilingProdsSummary from '../components/outputs/CeilingProdsSummary';
 import BaffleUnitsSummary from '../components/outputs/BaffleUnitsSummary';
 import WallProdsSummary from '../components/outputs/WallProdsSummary';
 
+
+
 export default class DetailsWindow extends React.Component {
   static contextType = Context;
 

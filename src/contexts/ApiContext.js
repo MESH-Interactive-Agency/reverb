@@ -51,6 +51,8 @@ const ApiContext = React.createContext({
 
   updateSelectedTreatments: () => {},
   clearSelectedTreatments: () => {},
+
+  getExistingSabines: () => {},
 });
 
 export default ApiContext;
@@ -73,6 +75,15 @@ export class ApiProvider extends Component {
     selectedReverbTime: 0,
 
     selectedTreatments: [],
+  };
+
+  getExistingSabines = () => {
+    this.getFloorMaterials();
+    this.getCeilingMaterials();
+    this.getWallMaterials();
+    this.getOtherMaterials();
+
+    return 0;
   };
 
   updateSelectedTreatments = () => {
@@ -240,6 +251,8 @@ export class ApiProvider extends Component {
       getBaffleUnits: this.getBaffleUnits,
       getWallProducts: this.getWallProducts,
       getRecommendedReverbTimes: this.getRecommendedReverbTimes,
+
+      getExistingSabines: this.getExistingSabines,
 
       updateSelectedFloorMaterial: this.updateSelectedFloorMaterial,
       updateSelectedCeilingMaterial: this.updateSelectedCeilingMaterial,

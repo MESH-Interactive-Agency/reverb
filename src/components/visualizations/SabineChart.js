@@ -175,9 +175,7 @@ export default class SabineChart extends Component {
                       otherMaterials[selectedOtherMaterial].hz4000),
                 };
 
-                rec = selectedReverbTime;
-
-                console.log(rec);
+                rec = volume / selectedReverbTime;
 
                 treatment = {
                   hz125:
@@ -284,37 +282,37 @@ export default class SabineChart extends Component {
                   name: '125',
                   altv: treatment.hz125,
                   uv: sabines.hz125,
-                  recommended: rec,
+                  recommended: volume / (rec * 0.492),
                 },
                 {
                   name: '250',
                   altv: treatment.hz250,
                   uv: sabines.hz250,
-                  recommended: rec,
+                  recommended: volume / (rec * 0.594),
                 },
                 {
                   name: '500',
                   altv: treatment.hz500,
                   uv: sabines.hz500,
-                  recommended: rec,
+                  recommended: volume / (rec * 1.188),
                 },
                 {
                   name: '1000',
                   altv: treatment.hz1000,
                   uv: sabines.hz1000,
-                  recommended: rec,
+                  recommended: volume / (rec * 1.391),
                 },
                 {
                   name: '2000',
                   altv: treatment.hz2000,
                   uv: sabines.hz2000,
-                  recommended: rec,
+                  recommended: volume / (rec * 1.594),
                 },
                 {
                   name: '4000',
                   altv: treatment.hz4000,
                   uv: sabines.hz4000,
-                  recommended: rec,
+                  recommended: volume / (rec * 1.797),
                 },
               ];
 
@@ -337,7 +335,8 @@ export default class SabineChart extends Component {
                   <div className="card-body">
                     <h6 className="big-title">
                       <span className="green">Existing Conditions</span> /{' '}
-                      <span className="orange">With Treatment</span>
+                      <span className="orange">With Treatment</span> /{' '}
+                      <span className="grey">Target</span>
                     </h6>
                     <ResponsiveContainer height={180}>
                       <LineChart data={data}>
@@ -369,9 +368,9 @@ export default class SabineChart extends Component {
                           strokeWidth={3}
                         />
                         <Line
+                          type="monotone"
                           dataKey="recommended"
-                          strokeWidth={15}
-                          fill="#008888"
+                          strokeWidth={5}
                           stroke="#22222222"
                           dot={false}
                         />

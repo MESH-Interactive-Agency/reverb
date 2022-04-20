@@ -119,6 +119,10 @@ h1 {
   color: #de6d35;
 }
 
+.grey {
+  color: #222222;
+}
+
 .card .card-header {
   padding: 15px 15px 0;
   border: 0;
@@ -371,8 +375,7 @@ nav {
 
 h3 {
   height: 1em;
-  padding: 1px;
-  background-color: #4d5861;
+  padding: 0.25em;
 }
 
 .inputCaptions {
@@ -571,6 +574,10 @@ select {
   width: 12em;
 }
 
+.long-lead-cell {
+  width: 28em;
+}
+
 .tables {
   display: flex;
   justify-content: center;
@@ -710,7 +717,7 @@ th {
   right: 0em;
   padding: 0.02em;
   border-radius: 50px;
-  z-index: 999;
+  z-index: 99;
 }
 
 .error {
@@ -719,6 +726,30 @@ th {
 
 .description {
   margin: 1em;
+}
+
+.printWindow {
+  position: fixed;
+  top: 5em;
+  left: 12em;
+  height: 40em;
+  width: 80em;
+  border: 1px solid pink;
+  z-index: 999;
+  background-color: white;
+  box-shadow: 1em 1em 10em 3em;
+}
+
+.print-chart {
+  height: 20em;
+  width: 40em;
+  border: 1px solid black;
+}
+
+.printable-summary{
+  display: grid;
+     grid-template-columns: 1fr 1fr;
+
 }
 
 @media screen and (min-width: 650px) {
