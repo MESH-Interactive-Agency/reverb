@@ -2,9 +2,7 @@ import React from 'react';
 import CeilingProdsSelector from '../inputs/CeilingProdsSelector';
 import BaffleUnitsSelector from '../inputs/BaffleUnitsSelector';
 import WallProdsSelector from '../inputs/WallProdsSelector';
-import Openings from '../inputs/Openings';
 
-import SabineChart from '../visualizations/SabineChart';
 import FinalSummary from './FinalSummary';
 
 import Context from '../../contexts/ApiContext';
@@ -35,7 +33,6 @@ export default class AcousticalTreatments extends React.Component {
           <CeilingProdsSelector />
           <BaffleUnitsSelector />
           <WallProdsSelector />
-          <Openings />
 
           {this.state.isOpen && (
             <div className="printWindow">

@@ -512,45 +512,41 @@ export default class OtherMatsSelector extends Component {
     let mats = this.context.otherMaterials;
 
     let {
-      isOpen1,
-      isOpen2,
-      isOpen3,
-      other1,
       other1length,
       other1width,
       other1qty,
       other1sqft,
-      other2,
+
       other2length,
       other2width,
       other2qty,
       other2sqft,
-      other3,
+
       other3length,
       other3width,
       other3qty,
       other3sqft,
-      other4,
+
       other4length,
       other4width,
       other4qty,
       other4sqft,
-      other5,
+
       other5length,
       other5width,
       other5qty,
       other5sqft,
-      other6,
+
       other6length,
       other6width,
       other6qty,
       other6sqft,
-      other7,
+
       other7length,
       other7width,
       other7qty,
       other7sqft,
-      other8,
+
       other8length,
       other8width,
       other8qty,

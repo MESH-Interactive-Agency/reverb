@@ -538,28 +538,28 @@ export class ApiProvider extends Component {
   };
 
   updateSelectedWall1Product = (mat) => {
-    this.setState({ selectedWallProduct: mat });
+    this.setState({ selectedWall1Product: mat });
   };
   updateSelectedWall2Product = (mat) => {
-    this.setState({ selectedWallProduct: mat });
+    this.setState({ selectedWall2Product: mat });
   };
   updateSelectedWall3Product = (mat) => {
-    this.setState({ selectedWallProduct: mat });
+    this.setState({ selectedWall3roduct: mat });
   };
   updateSelectedWall4Product = (mat) => {
-    this.setState({ selectedWallProduct: mat });
+    this.setState({ selectedWall4roduct: mat });
   };
   updateSelectedWall5Product = (mat) => {
-    this.setState({ selectedWallProduct: mat });
+    this.setState({ selectedWall5roduct: mat });
   };
   updateSelectedWall6Product = (mat) => {
-    this.setState({ selectedWallProduct: mat });
+    this.setState({ selectedWall6roduct: mat });
   };
   updateSelectedWall7Product = (mat) => {
-    this.setState({ selectedWallProduct: mat });
+    this.setState({ selectedWall7roduct: mat });
   };
   updateSelectedWall8Product = (mat) => {
-    this.setState({ selectedWallProduct: mat });
+    this.setState({ selectedWall8roduct: mat });
   };
   updateWallProd1sqft = (sqft) => {
     this.setState({ wallProd1sqft: sqft });

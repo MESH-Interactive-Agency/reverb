@@ -29,9 +29,9 @@ export default class DetailsWindow extends React.Component {
           </div>
           <div className="card outputTables">
             <h4 className="">Treatments</h4>
-            {/* <CeilingProdsSummary />
+            {/* <CeilingProdsSummary /> */}
             <WallProdsSummary />
-            <BaffleUnitsSummary /> */}
+            {/* <BaffleUnitsSummary /> */}
           </div>
         </div>
       </aside>
