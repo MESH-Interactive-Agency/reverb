@@ -181,13 +181,11 @@ export default class App extends Component {
         <ErrorBoundary>
           {/* <ReverbContext.Provider value={value}> */}
 
-
-            <Route path="/" component={NavWindow} />
-            <Route path="/" component={MainWindow} />
-            <Route path="/" component={DetailsWindow} />
-            <Route path="/" component={Footer} />
-            {/* </ReverbContext.Provider> */}
-
+          <Route path="/" component={NavWindow} />
+          <Route path="/" component={MainWindow} />
+          <Route path="/" component={DetailsWindow} />
+          {/* <Route path="/" component={Footer} /> */}
+          {/* </ReverbContext.Provider> */}
         </ErrorBoundary>
       </main>
     );

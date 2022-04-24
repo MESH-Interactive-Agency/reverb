@@ -473,6 +473,7 @@ export class ApiProvider extends Component {
   updateSelectedOther8Material = (mat) => {
     this.setState({ selectedOther8Material: mat });
   };
+
   updateOther1sqft = (sqft) => {
     this.setState({ other1sqft: sqft });
   };
@@ -728,7 +729,7 @@ export class ApiProvider extends Component {
       selectedOther5Material: this.state.selectedOther5Material,
       selectedOther6Material: this.state.selectedOther6Material,
       selectedOther7Material: this.state.selectedOther7Material,
-      selectedOther8Material: this.state.selectedOtherM8aterial,
+      selectedOther8Material: this.state.selectedOther8Material,
       other1sqft: this.state.other1sqft,
       other2sqft: this.state.other2sqft,
       other3sqft: this.state.other3sqft,

@@ -441,41 +441,80 @@ export default class OtherMatsSelector extends Component {
 
   expand1 = (e) => {
     e.preventDefault();
-    this.setState({ isOpen1: !this.state.isOpen1 });
+    this.setState({ isOpen1: true });
   };
   expand2 = (e) => {
     e.preventDefault();
-    this.setState({ isOpen2: !this.state.isOpen2 });
+    this.setState({ isOpen2: true });
   };
   expand3 = (e) => {
     e.preventDefault();
-    this.setState({ isOpen3: !this.state.isOpen3 });
+    this.setState({ isOpen3: true });
   };
   expand4 = (e) => {
     e.preventDefault();
-    this.setState({ isOpen4: !this.state.isOpen4 });
+    this.setState({ isOpen4: true });
   };
   expand5 = (e) => {
     e.preventDefault();
-    this.setState({ isOpen5: !this.state.isOpen5 });
+    this.setState({ isOpen5: true });
   };
   expand6 = (e) => {
     e.preventDefault();
-    this.setState({ isOpen6: !this.state.isOpen6 });
+    this.setState({ isOpen6: true });
   };
   expand7 = (e) => {
     e.preventDefault();
-    this.setState({ isOpen7: !this.state.isOpen7 });
+    this.setState({ isOpen7: true });
   };
   expand8 = (e) => {
     e.preventDefault();
-    this.setState({ isOpen8: !this.state.isOpen8 });
+    this.setState({ isOpen8: true });
+  };
+
+  contract2 = (e) => {
+    e.preventDefault();
+    this.setState({ isOpen1: false, isOpen2: false });
+    this.updateOther2sqft(0);
+  };
+  contract3 = (e) => {
+    e.preventDefault();
+    this.setState({ isOpen2: false, isOpen3: false });
+    this.updateOther3sqft(0);
+  };
+  contract4 = (e) => {
+    e.preventDefault();
+    this.setState({ isOpen3: false, isOpen4: false });
+    this.updateOther4sqft(0);
+  };
+  contract5 = (e) => {
+    e.preventDefault();
+    this.setState({ isOpen4: false, isOpen5: false });
+    this.updateOther5sqft(0);
+  };
+  contract6 = (e) => {
+    e.preventDefault();
+    this.setState({ isOpen5: false, isOpen6: false });
+    this.updateOther6sqft(0);
+  };
+  contract7 = (e) => {
+    e.preventDefault();
+    this.setState({ isOpen6: false, isOpen7: false });
+    this.updateOther7sqft(0);
+  };
+  contract8 = (e) => {
+    e.preventDefault();
+    this.setState({ isOpen7: false, isOpen8: false });
+    this.updateOther8sqft(0);
   };
 
   render() {
     let mats = this.context.otherMaterials;
 
     let {
+      isOpen1,
+      isOpen2,
+      isOpen3,
       other1,
       other1length,
       other1width,
@@ -542,7 +581,6 @@ export default class OtherMatsSelector extends Component {
                     </option>
                   ))}
                 </select>
-
                 <div className="additional-inputs">
                   <label>L:</label>
                   <input
@@ -611,95 +649,701 @@ export default class OtherMatsSelector extends Component {
             )}
 
             {this.state.isOpen1 && (
-              <div className="col-md-9">
-                <div className="form-group">
-                  <select
-                    className="lighter-border"
-                    name="othermats"
-                    id="othermats"
-                    onClick={(e) => {
-                      this.updateOther2Selection(e.currentTarget.value);
-                    }}
-                  >
-                    {mats.map((material) => (
-                      <option value={material.id} key={material.id}>
-                        {material.descript}
-                      </option>
-                    ))}
-                  </select>
-
-                  <div className="additional-inputs">
-                    <label>L:</label>
-                    <input
-                      className="shorter lighter-border"
-                      type="text"
-                      onChange={(e) => {
-                        other2length = this.updateOther2Length(
-                          e.currentTarget.value
-                        );
+              <span>
+                <div className="col-md-9">
+                  <div className="form-group">
+                    <select
+                      className="lighter-border"
+                      name="othermats"
+                      id="othermats"
+                      onClick={(e) => {
+                        this.updateOther2Selection(e.currentTarget.value);
                       }}
-                      id="Other2-length"
-                      name="Other2"
-                      value={other2length}
-                    ></input>
+                    >
+                      {mats.map((material) => (
+                        <option value={material.id} key={material.id}>
+                          {material.descript}
+                        </option>
+                      ))}
+                    </select>
 
-                    <label>W:</label>
-                    <input
-                      className="shorter lighter-border"
-                      type="text"
-                      onChange={(e) => {
-                        other2width = this.updateOther2Width(
-                          e.currentTarget.value
-                        );
-                      }}
-                      id="other2-width"
-                      name="Other2"
-                      value={other2width}
-                    ></input>
+                    <div className="additional-inputs">
+                      <label>L:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other2length = this.updateOther2Length(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="Other2-length"
+                        name="Other2"
+                        value={other2length}
+                      ></input>
 
-                    <label>QTY:</label>
-                    <input
-                      className="shorter lighter-border"
-                      type="text"
-                      onChange={(e) => {
-                        other2qty = this.updateOther2qty(e.currentTarget.value);
-                      }}
-                      id="other2-qty"
-                      name="Other2"
-                      value={other2qty}
-                    ></input>
+                      <label>W:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other2width = this.updateOther2Width(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other2-width"
+                        name="Other2"
+                        value={other2width}
+                      ></input>
 
-                    <label>Sqft:</label>
-                    <input
-                      className="short lighter-border"
-                      type="text"
-                      onChange={(e) => {
-                        other2sqft = this.updateOther2sqft(
-                          e.currentTarget.value,
-                          true
-                        );
-                      }}
-                      id="other2-sqft"
-                      name="Other2"
-                      value={other2sqft}
-                    ></input>
+                      <label>QTY:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other2qty = this.updateOther2qty(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other2-qty"
+                        name="Other2"
+                        value={other2qty}
+                      ></input>
+
+                      <label>Sqft:</label>
+                      <input
+                        className="short lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other2sqft = this.updateOther2sqft(
+                            e.currentTarget.value,
+                            true
+                          );
+                        }}
+                        id="other2-sqft"
+                        name="Other2"
+                        value={other2sqft}
+                      ></input>
+                    </div>
                   </div>
                 </div>
-              </div>
+
+                {!this.state.isOpen2 && (
+                  <span>
+                    <span className="expand-button">
+                      <button className="expand-button" onClick={this.expand2}>
+                        + Add Another
+                      </button>
+                    </span>
+
+                    <span className="expand-button">
+                      <button
+                        className="expand-button"
+                        onClick={this.contract2}
+                      >
+                        - Remove
+                      </button>
+                    </span>
+                  </span>
+                )}
+              </span>
             )}
 
-            {this.state.isOpen1 && (
+            {this.state.isOpen2 && (
               <span>
-                <span className="expand-button">
-                  <button className="expand-button" onClick={this.expand1}>
-                    - Remove
-                  </button>
-                </span>
-                {!this.state.isOpen2 && (
-                  <span className="expand-button">
-                    <button className="expand-button" onClick={this.expand1}>
-                      + Add Another
-                    </button>
+                <div className="col-md-9">
+                  <div className="form-group">
+                    <select
+                      className="lighter-border"
+                      name="othermats"
+                      id="othermats"
+                      onClick={(e) => {
+                        this.updateOther3Selection(e.currentTarget.value);
+                      }}
+                    >
+                      {mats.map((material) => (
+                        <option value={material.id} key={material.id}>
+                          {material.descript}
+                        </option>
+                      ))}
+                    </select>
+
+                    <div className="additional-inputs">
+                      <label>L:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other3length = this.updateOther3Length(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="Other3-length"
+                        name="Other3"
+                        value={other3length}
+                      ></input>
+
+                      <label>W:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other3width = this.updateOther3Width(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other3-width"
+                        name="Other3"
+                        value={other3width}
+                      ></input>
+
+                      <label>QTY:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other3qty = this.updateOther3qty(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other3-qty"
+                        name="Other3"
+                        value={other3qty}
+                      ></input>
+
+                      <label>Sqft:</label>
+                      <input
+                        className="short lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other3sqft = this.updateOther3sqft(
+                            e.currentTarget.value,
+                            true
+                          );
+                        }}
+                        id="other3-sqft"
+                        name="Other3"
+                        value={other3sqft}
+                      ></input>
+                    </div>
+                  </div>
+                </div>
+
+                {!this.state.isOpen3 && (
+                  <span>
+                    <span className="expand-button">
+                      <button className="expand-button" onClick={this.expand3}>
+                        + Add Another
+                      </button>
+                    </span>
+
+                    <span className="expand-button">
+                      <button
+                        className="expand-button"
+                        onClick={this.contract3}
+                      >
+                        - Remove
+                      </button>
+                    </span>
+                  </span>
+                )}
+              </span>
+            )}
+
+            {this.state.isOpen3 && (
+              <span>
+                <div className="col-md-9">
+                  <div className="form-group">
+                    <select
+                      className="lighter-border"
+                      name="othermats"
+                      id="othermats"
+                      onClick={(e) => {
+                        this.updateOther4Selection(e.currentTarget.value);
+                      }}
+                    >
+                      {mats.map((material) => (
+                        <option value={material.id} key={material.id}>
+                          {material.descript}
+                        </option>
+                      ))}
+                    </select>
+
+                    <div className="additional-inputs">
+                      <label>L:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other4length = this.updateOther4Length(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="Other4-length"
+                        name="Other4"
+                        value={other4length}
+                      ></input>
+
+                      <label>W:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other4width = this.updateOther4Width(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other4-width"
+                        name="Other4"
+                        value={other4width}
+                      ></input>
+
+                      <label>QTY:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other4qty = this.updateOther4qty(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other4-qty"
+                        name="Other4"
+                        value={other4qty}
+                      ></input>
+
+                      <label>Sqft:</label>
+                      <input
+                        className="short lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other4sqft = this.updateOther4sqft(
+                            e.currentTarget.value,
+                            true
+                          );
+                        }}
+                        id="other4-sqft"
+                        name="Other4"
+                        value={other4sqft}
+                      ></input>
+                    </div>
+                  </div>
+                </div>
+
+                {!this.state.isOpen4 && (
+                  <span>
+                    <span className="expand-button">
+                      <button className="expand-button" onClick={this.expand4}>
+                        + Add Another
+                      </button>
+                    </span>
+
+                    <span className="expand-button">
+                      <button
+                        className="expand-button"
+                        onClick={this.contract4}
+                      >
+                        - Remove
+                      </button>
+                    </span>
+                  </span>
+                )}
+              </span>
+            )}
+
+            {this.state.isOpen4 && (
+              <span>
+                <div className="col-md-9">
+                  <div className="form-group">
+                    <select
+                      className="lighter-border"
+                      name="othermats"
+                      id="othermats"
+                      onClick={(e) => {
+                        this.updateOther5Selection(e.currentTarget.value);
+                      }}
+                    >
+                      {mats.map((material) => (
+                        <option value={material.id} key={material.id}>
+                          {material.descript}
+                        </option>
+                      ))}
+                    </select>
+
+                    <div className="additional-inputs">
+                      <label>L:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other5length = this.updateOther5Length(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="Other5-length"
+                        name="Other5"
+                        value={other5length}
+                      ></input>
+
+                      <label>W:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other5width = this.updateOther5Width(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other5-width"
+                        name="Other5"
+                        value={other5width}
+                      ></input>
+
+                      <label>QTY:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other5qty = this.updateOther5qty(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other5-qty"
+                        name="Other5"
+                        value={other5qty}
+                      ></input>
+
+                      <label>Sqft:</label>
+                      <input
+                        className="short lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other5sqft = this.updateOther5sqft(
+                            e.currentTarget.value,
+                            true
+                          );
+                        }}
+                        id="other5-sqft"
+                        name="Other5"
+                        value={other5sqft}
+                      ></input>
+                    </div>
+                  </div>
+                </div>
+
+                {!this.state.isOpen5 && (
+                  <span>
+                    <span className="expand-button">
+                      <button className="expand-button" onClick={this.expand5}>
+                        + Add Another
+                      </button>
+                    </span>
+
+                    <span className="expand-button">
+                      <button
+                        className="expand-button"
+                        onClick={this.contract5}
+                      >
+                        - Remove
+                      </button>
+                    </span>
+                  </span>
+                )}
+              </span>
+            )}
+
+            {this.state.isOpen5 && (
+              <span>
+                <div className="col-md-9">
+                  <div className="form-group">
+                    <select
+                      className="lighter-border"
+                      name="othermats"
+                      id="othermats"
+                      onClick={(e) => {
+                        this.updateOther6Selection(e.currentTarget.value);
+                      }}
+                    >
+                      {mats.map((material) => (
+                        <option value={material.id} key={material.id}>
+                          {material.descript}
+                        </option>
+                      ))}
+                    </select>
+
+                    <div className="additional-inputs">
+                      <label>L:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other6length = this.updateOther6Length(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="Other6-length"
+                        name="Other6"
+                        value={other6length}
+                      ></input>
+
+                      <label>W:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other6width = this.updateOther6Width(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other6-width"
+                        name="Other6"
+                        value={other6width}
+                      ></input>
+
+                      <label>QTY:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other6qty = this.updateOther6qty(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other6-qty"
+                        name="Other6"
+                        value={other6qty}
+                      ></input>
+
+                      <label>Sqft:</label>
+                      <input
+                        className="short lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other6sqft = this.updateOther6sqft(
+                            e.currentTarget.value,
+                            true
+                          );
+                        }}
+                        id="other6-sqft"
+                        name="Other6"
+                        value={other6sqft}
+                      ></input>
+                    </div>
+                  </div>
+                </div>
+
+                {!this.state.isOpen6 && (
+                  <span>
+                    <span className="expand-button">
+                      <button className="expand-button" onClick={this.expand6}>
+                        + Add Another
+                      </button>
+                    </span>
+
+                    <span className="expand-button">
+                      <button
+                        className="expand-button"
+                        onClick={this.contract6}
+                      >
+                        - Remove
+                      </button>
+                    </span>
+                  </span>
+                )}
+              </span>
+            )}
+
+            {this.state.isOpen6 && (
+              <span>
+                <div className="col-md-9">
+                  <div className="form-group">
+                    <select
+                      className="lighter-border"
+                      name="othermats"
+                      id="othermats"
+                      onClick={(e) => {
+                        this.updateOther7Selection(e.currentTarget.value);
+                      }}
+                    >
+                      {mats.map((material) => (
+                        <option value={material.id} key={material.id}>
+                          {material.descript}
+                        </option>
+                      ))}
+                    </select>
+
+                    <div className="additional-inputs">
+                      <label>L:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other7length = this.updateOther7Length(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="Other7-length"
+                        name="Other7"
+                        value={other7length}
+                      ></input>
+
+                      <label>W:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other7width = this.updateOther7Width(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other7-width"
+                        name="Other7"
+                        value={other7width}
+                      ></input>
+
+                      <label>QTY:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other7qty = this.updateOther7qty(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other7-qty"
+                        name="Other7"
+                        value={other7qty}
+                      ></input>
+
+                      <label>Sqft:</label>
+                      <input
+                        className="short lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other7sqft = this.updateOther7sqft(
+                            e.currentTarget.value,
+                            true
+                          );
+                        }}
+                        id="other7-sqft"
+                        name="Other7"
+                        value={other7sqft}
+                      ></input>
+                    </div>
+                  </div>
+                </div>
+
+                {!this.state.isOpen7 && (
+                  <span>
+                    <span className="expand-button">
+                      <button className="expand-button" onClick={this.expand7}>
+                        + Add Another
+                      </button>
+                    </span>
+
+                    <span className="expand-button">
+                      <button
+                        className="expand-button"
+                        onClick={this.contract7}
+                      >
+                        - Remove
+                      </button>
+                    </span>
+                  </span>
+                )}
+              </span>
+            )}
+
+            {this.state.isOpen7 && (
+              <span>
+                <div className="col-md-9">
+                  <div className="form-group">
+                    <select
+                      className="lighter-border"
+                      name="othermats"
+                      id="othermats"
+                      onClick={(e) => {
+                        this.updateOther8Selection(e.currentTarget.value);
+                      }}
+                    >
+                      {mats.map((material) => (
+                        <option value={material.id} key={material.id}>
+                          {material.descript}
+                        </option>
+                      ))}
+                    </select>
+
+                    <div className="additional-inputs">
+                      <label>L:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other8length = this.updateOther8Length(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="Other8-length"
+                        name="Other8"
+                        value={other8length}
+                      ></input>
+
+                      <label>W:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other8width = this.updateOther8Width(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other8-width"
+                        name="Other8"
+                        value={other8width}
+                      ></input>
+
+                      <label>QTY:</label>
+                      <input
+                        className="shorter lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other8qty = this.updateOther8qty(
+                            e.currentTarget.value
+                          );
+                        }}
+                        id="other8-qty"
+                        name="Other8"
+                        value={other8qty}
+                      ></input>
+
+                      <label>Sqft:</label>
+                      <input
+                        className="short lighter-border"
+                        type="text"
+                        onChange={(e) => {
+                          other8sqft = this.updateOther8sqft(
+                            e.currentTarget.value,
+                            true
+                          );
+                        }}
+                        id="other8-sqft"
+                        name="Other8"
+                        value={other8sqft}
+                      ></input>
+                    </div>
+                  </div>
+                </div>
+
+                {!this.state.isOpen8 && (
+                  <span>
+                    <span className="expand-button">
+                      <button
+                        className="expand-button"
+                        onClick={this.contract8}
+                      >
+                        - Remove
+                      </button>
+                    </span>
                   </span>
                 )}
               </span>

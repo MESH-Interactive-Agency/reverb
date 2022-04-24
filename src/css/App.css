@@ -585,6 +585,7 @@ select {
   width: 100%;
   padding-left: 0.35em;
   font-weight: 300;
+  overflow-y: scroll;
 }
 
 table {
@@ -791,15 +792,14 @@ th {
   height: 2em;
   background-color: white;
   border: none;
-
 }
 
-.expand-button-right{
-position: relative;
-width: 12em;
-height: 2em;
-background-color: white;
-border: none;
+.expand-button-right {
+  position: relative;
+  width: 12em;
+  height: 2em;
+  background-color: white;
+  border: none;
 }
 
 .additional-inputs {

@@ -3,14 +3,6 @@ import ApiContext from '../../contexts/ApiContext';
 import React, { Component } from 'react';
 
 export default class OtherMatsSummary extends Component {
-  //static contextType = ApiContext;
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedOther1Material: 0,
-    };
-  }
-
   render() {
     return (
       <ReverbContext.Consumer>
@@ -38,11 +30,6 @@ export default class OtherMatsSummary extends Component {
               } = apiContext;
 
               const mats = otherMaterials;
-
-              console.log(
-                this.context.other1sqft,
-                this.context.selectedOther1Material
-              );
 
               return (
                 <div className="">
@@ -79,35 +66,253 @@ export default class OtherMatsSummary extends Component {
                         </thead>
 
                         <tbody>
-                          <tr>
-                            <th className="left">
-                              {mats[selectedOther1Material].descript.substring(
-                                0,
-                                18
-                              )}
-                            </th>
-                            <th className="right">
-                              {mats[selectedOther1Material].hz125}
-                            </th>
-                            <th className="right">
-                              {mats[selectedOther1Material].hz250}
-                            </th>
-                            <th className="right">
-                              {mats[selectedOther1Material].hz500}
-                            </th>
-                            <th className="right">
-                              {mats[selectedOther1Material].hz1000}
-                            </th>
-                            <th className="right">
-                              {mats[selectedOther1Material].hz2000}
-                            </th>
-                            <th className="right">
-                              {mats[selectedOther1Material].hz4000}
-                            </th>
-                            <th className="right">
-                              {mats[selectedOther1Material].nrc}
-                            </th>
-                          </tr>
+                          {other1sqft > 0 && (
+                            <tr>
+                              <th className="left">
+                                {mats[
+                                  selectedOther1Material
+                                ].descript.substring(0, 18)}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther1Material].hz125}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther1Material].hz250}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther1Material].hz500}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther1Material].hz1000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther1Material].hz2000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther1Material].hz4000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther1Material].nrc}
+                              </th>
+                            </tr>
+                          )}
+
+                          {other2sqft > 0 && (
+                            <tr>
+                              <th className="left">
+                                {mats[
+                                  selectedOther2Material
+                                ].descript.substring(0, 18)}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther2Material].hz125}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther2Material].hz250}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther2Material].hz500}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther2Material].hz1000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther2Material].hz2000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther2Material].hz4000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther2Material].nrc}
+                              </th>
+                            </tr>
+                          )}
+
+                          {other3sqft > 0 && (
+                            <tr>
+                              <th className="left">
+                                {mats[
+                                  selectedOther3Material
+                                ].descript.substring(0, 18)}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther3Material].hz125}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther3Material].hz250}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther3Material].hz500}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther3Material].hz1000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther3Material].hz2000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther3Material].hz4000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther3Material].nrc}
+                              </th>
+                            </tr>
+                          )}
+
+                          {other4sqft > 0 && (
+                            <tr>
+                              <th className="left">
+                                {mats[
+                                  selectedOther4Material
+                                ].descript.substring(0, 18)}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther4Material].hz125}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther4Material].hz250}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther4Material].hz500}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther4Material].hz1000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther4Material].hz2000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther4Material].hz4000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther4Material].nrc}
+                              </th>
+                            </tr>
+                          )}
+
+                          {other5sqft > 0 && (
+                            <tr>
+                              <th className="left">
+                                {mats[
+                                  selectedOther5Material
+                                ].descript.substring(0, 18)}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther5Material].hz125}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther5Material].hz250}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther5Material].hz500}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther5Material].hz1000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther5Material].hz2000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther5Material].hz4000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther5Material].nrc}
+                              </th>
+                            </tr>
+                          )}
+
+                          {other6sqft > 0 && (
+                            <tr>
+                              <th className="left">
+                                {mats[
+                                  selectedOther6Material
+                                ].descript.substring(0, 18)}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther6Material].hz125}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther6Material].hz250}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther6Material].hz500}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther6Material].hz1000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther6Material].hz2000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther6Material].hz4000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther6Material].nrc}
+                              </th>
+                            </tr>
+                          )}
+
+                          {other7sqft > 0 && (
+                            <tr>
+                              <th className="left">
+                                {mats[
+                                  selectedOther7Material
+                                ].descript.substring(0, 18)}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther7Material].hz125}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther7Material].hz250}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther7Material].hz500}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther7Material].hz1000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther7Material].hz2000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther7Material].hz4000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther7Material].nrc}
+                              </th>
+                            </tr>
+                          )}
+
+                          {other8sqft > 0 && (
+                            <tr>
+                              <th className="left">
+                                {mats[
+                                  selectedOther8Material
+                                ].descript.substring(0, 18)}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther8Material].hz125}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther8Material].hz250}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther8Material].hz500}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther8Material].hz1000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther8Material].hz2000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther8Material].hz4000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedOther8Material].nrc}
+                              </th>
+                            </tr>
+                          )}
 
                           <tr>
                             <th className="bold left">Total Sabines: </th>

@@ -18,22 +18,22 @@ export default class DetailsWindow extends React.Component {
   render() {
     return (
       <aside className="  ">
-        {/* <Charts />
+        <Charts />
         <div className=" tables">
           <div className="card outputTables">
             <h4 className=" ">Existing Conditions</h4>
             <FloorMatsSummary />
-            <CeilingMatsSummary />*/}
-        <WallMatsSummary />
-         <OtherMatsSummary />
-       {/* </div>
+            <CeilingMatsSummary />
+            <WallMatsSummary />
+            <OtherMatsSummary />
+          </div>
           <div className="card outputTables">
             <h4 className="">Treatments</h4>
-            <CeilingProdsSummary />
+            {/* <CeilingProdsSummary />
             <WallProdsSummary />
-            <BaffleUnitsSummary />
+            <BaffleUnitsSummary /> */}
           </div>
-        </div> */}
+        </div>
       </aside>
     );
   }
