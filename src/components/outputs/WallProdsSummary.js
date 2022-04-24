@@ -39,8 +39,6 @@ export default class WallProdsSummary extends Component {
 
               const mats = wallProducts;
 
-              console.log(mats);
-
               return (
                 <div className="">
                   {!!mats && (

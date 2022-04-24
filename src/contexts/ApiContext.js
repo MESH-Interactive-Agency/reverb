@@ -78,9 +78,11 @@ const ApiContext = React.createContext({
   selectedCeiling1Product: 0,
   selectedCeiling2Product: 0,
   selectedCeiling3Product: 0,
+  selectedCeiling4Product: 0,
   ceilingProd1sqft: 0,
   ceilingProd2sqft: 0,
   ceilingProd3sqft: 0,
+  ceilingProd4sqft: 0,
 
   selectedBaffle1Unit: 0,
   selectedBaffle2Unit: 0,
@@ -146,9 +148,11 @@ const ApiContext = React.createContext({
   updateSelectedCeiling1Product: () => {},
   updateSelectedCeiling2Product: () => {},
   updateSelectedCeiling3Product: () => {},
+  updateSelectedCeiling4Product: () => {},
   updateCeilingProd1sqft: () => {},
   updateCeilingProd2sqft: () => {},
   updateCeilingProd3sqft: () => {},
+  updateCeilingProd4sqft: () => {},
 
   updateSelectedBaffleUnit1: () => {},
   updateSelectedBaffleUnit2: () => {},
@@ -232,9 +236,11 @@ export class ApiProvider extends Component {
     selectedCeiling1Product: 0,
     selectedCeiling2Product: 0,
     selectedCeiling3Product: 0,
+    selectedCeiling4Product: 0,
     ceilingProd1sqft: 0,
     ceilingProd2sqft: 0,
     ceilingProd3sqft: 0,
+    ceilingProd4sqft: 0,
 
     selectedBaffle1Unit: 0,
     selectedBaffle2Unit: 0,
@@ -508,6 +514,9 @@ export class ApiProvider extends Component {
   updateSelectedCeiling3Product = (mat) => {
     this.setState({ selectedCeiling3Product: mat });
   };
+  updateSelectedCeiling4Product = (mat) => {
+    this.setState({ selectedCeiling4Product: mat });
+  };
   updateCeilingProd1sqft = (sqft) => {
     this.setState({ ceilingProd1sqft: sqft });
   };
@@ -516,6 +525,9 @@ export class ApiProvider extends Component {
   };
   updateCeilingProd3sqft = (sqft) => {
     this.setState({ ceilingProd3sqft: sqft });
+  };
+  updateCeilingProd4sqft = (sqft) => {
+    this.setState({ ceilingProd4sqft: sqft });
   };
 
   updateSelectedBaffleUnit1 = (mat) => {
@@ -687,9 +699,11 @@ export class ApiProvider extends Component {
       updateSelectedCeiling1Product: this.updateSelectedCeiling1Product,
       updateSelectedCeiling2Product: this.updateSelectedCeiling2Product,
       updateSelectedCeiling3Product: this.updateSelectedCeiling3Product,
+      updateSelectedCeiling4Product: this.updateSelectedCeiling4Product,
       updateCeilingProd1sqft: this.updateCeilingProd1sqft,
       updateCeilingProd2sqft: this.updateCeilingProd2sqft,
       updateCeilingProd3sqft: this.updateCeilingProd3sqft,
+      updateCeilingProd4sqft: this.updateCeilingProd4sqft,
 
       updateSelectedWall1Product: this.updateSelectedWall1Product,
       updateSelectedWall2Product: this.updateSelectedWall2Product,
@@ -742,9 +756,11 @@ export class ApiProvider extends Component {
       selectedCeiling1Product: this.state.selectedCeiling1Product,
       selectedCeiling2Product: this.state.selectedCeiling2Product,
       selectedCeiling3Product: this.state.selectedCeiling3Product,
+      selectedCeiling4Product: this.state.selectedCeiling4Product,
       ceilingProd1sqft: this.state.ceilingProd1sqft,
-      ceilingProd2sqft: this.state.ceilingProd1sqft,
-      ceilingProd3sqft: this.state.ceilingProd1sqft,
+      ceilingProd2sqft: this.state.ceilingProd2sqft,
+      ceilingProd3sqft: this.state.ceilingProd3sqft,
+      ceilingProd4sqft: this.state.ceilingProd4sqft,
 
       selectedBaffleUnit1: this.state.selectedBaffleUnit1,
       selectedBaffleUnit2: this.state.selectedBaffleUnit2,
