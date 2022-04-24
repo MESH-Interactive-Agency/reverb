@@ -545,7 +545,7 @@ input {
 }
 
 .dropdown {
-  margin: 1em;
+  margin: 2em 1em;
   width: 90%;
 }
 
@@ -634,12 +634,14 @@ th {
 
 #floormats,
 #ceilingmats,
-#wallmats,
+.wallmats,
 #othermats,
 #ceilingprods,
 #baffleunits {
   width: 93%;
 }
+
+
 
 .hide {
   display: none;
@@ -792,6 +794,9 @@ th {
   height: 2em;
 }
 
+.additional-inputs {
+  margin: 0.75em;
+}
 @media screen and (min-width: 650px) {
   .summaryPanel {
     display: flex;

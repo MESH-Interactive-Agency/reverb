@@ -12,8 +12,6 @@ import CeilingProdsSummary from '../components/outputs/CeilingProdsSummary';
 import BaffleUnitsSummary from '../components/outputs/BaffleUnitsSummary';
 import WallProdsSummary from '../components/outputs/WallProdsSummary';
 
-
-
 export default class DetailsWindow extends React.Component {
   static contextType = Context;
 
@@ -25,10 +23,10 @@ export default class DetailsWindow extends React.Component {
           <div className="card outputTables">
             <h4 className=" ">Existing Conditions</h4>
             <FloorMatsSummary />
-            <CeilingMatsSummary />
-            <WallMatsSummary />
-            <OtherMatsSummary />
-          </div>
+            <CeilingMatsSummary />*/}
+        <WallMatsSummary />
+        {/*  <OtherMatsSummary />
+       </div>
           <div className="card outputTables">
             <h4 className="">Treatments</h4>
             <CeilingProdsSummary />

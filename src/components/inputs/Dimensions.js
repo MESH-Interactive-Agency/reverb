@@ -24,8 +24,12 @@ export default class Dimensions extends React.Component {
   updateLength(length) {
     this.setState({ length: length });
     this.context.updateLength(length);
-    this.context.updateWall1Length(length);
-    this.context.updateWall3Length(length);
+    this.context.updateWall1sqft(length * this.state.height);
+    this.context.updateWall3sqft(length * this.state.height);
+
+    // this.context.updateWall1Length(length);
+    // this.context.updateWall3Length(length);
+
     this.context.updateCeilingLength(length);
 
     return length;
@@ -33,18 +37,29 @@ export default class Dimensions extends React.Component {
   updateWidth(width) {
     this.setState({ width: width });
     this.context.updateWidth(width);
-    this.context.updateWall2Length(width);
-    this.context.updateWall4Length(width);
+
+    this.context.updateWall2sqft(width * this.state.height);
+    this.context.updateWall4sqft(width * this.state.height);
+
+    // this.context.updateWall2Length(width);
+    // this.context.updateWall4Length(width);
+
     this.context.updateCeilingWidth(width);
     return width;
   }
   updateHeight(height) {
     this.setState({ height: height });
     this.context.updateHeight(height);
-    this.context.updateWall1Height(height);
-    this.context.updateWall2Height(height);
-    this.context.updateWall3Height(height);
-    this.context.updateWall4Height(height);
+
+    this.context.updateWall1sqft(height * this.state.length);
+    this.context.updateWall2sqft(height * this.state.width);
+    this.context.updateWall3sqft(height * this.state.length);
+    this.context.updateWall4sqft(height * this.state.width);
+
+    // this.context.updateWall1Height(height);
+    // this.context.updateWall2Height(height);
+    // this.context.updateWall3Height(height);
+    // this.context.updateWall4Height(height);
     return height;
   }
 
@@ -85,7 +100,7 @@ export default class Dimensions extends React.Component {
                       }}
                       id="length"
                       name="length"
-                      value={this.state.length}
+                      value={length}
                     ></input>
                   </div>
                 </div>
@@ -107,7 +122,7 @@ export default class Dimensions extends React.Component {
                       }}
                       id="width"
                       name="width"
-                      value={this.state.width}
+                      value={width}
                     />
                   </div>
                 </div>
@@ -129,7 +144,7 @@ export default class Dimensions extends React.Component {
                       }}
                       id="height"
                       name="height"
-                      value={this.state.height}
+                      value={height}
                     />
                   </div>
                 </div>

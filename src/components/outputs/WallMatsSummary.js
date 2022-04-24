@@ -7,7 +7,7 @@ export default class WallMatsSummary extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: 0,
+      //selected: 0,
     };
   }
 
@@ -20,6 +20,10 @@ export default class WallMatsSummary extends Component {
             selectedWall2Material,
             selectedWall3Material,
             selectedWall4Material,
+            wall1sqft,
+            wall2sqft,
+            wall3sqft,
+            wall4sqft,
             wallMaterials,
           } = apiContext;
 
@@ -29,10 +33,6 @@ export default class WallMatsSummary extends Component {
           const sel2 = selectedWall2Material;
           const sel3 = selectedWall3Material;
           const sel4 = selectedWall4Material;
-
-          const { wall1, wall2, wall3, wall4 } = apiContext;
-
-          console.log(wall1);
 
           return (
             <div className="">
@@ -121,58 +121,58 @@ export default class WallMatsSummary extends Component {
                         <th className="bold left">Total Sabines: </th>
                         <th className="bold right">
                           {(
-                            mats[sel1].hz125 * wall1.l * wall1.h +
-                            mats[sel2].hz125 * wall2.l * wall2.h +
-                            mats[sel3].hz125 * wall3.l * wall3.h +
-                            mats[sel4].hz125 * wall4.l * wall4.h
+                            mats[sel1].hz125 * wall1sqft +
+                            mats[sel2].hz125 * wall2sqft +
+                            mats[sel3].hz125 * wall3sqft +
+                            mats[sel4].hz125 * wall4sqft
                           ).toFixed(1)}
                         </th>
                         <th className="bold right">
                           {(
-                            mats[sel1].hz250 * wall1.l * wall1.h +
-                            mats[sel2].hz250 * wall2.l * wall2.h +
-                            mats[sel3].hz250 * wall3.l * wall3.h +
-                            mats[sel4].hz250 * wall4.l * wall4.h
+                            mats[sel1].hz250 * wall1sqft +
+                            mats[sel2].hz250 * wall2sqft +
+                            mats[sel3].hz250 * wall3sqft +
+                            mats[sel4].hz250 * wall4sqft
                           ).toFixed(1)}
                         </th>
                         <th className="bold right">
                           {(
-                            mats[sel1].hz500 * wall1.l * wall1.h +
-                            mats[sel2].hz500 * wall2.l * wall2.h +
-                            mats[sel3].hz500 * wall3.l * wall3.h +
-                            mats[sel4].hz500 * wall4.l * wall4.h
+                            mats[sel1].hz500 * wall1sqft +
+                            mats[sel2].hz500 * wall2sqft +
+                            mats[sel3].hz500 * wall3sqft +
+                            mats[sel4].hz500 * wall4sqft
                           ).toFixed(1)}
                         </th>
                         <th className="bold right">
                           {(
-                            mats[sel1].hz1000 * wall1.l * wall1.h +
-                            mats[sel2].hz1000 * wall2.l * wall2.h +
-                            mats[sel3].hz1000 * wall3.l * wall3.h +
-                            mats[sel4].hz1000 * wall4.l * wall4.h
+                            mats[sel1].hz1000 * wall1sqft +
+                            mats[sel2].hz1000 * wall2sqft +
+                            mats[sel3].hz1000 * wall3sqft +
+                            mats[sel4].hz1000 * wall4sqft
                           ).toFixed(1)}
                         </th>
                         <th className="bold right">
                           {(
-                            mats[sel1].hz2000 * wall1.l * wall1.h +
-                            mats[sel2].hz2000 * wall2.l * wall2.h +
-                            mats[sel3].hz2000 * wall3.l * wall3.h +
-                            mats[sel4].hz2000 * wall4.l * wall4.h
+                            mats[sel1].hz2000 * wall1sqft +
+                            mats[sel2].hz2000 * wall2sqft +
+                            mats[sel3].hz2000 * wall3sqft +
+                            mats[sel4].hz2000 * wall4sqft
                           ).toFixed(1)}
                         </th>
                         <th className="bold right">
                           {(
-                            mats[sel1].hz4000 * wall1.l * wall1.h +
-                            mats[sel2].hz4000 * wall2.l * wall2.h +
-                            mats[sel3].hz4000 * wall3.l * wall3.h +
-                            mats[sel4].hz4000 * wall4.l * wall4.h
+                            mats[sel1].hz4000 * wall1sqft +
+                            mats[sel2].hz4000 * wall2sqft +
+                            mats[sel3].hz4000 * wall3sqft +
+                            mats[sel4].hz4000 * wall4sqft
                           ).toFixed(1)}
                         </th>
                         <th className="bold right">
                           {(
-                            mats[sel1].nrc * wall1.l * wall1.h +
-                            mats[sel2].nrc * wall2.l * wall2.h +
-                            mats[sel3].nrc * wall3.l * wall3.h +
-                            mats[sel4].nrc * wall4.l * wall4.h
+                            mats[sel1].nrc * wall1sqft +
+                            mats[sel2].nrc * wall2sqft +
+                            mats[sel3].nrc * wall3sqft +
+                            mats[sel4].nrc * wall4sqft
                           ).toFixed(1)}
                         </th>
                       </tr>
