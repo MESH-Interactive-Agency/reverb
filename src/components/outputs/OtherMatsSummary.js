@@ -7,7 +7,7 @@ export default class OtherMatsSummary extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: 0,
+      selectedOther1Material: 0,
     };
   }
 
@@ -17,11 +17,33 @@ export default class OtherMatsSummary extends Component {
         {(reverbContext) => (
           <ApiContext.Consumer>
             {(apiContext) => {
-              const { selectedOtherMaterial, otherMaterials } = apiContext;
+              const {
+                otherMaterials,
+                selectedOther1Material,
+                selectedOther2Material,
+                selectedOther3Material,
+                selectedOther4Material,
+                selectedOther5Material,
+                selectedOther6Material,
+                selectedOther7Material,
+                selectedOther8Material,
+                other1sqft,
+                other2sqft,
+                other3sqft,
+                other4sqft,
+                other5sqft,
+                other6sqft,
+                other7sqft,
+                other8sqft,
+              } = apiContext;
+
               const mats = otherMaterials;
-              const selected = selectedOtherMaterial;
-              const { length, width } = reverbContext;
-              const area = length * width;
+
+              console.log(
+                this.context.other1sqft,
+                this.context.selectedOther1Material
+              );
+
               return (
                 <div className="">
                   {!!mats && (
@@ -59,39 +81,70 @@ export default class OtherMatsSummary extends Component {
                         <tbody>
                           <tr>
                             <th className="left">
-                              {mats[selected].descript.substring(0, 18)}
+                              {mats[selectedOther1Material].descript.substring(
+                                0,
+                                18
+                              )}
                             </th>
-                            <th className="right">{mats[selected].hz125}</th>
-                            <th className="right">{mats[selected].hz250}</th>
-                            <th className="right">{mats[selected].hz500}</th>
-                            <th className="right">{mats[selected].hz1000}</th>
-                            <th className="right">{mats[selected].hz2000}</th>
-                            <th className="right">{mats[selected].hz4000}</th>
-                            <th className="right">{mats[selected].nrc}</th>
+                            <th className="right">
+                              {mats[selectedOther1Material].hz125}
+                            </th>
+                            <th className="right">
+                              {mats[selectedOther1Material].hz250}
+                            </th>
+                            <th className="right">
+                              {mats[selectedOther1Material].hz500}
+                            </th>
+                            <th className="right">
+                              {mats[selectedOther1Material].hz1000}
+                            </th>
+                            <th className="right">
+                              {mats[selectedOther1Material].hz2000}
+                            </th>
+                            <th className="right">
+                              {mats[selectedOther1Material].hz4000}
+                            </th>
+                            <th className="right">
+                              {mats[selectedOther1Material].nrc}
+                            </th>
                           </tr>
 
                           <tr>
                             <th className="bold left">Total Sabines: </th>
                             <th className="bold right">
-                              {(mats[selected].hz125 * area).toFixed(1)}
+                              {(
+                                mats[selectedOther1Material].hz125 * other1sqft
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz250 * area).toFixed(1)}
+                              {(
+                                mats[selectedOther1Material].hz250 * other1sqft
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz500 * area).toFixed(1)}
+                              {(
+                                mats[selectedOther1Material].hz500 * other1sqft
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz1000 * area).toFixed(2)}
+                              {(
+                                mats[selectedOther1Material].hz1000 * other1sqft
+                              ).toFixed(2)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz2000 * area).toFixed(1)}
+                              {(
+                                mats[selectedOther1Material].hz2000 * other1sqft
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz4000 * area).toFixed(1)}
+                              {(
+                                mats[selectedOther1Material].hz4000 * other1sqft
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].nrc * area).toFixed(1)}
+                              {(
+                                mats[selectedOther1Material].nrc * other1sqft
+                              ).toFixed(1)}
                             </th>
                           </tr>
                         </tbody>

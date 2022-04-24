@@ -168,38 +168,11 @@ export default class WallMatsSelector extends Component {
     let wall3Height = this.state.wall3Height;
     let wall4Height = this.state.wall4Height;
 
-    console.log('start ------------');
-    console.log(this.context.wall1sqft, 'wall1sqft context');
-    console.log(this.context.wall2sqft, 'wall2sqft context');
-    console.log(this.context.wall3sqft, 'wall3sqft context');
-    console.log(this.context.wall4sqft, 'wall4sqft context');
-    console.log('mid -----');
-    console.log(this.state.wall1sqft, 'wall1sqft state');
-    console.log(this.state.wall2sqft, 'wall2sqft state');
-    console.log(this.state.wall3sqft, 'wall3sqft state');
-    console.log(this.state.wall4sqft, 'wall4sqft state');
-    console.log('end ------------');
     return (
       <div className="row">
         {!!mats && (
-          <div className="dropdown">
+          <div className="dropdown ">
             <label className="col-md-3 col-form-label ">Wall materials:</label>
-
-            {!this.state.isOpen && (
-              <span className="expand-button">
-                <button className="expand-button" onClick={this.expand}>
-                  +
-                </button>
-              </span>
-            )}
-
-            {this.state.isOpen && (
-              <span className="expand-button">
-                <button className="expand-button" onClick={this.expand}>
-                  -
-                </button>
-              </span>
-            )}
 
             <div className="col-md-9">
               <div className="form-group">
@@ -217,9 +190,18 @@ export default class WallMatsSelector extends Component {
                     </option>
                   ))}
                 </select>
+
+                {!this.state.isOpen && (
+                  <span className="expand-button">
+                    <button className="expand-button" onClick={this.expand}>
+                      + More Walls
+                    </button>
+                  </span>
+                )}
+
                 {this.state.isOpen && (
                   <div className="additional-inputs">
-                    <label>Length:</label>
+                    <label>L:</label>
                     <input
                       className="shorter lighter-border"
                       type="text"
@@ -233,7 +215,7 @@ export default class WallMatsSelector extends Component {
                       value={wall1Length}
                     ></input>
 
-                    <label>Height:</label>
+                    <label>H:</label>
                     <input
                       className="shorter lighter-border"
                       type="text"
@@ -249,7 +231,7 @@ export default class WallMatsSelector extends Component {
 
                     <label>OR sqft:</label>
                     <input
-                      className="shorter lighter-border"
+                      className="short lighter-border"
                       type="text"
                       onChange={(e) => {
                         wall1sqft = this.updateWall1sqft(
@@ -282,7 +264,7 @@ export default class WallMatsSelector extends Component {
                 )}
                 {this.state.isOpen && (
                   <div className="additional-inputs">
-                    <label>Length:</label>
+                    <label>L:</label>
                     <input
                       className="shorter lighter-border"
                       type="text"
@@ -296,7 +278,7 @@ export default class WallMatsSelector extends Component {
                       value={wall2Length}
                     ></input>
 
-                    <label>Height:</label>
+                    <label>H:</label>
                     <input
                       className="shorter lighter-border"
                       type="text"
@@ -312,7 +294,7 @@ export default class WallMatsSelector extends Component {
 
                     <label>OR sqft:</label>
                     <input
-                      className="shorter lighter-border"
+                      className="short lighter-border"
                       type="text"
                       onChange={(e) => {
                         wall2sqft = this.updateWall2sqft(
@@ -345,7 +327,7 @@ export default class WallMatsSelector extends Component {
                 )}
                 {this.state.isOpen && (
                   <div className="additional-inputs">
-                    <label>Length:</label>
+                    <label>L:</label>
                     <input
                       className="shorter lighter-border"
                       type="text"
@@ -359,7 +341,7 @@ export default class WallMatsSelector extends Component {
                       value={wall3Length}
                     ></input>
 
-                    <label>Height:</label>
+                    <label>Ht:</label>
                     <input
                       className="shorter lighter-border"
                       type="text"
@@ -373,9 +355,9 @@ export default class WallMatsSelector extends Component {
                       value={wall3Height}
                     ></input>
 
-                    <label>OR sqft:</label>
+                    <label>OR Sqft:</label>
                     <input
-                      className="shorter lighter-border"
+                      className="short lighter-border"
                       type="text"
                       onChange={(e) => {
                         wall3sqft = this.updateWall3sqft(
@@ -408,7 +390,7 @@ export default class WallMatsSelector extends Component {
                 )}
                 {this.state.isOpen && (
                   <div className="additional-inputs">
-                    <label>Length:</label>
+                    <label>L:</label>
                     <input
                       className="shorter lighter-border"
                       type="text"
@@ -422,7 +404,7 @@ export default class WallMatsSelector extends Component {
                       value={wall4Length}
                     ></input>
 
-                    <label>Height:</label>
+                    <label>H:</label>
                     <input
                       className="shorter lighter-border"
                       type="text"
@@ -436,9 +418,9 @@ export default class WallMatsSelector extends Component {
                       value={wall4Height}
                     ></input>
 
-                    <label>OR sqft:</label>
+                    <label>OR Sqft:</label>
                     <input
-                      className="shorter lighter-border"
+                      className="short lighter-border"
                       type="text"
                       onChange={(e) => {
                         wall1sqft = this.updateWall4sqft(
@@ -451,6 +433,14 @@ export default class WallMatsSelector extends Component {
                       value={wall4sqft}
                     ></input>
                   </div>
+                )}
+
+                {this.state.isOpen && (
+                  <span className="expand-button">
+                    <button className="expand-button" onClick={this.expand}>
+                      - Fewer walls
+                    </button>
+                  </span>
                 )}
               </div>
             </div>

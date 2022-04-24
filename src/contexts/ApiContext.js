@@ -16,21 +16,7 @@ const ApiContext = React.createContext({
   wall2: { l: 0, h: 0 },
   wall3: { l: 0, h: 0 },
   wall4: { l: 0, h: 0 },
-  openings: [],
-  door1: { l: 0, w: 0, qty: 0 },
-  door2: { l: 0, w: 0, qty: 0 },
-  window1: { l: 0, w: 0, qty: 0 },
-  window2: { l: 0, w: 0, qty: 0 },
-  opening1: { l: 0, w: 0, qty: 0 },
-  opening2: { l: 0, w: 0, qty: 0 },
-  other: { l: 0, w: 0, qty: 0 },
-  updateDoor1: () => {},
-  updateDoor2: () => {},
-  updateWindow1: () => {},
-  updateWindow2: () => {},
-  updateOpening1: () => {},
-  updateOpening2: () => {},
-  updateOther: () => {},
+
   updateCustomerName: () => {},
   updateProjectName: () => {},
   updateDate: () => {},
@@ -48,7 +34,7 @@ const ApiContext = React.createContext({
   updateWall4Height: () => {},
   updateWall4Length: () => {},
 
-  floorMaterials: [], ///--- Final values
+  floorMaterials: [],
   ceilingMaterials: [],
   wallMaterials: [],
   otherMaterials: [],
@@ -60,6 +46,7 @@ const ApiContext = React.createContext({
   selectedReverbTime: 0,
 
   selectedFloorMaterial: 0,
+
   selectedCeilingMaterial: 0,
 
   selectedWall1Material: 0,
@@ -71,7 +58,6 @@ const ApiContext = React.createContext({
   wall3sqft: 0,
   wall4sqft: 0,
 
-  selectedOtherMaterial: 0,
   selectedOther1Material: 0,
   selectedOther2Material: 0,
   selectedOther3Material: 0,
@@ -89,25 +75,20 @@ const ApiContext = React.createContext({
   other7sqft: 0,
   other8sqft: 0,
 
-  selectedCeilingProduct: 0,
   selectedCeiling1Product: 0,
   selectedCeiling2Product: 0,
   selectedCeiling3Product: 0,
   ceilingProd1sqft: 0,
   ceilingProd2sqft: 0,
   ceilingProd3sqft: 0,
-  ceilingProd4sqft: 0,
 
-  selectedBaffleUnit: 0,
   selectedBaffle1Unit: 0,
   selectedBaffle2Unit: 0,
   selectedBaffle3Unit: 0,
   baffle1sqft: 0,
   baffle2sqft: 0,
   baffle3sqft: 0,
-  baffle4sqft: 0,
 
-  selectedWallProduct: 0,
   selectedWall1Product: 0,
   selectedWall2Product: 0,
   selectedWall3Product: 0,
@@ -125,8 +106,6 @@ const ApiContext = React.createContext({
   wallProd7sqft: 0,
   wallProd8sqft: 0,
 
-  selectedTreatments: [],
-
   loggedIn: TokenService.hasAuthToken(),
   loggedInUser: () => {},
   setLogin: () => {},
@@ -134,18 +113,19 @@ const ApiContext = React.createContext({
   setError: () => {},
   clearError: () => {},
 
+  updateSelectedReverbTime: () => {},
   updateSelectedFloorMaterial: () => {},
   updateSelectedCeilingMaterial: () => {},
 
-  updateSelectedWallMaterial: () => {},
   updateSelectedWall1Material: () => {},
   updateSelectedWall2Material: () => {},
   updateSelectedWall3Material: () => {},
   updateSelectedWall4Material: () => {},
-
   updateWall1sqft: () => {},
+  updateWall2sqft: () => {},
+  updateWall3sqft: () => {},
+  updateWall4sqft: () => {},
 
-  updateSelectedOtherMaterial: () => {},
   updateSelectedOther1Material: () => {},
   updateSelectedOther2Material: () => {},
   updateSelectedOther3Material: () => {},
@@ -153,28 +133,48 @@ const ApiContext = React.createContext({
   updateSelectedOther5Material: () => {},
   updateSelectedOther6Material: () => {},
   updateSelectedOther7Material: () => {},
+  updateSelectedOther8Material: () => {},
+  updateOther1sqft: () => {},
+  updateOther2sqft: () => {},
+  updateOther3sqft: () => {},
+  updateOther4sqft: () => {},
+  updateOther5sqft: () => {},
+  updateOther6sqft: () => {},
+  updateOther7sqft: () => {},
+  updateOther8sqft: () => {},
 
-  updateSelectedCeilingProduct: () => {},
   updateSelectedCeiling1Product: () => {},
   updateSelectedCeiling2Product: () => {},
   updateSelectedCeiling3Product: () => {},
+  updateCeilingProd1sqft: () => {},
+  updateCeilingProd2sqft: () => {},
+  updateCeilingProd3sqft: () => {},
 
-  updateSelectedBaffleUnit: () => {},
-  updateSelected1BaffleUnit: () => {},
-  updateSelected2BaffleUnit: () => {},
-  updateSelected3BaffleUnit: () => {},
-
-  updateSelectedReverbTime: () => {},
+  updateSelectedBaffleUnit1: () => {},
+  updateSelectedBaffleUnit2: () => {},
+  updateSelectedBaffleUnit3: () => {},
+  updateBaffle1sqft: () => {},
+  updateBaffle2sqft: () => {},
+  updateBaffle3sqft: () => {},
 
   updateSelectedWall1Product: () => {},
   updateSelectedWall2Product: () => {},
   updateSelectedWall3Product: () => {},
   updateSelectedWall4Product: () => {},
+  updateSelectedWall5Product: () => {},
+  updateSelectedWall6Product: () => {},
+  updateSelectedWall7Product: () => {},
+  updateSelectedWall8Product: () => {},
+  updateWallProd1sqft: () => {},
+  updateWallProd2sqft: () => {},
+  updateWallProd3sqft: () => {},
+  updateWallProd4sqft: () => {},
+  updateWallProd5sqft: () => {},
+  updateWallProd6sqft: () => {},
+  updateWallProd7sqft: () => {},
+  updateWallProd8sqft: () => {},
 
-  updateSelectedTreatments: () => {},
-  clearSelectedTreatments: () => {},
-
-  clearAll: () => {},
+  clearAll: () => {}, //<----- NYI
 
   getExistingSabines: () => {},
   getTreamentSabines: () => {},
@@ -192,18 +192,10 @@ export class ApiProvider extends Component {
     height: 0,
     cLength: 0,
     cWidth: 0,
-    openings: [],
-    wall1: { l: 0, h: 0, sqft: 0 },
-    wall2: { l: 0, h: 0, sqft: 0 },
-    wall3: { l: 0, h: 0, sqft: 0 },
-    wall4: { l: 0, h: 0, sqft: 0 },
-    door1: { l: 0, w: 0, qty: 0, sqft: 0 },
-    door2: { l: 0, w: 0, qty: 0, sqft: 0 },
-    window1: { l: 0, w: 0, qty: 0, sqft: 0 },
-    window2: { l: 0, w: 0, qty: 0, sqft: 0 },
-    opening1: { l: 0, w: 0, qty: 0, sqft: 0 },
-    opening2: { l: 0, w: 0, qty: 0, sqft: 0 },
-    other: { l: 0, w: 0, qty: 0, sqft: 0 },
+    wall1: { l: 0, h: 0 },
+    wall2: { l: 0, h: 0 },
+    wall3: { l: 0, h: 0 },
+    wall4: { l: 0, h: 0 },
 
     loggedIn: TokenService.hasAuthToken(),
     loggedInUser: TokenService.getUsernameFromToken(),
@@ -211,7 +203,6 @@ export class ApiProvider extends Component {
     selectedFloorMaterial: 0,
     selectedCeilingMaterial: 0,
 
-    selectedWallMaterial: 0,
     selectedWall1Material: 0,
     selectedWall2Material: 0,
     selectedWall3Material: 0,
@@ -221,7 +212,6 @@ export class ApiProvider extends Component {
     wall3sqft: 0,
     wall4sqft: 0,
 
-    selectedOtherMaterial: 0,
     selectedOther1Material: 0,
     selectedOther2Material: 0,
     selectedOther3Material: 0,
@@ -239,23 +229,19 @@ export class ApiProvider extends Component {
     other7sqft: 0,
     other8sqft: 0,
 
-    selectedCeilingProduct: 0,
     selectedCeiling1Product: 0,
     selectedCeiling2Product: 0,
     selectedCeiling3Product: 0,
     ceilingProd1sqft: 0,
     ceilingProd2sqft: 0,
     ceilingProd3sqft: 0,
-    ceilingProd4sqft: 0,
 
-    selectedBaffleUnit: 0,
     selectedBaffle1Unit: 0,
     selectedBaffle2Unit: 0,
     selectedBaffle3Unit: 0,
     baffle1sqft: 0,
     baffle2sqft: 0,
     baffle3sqft: 0,
-    baffle4sqft: 0,
 
     selectedWall1Product: 0,
     selectedWall2Product: 0,
@@ -279,35 +265,6 @@ export class ApiProvider extends Component {
     selectedTreatments: [],
   };
 
-  updateOpenings = (o) => {
-    this.setState({ openings: o });
-  };
-
-  updateDoor1 = (o) => {
-    this.setState({ door1: o });
-  };
-  updateDoor2 = (o) => {
-    this.setState({ door2: o });
-  };
-
-  updateWindow1 = (o) => {
-    this.setState({ window1: o });
-  };
-  updateWindow2 = (o) => {
-    this.setState({ window2: o });
-  };
-
-  updateOpening1 = (o) => {
-    this.setState({ opening1: o });
-  };
-  updateOpening2 = (o) => {
-    this.setState({ opening2: o });
-  };
-
-  updateOther = (o) => {
-    this.setState({ other: o });
-  };
-
   updateWall1Height = (h) => {
     this.setState({ wall1: { l: this.state.wall1.l, h: h } });
     this.updateWall1sqft(this.state.wall1.l * this.state.wall1.h);
@@ -316,21 +273,18 @@ export class ApiProvider extends Component {
     this.setState({ wall1: { l: l, h: this.state.wall1.h } });
     this.updateWall1sqft(this.state.wall1.l * this.state.wall1.h);
   };
-
   updateWall2Height = (h) => {
     this.setState({ wall2: { l: this.state.wall2.l, h: h } });
   };
   updateWall2Length = (l) => {
     this.setState({ wall2: { l: l, h: this.state.wall2.h } });
   };
-
   updateWall3Height = (h) => {
     this.setState({ wall3: { l: this.state.wall3.l, h: h } });
   };
   updateWall3Length = (l) => {
     this.setState({ wall3: { l: l, h: this.state.wall3.h } });
   };
-
   updateWall4Height = (h) => {
     this.setState({ wall4: { l: this.state.wall4.l, h: h } });
   };
@@ -341,55 +295,35 @@ export class ApiProvider extends Component {
   updateCeilingWidth = (cWidth) => {
     this.setState({ cWidth: cWidth });
   };
-
   updateCeilingLength = (cLength) => {
     this.setState({ cLength: cLength });
   };
-
   updateCustomerName = (name) => {
     this.setState({ customerName: name });
   };
-
   updateProjectName = (name) => {
     this.setState({ projectName: name });
   };
-
   updateDate = (date) => {
     this.setState({ date: date });
   };
-
   updateHeight = (height) => {
     this.setState({ height: height });
   };
-
   updateWidth = (width) => {
     this.setState({ width: width });
   };
-
   updateLength = (length) => {
     this.setState({ length: length });
   };
 
   getExistingSabines = () => {
-    this.getFloorMaterials();
-    this.getCeilingMaterials();
-    this.getWallMaterials();
-    this.getOtherMaterials();
+    // this.getFloorMaterials();
+    // this.getCeilingMaterials();
+    // this.getWallMaterials();
+    // this.getOtherMaterials();
 
     return 0;
-  };
-
-  updateSelectedTreatments = () => {
-    let updatedTreatments = [];
-    this.setState({
-      selectedTreatments: updatedTreatments,
-    });
-  };
-
-  clearSelectedTreatments = () => {
-    this.setState({
-      selectedTreatments: [],
-    });
   };
 
   setLogin = (bool, userName) => {
@@ -398,7 +332,6 @@ export class ApiProvider extends Component {
       loggedInUser: TokenService.getUsernameFromToken(),
     });
   };
-
   getFloorMaterials = () => {
     ApiService.getFloorMaterials()
       .then((res) => {
@@ -408,7 +341,6 @@ export class ApiProvider extends Component {
       })
       .catch(this.context.setError);
   };
-
   getCeilingMaterials = () => {
     ApiService.getCeilingMaterials()
       .then((res) => {
@@ -418,7 +350,6 @@ export class ApiProvider extends Component {
       })
       .catch(this.context.setError);
   };
-
   getOtherMaterials = () => {
     ApiService.getOtherMaterials()
       .then((res) => {
@@ -428,7 +359,6 @@ export class ApiProvider extends Component {
       })
       .catch(this.context.setError);
   };
-
   getWallMaterials = () => {
     ApiService.getWallMaterials()
       .then((res) => {
@@ -438,7 +368,6 @@ export class ApiProvider extends Component {
       })
       .catch(this.context.setError);
   };
-
   getCeilingProducts = () => {
     ApiService.getCeilingProducts()
       .then((res) => {
@@ -448,7 +377,6 @@ export class ApiProvider extends Component {
       })
       .catch(this.context.setError);
   };
-
   getBaffleUnits = () => {
     ApiService.getBaffleUnits()
       .then((res) => {
@@ -458,7 +386,6 @@ export class ApiProvider extends Component {
       })
       .catch(this.context.setError);
   };
-
   getWallProducts = () => {
     ApiService.getWallProducts()
       .then((res) => {
@@ -468,7 +395,6 @@ export class ApiProvider extends Component {
       })
       .catch(this.context.setError);
   };
-
   getRecommendedReverbTimes = () => {
     ApiService.getRecommendedReverbTimes()
       .then((res) => {
@@ -483,46 +409,33 @@ export class ApiProvider extends Component {
     console.error(error);
     this.setState({ error });
   };
-
   clearError = () => {
     this.setState({ error: null });
-  };
-
-  updateSelectedFloorMaterial = (mat) => {
-    this.setState({ selectedFloorMaterial: mat });
   };
 
   updateSelectedReverbTime = (num) => {
     this.setState({ selectedReverbTime: num });
   };
 
+  updateSelectedFloorMaterial = (mat) => {
+    this.setState({ selectedFloorMaterial: mat });
+  };
   updateSelectedCeilingMaterial = (mat) => {
     this.setState({ selectedCeilingMaterial: mat });
-  };
-
-  updateSelectedCeiling1Material = (mat, sqft) => {
-    this.setState({ selectedCeiling1Material: { prod: mat, sq: sqft } });
-  };
-  updateSelectedCeiling2Material = (mat, sqft) => {
-    this.setState({ selectedCeiling2Material: { prod: mat, sq: sqft } });
-  };
-  updateSelectedCeiling3Material = (mat, sqft) => {
-    this.setState({ selectedCeiling3Material: { prod: mat, sq: sqft } });
   };
 
   updateSelectedWall1Material = (mat) => {
     this.setState({ selectedWall1Material: mat });
   };
-  updateSelectedWall2Material = (mat, sqft) => {
+  updateSelectedWall2Material = (mat) => {
     this.setState({ selectedWall2Material: mat });
   };
-  updateSelectedWall3Material = (mat, sqft) => {
+  updateSelectedWall3Material = (mat) => {
     this.setState({ selectedWall3Material: mat });
   };
-  updateSelectedWall4Material = (mat, sqft) => {
+  updateSelectedWall4Material = (mat) => {
     this.setState({ selectedWall4Material: mat });
   };
-
   updateWall1sqft = (sqft) => {
     this.setState({ wall1sqft: sqft });
   };
@@ -536,94 +449,140 @@ export class ApiProvider extends Component {
     this.setState({ wall4sqft: sqft });
   };
 
-  updateSelectedOtherMaterial = (mat, sqft) => {
-    this.setState({ selectedOtherMaterial: { prod: mat, sq: sqft } });
+  updateSelectedOther1Material = (mat) => {
+    this.setState({ selectedOther1Material: mat });
   };
-  updateSelectedOther1Material = (mat, sqft) => {
-    this.setState({ selectedOtherMaterial: { prod: mat, sq: sqft } });
+  updateSelectedOther2Material = (mat) => {
+    this.setState({ selectedOther2Material: mat });
   };
-  updateSelectedOther2Material = (mat, sqft) => {
-    this.setState({ selectedOtherMaterial: { prod: mat, sq: sqft } });
+  updateSelectedOther3Material = (mat) => {
+    this.setState({ selectedOther3Material: mat });
   };
-  updateSelectedOther3Material = (mat, sqft) => {
-    this.setState({ selectedOtherMaterial: { prod: mat, sq: sqft } });
+  updateSelectedOther4Material = (mat) => {
+    this.setState({ selectedOther4Material: mat });
   };
-  updateSelectedOther4Material = (mat, sqft) => {
-    this.setState({ selectedOtherMaterial: { prod: mat, sq: sqft } });
+  updateSelectedOther5Material = (mat) => {
+    this.setState({ selectedOther5Material: mat });
   };
-  updateSelectedOther5Material = (mat, sqft) => {
-    this.setState({ selectedOtherMaterial: { prod: mat, sq: sqft } });
+  updateSelectedOther6Material = (mat) => {
+    this.setState({ selectedOther6Material: mat });
   };
-  updateSelectedOther6Material = (mat, sqft) => {
-    this.setState({ selectedOtherMaterial: { prod: mat, sq: sqft } });
+  updateSelectedOther7Material = (mat) => {
+    this.setState({ selectedOther7Material: mat });
   };
-  updateSelectedOther7Material = (mat, sqft) => {
-    this.setState({ selectedOtherMaterial: { prod: mat, sq: sqft } });
+  updateSelectedOther8Material = (mat) => {
+    this.setState({ selectedOther8Material: mat });
   };
-  updateSelectedOther8Material = (mat, sqft) => {
-    this.setState({ selectedOtherMaterial: { prod: mat, sq: sqft } });
+  updateOther1sqft = (sqft) => {
+    this.setState({ other1sqft: sqft });
   };
-
-  updateSelectedCeilingProduct = (mat) => {
-    this.setState({ selectedCeilingProduct: mat });
+  updateOther2sqft = (sqft) => {
+    this.setState({ other2sqft: sqft });
   };
-  updateSelectedCeiling1Product = (mat, sqft) => {
-    this.setState({ selectedCeiling1Product: { prod: mat, sq: sqft } });
+  updateOther3sqft = (sqft) => {
+    this.setState({ other3sqft: sqft });
   };
-  updateSelectedCeiling2Product = (mat, sqft) => {
-    this.setState({ selectedCeiling2Product: { prod: mat, sq: sqft } });
+  updateOther4sqft = (sqft) => {
+    this.setState({ other4sqft: sqft });
   };
-  updateSelectedCeiling3Product = (mat, sqft) => {
-    this.setState({ selectedCeiling3Product: { prod: mat, sq: sqft } });
+  updateOther5sqft = (sqft) => {
+    this.setState({ other5sqft: sqft });
   };
-
-  updateSelectedBaffleUnit = (mat) => {
-    this.setState({ selectedBaffleUnit: mat });
+  updateOther6sqft = (sqft) => {
+    this.setState({ other6sqft: sqft });
   };
-  updateSelectedBaffleUnit1 = (mat, sqft) => {
-    this.setState({ selectedBaffleUnit: { prod: mat, sq: sqft } });
+  updateOther7sqft = (sqft) => {
+    this.setState({ other7sqft: sqft });
   };
-  updateSelectedBaffleUnit2 = (mat, sqft) => {
-    this.setState({ selectedBaffleUnit: { prod: mat, sq: sqft } });
-  };
-  updateSelectedBaffleUnit3 = (mat, sqft) => {
-    this.setState({ selectedBaffleUnit: { prod: mat, sq: sqft } });
+  updateOther8sqft = (sqft) => {
+    this.setState({ other8sqft: sqft });
   };
 
-  updateSelectedWallProduct = (mat) => {
-    this.setState({ selectedWallProduct: mat });
+  updateSelectedCeiling1Product = (mat) => {
+    this.setState({ selectedCeiling1Product: mat });
+  };
+  updateSelectedCeiling2Product = (mat) => {
+    this.setState({ selectedCeiling2Product: mat });
+  };
+  updateSelectedCeiling3Product = (mat) => {
+    this.setState({ selectedCeiling3Product: mat });
+  };
+  updateCeilingProd1sqft = (sqft) => {
+    this.setState({ ceilingProd1sqft: sqft });
+  };
+  updateCeilingProd2sqft = (sqft) => {
+    this.setState({ ceilingProd2sqft: sqft });
+  };
+  updateCeilingProd3sqft = (sqft) => {
+    this.setState({ ceilingProd3sqft: sqft });
+  };
+
+  updateSelectedBaffleUnit1 = (mat) => {
+    this.setState({ selectedBaffleUnit1: mat });
+  };
+  updateSelectedBaffleUnit2 = (mat) => {
+    this.setState({ selectedBaffleUnit2: mat });
+  };
+  updateSelectedBaffleUnit3 = (mat) => {
+    this.setState({ selectedBaffleUnit3: mat });
+  };
+  updateBaffle1sqft = (sqft) => {
+    this.setState({ baffle1sqft: sqft });
+  };
+  updateBaffle2sqft = (sqft) => {
+    this.setState({ baffle2sqft: sqft });
+  };
+  updateBaffle3sqft = (sqft) => {
+    this.setState({ baffle3sqft: sqft });
   };
 
   updateSelectedWall1Product = (mat) => {
     this.setState({ selectedWallProduct: mat });
   };
-
-  updateSelectedWall2Product = (mat, sqft) => {
-    this.setState({ selectedWallProduct: { prod: mat, sq: sqft } });
+  updateSelectedWall2Product = (mat) => {
+    this.setState({ selectedWallProduct: mat });
   };
-
-  updateSelectedWall3Product = (mat, sqft) => {
-    this.setState({ selectedWallProduct: { prod: mat, sq: sqft } });
+  updateSelectedWall3Product = (mat) => {
+    this.setState({ selectedWallProduct: mat });
   };
-
-  updateSelectedWall4Product = (mat, sqft) => {
-    this.setState({ selectedWallProduct: { prod: mat, sq: sqft } });
+  updateSelectedWall4Product = (mat) => {
+    this.setState({ selectedWallProduct: mat });
   };
-
-  updateSelectedWall5Product = (mat, sqft) => {
-    this.setState({ selectedWallProduct: { prod: mat, sq: sqft } });
+  updateSelectedWall5Product = (mat) => {
+    this.setState({ selectedWallProduct: mat });
   };
-
-  updateSelectedWall6Product = (mat, sqft) => {
-    this.setState({ selectedWallProduct: { prod: mat, sq: sqft } });
+  updateSelectedWall6Product = (mat) => {
+    this.setState({ selectedWallProduct: mat });
   };
-
-  updateSelectedWall7Product = (mat, sqft) => {
-    this.setState({ selectedWallProduct: { prod: mat, sq: sqft } });
+  updateSelectedWall7Product = (mat) => {
+    this.setState({ selectedWallProduct: mat });
   };
-
-  updateSelectedWall8Product = (mat, sqft) => {
-    this.setState({ selectedWallProduct: { prod: mat, sq: sqft } });
+  updateSelectedWall8Product = (mat) => {
+    this.setState({ selectedWallProduct: mat });
+  };
+  updateWallProd1sqft = (sqft) => {
+    this.setState({ wallProd1sqft: sqft });
+  };
+  updateWallProd2sqft = (sqft) => {
+    this.setState({ wallProd2sqft: sqft });
+  };
+  updateWallProd3sqft = (sqft) => {
+    this.setState({ wallProd3sqft: sqft });
+  };
+  updateWallProd4sqft = (sqft) => {
+    this.setState({ wallProd4sqft: sqft });
+  };
+  updateWallProd5sqft = (sqft) => {
+    this.setState({ wallProd5sqft: sqft });
+  };
+  updateWallProd6sqft = (sqft) => {
+    this.setState({ wallProd6sqft: sqft });
+  };
+  updateWallProd7sqft = (sqft) => {
+    this.setState({ wallProd7sqft: sqft });
+  };
+  updateWallProd8sqft = (sqft) => {
+    this.setState({ wallProd8sqft: sqft });
   };
 
   render() {
@@ -695,8 +654,11 @@ export class ApiProvider extends Component {
       updateSelectedWall2Material: this.updateSelectedWall2Material,
       updateSelectedWall3Material: this.updateSelectedWall3Material,
       updateSelectedWall4Material: this.updateSelectedWall4Material,
+      updateWall1sqft: this.updateWall1sqft,
+      updateWall2sqft: this.updateWall2sqft,
+      updateWall3sqft: this.updateWall3sqft,
+      updateWall4sqft: this.updateWall4sqft,
 
-      updateSelectedOtherMaterial: this.updateSelectedOtherMaterial,
       updateSelectedOther1Material: this.updateSelectedOther1Material,
       updateSelectedOther2Material: this.updateSelectedOther2Material,
       updateSelectedOther3Material: this.updateSelectedOther3Material,
@@ -705,16 +667,28 @@ export class ApiProvider extends Component {
       updateSelectedOther6Material: this.updateSelectedOther6Material,
       updateSelectedOther7Material: this.updateSelectedOther7Material,
       updateSelectedOther8Material: this.updateSelectedOther8Material,
+      updateOther1sqft: this.updateOther1sqft,
+      updateOther2sqft: this.updateOther2sqft,
+      updateOther3sqft: this.updateOther3sqft,
+      updateOther4sqft: this.updateOther4sqft,
+      updateOther5sqft: this.updateOther5sqft,
+      updateOther6sqft: this.updateOther6sqft,
+      updateOther7sqft: this.updateOther7sqft,
+      updateOther8sqft: this.updateOther8sqft,
 
-      updateSelectedBaffleUnit: this.updateSelectedBaffleUnit,
       updateSelectedBaffleUnit1: this.updateSelectedBaffleUnit1,
       updateSelectedBaffleUnit2: this.updateSelectedBaffleUnit2,
       updateSelectedBaffleUnit3: this.updateSelectedBaffleUnit3,
+      updateBaffle1sqft: this.updateBaffle1sqft,
+      updateBaffle2sqft: this.updateBaffle2sqft,
+      updateBaffle3sqft: this.updateBaffle3sqft,
 
-      updateSelectedCeilingProduct: this.updateSelectedCeilingProduct,
       updateSelectedCeiling1Product: this.updateSelectedCeiling1Product,
       updateSelectedCeiling2Product: this.updateSelectedCeiling2Product,
       updateSelectedCeiling3Product: this.updateSelectedCeiling3Product,
+      updateCeilingProd1sqft: this.updateCeilingProd1sqft,
+      updateCeilingProd2sqft: this.updateCeilingProd2sqft,
+      updateCeilingProd3sqft: this.updateCeilingProd3sqft,
 
       updateSelectedWall1Product: this.updateSelectedWall1Product,
       updateSelectedWall2Product: this.updateSelectedWall2Product,
@@ -724,6 +698,14 @@ export class ApiProvider extends Component {
       updateSelectedWall6Product: this.updateSelectedWall6Product,
       updateSelectedWall7Product: this.updateSelectedWall7Product,
       updateSelectedWall8Product: this.updateSelectedWall8Product,
+      updateWallProd1sqft: this.updateWallProd1sqft,
+      updateWallProd2sqft: this.updateWallProd2sqft,
+      updateWallProd3sqft: this.updateWallProd3sqft,
+      updateWallProd4sqft: this.updateWallProd4sqft,
+      updateWallProd5sqft: this.updateWallProd5sqft,
+      updateWallProd6sqft: this.updateWallProd6sqft,
+      updateWallProd7sqft: this.updateWallProd7sqft,
+      updateWallProd8sqft: this.updateWallProd8sqft,
 
       updateSelectedReverbTime: this.updateSelectedReverbTime,
 
@@ -792,11 +774,6 @@ export class ApiProvider extends Component {
       updateSelectedTreatments: this.updateSelectedTreatments,
 
       clearTreatments: this.clearTreatments,
-
-      updateWall1sqft: this.updateWall1sqft,
-      updateWall2sqft: this.updateWall2sqft,
-      updateWall3sqft: this.updateWall3sqft,
-      updateWall4sqft: this.updateWall4sqft,
     };
 
     return (

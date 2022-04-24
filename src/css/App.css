@@ -273,7 +273,8 @@ h1 {
 }
 
 .short {
-  width: 30%;
+  width: 3em;
+  margin-left: 1em;
 }
 .shorter {
   width: 2em;
@@ -641,8 +642,6 @@ th {
   width: 93%;
 }
 
-
-
 .hide {
   display: none;
 }
@@ -788,10 +787,19 @@ th {
 }
 
 .expand-button {
-  padding-bottom: 1em;
-  right: 0em;
-  width: 4em;
+  width: 12em;
   height: 2em;
+  background-color: white;
+  border: none;
+
+}
+
+.expand-button-right{
+position: relative;
+width: 12em;
+height: 2em;
+background-color: white;
+border: none;
 }
 
 .additional-inputs {

@@ -25,8 +25,8 @@ export default class DetailsWindow extends React.Component {
             <FloorMatsSummary />
             <CeilingMatsSummary />*/}
         <WallMatsSummary />
-        {/*  <OtherMatsSummary />
-       </div>
+         <OtherMatsSummary />
+       {/* </div>
           <div className="card outputTables">
             <h4 className="">Treatments</h4>
             <CeilingProdsSummary />

@@ -23,7 +23,7 @@ export default class ExistingConditions extends React.Component {
           {/* <WallSurfaces /> */}
           <WallMatsSelector />
           <OtherMatsSelector />
-          <Openings />
+          {/* <Openings /> */}
         </form>
       </div>
     );
