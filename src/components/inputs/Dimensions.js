@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import Context from '../../contexts/ReverbContext';
+import Context from '../../contexts/ApiContext';
 
 import ReverbTime from './ReverbTime';
 
@@ -27,6 +27,7 @@ export default class Dimensions extends React.Component {
     this.context.updateWall1Length(length);
     this.context.updateWall3Length(length);
     this.context.updateCeilingLength(length);
+
     return length;
   }
   updateWidth(width) {

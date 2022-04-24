@@ -20,7 +20,7 @@ export default class DetailsWindow extends React.Component {
   render() {
     return (
       <aside className="  ">
-        <Charts />
+        {/* <Charts />
         <div className=" tables">
           <div className="card outputTables">
             <h4 className=" ">Existing Conditions</h4>
@@ -35,8 +35,7 @@ export default class DetailsWindow extends React.Component {
             <WallProdsSummary />
             <BaffleUnitsSummary />
           </div>
-        </div>
-        {/* <Results /> */}
+        </div> */}
       </aside>
     );
   }

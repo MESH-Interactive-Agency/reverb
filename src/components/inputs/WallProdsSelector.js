@@ -16,7 +16,7 @@ export default class WallProdsSelector extends Component {
 
   updateSelection(selection) {
     this.setState({ selected: selection - 1 });
-    this.context.updateSelectedWallProduct(selection - 1);
+    this.context.updateSelectedWall1Product(selection - 1);
   }
 
   render() {

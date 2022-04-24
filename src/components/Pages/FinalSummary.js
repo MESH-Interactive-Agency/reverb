@@ -11,7 +11,7 @@ export default function PrintComponent() {
       <div>
         {/* button to trigger printing of target component */}
         <ReactToPrint
-          trigger={() => <Button>Print this out!</Button>}
+          trigger={() => <Button className="top-right-print">Print</Button>}
           content={() => componentRef}
         />
 

@@ -325,9 +325,9 @@ export default class SabineChart extends Component {
                       </div>
                       <div className="col-sm-5">
                         <div className="pull-right">
-                          <span className="badge badge-pill badge-success">
+                          {/* <span className="badge badge-pill badge-success">
                             Avg Reverb Time - 0.5
-                          </span>
+                          </span> */}
                         </div>
                       </div>
                     </div>

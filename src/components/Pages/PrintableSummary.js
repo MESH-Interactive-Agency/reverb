@@ -3,6 +3,10 @@ import SabineChart from '../visualizations/SabineChart';
 import ReverbContext from '../../contexts/ReverbContext';
 import ApiContext from '../../contexts/ApiContext';
 
+import CeilingProdsSummary from '../outputs/CeilingProdsSummary';
+import WallProdsSummary from '../outputs/WallProdsSummary';
+import BaffleUnitsSummary from '../outputs/BaffleUnitsSummary';
+
 export default class PrintableSummary extends React.Component {
   render() {
     return (
@@ -36,87 +40,99 @@ export default class PrintableSummary extends React.Component {
                     <div className="print-chart">
                       <SabineChart />
                     </div>
-                    <br></br>
-                    <h3>Specified Average Reverb Time: {selectedReverbTime}</h3>
-                    <br></br>
-                    <h3>Total Room Volume (ft3): {volume}</h3>
-                    <h3>Total Surface Area (ft2): {area}</h3>
-                  </div>
 
-                  <div className="right-side">
-                    <table className=" print-chart">
-                      <thead>
-                        <tr>
-                          <th
-                            scope="col"
-                            className="bold left long-lead-cell"
-                          ></th>
-                          <th scope="col" className="bold center-text">
-                            Original Space
-                          </th>
-                          <th scope="col" className="bold center-text">
-                            After Treatment
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="col" className="bold right">
-                            Average Reverb Time:
-                          </th>
-                          <th scope="col" className="bold center-text">
-                            PH
-                          </th>
-                          <th scope="col" className="bold center-text">
-                            PH
-                          </th>
-                        </tr>
-                        <tr>
-                          <th scope="col" className="bold right">
-                            Total Averga Sabines:
-                          </th>
-                          <th scope="col" className="bold center-text">
-                            PH
-                          </th>
-                          <th scope="col" className="bold center-text">
-                            PH
-                          </th>
-                        </tr>
-                        <tr>
-                          <th scope="col" className="bold right">
-                            Average Room Absorption Coefficient:
-                          </th>
-                          <th scope="col" className="bold center-text">
-                            PH
-                          </th>
-                          <th scope="col" className="bold center-text">
-                            PH
-                          </th>
-                        </tr>
-                        <tr>
-                          <th scope="col" className="bold right">
-                            Critical Distance to Reverberant Field (ft):
-                          </th>
-                          <th scope="col" className="bold center-text">
-                            PH
-                          </th>
-                          <th scope="col" className="bold center-text">
-                            PH
-                          </th>
-                        </tr>
-                        <tr>
-                          <th scope="col" className="bold right">
-                            Maximum SPL Reduction at Critical Distance (dB):
-                          </th>
-                          <th scope="col" className="bold center-text">
-                            PH
-                          </th>
-                          <th scope="col" className="bold center-text">
-                            PH
-                          </th>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div className="side-by-side">
+                      <div className="left-side">
+                        <br></br>
+                        <h3>
+                          Specified Average Reverb Time: {selectedReverbTime}
+                        </h3>
+                        <br></br>
+                        <h3>Total Room Volume (ft3): {volume}</h3>
+                        <h3>Total Surface Area (ft2): {area}</h3>
+                      </div>
+
+                      <div className="right-side">
+                        <table className=" print-table">
+                          <thead>
+                            <tr>
+                              <th
+                                scope="col"
+                                className="bold left long-lead-cell"
+                              ></th>
+                              <th scope="col" className="bold center-text">
+                                Original Space
+                              </th>
+                              <th scope="col" className="bold center-text">
+                                After Treatment
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="col" className="bold right">
+                                Average Reverb Time:
+                              </th>
+                              <th scope="col" className="bold center-text">
+                                PH
+                              </th>
+                              <th scope="col" className="bold center-text">
+                                PH
+                              </th>
+                            </tr>
+                            <tr>
+                              <th scope="col" className="bold right">
+                                Total Averga Sabines:
+                              </th>
+                              <th scope="col" className="bold center-text">
+                                PH
+                              </th>
+                              <th scope="col" className="bold center-text">
+                                PH
+                              </th>
+                            </tr>
+                            <tr>
+                              <th scope="col" className="bold right">
+                                Average Room Absorption Coefficient:
+                              </th>
+                              <th scope="col" className="bold center-text">
+                                PH
+                              </th>
+                              <th scope="col" className="bold center-text">
+                                PH
+                              </th>
+                            </tr>
+                            <tr>
+                              <th scope="col" className="bold right">
+                                Critical Distance to Reverberant Field (ft):
+                              </th>
+                              <th scope="col" className="bold center-text">
+                                PH
+                              </th>
+                              <th scope="col" className="bold center-text">
+                                PH
+                              </th>
+                            </tr>
+                            <tr>
+                              <th scope="col" className="bold right">
+                                Maximum SPL Reduction at Critical Distance (dB):
+                              </th>
+                              <th scope="col" className="bold center-text">
+                                PH
+                              </th>
+                              <th scope="col" className="bold center-text">
+                                PH
+                              </th>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div className="print-summary">
+                      <CeilingProdsSummary />
+                      <WallProdsSummary />
+                      <BaffleUnitsSummary />
+                    </div>
                   </div>
                 </div>
               );

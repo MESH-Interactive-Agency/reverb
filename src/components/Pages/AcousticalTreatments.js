@@ -7,7 +7,6 @@ import Openings from '../inputs/Openings';
 import SabineChart from '../visualizations/SabineChart';
 import FinalSummary from './FinalSummary';
 
-
 import Context from '../../contexts/ApiContext';
 
 export default class AcousticalTreatments extends React.Component {
@@ -41,7 +40,10 @@ export default class AcousticalTreatments extends React.Component {
           {this.state.isOpen && (
             <div className="printWindow">
               <FinalSummary />
-              <button onClick={this.printWindow}> Close</button>
+              <button className="top-right-close" onClick={this.printWindow}>
+                {' '}
+                Close
+              </button>
             </div>
           )}
 
