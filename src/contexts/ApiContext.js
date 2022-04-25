@@ -556,22 +556,22 @@ export class ApiProvider extends Component {
     this.setState({ selectedWall2Product: mat });
   };
   updateSelectedWall3Product = (mat) => {
-    this.setState({ selectedWall3roduct: mat });
+    this.setState({ selectedWall3Product: mat });
   };
   updateSelectedWall4Product = (mat) => {
-    this.setState({ selectedWall4roduct: mat });
+    this.setState({ selectedWall4Product: mat });
   };
   updateSelectedWall5Product = (mat) => {
-    this.setState({ selectedWall5roduct: mat });
+    this.setState({ selectedWall5Product: mat });
   };
   updateSelectedWall6Product = (mat) => {
-    this.setState({ selectedWall6roduct: mat });
+    this.setState({ selectedWall6Product: mat });
   };
   updateSelectedWall7Product = (mat) => {
-    this.setState({ selectedWall7roduct: mat });
+    this.setState({ selectedWall7Product: mat });
   };
   updateSelectedWall8Product = (mat) => {
-    this.setState({ selectedWall8roduct: mat });
+    this.setState({ selectedWall8Product: mat });
   };
   updateWallProd1sqft = (sqft) => {
     this.setState({ wallProd1sqft: sqft });
@@ -772,9 +772,19 @@ export class ApiProvider extends Component {
       selectedWall1Product: this.state.selectedWall1Product,
       selectedWall2Product: this.state.selectedWall2Product,
       selectedWall3Product: this.state.selectedWall3Product,
+      selectedWall4Product: this.state.selectedWall4Product,
+      selectedWall5Product: this.state.selectedWall5Product,
+      selectedWall6Product: this.state.selectedWall6Product,
+      selectedWall7Product: this.state.selectedWall7Product,
+      selectedWall8Product: this.state.selectedWall8Product,
       wallProd1sqft: this.state.wallProd1sqft,
       wallProd2sqft: this.state.wallProd2sqft,
       wallProd3sqft: this.state.wallProd3sqft,
+      wallProd4sqft: this.state.wallProd4sqft,
+      wallProd5sqft: this.state.wallProd5sqft,
+      wallProd6sqft: this.state.wallProd6sqft,
+      wallProd7sqft: this.state.wallProd7sqft,
+      wallProd8sqft: this.state.wallProd8sqft,
 
       selectedReverbTime: this.state.selectedReverbTime,
 

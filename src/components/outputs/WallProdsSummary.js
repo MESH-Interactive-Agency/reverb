@@ -334,40 +334,131 @@ export default class WallProdsSummary extends Component {
                             <th className="bold left">Total Sabines: </th>
                             <th className="bold right">
                               {(
-                                mats[selectedWall1Product].hz125 * wallProd1sqft
+                                mats[selectedWall1Product].hz125 *
+                                  wallProd1sqft +
+                                mats[selectedWall2Product].hz125 *
+                                  wallProd2sqft +
+                                mats[selectedWall3Product].hz125 *
+                                  wallProd3sqft +
+                                mats[selectedWall4Product].hz125 *
+                                  wallProd4sqft +
+                                mats[selectedWall5Product].hz125 *
+                                  wallProd5sqft +
+                                mats[selectedWall6Product].hz125 *
+                                  wallProd6sqft +
+                                mats[selectedWall7Product].hz125 *
+                                  wallProd7sqft +
+                                mats[selectedWall8Product].hz125 * wallProd8sqft
                               ).toFixed(1)}
                             </th>
                             <th className="bold right">
                               {(
-                                mats[selectedWall1Product].hz250 * wallProd1sqft
+                                mats[selectedWall1Product].hz250 *
+                                  wallProd1sqft +
+                                mats[selectedWall2Product].hz250 *
+                                  wallProd2sqft +
+                                mats[selectedWall3Product].hz250 *
+                                  wallProd3sqft +
+                                mats[selectedWall4Product].hz250 *
+                                  wallProd4sqft +
+                                mats[selectedWall5Product].hz250 *
+                                  wallProd5sqft +
+                                mats[selectedWall6Product].hz250 *
+                                  wallProd6sqft +
+                                mats[selectedWall7Product].hz250 *
+                                  wallProd7sqft +
+                                mats[selectedWall8Product].hz250 * wallProd8sqft
                               ).toFixed(1)}
                             </th>
                             <th className="bold right">
                               {(
-                                mats[selectedWall1Product].hz500 * wallProd1sqft
+                                mats[selectedWall1Product].hz500 *
+                                  wallProd1sqft +
+                                mats[selectedWall2Product].hz500 *
+                                  wallProd2sqft +
+                                mats[selectedWall3Product].hz500 *
+                                  wallProd3sqft +
+                                mats[selectedWall4Product].hz500 *
+                                  wallProd4sqft +
+                                mats[selectedWall5Product].hz500 *
+                                  wallProd5sqft +
+                                mats[selectedWall6Product].hz500 *
+                                  wallProd6sqft +
+                                mats[selectedWall7Product].hz500 *
+                                  wallProd7sqft +
+                                mats[selectedWall8Product].hz500 * wallProd8sqft
                               ).toFixed(1)}
                             </th>
                             <th className="bold right">
                               {(
                                 mats[selectedWall1Product].hz1000 *
-                                wallProd1sqft
+                                  wallProd1sqft +
+                                mats[selectedWall2Product].hz1000 *
+                                  wallProd2sqft +
+                                mats[selectedWall3Product].hz1000 *
+                                  wallProd3sqft +
+                                mats[selectedWall4Product].hz1000 *
+                                  wallProd4sqft +
+                                mats[selectedWall5Product].hz1000 *
+                                  wallProd5sqft +
+                                mats[selectedWall6Product].hz1000 *
+                                  wallProd6sqft +
+                                mats[selectedWall7Product].hz1000 *
+                                  wallProd7sqft +
+                                mats[selectedWall8Product].hz1000 *
+                                  wallProd8sqft
                               ).toFixed(2)}
                             </th>
                             <th className="bold right">
                               {(
                                 mats[selectedWall1Product].hz2000 *
-                                wallProd1sqft
+                                  wallProd1sqft +
+                                mats[selectedWall2Product].hz2000 *
+                                  wallProd2sqft +
+                                mats[selectedWall3Product].hz2000 *
+                                  wallProd3sqft +
+                                mats[selectedWall4Product].hz2000 *
+                                  wallProd4sqft +
+                                mats[selectedWall5Product].hz2000 *
+                                  wallProd5sqft +
+                                mats[selectedWall6Product].hz2000 *
+                                  wallProd6sqft +
+                                mats[selectedWall7Product].hz2000 *
+                                  wallProd7sqft +
+                                mats[selectedWall8Product].hz2000 *
+                                  wallProd8sqft
                               ).toFixed(1)}
                             </th>
                             <th className="bold right">
                               {(
                                 mats[selectedWall1Product].hz4000 *
-                                wallProd1sqft
+                                  wallProd1sqft +
+                                mats[selectedWall2Product].hz4000 *
+                                  wallProd2sqft +
+                                mats[selectedWall3Product].hz4000 *
+                                  wallProd3sqft +
+                                mats[selectedWall4Product].hz4000 *
+                                  wallProd4sqft +
+                                mats[selectedWall5Product].hz4000 *
+                                  wallProd5sqft +
+                                mats[selectedWall6Product].hz4000 *
+                                  wallProd6sqft +
+                                mats[selectedWall7Product].hz4000 *
+                                  wallProd7sqft +
+                                mats[selectedWall8Product].hz4000 *
+                                  wallProd8sqft
                               ).toFixed(1)}
                             </th>
                             <th className="bold right">
                               {(
-                                mats[selectedWall1Product].nrc * wallProd1sqft
+                                mats[selectedWall1Product].nrc * wallProd1sqft +
+                                mats[selectedWall2Product].nrc * wallProd2sqft +
+                                mats[selectedWall3Product].nrc * wallProd3sqft +
+                                mats[selectedWall4Product].nrc * wallProd4sqft +
+                                mats[selectedWall5Product].nrc * wallProd5sqft +
+                                mats[selectedWall6Product].nrc * wallProd6sqft +
+                                mats[selectedWall7Product].nrc * wallProd7sqft +
+                                mats[selectedWall8Product].nrc * wallProd8sqft
                               ).toFixed(1)}
                             </th>
                           </tr>
