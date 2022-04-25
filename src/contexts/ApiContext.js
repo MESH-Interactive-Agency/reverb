@@ -531,13 +531,13 @@ export class ApiProvider extends Component {
   };
 
   updateSelectedBaffleUnit1 = (mat) => {
-    this.setState({ selectedBaffleUnit1: mat });
+    this.setState({ selectedBaffle1Unit: mat });
   };
   updateSelectedBaffleUnit2 = (mat) => {
-    this.setState({ selectedBaffleUnit2: mat });
+    this.setState({ selectedBaffle2Unit: mat });
   };
   updateSelectedBaffleUnit3 = (mat) => {
-    this.setState({ selectedBaffleUnit3: mat });
+    this.setState({ selectedBaffle3Unit: mat });
   };
   updateBaffle1sqft = (sqft) => {
     this.setState({ baffle1sqft: sqft });
@@ -762,9 +762,9 @@ export class ApiProvider extends Component {
       ceilingProd3sqft: this.state.ceilingProd3sqft,
       ceilingProd4sqft: this.state.ceilingProd4sqft,
 
-      selectedBaffleUnit1: this.state.selectedBaffleUnit1,
-      selectedBaffleUnit2: this.state.selectedBaffleUnit2,
-      selectedBaffleUnit3: this.state.selectedBaffleUnit3,
+      selectedBaffle1Unit: this.state.selectedBaffle1Unit,
+      selectedBaffle2Unit: this.state.selectedBaffle2Unit,
+      selectedBaffle3Unit: this.state.selectedBaffle3Unit,
       baffle1sqft: this.state.baffle1sqft,
       baffle2sqft: this.state.baffle2sqft,
       baffle3sqft: this.state.baffle3sqft,

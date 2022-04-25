@@ -17,11 +17,22 @@ export default class BaffleUnitsSummary extends Component {
         {(reverbContext) => (
           <ApiContext.Consumer>
             {(apiContext) => {
-              const { selectedBaffleUnit, baffleUnits } = apiContext;
+              const {
+                baffleUnits,
+
+                selectedBaffle1Unit,
+                selectedBaffle2Unit,
+                selectedBaffle3Unit,
+
+                baffle1sqft,
+                baffle2sqft,
+                baffle3sqft,
+              } = apiContext;
+
               const mats = baffleUnits;
-              const selected = selectedBaffleUnit;
-              const { length, width } = reverbContext;
-              const area = length * width;
+
+              console.log(mats, selectedBaffle1Unit);
+
               return (
                 <div className="">
                   {!!mats && (
@@ -30,7 +41,7 @@ export default class BaffleUnitsSummary extends Component {
                         <thead>
                           <tr>
                             <th scope="col" className="bold left lead-cell">
-                              Baffle Units
+                              Baffle Products
                             </th>
                             <th scope="col" className="bold right">
                               125hz
@@ -57,41 +68,152 @@ export default class BaffleUnitsSummary extends Component {
                         </thead>
 
                         <tbody>
-                          <tr>
-                            <th className="left">
-                              {mats[selected].descript.substring(0, 18)}
-                            </th>
-                            <th className="right">{mats[selected].hz125}</th>
-                            <th className="right">{mats[selected].hz250}</th>
-                            <th className="right">{mats[selected].hz500}</th>
-                            <th className="right">{mats[selected].hz1000}</th>
-                            <th className="right">{mats[selected].hz2000}</th>
-                            <th className="right">{mats[selected].hz4000}</th>
-                            <th className="right">{mats[selected].nrc}</th>
-                          </tr>
+                          {baffle1sqft > 0 && (
+                            <tr>
+                              <th className="left">
+                                {mats[selectedBaffle1Unit].descript.substring(
+                                  0,
+                                  18
+                                )}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle1Unit].hz125}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle1Unit].hz250}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle1Unit].hz500}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle1Unit].hz1000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle1Unit].hz2000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle1Unit].hz4000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle1Unit].nrc}
+                              </th>
+                            </tr>
+                          )}
+
+                          {baffle2sqft > 0 && (
+                            <tr>
+                              <th className="left">
+                                {mats[selectedBaffle2Unit].descript.substring(
+                                  0,
+                                  18
+                                )}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle2Unit].hz125}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle2Unit].hz250}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle2Unit].hz500}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle2Unit].hz1000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle2Unit].hz2000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle2Unit].hz4000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle2Unit].nrc}
+                              </th>
+                            </tr>
+                          )}
+
+                          {baffle3sqft > 0 && (
+                            <tr>
+                              <th className="left">
+                                {mats[selectedBaffle3Unit].descript.substring(
+                                  0,
+                                  18
+                                )}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle3Unit].hz125}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle3Unit].hz250}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle3Unit].hz500}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle3Unit].hz1000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle3Unit].hz2000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle3Unit].hz4000}
+                              </th>
+                              <th className="right">
+                                {mats[selectedBaffle3Unit].nrc}
+                              </th>
+                            </tr>
+                          )}
 
                           <tr>
                             <th className="bold left">Total Sabines: </th>
                             <th className="bold right">
-                              {(mats[selected].hz125 * area).toFixed(1)}
+                              {(
+                                mats[selectedBaffle1Unit].hz125 * baffle1sqft +
+                                mats[selectedBaffle2Unit].hz125 * baffle2sqft +
+                                mats[selectedBaffle3Unit].hz125 * baffle3sqft
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz250 * area).toFixed(1)}
+                              {(
+                                mats[selectedBaffle1Unit].hz250 * baffle1sqft +
+                                mats[selectedBaffle2Unit].hz250 * baffle2sqft +
+                                mats[selectedBaffle3Unit].hz250 * baffle3sqft
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz500 * area).toFixed(1)}
+                              {(
+                                mats[selectedBaffle1Unit].hz500 * baffle1sqft +
+                                mats[selectedBaffle2Unit].hz500 * baffle2sqft +
+                                mats[selectedBaffle3Unit].hz500 * baffle3sqft
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz1000 * area).toFixed(2)}
+                              {(
+                                mats[selectedBaffle1Unit].hz1000 * baffle1sqft +
+                                mats[selectedBaffle2Unit].hz1000 * baffle2sqft +
+                                mats[selectedBaffle3Unit].hz1000 * baffle3sqft
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz2000 * area).toFixed(1)}
+                              {(
+                                mats[selectedBaffle1Unit].hz2000 * baffle1sqft +
+                                mats[selectedBaffle2Unit].hz2000 * baffle2sqft +
+                                mats[selectedBaffle3Unit].hz2000 * baffle3sqft
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].hz4000 * area).toFixed(1)}
+                              {(
+                                mats[selectedBaffle1Unit].hz4000 * baffle1sqft +
+                                mats[selectedBaffle2Unit].hz4000 * baffle2sqft +
+                                mats[selectedBaffle3Unit].hz4000 * baffle3sqft
+                              ).toFixed(1)}
                             </th>
                             <th className="bold right">
-                              {(mats[selected].nrc * area).toFixed(1)}
+                              {(
+                                mats[selectedBaffle1Unit].nrc * baffle1sqft +
+                                mats[selectedBaffle2Unit].nrc * baffle2sqft +
+                                mats[selectedBaffle3Unit].nrc * baffle3sqft
+                              ).toFixed(1)}
                             </th>
                           </tr>
                         </tbody>
