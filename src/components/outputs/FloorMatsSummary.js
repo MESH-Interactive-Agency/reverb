@@ -17,10 +17,9 @@ export default class FloorMatsSummary extends Component {
         {(reverbContext) => (
           <ApiContext.Consumer>
             {(apiContext) => {
-              const { selectedFloorMaterial, floorMaterials } = apiContext;
+              const { selectedFloorMaterial, floorMaterials, length, width } = apiContext;
               const mats = floorMaterials;
               const selected = selectedFloorMaterial;
-              const { length, width } = reverbContext;
               const area = length * width;
               return (
                 <div className="">

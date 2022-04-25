@@ -196,7 +196,7 @@ export default class OtherMatsSelector extends Component {
       other2sqft: this.state.other2length * this.state.other2qty * w,
     });
     this.context.updateOther2sqft(
-      this.state.other12ength * this.state.other2qty * w
+      this.state.other2length * this.state.other2qty * w
     );
     return w;
   }
@@ -581,7 +581,7 @@ export default class OtherMatsSelector extends Component {
                   <label>L:</label>
                   <input
                     className="shorter lighter-border"
-                    type="text"
+                    type="number"
                     onChange={(e) => {
                       other1length = this.updateOther1Length(
                         e.currentTarget.value
@@ -595,7 +595,7 @@ export default class OtherMatsSelector extends Component {
                   <label>W:</label>
                   <input
                     className="shorter lighter-border"
-                    type="text"
+                    type="number"
                     onChange={(e) => {
                       other1width = this.updateOther1Width(
                         e.currentTarget.value
@@ -609,7 +609,7 @@ export default class OtherMatsSelector extends Component {
                   <label>QTY:</label>
                   <input
                     className="shorter lighter-border"
-                    type="text"
+                    type="number"
                     onChange={(e) => {
                       other1qty = this.updateOther1qty(e.currentTarget.value);
                     }}
@@ -621,7 +621,7 @@ export default class OtherMatsSelector extends Component {
                   <label>Sqft:</label>
                   <input
                     className="short lighter-border"
-                    type="text"
+                    type="number"
                     onChange={(e) => {
                       other1sqft = this.updateOther1sqft(
                         e.currentTarget.value,
@@ -667,7 +667,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other2length = this.updateOther2Length(
                             e.currentTarget.value
@@ -681,7 +681,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other2width = this.updateOther2Width(
                             e.currentTarget.value
@@ -695,7 +695,7 @@ export default class OtherMatsSelector extends Component {
                       <label>QTY:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other2qty = this.updateOther2qty(
                             e.currentTarget.value
@@ -709,7 +709,7 @@ export default class OtherMatsSelector extends Component {
                       <label>Sqft:</label>
                       <input
                         className="short lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other2sqft = this.updateOther2sqft(
                             e.currentTarget.value,
@@ -768,7 +768,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other3length = this.updateOther3Length(
                             e.currentTarget.value
@@ -782,7 +782,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other3width = this.updateOther3Width(
                             e.currentTarget.value
@@ -796,7 +796,7 @@ export default class OtherMatsSelector extends Component {
                       <label>QTY:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other3qty = this.updateOther3qty(
                             e.currentTarget.value
@@ -810,7 +810,7 @@ export default class OtherMatsSelector extends Component {
                       <label>Sqft:</label>
                       <input
                         className="short lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other3sqft = this.updateOther3sqft(
                             e.currentTarget.value,
@@ -869,7 +869,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other4length = this.updateOther4Length(
                             e.currentTarget.value
@@ -883,7 +883,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other4width = this.updateOther4Width(
                             e.currentTarget.value
@@ -897,7 +897,7 @@ export default class OtherMatsSelector extends Component {
                       <label>QTY:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other4qty = this.updateOther4qty(
                             e.currentTarget.value
@@ -911,7 +911,7 @@ export default class OtherMatsSelector extends Component {
                       <label>Sqft:</label>
                       <input
                         className="short lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other4sqft = this.updateOther4sqft(
                             e.currentTarget.value,
@@ -970,7 +970,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other5length = this.updateOther5Length(
                             e.currentTarget.value
@@ -984,7 +984,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other5width = this.updateOther5Width(
                             e.currentTarget.value
@@ -998,7 +998,7 @@ export default class OtherMatsSelector extends Component {
                       <label>QTY:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other5qty = this.updateOther5qty(
                             e.currentTarget.value
@@ -1012,7 +1012,7 @@ export default class OtherMatsSelector extends Component {
                       <label>Sqft:</label>
                       <input
                         className="short lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other5sqft = this.updateOther5sqft(
                             e.currentTarget.value,
@@ -1071,7 +1071,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other6length = this.updateOther6Length(
                             e.currentTarget.value
@@ -1085,7 +1085,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other6width = this.updateOther6Width(
                             e.currentTarget.value
@@ -1099,7 +1099,7 @@ export default class OtherMatsSelector extends Component {
                       <label>QTY:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other6qty = this.updateOther6qty(
                             e.currentTarget.value
@@ -1113,7 +1113,7 @@ export default class OtherMatsSelector extends Component {
                       <label>Sqft:</label>
                       <input
                         className="short lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other6sqft = this.updateOther6sqft(
                             e.currentTarget.value,
@@ -1172,7 +1172,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other7length = this.updateOther7Length(
                             e.currentTarget.value
@@ -1186,7 +1186,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other7width = this.updateOther7Width(
                             e.currentTarget.value
@@ -1200,7 +1200,7 @@ export default class OtherMatsSelector extends Component {
                       <label>QTY:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other7qty = this.updateOther7qty(
                             e.currentTarget.value
@@ -1214,7 +1214,7 @@ export default class OtherMatsSelector extends Component {
                       <label>Sqft:</label>
                       <input
                         className="short lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other7sqft = this.updateOther7sqft(
                             e.currentTarget.value,
@@ -1273,7 +1273,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other8length = this.updateOther8Length(
                             e.currentTarget.value
@@ -1287,7 +1287,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other8width = this.updateOther8Width(
                             e.currentTarget.value
@@ -1301,7 +1301,7 @@ export default class OtherMatsSelector extends Component {
                       <label>QTY:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other8qty = this.updateOther8qty(
                             e.currentTarget.value
@@ -1315,7 +1315,7 @@ export default class OtherMatsSelector extends Component {
                       <label>Sqft:</label>
                       <input
                         className="short lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           other8sqft = this.updateOther8sqft(
                             e.currentTarget.value,

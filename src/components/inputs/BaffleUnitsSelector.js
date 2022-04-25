@@ -8,47 +8,22 @@ export default class BaffleUnitSelector extends Component {
       selectedBaffle1Unit: 0,
       selectedBaffle2Unit: 0,
       selectedBaffle3Unit: 0,
-      selectedBaffle4Unit: 0,
-      selectedBaffle5Unit: 0,
-      selectedBaffle6Unit: 0,
-      selectedBaffle7Unit: 0,
-      selectedBaffle8Unit: 0,
 
       baffle1sqft: 0,
       baffle2sqft: 0,
       baffle3sqft: 0,
-      baffle4sqft: 0,
-      baffle5sqft: 0,
-      baffle6sqft: 0,
-      baffle7sqft: 0,
-      baffle8sqft: 0,
 
       baffleUnit1length: 0,
       baffleUnit2length: 0,
       baffleUnit3length: 0,
-      baffleUnit4length: 0,
-      baffleUnit5length: 0,
-      baffleUnit6length: 0,
-      baffleUnit7length: 0,
-      baffleUnit8length: 0,
 
       baffleUnit1width: 0,
       baffleUnit2width: 0,
       baffleUnit3width: 0,
-      baffleUnit4width: 0,
-      baffleUnit5width: 0,
-      baffleUnit6width: 0,
-      baffleUnit7width: 0,
-      baffleUnit8width: 0,
 
       baffleUnit1qty: 0,
       baffleUnit2qty: 0,
       baffleUnit3qty: 0,
-      baffleUnit4qty: 0,
-      baffleUnit5qty: 0,
-      baffleUnit6qty: 0,
-      baffleUnit7qty: 0,
-      baffleUnit8qty: 0,
 
       isOpen: false,
       isOpen1: false,
@@ -78,16 +53,11 @@ export default class BaffleUnitSelector extends Component {
     this.setState({ selectedBaffle3Unit: selection - 1 });
     this.context.updateSelectedBaffleUnit3(selection - 1);
   }
-  updateBaffleUnit4Selection(selection) {
-    this.setState({ selectedBaffleUnit4: selection - 1 });
-    this.context.updateSelectedBaffleUnit4(selection - 1);
-  }
 
   updateBaffleUnit1Length(l) {
     this.setState({
       baffleUnit1length: l,
-      baffleUnit1sqft:
-        this.state.baffleUnit1width * this.state.baffleUnit1qty * l,
+      baffle1sqft: this.state.baffleUnit1width * this.state.baffleUnit1qty * l,
     });
     this.context.updateBaffle1sqft(
       this.state.baffleUnit1width * this.state.baffleUnit1qty * l
@@ -95,14 +65,10 @@ export default class BaffleUnitSelector extends Component {
     return l;
   }
 
-  //updateSelectedBaffleUnit3:
-  //updateBaffle1sqft:
-
   updateBaffleUnit2Length(l) {
     this.setState({
       baffleUnit2length: l,
-      baffleUnit2sqft:
-        this.state.baffleUnit2width * this.state.baffleUnit2qty * l,
+      baffle2sqft: this.state.baffleUnit2width * this.state.baffleUnit2qty * l,
     });
     this.context.updateBaffle2sqft(
       this.state.baffleUnit2width * this.state.baffleUnit2qty * l
@@ -112,8 +78,7 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit3Length(l) {
     this.setState({
       baffleUnit3length: l,
-      baffleUnit3sqft:
-        this.state.baffleUnit3width * this.state.baffleUnit3qty * l,
+      baffle3sqft: this.state.baffleUnit3width * this.state.baffleUnit3qty * l,
     });
     this.context.updateBaffle3sqft(
       this.state.baffleUnit3width * this.state.baffleUnit3qty * l
@@ -124,8 +89,7 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit1Width(w) {
     this.setState({
       baffleUnit1width: w,
-      baffleUnit1sqft:
-        this.state.baffleUnit1length * this.state.baffleUnit1qty * w,
+      baffle1sqft: this.state.baffleUnit1length * this.state.baffleUnit1qty * w,
     });
     this.context.updateBaffle1sqft(
       this.state.baffleUnit1length * this.state.baffleUnit1qty * w
@@ -135,19 +99,17 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit2Width(w) {
     this.setState({
       baffleUnit2width: w,
-      baffleUnit2sqft:
-        this.state.baffleUnit2length * this.state.baffleUnit2qty * w,
+      baffle2sqft: this.state.baffleUnit2length * this.state.baffleUnit2qty * w,
     });
     this.context.updateBaffle2sqft(
-      this.state.baffleUnit12ength * this.state.baffleUnit2qty * w
+      this.state.baffleUnit2length * this.state.baffleUnit2qty * w
     );
     return w;
   }
   updateBaffleUnit3Width(w) {
     this.setState({
       baffleUnit3width: w,
-      baffleUnit3sqft:
-        this.state.baffleUnit3length * this.state.baffleUnit3qty * w,
+      baffle3sqft: this.state.baffleUnit3length * this.state.baffleUnit3qty * w,
     });
     this.context.updateBaffle3sqft(
       this.state.baffleUnit3length * this.state.baffleUnit3qty * w
@@ -158,7 +120,7 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit1qty(qty) {
     this.setState({
       baffleUnit1qty: qty,
-      baffleUnit1sqft:
+      baffle1sqft:
         this.state.baffleUnit1length * this.state.baffleUnit1width * qty,
     });
     this.context.updateBaffle1sqft(
@@ -169,7 +131,7 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit2qty(qty) {
     this.setState({
       baffleUnit2qty: qty,
-      baffleUnit2sqft:
+      baffle2sqft:
         this.state.baffleUnit2length * this.state.baffleUnit2width * qty,
     });
     this.context.updateBaffle2sqft(
@@ -180,7 +142,7 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit3qty(qty) {
     this.setState({
       baffleUnit3qty: qty,
-      baffleUnit3sqft:
+      baffle3sqft:
         this.state.baffleUnit3length * this.state.baffleUnit3width * qty,
     });
     this.context.updateBaffle3sqft(
@@ -192,7 +154,7 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit1sqft(sqft, clear = false) {
     if (clear) {
       this.setState({
-        baffleUnit1sqft: sqft,
+        baffle1sqft: sqft,
         baffleUnit1length: 0,
         baffleUnit1width: 0,
         baffleUnit1qty: 0,
@@ -204,7 +166,7 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit2sqft(sqft, clear = false) {
     if (clear) {
       this.setState({
-        baffleUnit2sqft: sqft,
+        baffle2sqft: sqft,
         baffleUnit2length: 0,
         baffleUnit2width: 0,
         baffleUnit2qty: 0,
@@ -216,25 +178,13 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit3sqft(sqft, clear = false) {
     if (clear) {
       this.setState({
-        baffleUnit3sqft: sqft,
+        baffle3sqft: sqft,
         baffleUnit3length: 0,
         baffleUnit3width: 0,
         baffleUnit3qty: 0,
       });
     }
     this.context.updateBaffle3sqft(sqft);
-    return sqft;
-  }
-  updateBaffleUnit4sqft(sqft, clear = false) {
-    if (clear) {
-      this.setState({
-        baffleUnit4sqft: sqft,
-        baffleUnit4length: 0,
-        baffleUnit4width: 0,
-        baffleUnit4qty: 0,
-      });
-    }
-    this.context.updateBaffle4sqft(sqft);
     return sqft;
   }
 
@@ -314,18 +264,19 @@ export default class BaffleUnitSelector extends Component {
       baffleUnit1length,
       baffleUnit1width,
       baffleUnit1qty,
-      baffleUnit1sqft,
+      baffle1sqft,
 
       baffleUnit2length,
       baffleUnit2width,
       baffleUnit2qty,
-      baffleUnit2sqft,
+      baffle2sqft,
 
       baffleUnit3length,
       baffleUnit3width,
       baffleUnit3qty,
-      baffleUnit3sqft,
+      baffle3sqft,
     } = this.state;
+    console.log(this.state);
 
     return (
       <div className="row">
@@ -353,7 +304,7 @@ export default class BaffleUnitSelector extends Component {
                   <label>L:</label>
                   <input
                     className="shorter lighter-border"
-                    type="text"
+                    type="number"
                     onChange={(e) => {
                       baffleUnit1length = this.updateBaffleUnit1Length(
                         e.currentTarget.value
@@ -367,7 +318,7 @@ export default class BaffleUnitSelector extends Component {
                   <label>W:</label>
                   <input
                     className="shorter lighter-border"
-                    type="text"
+                    type="number"
                     onChange={(e) => {
                       baffleUnit1width = this.updateBaffleUnit1Width(
                         e.currentTarget.value
@@ -381,7 +332,7 @@ export default class BaffleUnitSelector extends Component {
                   <label>QTY:</label>
                   <input
                     className="shorter lighter-border"
-                    type="text"
+                    type="number"
                     onChange={(e) => {
                       baffleUnit1qty = this.updateBaffleUnit1qty(
                         e.currentTarget.value
@@ -395,16 +346,16 @@ export default class BaffleUnitSelector extends Component {
                   <label>Sqft:</label>
                   <input
                     className="short lighter-border"
-                    type="text"
+                    type="number"
                     onChange={(e) => {
-                      baffleUnit1sqft = this.updateBaffleUnit1sqft(
+                      baffle1sqft = this.updateBaffleUnit1sqft(
                         e.currentTarget.value,
                         true
                       );
                     }}
                     id="baffleUnit1-sqft"
                     name="BaffleUnit1"
-                    value={baffleUnit1sqft}
+                    value={baffle1sqft}
                   ></input>
                 </div>
               </div>
@@ -441,7 +392,7 @@ export default class BaffleUnitSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           baffleUnit2length = this.updateBaffleUnit2Length(
                             e.currentTarget.value
@@ -455,7 +406,7 @@ export default class BaffleUnitSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           baffleUnit2width = this.updateBaffleUnit2Width(
                             e.currentTarget.value
@@ -469,7 +420,7 @@ export default class BaffleUnitSelector extends Component {
                       <label>QTY:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           baffleUnit2qty = this.updateBaffleUnit2qty(
                             e.currentTarget.value
@@ -483,16 +434,16 @@ export default class BaffleUnitSelector extends Component {
                       <label>Sqft:</label>
                       <input
                         className="short lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
-                          baffleUnit2sqft = this.updateBaffleUnit2sqft(
+                          baffle2sqft = this.updateBaffleUnit2sqft(
                             e.currentTarget.value,
                             true
                           );
                         }}
                         id="baffleUnit2-sqft"
                         name="BaffleUnit2"
-                        value={baffleUnit2sqft}
+                        value={baffle2sqft}
                       ></input>
                     </div>
                   </div>
@@ -542,7 +493,7 @@ export default class BaffleUnitSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           baffleUnit3length = this.updateBaffleUnit3Length(
                             e.currentTarget.value
@@ -556,7 +507,7 @@ export default class BaffleUnitSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           baffleUnit3width = this.updateBaffleUnit3Width(
                             e.currentTarget.value
@@ -570,7 +521,7 @@ export default class BaffleUnitSelector extends Component {
                       <label>QTY:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           baffleUnit3qty = this.updateBaffleUnit3qty(
                             e.currentTarget.value
@@ -584,16 +535,16 @@ export default class BaffleUnitSelector extends Component {
                       <label>Sqft:</label>
                       <input
                         className="short lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
-                          baffleUnit3sqft = this.updateBaffleUnit3sqft(
+                          baffle3sqft = this.updateBaffleUnit3sqft(
                             e.currentTarget.value,
                             true
                           );
                         }}
                         id="baffleUnit3-sqft"
                         name="BaffleUnit3"
-                        value={baffleUnit3sqft}
+                        value={baffle3sqft}
                       ></input>
                     </div>
                   </div>

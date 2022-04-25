@@ -20,7 +20,7 @@ export default class CeilingMatsSummary extends Component {
               const { selectedCeilingMaterial, ceilingMaterials } = apiContext;
               const mats = ceilingMaterials;
               const selected = selectedCeilingMaterial;
-              const { length, width } = reverbContext;
+              const { length, width } = apiContext;
               const area = length * width;
               return (
                 <div className="">

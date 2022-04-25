@@ -313,9 +313,6 @@ a:hover {
   grid-column: span 2;
 }
 
-p {
-  /* color: white; */
-}
 
 footer {
   background-color: #4d5861;
@@ -393,8 +390,6 @@ Input {
   width: 50%;
 }
 
-.sticky {
-}
 
 .form-group .form-control,
 .input-group .form-control {

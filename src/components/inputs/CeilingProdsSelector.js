@@ -9,46 +9,26 @@ export default class CeilingProdsSelector extends Component {
       selectedCeiling2Product: 0,
       selectedCeiling3Product: 0,
       selectedCeiling4Product: 0,
-      selectedCeiling5Product: 0,
-      selectedCeiling6Product: 0,
-      selectedCeiling7Product: 0,
-      selectedCeiling8Product: 0,
 
       ceilingProd1sqft: 0,
       ceilingProd2sqft: 0,
       ceilingProd3sqft: 0,
       ceilingProd4sqft: 0,
-      ceilingProd5sqft: 0,
-      ceilingProd6sqft: 0,
-      ceilingProd7sqft: 0,
-      ceilingProd8sqft: 0,
 
       ceilingProd1length: 0,
       ceilingProd2length: 0,
       ceilingProd3length: 0,
       ceilingProd4length: 0,
-      ceilingProd5length: 0,
-      ceilingProd6length: 0,
-      ceilingProd7length: 0,
-      ceilingProd8length: 0,
 
       ceilingProd1width: 0,
       ceilingProd2width: 0,
       ceilingProd3width: 0,
       ceilingProd4width: 0,
-      ceilingProd5width: 0,
-      ceilingProd6width: 0,
-      ceilingProd7width: 0,
-      ceilingProd8width: 0,
 
       ceilingProd1qty: 0,
       ceilingProd2qty: 0,
       ceilingProd3qty: 0,
       ceilingProd4qty: 0,
-      ceilingProd5qty: 0,
-      ceilingProd6qty: 0,
-      ceilingProd7qty: 0,
-      ceilingProd8qty: 0,
 
       isOpen: false,
       isOpen1: false,
@@ -146,7 +126,7 @@ export default class CeilingProdsSelector extends Component {
         this.state.ceilingProd2length * this.state.ceilingProd2qty * w,
     });
     this.context.updateCeilingProd2sqft(
-      this.state.ceilingProd12ength * this.state.ceilingProd2qty * w
+      this.state.ceilingProd2length * this.state.ceilingProd2qty * w
     );
     return w;
   }
@@ -359,26 +339,6 @@ export default class CeilingProdsSelector extends Component {
       ceilingProd4width,
       ceilingProd4qty,
       ceilingProd4sqft,
-
-      ceilingProd5length,
-      ceilingProd5width,
-      ceilingProd5qty,
-      ceilingProd5sqft,
-
-      ceilingProd6length,
-      ceilingProd6width,
-      ceilingProd6qty,
-      ceilingProd6sqft,
-
-      ceilingProd7length,
-      ceilingProd7width,
-      ceilingProd7qty,
-      ceilingProd7sqft,
-
-      ceilingProd8length,
-      ceilingProd8width,
-      ceilingProd8qty,
-      ceilingProd8sqft,
     } = this.state;
 
     return (
@@ -407,7 +367,7 @@ export default class CeilingProdsSelector extends Component {
                   <label>L:</label>
                   <input
                     className="shorter lighter-border"
-                    type="text"
+                    type="number"
                     onChange={(e) => {
                       ceilingProd1length = this.updateCeilingProd1Length(
                         e.currentTarget.value
@@ -421,7 +381,7 @@ export default class CeilingProdsSelector extends Component {
                   <label>W:</label>
                   <input
                     className="shorter lighter-border"
-                    type="text"
+                    type="number"
                     onChange={(e) => {
                       ceilingProd1width = this.updateCeilingProd1Width(
                         e.currentTarget.value
@@ -435,7 +395,7 @@ export default class CeilingProdsSelector extends Component {
                   <label>QTY:</label>
                   <input
                     className="shorter lighter-border"
-                    type="text"
+                    type="number"
                     onChange={(e) => {
                       ceilingProd1qty = this.updateCeilingProd1qty(
                         e.currentTarget.value
@@ -449,7 +409,7 @@ export default class CeilingProdsSelector extends Component {
                   <label>Sqft:</label>
                   <input
                     className="short lighter-border"
-                    type="text"
+                    type="number"
                     onChange={(e) => {
                       ceilingProd1sqft = this.updateCeilingProd1sqft(
                         e.currentTarget.value,
@@ -495,7 +455,7 @@ export default class CeilingProdsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           ceilingProd2length = this.updateCeilingProd2Length(
                             e.currentTarget.value
@@ -509,7 +469,7 @@ export default class CeilingProdsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           ceilingProd2width = this.updateCeilingProd2Width(
                             e.currentTarget.value
@@ -523,7 +483,7 @@ export default class CeilingProdsSelector extends Component {
                       <label>QTY:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           ceilingProd2qty = this.updateCeilingProd2qty(
                             e.currentTarget.value
@@ -537,7 +497,7 @@ export default class CeilingProdsSelector extends Component {
                       <label>Sqft:</label>
                       <input
                         className="short lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           ceilingProd2sqft = this.updateCeilingProd2sqft(
                             e.currentTarget.value,
@@ -596,7 +556,7 @@ export default class CeilingProdsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           ceilingProd3length = this.updateCeilingProd3Length(
                             e.currentTarget.value
@@ -610,7 +570,7 @@ export default class CeilingProdsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           ceilingProd3width = this.updateCeilingProd3Width(
                             e.currentTarget.value
@@ -624,7 +584,7 @@ export default class CeilingProdsSelector extends Component {
                       <label>QTY:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           ceilingProd3qty = this.updateCeilingProd3qty(
                             e.currentTarget.value
@@ -638,7 +598,7 @@ export default class CeilingProdsSelector extends Component {
                       <label>Sqft:</label>
                       <input
                         className="short lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           ceilingProd3sqft = this.updateCeilingProd3sqft(
                             e.currentTarget.value,
@@ -697,7 +657,7 @@ export default class CeilingProdsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           ceilingProd4length = this.updateCeilingProd4Length(
                             e.currentTarget.value
@@ -711,7 +671,7 @@ export default class CeilingProdsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           ceilingProd4width = this.updateCeilingProd4Width(
                             e.currentTarget.value
@@ -725,7 +685,7 @@ export default class CeilingProdsSelector extends Component {
                       <label>QTY:</label>
                       <input
                         className="shorter lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           ceilingProd4qty = this.updateCeilingProd4qty(
                             e.currentTarget.value
@@ -739,7 +699,7 @@ export default class CeilingProdsSelector extends Component {
                       <label>Sqft:</label>
                       <input
                         className="short lighter-border"
-                        type="text"
+                        type="number"
                         onChange={(e) => {
                           ceilingProd4sqft = this.updateCeilingProd4sqft(
                             e.currentTarget.value,

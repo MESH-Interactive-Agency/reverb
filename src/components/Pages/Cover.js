@@ -1,8 +1,6 @@
 import React from 'react';
-import { Button } from '../../utils/utils';
 import Context from '../../contexts/ReverbContext';
-import ReverbTime from '../inputs/ReverbTime';
-import Dimensions from '../inputs/Dimensions';
+
 
 export default class Cover extends React.Component {
   constructor(props) {

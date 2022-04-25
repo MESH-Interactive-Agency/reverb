@@ -31,8 +31,6 @@ export default class BaffleUnitsSummary extends Component {
 
               const mats = baffleUnits;
 
-              console.log(mats, selectedBaffle1Unit);
-
               return (
                 <div className="">
                   {!!mats && (

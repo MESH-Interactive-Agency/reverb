@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
-import Context from '../../contexts/ReverbContext';
+import Context from '../../contexts/ApiContext';
 
 export default class BoxSpace extends Component {
   static contextType = Context;
@@ -31,7 +31,7 @@ export default class BoxSpace extends Component {
           </div>
         </div>
         <div className="card-body">
-        <h6 className="big-title">Visualize your space</h6>
+          <h6 className="big-title">Visualize your space</h6>
           <div className="">
             <Canvas camera={{ position: [10, 14, 10], fov: 60 }}>
               <OrbitControls />

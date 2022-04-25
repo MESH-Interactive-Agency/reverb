@@ -77,10 +77,9 @@ export default class CeilingProdsSummary extends Component {
                           {ceilingProd1sqft > 0 && (
                             <tr>
                               <th className="left">
-                                {mats[selectedCeiling1Product].descript.substring(
-                                  0,
-                                  18
-                                )}
+                                {mats[
+                                  selectedCeiling1Product
+                                ].descript.substring(0, 18)}
                               </th>
                               <th className="right">
                                 {mats[selectedCeiling1Product].hz125}
@@ -109,10 +108,9 @@ export default class CeilingProdsSummary extends Component {
                           {ceilingProd2sqft > 0 && (
                             <tr>
                               <th className="left">
-                                {mats[selectedCeiling2Product].descript.substring(
-                                  0,
-                                  18
-                                )}
+                                {mats[
+                                  selectedCeiling2Product
+                                ].descript.substring(0, 18)}
                               </th>
                               <th className="right">
                                 {mats[selectedCeiling2Product].hz125}
@@ -141,10 +139,9 @@ export default class CeilingProdsSummary extends Component {
                           {ceilingProd3sqft > 0 && (
                             <tr>
                               <th className="left">
-                                {mats[selectedCeiling3Product].descript.substring(
-                                  0,
-                                  18
-                                )}
+                                {mats[
+                                  selectedCeiling3Product
+                                ].descript.substring(0, 18)}
                               </th>
                               <th className="right">
                                 {mats[selectedCeiling3Product].hz125}
@@ -173,10 +170,9 @@ export default class CeilingProdsSummary extends Component {
                           {ceilingProd4sqft > 0 && (
                             <tr>
                               <th className="left">
-                                {mats[selectedCeiling4Product].descript.substring(
-                                  0,
-                                  18
-                                )}
+                                {mats[
+                                  selectedCeiling4Product
+                                ].descript.substring(0, 18)}
                               </th>
                               <th className="right">
                                 {mats[selectedCeiling4Product].hz125}
@@ -205,10 +201,9 @@ export default class CeilingProdsSummary extends Component {
                           {ceilingProd5sqft > 0 && (
                             <tr>
                               <th className="left">
-                                {mats[selectedCeiling5Product].descript.substring(
-                                  0,
-                                  18
-                                )}
+                                {mats[
+                                  selectedCeiling5Product
+                                ].descript.substring(0, 18)}
                               </th>
                               <th className="right">
                                 {mats[selectedCeiling5Product].hz125}
@@ -237,10 +232,9 @@ export default class CeilingProdsSummary extends Component {
                           {ceilingProd6sqft > 0 && (
                             <tr>
                               <th className="left">
-                                {mats[selectedCeiling6Product].descript.substring(
-                                  0,
-                                  18
-                                )}
+                                {mats[
+                                  selectedCeiling6Product
+                                ].descript.substring(0, 18)}
                               </th>
                               <th className="right">
                                 {mats[selectedCeiling6Product].hz125}
@@ -269,10 +263,9 @@ export default class CeilingProdsSummary extends Component {
                           {ceilingProd7sqft > 0 && (
                             <tr>
                               <th className="left">
-                                {mats[selectedCeiling7Product].descript.substring(
-                                  0,
-                                  18
-                                )}
+                                {mats[
+                                  selectedCeiling7Product
+                                ].descript.substring(0, 18)}
                               </th>
                               <th className="right">
                                 {mats[selectedCeiling7Product].hz125}
@@ -301,10 +294,9 @@ export default class CeilingProdsSummary extends Component {
                           {ceilingProd8sqft > 0 && (
                             <tr>
                               <th className="left">
-                                {mats[selectedCeiling8Product].descript.substring(
-                                  0,
-                                  18
-                                )}
+                                {mats[
+                                  selectedCeiling8Product
+                                ].descript.substring(0, 18)}
                               </th>
                               <th className="right">
                                 {mats[selectedCeiling8Product].hz125}
@@ -334,40 +326,86 @@ export default class CeilingProdsSummary extends Component {
                             <th className="bold left">Total Sabines: </th>
                             <th className="bold right">
                               {(
-                                mats[selectedCeiling1Product].hz125 * ceilingProd1sqft
+                                mats[selectedCeiling1Product].hz125 *
+                                  ceilingProd1sqft +
+                                mats[selectedCeiling2Product].hz125 *
+                                  ceilingProd2sqft +
+                                mats[selectedCeiling3Product].hz125 *
+                                  ceilingProd3sqft +
+                                mats[selectedCeiling4Product].hz125 *
+                                  ceilingProd4sqft
                               ).toFixed(1)}
                             </th>
                             <th className="bold right">
                               {(
-                                mats[selectedCeiling1Product].hz250 * ceilingProd1sqft
+                                mats[selectedCeiling1Product].hz250 *
+                                  ceilingProd1sqft +
+                                mats[selectedCeiling2Product].hz250 *
+                                  ceilingProd2sqft +
+                                mats[selectedCeiling3Product].hz250 *
+                                  ceilingProd3sqft +
+                                mats[selectedCeiling4Product].hz250 *
+                                  ceilingProd4sqft
                               ).toFixed(1)}
                             </th>
                             <th className="bold right">
                               {(
-                                mats[selectedCeiling1Product].hz500 * ceilingProd1sqft
+                                mats[selectedCeiling1Product].hz500 *
+                                  ceilingProd1sqft +
+                                mats[selectedCeiling2Product].hz500 *
+                                  ceilingProd2sqft +
+                                mats[selectedCeiling3Product].hz500 *
+                                  ceilingProd3sqft +
+                                mats[selectedCeiling4Product].hz500 *
+                                  ceilingProd4sqft
                               ).toFixed(1)}
                             </th>
                             <th className="bold right">
                               {(
                                 mats[selectedCeiling1Product].hz1000 *
-                                ceilingProd1sqft
+                                  ceilingProd1sqft +
+                                mats[selectedCeiling2Product].hz1000 *
+                                  ceilingProd2sqft +
+                                mats[selectedCeiling3Product].hz1000 *
+                                  ceilingProd3sqft +
+                                mats[selectedCeiling4Product].hz1000 *
+                                  ceilingProd4sqft
                               ).toFixed(2)}
                             </th>
                             <th className="bold right">
                               {(
                                 mats[selectedCeiling1Product].hz2000 *
-                                ceilingProd1sqft
+                                  ceilingProd1sqft +
+                                mats[selectedCeiling2Product].hz2000 *
+                                  ceilingProd2sqft +
+                                mats[selectedCeiling3Product].hz2000 *
+                                  ceilingProd3sqft +
+                                mats[selectedCeiling4Product].hz2000 *
+                                  ceilingProd4sqft
                               ).toFixed(1)}
                             </th>
                             <th className="bold right">
                               {(
                                 mats[selectedCeiling1Product].hz4000 *
-                                ceilingProd1sqft
+                                  ceilingProd1sqft +
+                                mats[selectedCeiling2Product].hz4000 *
+                                  ceilingProd2sqft +
+                                mats[selectedCeiling3Product].hz4000 *
+                                  ceilingProd3sqft +
+                                mats[selectedCeiling4Product].hz4000 *
+                                  ceilingProd4sqft
                               ).toFixed(1)}
                             </th>
                             <th className="bold right">
                               {(
-                                mats[selectedCeiling1Product].nrc * ceilingProd1sqft
+                                mats[selectedCeiling1Product].nrc *
+                                  ceilingProd1sqft +
+                                mats[selectedCeiling2Product].nrc *
+                                  ceilingProd2sqft +
+                                mats[selectedCeiling3Product].nrc *
+                                  ceilingProd3sqft +
+                                mats[selectedCeiling4Product].nrc *
+                                  ceilingProd4sqft
                               ).toFixed(1)}
                             </th>
                           </tr>
