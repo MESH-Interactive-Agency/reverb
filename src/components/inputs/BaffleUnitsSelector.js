@@ -276,7 +276,6 @@ export default class BaffleUnitSelector extends Component {
       baffleUnit3qty,
       baffle3sqft,
     } = this.state;
-    console.log(this.state);
 
     return (
       <div className="row">

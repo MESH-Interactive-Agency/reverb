@@ -182,6 +182,22 @@ const ApiContext = React.createContext({
 
   getExistingSabines: () => {},
   getTreamentSabines: () => {},
+
+  floorMatTotal: {},
+  ceilingMatTotal: {},
+  wallMatTotal: {},
+  otherMatTotal: {},
+  ceilingProdTotal: {},
+  wallProdTotal: {},
+  baffleTotal: {},
+
+  updateFloorMatTotal: () => {},
+  updateCeilingMatTotal: () => {},
+  updateWallMatTotal: () => {},
+  updateOtherMatTotal: () => {},
+  updateCeilingProdTotal: () => {},
+  updateWallProdTotal: () => {},
+  updateBaffleTotal: () => {},
 });
 
 export default ApiContext;
@@ -269,6 +285,162 @@ export class ApiProvider extends Component {
     selectedReverbTime: 0,
 
     selectedTreatments: [],
+
+    floorMatTotal: {
+      hz125: 0,
+      hz250: 0,
+      hz500: 0,
+      hz1000: 0,
+      hz2000: 0,
+      hz4000: 0,
+      nrc: 0,
+    },
+    ceilingMatTotal: {
+      hz125: 0,
+      hz250: 0,
+      hz500: 0,
+      hz1000: 0,
+      hz2000: 0,
+      hz4000: 0,
+      nrc: 0,
+    },
+    wallMatTotal: {
+      hz125: 0,
+      hz250: 0,
+      hz500: 0,
+      hz1000: 0,
+      hz2000: 0,
+      hz4000: 0,
+      nrc: 0,
+    },
+    otherMatTotal: {
+      hz125: 0,
+      hz250: 0,
+      hz500: 0,
+      hz1000: 0,
+      hz2000: 0,
+      hz4000: 0,
+      nrc: 0,
+    },
+    ceilingProdTotal: {
+      hz125: 0,
+      hz250: 0,
+      hz500: 0,
+      hz1000: 0,
+      hz2000: 0,
+      hz4000: 0,
+      nrc: 0,
+    },
+    wallProdTotal: {
+      hz125: 0,
+      hz250: 0,
+      hz500: 0,
+      hz1000: 0,
+      hz2000: 0,
+      hz4000: 0,
+      nrc: 0,
+    },
+    baffleTotal: {
+      hz125: 0,
+      hz250: 0,
+      hz500: 0,
+      hz1000: 0,
+      hz2000: 0,
+      hz4000: 0,
+      nrc: 0,
+    },
+  };
+
+  updateFloorMatTotal = (t) => {
+    this.setState({
+      floorMatTotal: {
+        hz125: t.hz125,
+        hz250: t.hz250,
+        hz500: t.hz500,
+        hz1000: t.hz1000,
+        hz2000: t.hz2000,
+        hz4000: t.hz4000,
+        nrc: t.nrc,
+      },
+    });
+  };
+  updateCeilingMatTotal = (t) => {
+    this.setState({
+      ceilingMatTotal: {
+        hz125: t.hz125,
+        hz250: t.hz250,
+        hz500: t.hz500,
+        hz1000: t.hz1000,
+        hz2000: t.hz2000,
+        hz4000: t.hz4000,
+        nrc: t.nrc,
+      },
+    });
+  };
+  updateWallMatTotal = (t) => {
+    this.setState({
+      wallMatTotal: {
+        hz125: t.hz125,
+        hz250: t.hz250,
+        hz500: t.hz500,
+        hz1000: t.hz1000,
+        hz2000: t.hz2000,
+        hz4000: t.hz4000,
+        nrc: t.nrc,
+      },
+    });
+  };
+  updateOtherMatTotal = (t) => {
+    this.setState({
+      otherMatTotal: {
+        hz125: t.hz125,
+        hz250: t.hz250,
+        hz500: t.hz500,
+        hz1000: t.hz1000,
+        hz2000: t.hz2000,
+        hz4000: t.hz4000,
+        nrc: t.nrc,
+      },
+    });
+  };
+  updateCeilingProdTotal = (t) => {
+    this.setState({
+      ceilingProdTotal: {
+        hz125: t.hz125,
+        hz250: t.hz250,
+        hz500: t.hz500,
+        hz1000: t.hz1000,
+        hz2000: t.hz2000,
+        hz4000: t.hz4000,
+        nrc: t.nrc,
+      },
+    });
+  };
+  updateWallProdTotal = (t) => {
+    this.setState({
+      wallProdTotal: {
+        hz125: t.hz125,
+        hz250: t.hz250,
+        hz500: t.hz500,
+        hz1000: t.hz1000,
+        hz2000: t.hz2000,
+        hz4000: t.hz4000,
+        nrc: t.nrc,
+      },
+    });
+  };
+  updateBaffleTotal = (t) => {
+    this.setState({
+      baffleTotal: {
+        hz125: t.hz125,
+        hz250: t.hz250,
+        hz500: t.hz500,
+        hz1000: t.hz1000,
+        hz2000: t.hz2000,
+        hz4000: t.hz4000,
+        nrc: t.nrc,
+      },
+    });
   };
 
   updateWall1Height = (h) => {
@@ -724,6 +896,22 @@ export class ApiProvider extends Component {
 
       updateSelectedReverbTime: this.updateSelectedReverbTime,
 
+      updateFloorMatTotal: this.updateFloorMatTotal,
+      updateCeilingMatTotal: this.updateCeilingMatTotal,
+      updateWallMatTotal: this.updateWallMatTotal,
+      updateOtherMatTotal: this.updateOtherMatTotal,
+      updateCeilingProdTotal: this.updateCeilingProdTotal,
+      updateWallProdTotal: this.updateWallProdTotal,
+      updateBaffleTotal: this.updateBaffleTotal,
+
+      floorMatTotal: this.state.floorMatTotal,
+      ceilingMatTotal: this.state.ceilingMatTotal,
+      wallMatTotal: this.state.wallMatTotal,
+      otherMatTotal: this.state.otherMatTotal,
+      ceilingProdTotal: this.state.ceilingProdTotal,
+      wallProdTotal: this.state.wallProdTotal,
+      baffleTotal: this.state.baffleTotal,
+
       selectedFloorMaterial: this.state.selectedFloorMaterial,
       selectedCeilingMaterial: this.state.selectedCeilingMaterial,
 
@@ -796,9 +984,6 @@ export class ApiProvider extends Component {
       baffleUnits: this.state.baffleUnits,
       wallProducts: this.state.wallProducts,
       recommendedReverbTimes: this.state.recommendedReverbTimes,
-
-      selectedTreatments: this.selectedTreatments,
-      updateSelectedTreatments: this.updateSelectedTreatments,
 
       clearTreatments: this.clearTreatments,
     };

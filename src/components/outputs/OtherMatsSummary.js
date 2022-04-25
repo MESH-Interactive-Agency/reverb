@@ -2,6 +2,77 @@ import ApiContext from '../../contexts/ApiContext';
 import React, { Component } from 'react';
 
 export default class OtherMatsSummary extends Component {
+  total = {
+    hz125: 0,
+    hz250: 0,
+    hz500: 0,
+    hz1000: 0,
+    hz2000: 0,
+    hz4000: 0,
+    nrc: 0,
+  };
+
+  prevTotal = {
+    hz125: 0,
+    hz250: 0,
+    hz500: 0,
+    hz1000: 0,
+    hz2000: 0,
+    hz4000: 0,
+    nrc: 0,
+  };
+
+  static contextType = ApiContext;
+
+  updateTotal125(tot) {
+    const t = tot.toFixed(1);
+    this.total.hz125 = t;
+    return t;
+  }
+
+  updateTotal250(tot) {
+    const t = tot.toFixed(1);
+    this.total.hz250 = t;
+    return t;
+  }
+
+  updateTotal500(tot) {
+    const t = tot.toFixed(1);
+    this.total.hz500 = t;
+    return t;
+  }
+
+  updateTotal1000(tot) {
+    const t = tot.toFixed(1);
+    this.total.hz1000 = t;
+    return t;
+  }
+
+  updateTotal2000(tot) {
+    const t = tot.toFixed(1);
+    this.total.hz2000 = t;
+    return t;
+  }
+
+  updateTotal4000(tot) {
+    const t = tot.toFixed(1);
+    this.total.hz4000 = t;
+    return t;
+  }
+
+  updateNRC(tot) {
+    const t = tot.toFixed(1);
+    this.total.nrc = t;
+    return t;
+  }
+
+  componentDidUpdate() {
+    if (this.prevTotal.nrc !== this.total.nrc) {
+      this.context.updateOtherMatTotal(this.total);
+    }
+    this.prevTotal.nrc = this.total.nrc;
+  }
+
   render() {
     return (
       <ApiContext.Consumer>
@@ -322,88 +393,88 @@ export default class OtherMatsSummary extends Component {
                       <tr>
                         <th className="bold left">Total Sabines: </th>
                         <th className="bold right">
-                          {(
+                          {this.updateTotal125(
                             mats[selectedOther1Material].hz125 * other1sqft +
-                            mats[selectedOther2Material].hz125 * other2sqft +
-                            mats[selectedOther3Material].hz125 * other3sqft +
-                            mats[selectedOther4Material].hz125 * other4sqft +
-                            mats[selectedOther5Material].hz125 * other5sqft +
-                            mats[selectedOther6Material].hz125 * other6sqft +
-                            mats[selectedOther7Material].hz125 * other7sqft +
-                            mats[selectedOther8Material].hz125 * other8sqft
-                          ).toFixed(1)}
+                              mats[selectedOther2Material].hz125 * other2sqft +
+                              mats[selectedOther3Material].hz125 * other3sqft +
+                              mats[selectedOther4Material].hz125 * other4sqft +
+                              mats[selectedOther5Material].hz125 * other5sqft +
+                              mats[selectedOther6Material].hz125 * other6sqft +
+                              mats[selectedOther7Material].hz125 * other7sqft +
+                              mats[selectedOther8Material].hz125 * other8sqft
+                          )}
                         </th>
                         <th className="bold right">
-                          {(
+                          {this.updateTotal250(
                             mats[selectedOther1Material].hz250 * other1sqft +
-                            mats[selectedOther2Material].hz250 * other2sqft +
-                            mats[selectedOther3Material].hz250 * other3sqft +
-                            mats[selectedOther4Material].hz250 * other4sqft +
-                            mats[selectedOther5Material].hz250 * other5sqft +
-                            mats[selectedOther6Material].hz250 * other6sqft +
-                            mats[selectedOther7Material].hz250 * other7sqft +
-                            mats[selectedOther8Material].hz250 * other8sqft
-                          ).toFixed(1)}
+                              mats[selectedOther2Material].hz250 * other2sqft +
+                              mats[selectedOther3Material].hz250 * other3sqft +
+                              mats[selectedOther4Material].hz250 * other4sqft +
+                              mats[selectedOther5Material].hz250 * other5sqft +
+                              mats[selectedOther6Material].hz250 * other6sqft +
+                              mats[selectedOther7Material].hz250 * other7sqft +
+                              mats[selectedOther8Material].hz250 * other8sqft
+                          )}
                         </th>
                         <th className="bold right">
-                          {(
+                          {this.updateTotal500(
                             mats[selectedOther1Material].hz500 * other1sqft +
-                            mats[selectedOther2Material].hz500 * other2sqft +
-                            mats[selectedOther3Material].hz500 * other3sqft +
-                            mats[selectedOther4Material].hz500 * other4sqft +
-                            mats[selectedOther5Material].hz500 * other5sqft +
-                            mats[selectedOther6Material].hz500 * other6sqft +
-                            mats[selectedOther7Material].hz500 * other7sqft +
-                            mats[selectedOther8Material].hz500 * other8sqft
-                          ).toFixed(1)}
+                              mats[selectedOther2Material].hz500 * other2sqft +
+                              mats[selectedOther3Material].hz500 * other3sqft +
+                              mats[selectedOther4Material].hz500 * other4sqft +
+                              mats[selectedOther5Material].hz500 * other5sqft +
+                              mats[selectedOther6Material].hz500 * other6sqft +
+                              mats[selectedOther7Material].hz500 * other7sqft +
+                              mats[selectedOther8Material].hz500 * other8sqft
+                          )}
                         </th>
                         <th className="bold right">
-                          {(
+                          {this.updateTotal1000(
                             mats[selectedOther1Material].hz1000 * other1sqft +
-                            mats[selectedOther2Material].hz1000 * other2sqft +
-                            mats[selectedOther3Material].hz1000 * other3sqft +
-                            mats[selectedOther4Material].hz1000 * other4sqft +
-                            mats[selectedOther5Material].hz1000 * other5sqft +
-                            mats[selectedOther6Material].hz1000 * other6sqft +
-                            mats[selectedOther7Material].hz1000 * other7sqft +
-                            mats[selectedOther8Material].hz1000 * other8sqft
-                          ).toFixed(2)}
+                              mats[selectedOther2Material].hz1000 * other2sqft +
+                              mats[selectedOther3Material].hz1000 * other3sqft +
+                              mats[selectedOther4Material].hz1000 * other4sqft +
+                              mats[selectedOther5Material].hz1000 * other5sqft +
+                              mats[selectedOther6Material].hz1000 * other6sqft +
+                              mats[selectedOther7Material].hz1000 * other7sqft +
+                              mats[selectedOther8Material].hz1000 * other8sqft
+                          )}
                         </th>
                         <th className="bold right">
-                          {(
+                          {this.updateTotal2000(
                             mats[selectedOther1Material].hz2000 * other1sqft +
-                            mats[selectedOther2Material].hz2000 * other2sqft +
-                            mats[selectedOther3Material].hz2000 * other3sqft +
-                            mats[selectedOther4Material].hz2000 * other4sqft +
-                            mats[selectedOther5Material].hz2000 * other5sqft +
-                            mats[selectedOther6Material].hz2000 * other6sqft +
-                            mats[selectedOther7Material].hz2000 * other7sqft +
-                            mats[selectedOther8Material].hz2000 * other8sqft
-                          ).toFixed(1)}
+                              mats[selectedOther2Material].hz2000 * other2sqft +
+                              mats[selectedOther3Material].hz2000 * other3sqft +
+                              mats[selectedOther4Material].hz2000 * other4sqft +
+                              mats[selectedOther5Material].hz2000 * other5sqft +
+                              mats[selectedOther6Material].hz2000 * other6sqft +
+                              mats[selectedOther7Material].hz2000 * other7sqft +
+                              mats[selectedOther8Material].hz2000 * other8sqft
+                          )}
                         </th>
                         <th className="bold right">
-                          {(
+                          {this.updateTotal4000(
                             mats[selectedOther1Material].hz4000 * other1sqft +
-                            mats[selectedOther2Material].hz4000 * other2sqft +
-                            mats[selectedOther3Material].hz4000 * other3sqft +
-                            mats[selectedOther4Material].hz4000 * other4sqft +
-                            mats[selectedOther5Material].hz4000 * other5sqft +
-                            mats[selectedOther6Material].hz4000 * other6sqft +
-                            mats[selectedOther7Material].hz4000 * other7sqft +
-                            mats[selectedOther8Material].hz4000 * other8sqft
-                          ).toFixed(1)}
+                              mats[selectedOther2Material].hz4000 * other2sqft +
+                              mats[selectedOther3Material].hz4000 * other3sqft +
+                              mats[selectedOther4Material].hz4000 * other4sqft +
+                              mats[selectedOther5Material].hz4000 * other5sqft +
+                              mats[selectedOther6Material].hz4000 * other6sqft +
+                              mats[selectedOther7Material].hz4000 * other7sqft +
+                              mats[selectedOther8Material].hz4000 * other8sqft
+                          )}
                         </th>
                         <th className="bold right">
-                          {(
+                          {this.updateNRC(
                             mats[selectedOther1Material].nrc * other1sqft +
-                            mats[selectedOther2Material].nrc * other2sqft +
-                            mats[selectedOther3Material].nrc * other3sqft +
-                            mats[selectedOther4Material].nrc * other4sqft +
-                            mats[selectedOther5Material].nrc * other5sqft +
-                            mats[selectedOther6Material].nrc * other6sqft +
-                            mats[selectedOther7Material].nrc * other7sqft +
-                            mats[selectedOther8Material].nrc * other8sqft
-                          ).toFixed(1)}
+                              mats[selectedOther2Material].nrc * other2sqft +
+                              mats[selectedOther3Material].nrc * other3sqft +
+                              mats[selectedOther4Material].nrc * other4sqft +
+                              mats[selectedOther5Material].nrc * other5sqft +
+                              mats[selectedOther6Material].nrc * other6sqft +
+                              mats[selectedOther7Material].nrc * other7sqft +
+                              mats[selectedOther8Material].nrc * other8sqft
+                          )}
                         </th>
                       </tr>
                     </tbody>

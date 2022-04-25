@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
-import {
-  BarChart,
-  LineChart,
-  Line,
-  Bar,
-  ResponsiveContainer,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-} from 'recharts';
+import { LineChart, Line, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
-import ReverbContext from '../../contexts/ReverbContext';
 import ApiContext from '../../contexts/ApiContext';
-import { faLongArrowDown } from '@fortawesome/free-solid-svg-icons';
+
+/*
+      updateFloorMatTotal: this.updateFloorMatTotal,
+      updateCeilingMatTotal: this.updateCeilingMatTotal,
+      updateWallMatTotal: this.updateWallMatTotal,
+      updateOtherMatTotal: this.updateOtherMatTotal,
+      updateCeilingProdTotal: this.updateCeilingProdTotal,
+      updateWallProdTotal: this.updateWallProdTotal,
+      updateBaffleTotal: this.updateBaffleTotal,
+
+      floorMatTotal: this.state.floorMatTotal,
+      ceilingMatTotal: this.state.ceilingMatTotal,
+      wallMatTotal: this.state.wallMatTotal,
+      otherMatTotal: this.state.otherMatTotal,
+      ceilingProdTotal: this.state.ceilingProdTotal,
+      wallProdTotal: this.state.wallProdTotal,
+      baffleTotal: this.state.baffleTotal,
+*/
 
 export default class SabineChart extends Component {
   calculateOpeningsArea = () => {

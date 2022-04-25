@@ -31,7 +31,7 @@ export default class DetailsWindow extends React.Component {
             <h4 className="">Treatments</h4>
             <CeilingProdsSummary />
             <WallProdsSummary />
-            <BaffleUnitsSummary /> 
+            <BaffleUnitsSummary />
           </div>
         </div>
       </aside>

@@ -2,12 +2,82 @@ import ApiContext from '../../contexts/ApiContext';
 import React, { Component } from 'react';
 
 export default class WallMatsSummary extends Component {
-  //static contextType = ApiContext;
+  static contextType = ApiContext;
   constructor(props) {
     super(props);
     this.state = {
       //selected: 0,
     };
+  }
+
+  total = {
+    hz125: 0,
+    hz250: 0,
+    hz500: 0,
+    hz1000: 0,
+    hz2000: 0,
+    hz4000: 0,
+    nrc: 0,
+  };
+
+  prevTotal = {
+    hz125: 0,
+    hz250: 0,
+    hz500: 0,
+    hz1000: 0,
+    hz2000: 0,
+    hz4000: 0,
+    nrc: 0,
+  };
+
+  updateTotal125(tot) {
+    const t = tot.toFixed(1);
+    this.total.hz125 = t;
+    return t;
+  }
+
+  updateTotal250(tot) {
+    const t = tot.toFixed(1);
+    this.total.hz250 = t;
+    return t;
+  }
+
+  updateTotal500(tot) {
+    const t = tot.toFixed(1);
+    this.total.hz500 = t;
+    return t;
+  }
+
+  updateTotal1000(tot) {
+    const t = tot.toFixed(1);
+    this.total.hz1000 = t;
+    return t;
+  }
+
+  updateTotal2000(tot) {
+    const t = tot.toFixed(1);
+    this.total.hz2000 = t;
+    return t;
+  }
+
+  updateTotal4000(tot) {
+    const t = tot.toFixed(1);
+    this.total.hz4000 = t;
+    return t;
+  }
+
+  updateNRC(tot) {
+    const t = tot.toFixed(1);
+    this.total.nrc = t;
+    return t;
+  }
+
+  componentDidUpdate() {
+    if (this.prevTotal.nrc !== this.total.nrc) {
+      this.context.updateWallMatTotal(this.total);
+      console.log(this.context.wallMatTotal);
+    }
+    this.prevTotal.nrc = this.total.nrc;
   }
 
   render() {
@@ -119,60 +189,60 @@ export default class WallMatsSummary extends Component {
                       <tr>
                         <th className="bold left">Total Sabines: </th>
                         <th className="bold right">
-                          {(
+                          {this.updateTotal125(
                             mats[sel1].hz125 * wall1sqft +
-                            mats[sel2].hz125 * wall2sqft +
-                            mats[sel3].hz125 * wall3sqft +
-                            mats[sel4].hz125 * wall4sqft
-                          ).toFixed(1)}
+                              mats[sel2].hz125 * wall2sqft +
+                              mats[sel3].hz125 * wall3sqft +
+                              mats[sel4].hz125 * wall4sqft
+                          )}
                         </th>
                         <th className="bold right">
-                          {(
+                          {this.updateTotal250(
                             mats[sel1].hz250 * wall1sqft +
-                            mats[sel2].hz250 * wall2sqft +
-                            mats[sel3].hz250 * wall3sqft +
-                            mats[sel4].hz250 * wall4sqft
-                          ).toFixed(1)}
+                              mats[sel2].hz250 * wall2sqft +
+                              mats[sel3].hz250 * wall3sqft +
+                              mats[sel4].hz250 * wall4sqft
+                          )}
                         </th>
                         <th className="bold right">
-                          {(
+                          {this.updateTotal500(
                             mats[sel1].hz500 * wall1sqft +
-                            mats[sel2].hz500 * wall2sqft +
-                            mats[sel3].hz500 * wall3sqft +
-                            mats[sel4].hz500 * wall4sqft
-                          ).toFixed(1)}
+                              mats[sel2].hz500 * wall2sqft +
+                              mats[sel3].hz500 * wall3sqft +
+                              mats[sel4].hz500 * wall4sqft
+                          )}
                         </th>
                         <th className="bold right">
-                          {(
+                          {this.updateTotal1000(
                             mats[sel1].hz1000 * wall1sqft +
-                            mats[sel2].hz1000 * wall2sqft +
-                            mats[sel3].hz1000 * wall3sqft +
-                            mats[sel4].hz1000 * wall4sqft
-                          ).toFixed(1)}
+                              mats[sel2].hz1000 * wall2sqft +
+                              mats[sel3].hz1000 * wall3sqft +
+                              mats[sel4].hz1000 * wall4sqft
+                          )}
                         </th>
                         <th className="bold right">
-                          {(
+                          {this.updateTotal2000(
                             mats[sel1].hz2000 * wall1sqft +
-                            mats[sel2].hz2000 * wall2sqft +
-                            mats[sel3].hz2000 * wall3sqft +
-                            mats[sel4].hz2000 * wall4sqft
-                          ).toFixed(1)}
+                              mats[sel2].hz2000 * wall2sqft +
+                              mats[sel3].hz2000 * wall3sqft +
+                              mats[sel4].hz2000 * wall4sqft
+                          )}
                         </th>
                         <th className="bold right">
-                          {(
+                          {this.updateTotal4000(
                             mats[sel1].hz4000 * wall1sqft +
-                            mats[sel2].hz4000 * wall2sqft +
-                            mats[sel3].hz4000 * wall3sqft +
-                            mats[sel4].hz4000 * wall4sqft
-                          ).toFixed(1)}
+                              mats[sel2].hz4000 * wall2sqft +
+                              mats[sel3].hz4000 * wall3sqft +
+                              mats[sel4].hz4000 * wall4sqft
+                          )}
                         </th>
                         <th className="bold right">
-                          {(
+                          {this.updateNRC(
                             mats[sel1].nrc * wall1sqft +
-                            mats[sel2].nrc * wall2sqft +
-                            mats[sel3].nrc * wall3sqft +
-                            mats[sel4].nrc * wall4sqft
-                          ).toFixed(1)}
+                              mats[sel2].nrc * wall2sqft +
+                              mats[sel3].nrc * wall3sqft +
+                              mats[sel4].nrc * wall4sqft
+                          )}
                         </th>
                       </tr>
                     </tbody>
