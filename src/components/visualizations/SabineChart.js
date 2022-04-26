@@ -186,26 +186,6 @@ export default class SabineChart extends Component {
             },
           ];
 
-          console.log(
-            'sabines:',
-            sabines.hz125,
-            'treatment',
-            treatment.hz125,
-            'recommended:',
-            'volume',
-            volume,
-            rec,
-            'raw',
-
-            floorMatTotal.hz125,
-            ceilingMatTotal.hz125,
-            wallMatTotal.hz125,
-            otherMatTotal.hz125,
-            ceilingProdTotal.hz125,
-            wallProdTotal.hz125,
-            baffleTotal.hz125
-          );
-
           return (
             <div className="card">
               <div className="card-header">
@@ -224,8 +204,8 @@ export default class SabineChart extends Component {
               </div>
               <div className="card-body">
                 <h6 className="big-title">
-                  <span className="green">Existing Conditions</span> /{' '}
-                  <span className="orange">With Treatment</span> /{' '}
+                  <span className="orange">Existing Conditions</span> /{' '}
+                  <span className="green">With Treatment</span> /{' '}
                   <span className="grey">Target</span>
                 </h6>
                 <ResponsiveContainer height={180}>
@@ -248,13 +228,13 @@ export default class SabineChart extends Component {
                     <Line
                       dot={false}
                       dataKey="uv"
-                      stroke="#7f9e23"
+                      stroke="#de6d35"
                       strokeWidth={3}
                     />
                     <Line
                       dot={false}
                       dataKey="altv"
-                      stroke="#de6d35"
+                      stroke="#7f9e23"
                       strokeWidth={3}
                     />
                     <Line

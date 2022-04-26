@@ -44,12 +44,13 @@ export default class SurfaceAreaChart extends Component {
             {
               name: 'Total Required',
               uv: remaining,
-              fill: '#7f9e23',
+
+              fill: '#de6d35',
             },
             {
               name: 'Added',
               uv: added,
-              fill: '#de6d35',
+              fill: '#7f9e23',
             },
           ];
 

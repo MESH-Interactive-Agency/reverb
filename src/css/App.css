@@ -507,12 +507,13 @@ input {
 .charts {
   /* display: flex;
   flex-direction: row; */
-  margin-top: 1em;
+  margin-top: 0.5em;
   display: grid;
   grid-template-columns: auto 21em 33em 21em auto;
   grid-gap: 1.1em;
   background-color: #f4f3ef;
   padding-left: 0em;
+  margin-left: -5px;
 }
 
 .boxVisualizer {
