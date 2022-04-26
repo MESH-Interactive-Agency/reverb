@@ -14,13 +14,8 @@ export default class PrintableSummary extends React.Component {
         {(reverbContext) => (
           <ApiContext.Consumer>
             {(apiContext) => {
-              const {
-                selectedFloorMaterial,
-                floorMaterials,
-                selectedReverbTime,
-              } = apiContext;
-              const mats = floorMaterials;
-              const selected = selectedFloorMaterial;
+              const { selectedReverbTime } = apiContext;
+
               const { length, width, height, customerName, projectName, date } =
                 reverbContext;
               const volume = length * width * height;
