@@ -38,7 +38,6 @@ export default class SurfaceAreaChart extends Component {
 
           let remaining = volume / selectedReverbTime - current;
 
-          console.log(volume, selectedReverbTime, remaining);
 
           const data = [
             {
@@ -54,7 +53,6 @@ export default class SurfaceAreaChart extends Component {
             },
           ];
 
-          console.log();
 
           return (
             <div className="card  ">

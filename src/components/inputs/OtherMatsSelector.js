@@ -581,7 +581,7 @@ export default class OtherMatsSelector extends Component {
                   <label>L:</label>
                   <input
                     className="shorter lighter-border"
-                    type="number"
+                    type="text"
                     onChange={(e) => {
                       other1length = this.updateOther1Length(
                         e.currentTarget.value
@@ -595,7 +595,7 @@ export default class OtherMatsSelector extends Component {
                   <label>W:</label>
                   <input
                     className="shorter lighter-border"
-                    type="number"
+                    type="text"
                     onChange={(e) => {
                       other1width = this.updateOther1Width(
                         e.currentTarget.value
@@ -667,7 +667,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other2length = this.updateOther2Length(
                             e.currentTarget.value
@@ -681,7 +681,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other2width = this.updateOther2Width(
                             e.currentTarget.value
@@ -768,7 +768,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other3length = this.updateOther3Length(
                             e.currentTarget.value
@@ -782,7 +782,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other3width = this.updateOther3Width(
                             e.currentTarget.value
@@ -869,7 +869,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other4length = this.updateOther4Length(
                             e.currentTarget.value
@@ -883,7 +883,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other4width = this.updateOther4Width(
                             e.currentTarget.value
@@ -970,7 +970,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other5length = this.updateOther5Length(
                             e.currentTarget.value
@@ -984,7 +984,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other5width = this.updateOther5Width(
                             e.currentTarget.value
@@ -1071,7 +1071,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other6length = this.updateOther6Length(
                             e.currentTarget.value
@@ -1085,7 +1085,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other6width = this.updateOther6Width(
                             e.currentTarget.value
@@ -1172,7 +1172,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other7length = this.updateOther7Length(
                             e.currentTarget.value
@@ -1186,7 +1186,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other7width = this.updateOther7Width(
                             e.currentTarget.value
@@ -1273,7 +1273,7 @@ export default class OtherMatsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other8length = this.updateOther8Length(
                             e.currentTarget.value
@@ -1287,7 +1287,7 @@ export default class OtherMatsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           other8width = this.updateOther8Width(
                             e.currentTarget.value

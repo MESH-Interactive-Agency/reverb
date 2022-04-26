@@ -76,7 +76,6 @@ export default class CeilingProdsSummary extends Component {
   componentDidUpdate() {
     if (this.prevTotal.nrc !== this.total.nrc) {
       this.context.updateCeilingProdTotal(this.total);
-      console.log(this.context.ceilingProdTotal);
     }
     this.prevTotal.nrc = this.total.nrc;
   }

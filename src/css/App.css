@@ -510,10 +510,10 @@ input {
   margin-top: 0.5em;
   display: grid;
   grid-template-columns: auto 21em 33em 21em auto;
-  grid-gap: 1.1em;
+  grid-gap: 1.05em;
   background-color: #f4f3ef;
-  padding-left: 0em;
-  margin-left: -5px;
+  margin-bottom: .25em;
+  margin-left: -0.25em;
 }
 
 .boxVisualizer {

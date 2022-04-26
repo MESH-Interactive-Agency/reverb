@@ -75,7 +75,6 @@ export default class WallMatsSummary extends Component {
   componentDidUpdate() {
     if (this.prevTotal.nrc !== this.total.nrc) {
       this.context.updateWallMatTotal(this.total);
-      console.log(this.context.wallMatTotal);
     }
     this.prevTotal.nrc = this.total.nrc;
   }

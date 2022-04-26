@@ -587,7 +587,7 @@ export default class WallProdsSelector extends Component {
                   <label>L:</label>
                   <input
                     className="shorter lighter-border"
-                    type="number"
+                    type="text"
                     onChange={(e) => {
                       wallProd1length = this.updateWallProd1Length(
                         e.currentTarget.value
@@ -601,7 +601,7 @@ export default class WallProdsSelector extends Component {
                   <label>W:</label>
                   <input
                     className="shorter lighter-border"
-                    type="number"
+                    type="text"
                     onChange={(e) => {
                       wallProd1width = this.updateWallProd1Width(
                         e.currentTarget.value
@@ -675,7 +675,7 @@ export default class WallProdsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd2length = this.updateWallProd2Length(
                             e.currentTarget.value
@@ -689,7 +689,7 @@ export default class WallProdsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd2width = this.updateWallProd2Width(
                             e.currentTarget.value
@@ -776,7 +776,7 @@ export default class WallProdsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd3length = this.updateWallProd3Length(
                             e.currentTarget.value
@@ -790,7 +790,7 @@ export default class WallProdsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd3width = this.updateWallProd3Width(
                             e.currentTarget.value
@@ -877,7 +877,7 @@ export default class WallProdsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd4length = this.updateWallProd4Length(
                             e.currentTarget.value
@@ -891,7 +891,7 @@ export default class WallProdsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd4width = this.updateWallProd4Width(
                             e.currentTarget.value
@@ -978,7 +978,7 @@ export default class WallProdsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd5length = this.updateWallProd5Length(
                             e.currentTarget.value
@@ -992,7 +992,7 @@ export default class WallProdsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd5width = this.updateWallProd5Width(
                             e.currentTarget.value
@@ -1079,7 +1079,7 @@ export default class WallProdsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd6length = this.updateWallProd6Length(
                             e.currentTarget.value
@@ -1093,7 +1093,7 @@ export default class WallProdsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd6width = this.updateWallProd6Width(
                             e.currentTarget.value
@@ -1180,7 +1180,7 @@ export default class WallProdsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd7length = this.updateWallProd7Length(
                             e.currentTarget.value
@@ -1194,7 +1194,7 @@ export default class WallProdsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd7width = this.updateWallProd7Width(
                             e.currentTarget.value
@@ -1281,7 +1281,7 @@ export default class WallProdsSelector extends Component {
                       <label>L:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd8length = this.updateWallProd8Length(
                             e.currentTarget.value
@@ -1295,7 +1295,7 @@ export default class WallProdsSelector extends Component {
                       <label>W:</label>
                       <input
                         className="shorter lighter-border"
-                        type="number"
+                        type="text"
                         onChange={(e) => {
                           wallProd8width = this.updateWallProd8Width(
                             e.currentTarget.value
