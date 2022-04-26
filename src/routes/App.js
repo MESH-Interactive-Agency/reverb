@@ -20,7 +20,7 @@ export default class App extends Component {
           <Route path="/" component={NavWindow} />
           <Route path="/" component={MainWindow} />
           <Route path="/" component={DetailsWindow} />
-          {/* <Route path="/" component={Footer} /> */}
+          <Route path="/" component={Footer} />
         </ErrorBoundary>
       </main>
     );

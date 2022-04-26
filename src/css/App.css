@@ -58,8 +58,6 @@ html {
   justify-content: center;
 }
 
-
-
 body {
   color: #2c2c2c;
   font-size: 0.9rem;
@@ -69,7 +67,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-aside{
+aside {
   overflow-y: scroll;
   overflow-x: hidden;
   height: 47em;
@@ -541,7 +539,7 @@ input {
 }
 
 .dropdown-groups {
-  height: 48em;
+  height: 47em;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -570,7 +568,6 @@ select {
   margin: 0.5em;
   margin-left: 0.175em;
   padding: 0.75em;
-
 }
 
 .lead-cell {

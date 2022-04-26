@@ -14,7 +14,7 @@ export default class Charts extends React.Component {
         <div></div>
         <BoxSpace />
         <SabineChart />
-        {/* <SurfaceAreaChart /> */}
+        <SurfaceAreaChart />
         <div></div>
       </div>
     );
