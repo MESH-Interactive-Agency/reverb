@@ -354,91 +354,91 @@ export class ApiProvider extends Component {
   updateFloorMatTotal = (t) => {
     this.setState({
       floorMatTotal: {
-        hz125: t.hz125,
-        hz250: t.hz250,
-        hz500: t.hz500,
-        hz1000: t.hz1000,
-        hz2000: t.hz2000,
-        hz4000: t.hz4000,
-        nrc: t.nrc,
+        hz125: Number(t.hz125),
+        hz250: Number(t.hz250),
+        hz500: Number(t.hz500),
+        hz1000: Number(t.hz1000),
+        hz2000: Number(t.hz2000),
+        hz4000: Number(t.hz4000),
+        nrc: Number(t.nrc),
       },
     });
   };
   updateCeilingMatTotal = (t) => {
     this.setState({
       ceilingMatTotal: {
-        hz125: t.hz125,
-        hz250: t.hz250,
-        hz500: t.hz500,
-        hz1000: t.hz1000,
-        hz2000: t.hz2000,
-        hz4000: t.hz4000,
-        nrc: t.nrc,
+        hz125: Number(t.hz125),
+        hz250: Number(t.hz250),
+        hz500: Number(t.hz500),
+        hz1000: Number(t.hz1000),
+        hz2000: Number(t.hz2000),
+        hz4000: Number(t.hz4000),
+        nrc: Number(t.nrc),
       },
     });
   };
   updateWallMatTotal = (t) => {
     this.setState({
       wallMatTotal: {
-        hz125: t.hz125,
-        hz250: t.hz250,
-        hz500: t.hz500,
-        hz1000: t.hz1000,
-        hz2000: t.hz2000,
-        hz4000: t.hz4000,
-        nrc: t.nrc,
+        hz125: Number(t.hz125),
+        hz250: Number(t.hz250),
+        hz500: Number(t.hz500),
+        hz1000: Number(t.hz1000),
+        hz2000: Number(t.hz2000),
+        hz4000: Number(t.hz4000),
+        nrc: Number(t.nrc),
       },
     });
   };
   updateOtherMatTotal = (t) => {
     this.setState({
       otherMatTotal: {
-        hz125: t.hz125,
-        hz250: t.hz250,
-        hz500: t.hz500,
-        hz1000: t.hz1000,
-        hz2000: t.hz2000,
-        hz4000: t.hz4000,
-        nrc: t.nrc,
+        hz125: Number(t.hz125),
+        hz250: Number(t.hz250),
+        hz500: Number(t.hz500),
+        hz1000: Number(t.hz1000),
+        hz2000: Number(t.hz2000),
+        hz4000: Number(t.hz4000),
+        nrc: Number(t.nrc),
       },
     });
   };
   updateCeilingProdTotal = (t) => {
     this.setState({
       ceilingProdTotal: {
-        hz125: t.hz125,
-        hz250: t.hz250,
-        hz500: t.hz500,
-        hz1000: t.hz1000,
-        hz2000: t.hz2000,
-        hz4000: t.hz4000,
-        nrc: t.nrc,
+        hz125: Number(t.hz125),
+        hz250: Number(t.hz250),
+        hz500: Number(t.hz500),
+        hz1000: Number(t.hz1000),
+        hz2000: Number(t.hz2000),
+        hz4000: Number(t.hz4000),
+        nrc: Number(t.nrc),
       },
     });
   };
   updateWallProdTotal = (t) => {
     this.setState({
       wallProdTotal: {
-        hz125: t.hz125,
-        hz250: t.hz250,
-        hz500: t.hz500,
-        hz1000: t.hz1000,
-        hz2000: t.hz2000,
-        hz4000: t.hz4000,
-        nrc: t.nrc,
+        hz125: Number(t.hz125),
+        hz250: Number(t.hz250),
+        hz500: Number(t.hz500),
+        hz1000: Number(t.hz1000),
+        hz2000: Number(t.hz2000),
+        hz4000: Number(t.hz4000),
+        nrc: Number(t.nrc),
       },
     });
   };
   updateBaffleTotal = (t) => {
     this.setState({
       baffleTotal: {
-        hz125: t.hz125,
-        hz250: t.hz250,
-        hz500: t.hz500,
-        hz1000: t.hz1000,
-        hz2000: t.hz2000,
-        hz4000: t.hz4000,
-        nrc: t.nrc,
+        hz125: Number(t.hz125),
+        hz250: Number(t.hz250),
+        hz500: Number(t.hz500),
+        hz1000: Number(t.hz1000),
+        hz2000: Number(t.hz2000),
+        hz4000: Number(t.hz4000),
+        nrc: Number(t.nrc),
       },
     });
   };

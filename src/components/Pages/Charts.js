@@ -13,7 +13,7 @@ export default class Charts extends React.Component {
       <div className="charts sticky ">
         <div></div>
         <BoxSpace />
-        {/* <SabineChart /> */}
+        <SabineChart />
         {/* <SurfaceAreaChart /> */}
         <div></div>
       </div>

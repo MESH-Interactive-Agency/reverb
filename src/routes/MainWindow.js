@@ -16,8 +16,8 @@ export default class MainWindow extends React.Component {
       <div className=" main no-shadow">
         <div className="dropdown-groups">
           <Cover />
-          <ReverbTime />
           <Dimensions />
+          <ReverbTime />
           <ExistingConditions />
           <AcousticalTreatments />
         </div>
