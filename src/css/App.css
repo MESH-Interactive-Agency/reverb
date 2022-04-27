@@ -184,6 +184,10 @@ h1 {
   padding: 15px 15px 10px 15px;
 }
 
+.no-foot {
+  padding: 15px 15px 10px 15px;
+}
+
 .card .card-body {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -512,7 +516,8 @@ input {
   grid-template-columns: auto 21em 33em 21em auto;
   grid-gap: 1.05em;
   background-color: #f4f3ef;
-  margin-bottom: .25em;
+
+  margin-bottom: 0.25em;
   margin-left: -0.25em;
 }
 
@@ -565,10 +570,10 @@ select {
 .outputTables {
   display: flex;
   flex-direction: column;
-  width: 36.75em;
+  width: 36.2em;
   margin: 0.5em;
   margin-left: 0.175em;
-  padding: 0.75em;
+  padding: 1em 1em 1em 1em;
 }
 
 .lead-cell {

@@ -30,7 +30,7 @@ export default class BoxSpace extends Component {
             </div>
           </div>
         </div>
-        <div className="card-body">
+        <div className=" no-foot">
           <h6 className="big-title">Visualize your space</h6>
           <div className="">
             <Canvas camera={{ position: [10, 14, 10], fov: 60 }}>

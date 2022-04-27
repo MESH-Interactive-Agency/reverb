@@ -38,21 +38,19 @@ export default class SurfaceAreaChart extends Component {
 
           let remaining = volume / selectedReverbTime - current;
 
-
           const data = [
             {
               name: 'Total Required',
-              uv: remaining,
+              uv: remaining > 0 ? remaining : 0,
 
               fill: '#de6d35',
             },
             {
               name: 'Added',
-              uv: added,
+              uv: added > 0 ? added : 0,
               fill: '#7f9e23',
             },
           ];
-
 
           return (
             <div className="card  ">
@@ -64,15 +62,28 @@ export default class SurfaceAreaChart extends Component {
                   <div className="col-sm-5"></div>
                 </div>
               </div>
-              <div className="card-body">
+              <div className=" no-foot">
                 <h6 className="big-title">
                   <span>Treatment Required</span>
                 </h6>
 
                 <ResponsiveContainer width="100%" height={180}>
                   <BarChart data={data}>
-                    <XAxis dataKey="name" height={15} tick={{ fontSize: 10 }} />
-                    <YAxis type="number" width={35} tick={{ fontSize: 12 }} />
+                    <XAxis
+                      dataKey="name"
+                      height={15}
+                      tick={{ fontSize: 10 }}
+                      axisLine={false}
+                      tickLine={false}
+                    />
+                    <YAxis
+                      type="number"
+                      width={35}
+                      tick={{ fontSize: 12 }}
+                      domain={[0, 'auto']}
+                      axisLine={false}
+                      tickLine={false}
+                    />
                     <Bar dataKey="uv" fill="#8884d8" barSize={30} />
                   </BarChart>
                 </ResponsiveContainer>

@@ -185,7 +185,6 @@ export default class SabineChart extends Component {
               recommended: volume / (rec * 1.797),
             },
           ];
-
           return (
             <div className="card">
               <div className="card-header">
@@ -202,7 +201,7 @@ export default class SabineChart extends Component {
                   </div>
                 </div>
               </div>
-              <div className="card-body">
+              <div className=" no-foot">
                 <h6 className="big-title">
                   <span className="orange">Existing Conditions</span> /{' '}
                   <span className="green">With Treatment</span> /{' '}
@@ -220,7 +219,7 @@ export default class SabineChart extends Component {
                     <YAxis
                       width={22}
                       tick={{ fontSize: 10 }}
-                      domain={[0, 3.5]}
+                      domain={[0, 'auto']}
                       axisLine={false}
                       tickLine={false}
                     />

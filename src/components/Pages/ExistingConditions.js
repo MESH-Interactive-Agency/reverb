@@ -12,6 +12,7 @@ export default class ExistingConditions extends React.Component {
         <div className="card-header">
           <h4 className="card-title">Existing Materials</h4>
         </div>
+
         <form className="form-horizontal">
           <FloorMatsSelector />
           <CeilingMatsSelector />
