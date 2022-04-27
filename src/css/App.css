@@ -284,7 +284,8 @@ h1 {
 
 .short {
   width: 3em;
-  margin-left: 1em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
 }
 .shorter {
   width: 2em;
@@ -292,6 +293,9 @@ h1 {
   margin: 0 0.5em;
 }
 
+.box-model {
+  height: 12.5em;
+}
 .doors {
   padding-left: 0.3em;
 }
@@ -639,12 +643,13 @@ th {
   align-content: center;
 }
 
-#floormats,
-#ceilingmats,
+.floormats,
+.ceilingmats,
 .wallmats,
-#othermats,
-#ceilingprods,
-#baffleunits {
+.wallprods,
+.othermats,
+.ceilingprods,
+.baffleunits {
   width: 93%;
 }
 
@@ -808,7 +813,7 @@ th {
 }
 
 .additional-inputs {
-  margin: 0.75em;
+  margin: 0.75em 0em 0.75em 0.25em;
 }
 @media screen and (min-width: 650px) {
   .summaryPanel {

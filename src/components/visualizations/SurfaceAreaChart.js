@@ -78,8 +78,8 @@ export default class SurfaceAreaChart extends Component {
                     />
                     <YAxis
                       type="number"
-                      width={35}
-                      tick={{ fontSize: 12 }}
+                      width={25}
+                      tick={{ fontSize: 10 }}
                       domain={[0, 'auto']}
                       axisLine={false}
                       tickLine={false}

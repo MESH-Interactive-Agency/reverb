@@ -150,6 +150,8 @@ export default class WallMatsSelector extends Component {
     });
   };
 
+  handleFocus = (event) => event.target.select();
+
   render() {
     let mats = this.context.wallMaterials;
 
@@ -203,6 +205,9 @@ export default class WallMatsSelector extends Component {
                   <div className="additional-inputs">
                     <label>L:</label>
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="shorter lighter-border"
                       type="number"
                       onChange={(e) => {
@@ -217,6 +222,9 @@ export default class WallMatsSelector extends Component {
 
                     <label>H:</label>
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="shorter lighter-border"
                       type="number"
                       onChange={(e) => {
@@ -231,6 +239,9 @@ export default class WallMatsSelector extends Component {
 
                     <label>OR sqft:</label>
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="short lighter-border"
                       type="number"
                       onChange={(e) => {
@@ -266,6 +277,9 @@ export default class WallMatsSelector extends Component {
                   <div className="additional-inputs">
                     <label>L:</label>
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="shorter lighter-border"
                       type="number"
                       onChange={(e) => {
@@ -280,6 +294,9 @@ export default class WallMatsSelector extends Component {
 
                     <label>H:</label>
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="shorter lighter-border"
                       type="number"
                       onChange={(e) => {
@@ -294,6 +311,9 @@ export default class WallMatsSelector extends Component {
 
                     <label>OR sqft:</label>
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="short lighter-border"
                       type="number"
                       onChange={(e) => {
@@ -329,6 +349,9 @@ export default class WallMatsSelector extends Component {
                   <div className="additional-inputs">
                     <label>L:</label>
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="shorter lighter-border"
                       type="number"
                       onChange={(e) => {
@@ -343,6 +366,9 @@ export default class WallMatsSelector extends Component {
 
                     <label>Ht:</label>
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="shorter lighter-border"
                       type="number"
                       onChange={(e) => {
@@ -357,6 +383,9 @@ export default class WallMatsSelector extends Component {
 
                     <label>OR Sqft:</label>
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="short lighter-border"
                       type="number"
                       onChange={(e) => {
@@ -392,6 +421,9 @@ export default class WallMatsSelector extends Component {
                   <div className="additional-inputs">
                     <label>L:</label>
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="shorter lighter-border"
                       type="number"
                       onChange={(e) => {
@@ -406,6 +438,9 @@ export default class WallMatsSelector extends Component {
 
                     <label>H:</label>
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="shorter lighter-border"
                       type="number"
                       onChange={(e) => {
@@ -420,6 +455,9 @@ export default class WallMatsSelector extends Component {
 
                     <label>OR Sqft:</label>
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="short lighter-border"
                       type="number"
                       onChange={(e) => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import Context from '../../contexts/ReverbContext';
 
-
 export default class Cover extends React.Component {
   constructor(props) {
     super(props);
@@ -39,6 +38,8 @@ export default class Cover extends React.Component {
   //   });
   // }
 
+  handleFocus = (event) => event.target.select();
+
   render() {
     return (
       <div className=" card  cover-page">
@@ -57,6 +58,9 @@ export default class Cover extends React.Component {
                 </label>
                 <div className="form-group">
                   <input
+                    onFocus={(e) => {
+                      this.handleFocus(e);
+                    }}
                     type="date"
                     className="form-control datepicker"
                     onChange={(e) => {
@@ -78,6 +82,9 @@ export default class Cover extends React.Component {
                 </label>
                 <div className="form-group">
                   <input
+                    onFocus={(e) => {
+                      this.handleFocus(e);
+                    }}
                     className="form-control"
                     type="text"
                     placeholder="Customer Name"
@@ -100,6 +107,9 @@ export default class Cover extends React.Component {
                 </label>
                 <div className="form-group">
                   <input
+                    onFocus={(e) => {
+                      this.handleFocus(e);
+                    }}
                     className="form-control"
                     type="text"
                     placeholder="Project Name"

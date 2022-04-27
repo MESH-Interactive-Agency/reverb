@@ -508,6 +508,8 @@ export default class OtherMatsSelector extends Component {
     this.updateOther8sqft(0);
   };
 
+  handleFocus = (event) => event.target.select();
+
   render() {
     let mats = this.context.otherMaterials;
 
@@ -564,7 +566,7 @@ export default class OtherMatsSelector extends Component {
             <div className="col-md-9">
               <div className="form-group">
                 <select
-                  className="lighter-border"
+                  className="lighter-border othermats"
                   name="othermats"
                   id="othermats"
                   onClick={(e) => {
@@ -580,6 +582,9 @@ export default class OtherMatsSelector extends Component {
                 <div className="additional-inputs">
                   <label>L:</label>
                   <input
+                    onFocus={(e) => {
+                      this.handleFocus(e);
+                    }}
                     className="shorter lighter-border"
                     type="text"
                     onChange={(e) => {
@@ -594,6 +599,9 @@ export default class OtherMatsSelector extends Component {
 
                   <label>W:</label>
                   <input
+                    onFocus={(e) => {
+                      this.handleFocus(e);
+                    }}
                     className="shorter lighter-border"
                     type="text"
                     onChange={(e) => {
@@ -608,7 +616,10 @@ export default class OtherMatsSelector extends Component {
 
                   <label>QTY:</label>
                   <input
-                    className="shorter lighter-border"
+                    onFocus={(e) => {
+                      this.handleFocus(e);
+                    }}
+                    className="short lighter-border"
                     type="number"
                     onChange={(e) => {
                       other1qty = this.updateOther1qty(e.currentTarget.value);
@@ -620,6 +631,9 @@ export default class OtherMatsSelector extends Component {
 
                   <label>Sqft:</label>
                   <input
+                    onFocus={(e) => {
+                      this.handleFocus(e);
+                    }}
                     className="short lighter-border"
                     type="number"
                     onChange={(e) => {
@@ -649,7 +663,7 @@ export default class OtherMatsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border othermats"
                       name="othermats"
                       id="othermats"
                       onClick={(e) => {
@@ -666,6 +680,9 @@ export default class OtherMatsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -680,6 +697,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -694,7 +714,10 @@ export default class OtherMatsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           other2qty = this.updateOther2qty(
@@ -708,6 +731,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {
@@ -750,7 +776,7 @@ export default class OtherMatsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border othermats"
                       name="othermats"
                       id="othermats"
                       onClick={(e) => {
@@ -767,6 +793,9 @@ export default class OtherMatsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -781,6 +810,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -795,7 +827,10 @@ export default class OtherMatsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           other3qty = this.updateOther3qty(
@@ -809,6 +844,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {
@@ -851,7 +889,7 @@ export default class OtherMatsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border othermats"
                       name="othermats"
                       id="othermats"
                       onClick={(e) => {
@@ -868,6 +906,9 @@ export default class OtherMatsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -882,6 +923,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -896,7 +940,10 @@ export default class OtherMatsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           other4qty = this.updateOther4qty(
@@ -910,6 +957,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {
@@ -952,7 +1002,7 @@ export default class OtherMatsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border othermats"
                       name="othermats"
                       id="othermats"
                       onClick={(e) => {
@@ -969,6 +1019,9 @@ export default class OtherMatsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -983,6 +1036,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -997,7 +1053,10 @@ export default class OtherMatsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           other5qty = this.updateOther5qty(
@@ -1011,6 +1070,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {
@@ -1053,7 +1115,7 @@ export default class OtherMatsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border othermats"
                       name="othermats"
                       id="othermats"
                       onClick={(e) => {
@@ -1070,6 +1132,9 @@ export default class OtherMatsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -1084,6 +1149,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -1098,7 +1166,10 @@ export default class OtherMatsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           other6qty = this.updateOther6qty(
@@ -1112,6 +1183,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {
@@ -1154,7 +1228,7 @@ export default class OtherMatsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border othermats"
                       name="othermats"
                       id="othermats"
                       onClick={(e) => {
@@ -1171,6 +1245,9 @@ export default class OtherMatsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -1185,6 +1262,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -1199,7 +1279,10 @@ export default class OtherMatsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           other7qty = this.updateOther7qty(
@@ -1213,6 +1296,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {
@@ -1255,7 +1341,7 @@ export default class OtherMatsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border othermats"
                       name="othermats"
                       id="othermats"
                       onClick={(e) => {
@@ -1272,6 +1358,9 @@ export default class OtherMatsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -1286,6 +1375,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -1300,7 +1392,10 @@ export default class OtherMatsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           other8qty = this.updateOther8qty(
@@ -1314,6 +1409,9 @@ export default class OtherMatsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {

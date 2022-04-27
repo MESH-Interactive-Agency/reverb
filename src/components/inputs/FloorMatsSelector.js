@@ -31,7 +31,7 @@ export default class FloorMatsSelector extends Component {
             <div className="col-md-9">
               <div className="form-group">
                 <select
-                className="lighter-border"
+                className="lighter-border floormats"
                   name="floormats"
                   id="floormats"
                   onClick={(e) => {

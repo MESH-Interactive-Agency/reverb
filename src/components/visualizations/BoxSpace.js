@@ -32,7 +32,7 @@ export default class BoxSpace extends Component {
         </div>
         <div className=" no-foot">
           <h6 className="big-title">Visualize your space</h6>
-          <div className="">
+          <div className="box-model">
             <Canvas camera={{ position: [10, 14, 10], fov: 60 }}>
               <OrbitControls />
               <ambientLight intensity={0.5} />

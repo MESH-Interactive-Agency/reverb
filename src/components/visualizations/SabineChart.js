@@ -211,13 +211,13 @@ export default class SabineChart extends Component {
                   <LineChart data={data}>
                     <XAxis
                       dataKey="name"
-                      height={20}
-                      tick={{ fontSize: 8 }}
+                      height={15}
+                      tick={{ fontSize: 10 }}
                       axisLine={false}
                       tickLine={false}
                     />
                     <YAxis
-                      width={22}
+                      width={25}
                       tick={{ fontSize: 10 }}
                       domain={[0, 'auto']}
                       axisLine={false}

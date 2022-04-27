@@ -63,6 +63,8 @@ export default class Dimensions extends React.Component {
     return height;
   }
 
+  handleFocus = (event) => event.target.select();
+
   clearData() {
     this.setState({
       length: 0,
@@ -91,6 +93,9 @@ export default class Dimensions extends React.Component {
                   </label>
                   <div className="col-md-9">
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="form-control"
                       type="number"
                       onChange={(e) => {
@@ -113,6 +118,9 @@ export default class Dimensions extends React.Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="form-control"
                       type="number"
                       onChange={(e) => {
@@ -135,6 +143,9 @@ export default class Dimensions extends React.Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <input
+                      onFocus={(e) => {
+                        this.handleFocus(e);
+                      }}
                       className="form-control"
                       type="number"
                       onChange={(e) => {

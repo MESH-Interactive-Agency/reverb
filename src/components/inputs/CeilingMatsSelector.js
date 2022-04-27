@@ -33,7 +33,7 @@ export default class CeilingMatsSelector extends Component {
             <div className="col-md-9">
               <div className="form-group">
                 <select
-                className="lighter-border"
+                className="lighter-border ceilingmats"
                   name="ceilingmats"
                   id="ceilingmats"
                   onClick={(e) => {

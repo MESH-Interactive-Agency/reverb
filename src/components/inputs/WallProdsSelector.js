@@ -516,6 +516,8 @@ export default class WallProdsSelector extends Component {
     this.updateWallProd8sqft(0);
   };
 
+  handleFocus = (event) => event.target.select();
+
   render() {
     let mats = this.context.wallProducts;
 
@@ -570,7 +572,7 @@ export default class WallProdsSelector extends Component {
             <div className="col-md-9">
               <div className="form-group">
                 <select
-                  className="lighter-border"
+                  className="lighter-border wallprods"
                   name="wallProdmats"
                   id="wallProdmats"
                   onClick={(e) => {
@@ -586,6 +588,9 @@ export default class WallProdsSelector extends Component {
                 <div className="additional-inputs">
                   <label>L:</label>
                   <input
+                    onFocus={(e) => {
+                      this.handleFocus(e);
+                    }}
                     className="shorter lighter-border"
                     type="text"
                     onChange={(e) => {
@@ -600,6 +605,9 @@ export default class WallProdsSelector extends Component {
 
                   <label>W:</label>
                   <input
+                    onFocus={(e) => {
+                      this.handleFocus(e);
+                    }}
                     className="shorter lighter-border"
                     type="text"
                     onChange={(e) => {
@@ -614,7 +622,10 @@ export default class WallProdsSelector extends Component {
 
                   <label>QTY:</label>
                   <input
-                    className="shorter lighter-border"
+                    onFocus={(e) => {
+                      this.handleFocus(e);
+                    }}
+                    className="short lighter-border"
                     type="number"
                     onChange={(e) => {
                       wallProd1qty = this.updateWallProd1qty(
@@ -628,6 +639,9 @@ export default class WallProdsSelector extends Component {
 
                   <label>Sqft:</label>
                   <input
+                    onFocus={(e) => {
+                      this.handleFocus(e);
+                    }}
                     className="short lighter-border"
                     type="number"
                     onChange={(e) => {
@@ -657,7 +671,7 @@ export default class WallProdsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border wallprods"
                       name="wallProdmats"
                       id="wallProdmats"
                       onClick={(e) => {
@@ -674,6 +688,9 @@ export default class WallProdsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -688,6 +705,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -702,7 +722,10 @@ export default class WallProdsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           wallProd2qty = this.updateWallProd2qty(
@@ -716,6 +739,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {
@@ -758,7 +784,7 @@ export default class WallProdsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border wallprods"
                       name="wallProdmats"
                       id="wallProdmats"
                       onClick={(e) => {
@@ -775,6 +801,9 @@ export default class WallProdsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -789,6 +818,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -803,7 +835,10 @@ export default class WallProdsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           wallProd3qty = this.updateWallProd3qty(
@@ -817,6 +852,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {
@@ -859,7 +897,7 @@ export default class WallProdsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border wallprods"
                       name="wallProdmats"
                       id="wallProdmats"
                       onClick={(e) => {
@@ -876,6 +914,9 @@ export default class WallProdsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -890,6 +931,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -904,7 +948,10 @@ export default class WallProdsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           wallProd4qty = this.updateWallProd4qty(
@@ -918,6 +965,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {
@@ -960,7 +1010,7 @@ export default class WallProdsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border wallprods"
                       name="wallProdmats"
                       id="wallProdmats"
                       onClick={(e) => {
@@ -977,6 +1027,9 @@ export default class WallProdsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -991,6 +1044,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -1005,7 +1061,10 @@ export default class WallProdsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           wallProd5qty = this.updateWallProd5qty(
@@ -1019,6 +1078,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {
@@ -1061,7 +1123,7 @@ export default class WallProdsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border wallprods"
                       name="wallProdmats"
                       id="wallProdmats"
                       onClick={(e) => {
@@ -1078,6 +1140,9 @@ export default class WallProdsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -1092,6 +1157,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -1106,7 +1174,10 @@ export default class WallProdsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           wallProd6qty = this.updateWallProd6qty(
@@ -1120,6 +1191,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {
@@ -1162,7 +1236,7 @@ export default class WallProdsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border wallprods"
                       name="wallProdmats"
                       id="wallProdmats"
                       onClick={(e) => {
@@ -1179,6 +1253,9 @@ export default class WallProdsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -1193,6 +1270,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -1207,7 +1287,10 @@ export default class WallProdsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           wallProd7qty = this.updateWallProd7qty(
@@ -1221,6 +1304,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {
@@ -1263,7 +1349,7 @@ export default class WallProdsSelector extends Component {
                 <div className="col-md-9">
                   <div className="form-group">
                     <select
-                      className="lighter-border"
+                      className="lighter-border wallprods"
                       name="wallProdmats"
                       id="wallProdmats"
                       onClick={(e) => {
@@ -1280,6 +1366,9 @@ export default class WallProdsSelector extends Component {
                     <div className="additional-inputs">
                       <label>L:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -1294,6 +1383,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>W:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="shorter lighter-border"
                         type="text"
                         onChange={(e) => {
@@ -1308,7 +1400,10 @@ export default class WallProdsSelector extends Component {
 
                       <label>QTY:</label>
                       <input
-                        className="shorter lighter-border"
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
+                        className="short lighter-border"
                         type="number"
                         onChange={(e) => {
                           wallProd8qty = this.updateWallProd8qty(
@@ -1322,6 +1417,9 @@ export default class WallProdsSelector extends Component {
 
                       <label>Sqft:</label>
                       <input
+                        onFocus={(e) => {
+                          this.handleFocus(e);
+                        }}
                         className="short lighter-border"
                         type="number"
                         onChange={(e) => {

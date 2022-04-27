@@ -42,6 +42,8 @@ export default class ReverbTime extends Component {
     this.context.updateSelectedReverbTime(value);
   }
 
+  handleFocus = (event) => event.target.select();
+
   render() {
     let mats = this.context.recommendedReverbTimes;
 
@@ -80,7 +82,7 @@ export default class ReverbTime extends Component {
                             </option>
                           ))}
                         </select>
-                        <input
+                       <input onFocus={(e) => {this.handleFocus(e);}}
                           onChange={(e) => {
                             avg = this.updateAvg(e.currentTarget.value);
                           }}
