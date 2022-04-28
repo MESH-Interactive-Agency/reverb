@@ -24,10 +24,12 @@ export default class LoginPage extends Component {
   render() {
     return (
       <Section className="LoginPage">
+        
         <LoginForm onLoginSuccess={this.handleLoginSuccess} />
-        <span className="register-link">
+
+        <div className="register-link">
           No account? <Link to="/register">Register</Link> here!
-        </span>
+        </div>
       </Section>
     );
   }

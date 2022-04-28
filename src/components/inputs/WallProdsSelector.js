@@ -74,8 +74,6 @@ export default class WallProdsSelector extends Component {
   updateWallProd1Selection(selection) {
     this.setState({ selectedWall1Product: selection - 1 });
 
-    console.log(this.context.wallProducts[selection]);
-
     if (
       !!this.context.wallProducts[selection - 1].w &&
       !!this.context.wallProducts[selection - 1].l
