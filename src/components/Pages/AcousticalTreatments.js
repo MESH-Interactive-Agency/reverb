@@ -20,7 +20,6 @@ export default class AcousticalTreatments extends React.Component {
   printWindow = (e) => {
     e.preventDefault();
     this.setState({ isOpen: !this.state.isOpen });
-    console.log(e);
   };
 
   render() {
@@ -37,14 +36,22 @@ export default class AcousticalTreatments extends React.Component {
           {this.state.isOpen && (
             <div className="printWindow">
               <FinalSummary />
-              <button className="top-right-close" onClick={this.printWindow}>
-                {' '}
+              <button
+                className="top-right-close round-button red"
+                onClick={this.printWindow}
+              >
                 Close
               </button>
             </div>
           )}
 
-          <button onClick={this.printWindow}>Print Report</button>
+          <button
+            id="print-button"
+            className="round-button"
+            onClick={this.printWindow}
+          >
+            Print Report
+          </button>
         </form>
       </div>
     );

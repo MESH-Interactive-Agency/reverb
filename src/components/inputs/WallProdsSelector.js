@@ -63,8 +63,8 @@ export default class WallProdsSelector extends Component {
   static contextType = Context;
 
   removeSpecialChars(num) {
-    if (num < 0) num = 0;
-    return num.replace(/[^0-9.]/g, '');
+    if (num < 0) return 0;
+    else return num.replace(/[^0-9.]/g, '');
   }
 
   componentDidMount() {

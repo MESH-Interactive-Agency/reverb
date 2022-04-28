@@ -42,8 +42,8 @@ export default class BaffleUnitSelector extends Component {
   }
 
   removeSpecialChars(num) {
-    if (num < 0) num = 0;
-    return num.replace(/[^0-9.]/g, '');
+    if (num < 0) return 0;
+    else return num.replace(/[^0-9.]/g, '');
   }
 
   updateBaffleUnit1Selection(selection) {

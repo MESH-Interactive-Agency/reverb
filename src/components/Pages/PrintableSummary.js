@@ -1,11 +1,17 @@
 import React from 'react';
 import SabineChart from '../visualizations/SabineChart';
+import SurfaceAreaChart from '../visualizations/SurfaceAreaChart';
 import ReverbContext from '../../contexts/ReverbContext';
 import ApiContext from '../../contexts/ApiContext';
 
 import CeilingProdsSummary from '../outputs/CeilingProdsSummary';
 import WallProdsSummary from '../outputs/WallProdsSummary';
 import BaffleUnitsSummary from '../outputs/BaffleUnitsSummary';
+
+import FloorMatsSummary from '../outputs/FloorMatsSummary';
+import CeilingMatsSummary from '../outputs/CeilingMatsSummary';
+import WallMatsSummary from '../outputs/WallMatsSummary';
+import OtherMatsSummary from '../outputs/OtherMatsSummary';
 
 export default class PrintableSummary extends React.Component {
   render() {
@@ -14,120 +20,94 @@ export default class PrintableSummary extends React.Component {
         {(reverbContext) => (
           <ApiContext.Consumer>
             {(apiContext) => {
-              const { selectedReverbTime } = apiContext;
+              const {
+                floorMatTotal,
+                ceilingMatTotal,
+                wallMatTotal,
+                otherMatTotal,
+                ceilingProdTotal,
+                wallProdTotal,
+                baffleTotal,
+                selectedReverbTime,
+                length,
+                width,
+                height,
+                customerName,
+                projectName,
+                date,
+              } = apiContext;
 
-              const { length, width, height, customerName, projectName, date } =
-                reverbContext;
+              console.log(date, customerName, projectName);
+
               const volume = length * width * height;
+
               const area =
                 length * height * 2 + width * height * 2 + length * width * 2;
 
+              const avgExistingReverbTime =
+                (volume * 0.049) /
+                (floorMatTotal.nrc +
+                  ceilingMatTotal.nrc +
+                  wallMatTotal.nrc +
+                  otherMatTotal.nrc);
+
+              const avgTreatedReverbTime =
+                (volume * 0.049) /
+                (floorMatTotal.nrc +
+                  ceilingMatTotal.nrc +
+                  wallMatTotal.nrc +
+                  otherMatTotal.nrc +
+                  ceilingProdTotal.nrc +
+                  wallProdTotal.nrc +
+                  baffleTotal.nrc);
+
               return (
                 <div className="printable-summary ">
-                  <div className="left-side">
+                  <div className="">
                     <h2>LAMVIN</h2>
                     <h3>Interior Room Accoustics Report</h3>
                     <br></br>
                     <h3>Date: {date}</h3>
                     <h3>Customer Name: {customerName}</h3>
                     <h3>Project Name: {projectName}</h3>
-                    <br></br>
-                    <div className="print-chart">
-                      <SabineChart />
-                    </div>
+                    <h3>Total Room Volume (ft3): {volume}</h3>
+                    <h3>Total Surface Area (ft2): {area}</h3>
 
-                    <div className="side-by-side">
-                      <div className="left-side">
-                        <br></br>
-                        <h3>
-                          Specified Average Reverb Time: {selectedReverbTime}
-                        </h3>
-                        <br></br>
-                        <h3>Total Room Volume (ft3): {volume}</h3>
-                        <h3>Total Surface Area (ft2): {area}</h3>
+                    <div className="print-charts">
+                      <div className="print-chart">
+                        <SabineChart />
                       </div>
-
-                      <div className="right-side">
-                        <table className=" print-table">
-                          <thead>
-                            <tr>
-                              <th
-                                scope="col"
-                                className="bold left long-lead-cell"
-                              ></th>
-                              <th scope="col" className="bold center-text">
-                                Original Space
-                              </th>
-                              <th scope="col" className="bold center-text">
-                                After Treatment
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="col" className="bold right">
-                                Average Reverb Time:
-                              </th>
-                              <th scope="col" className="bold center-text">
-                                PH
-                              </th>
-                              <th scope="col" className="bold center-text">
-                                PH
-                              </th>
-                            </tr>
-                            <tr>
-                              <th scope="col" className="bold right">
-                                Total Averga Sabines:
-                              </th>
-                              <th scope="col" className="bold center-text">
-                                PH
-                              </th>
-                              <th scope="col" className="bold center-text">
-                                PH
-                              </th>
-                            </tr>
-                            <tr>
-                              <th scope="col" className="bold right">
-                                Average Room Absorption Coefficient:
-                              </th>
-                              <th scope="col" className="bold center-text">
-                                PH
-                              </th>
-                              <th scope="col" className="bold center-text">
-                                PH
-                              </th>
-                            </tr>
-                            <tr>
-                              <th scope="col" className="bold right">
-                                Critical Distance to Reverberant Field (ft):
-                              </th>
-                              <th scope="col" className="bold center-text">
-                                PH
-                              </th>
-                              <th scope="col" className="bold center-text">
-                                PH
-                              </th>
-                            </tr>
-                            <tr>
-                              <th scope="col" className="bold right">
-                                Maximum SPL Reduction at Critical Distance (dB):
-                              </th>
-                              <th scope="col" className="bold center-text">
-                                PH
-                              </th>
-                              <th scope="col" className="bold center-text">
-                                PH
-                              </th>
-                            </tr>
-                          </tbody>
-                        </table>
+                      <div className="print-chart">
+                        <SurfaceAreaChart />
                       </div>
                     </div>
                     <div className="print-summary">
-                      <CeilingProdsSummary />
-                      <WallProdsSummary />
-                      <BaffleUnitsSummary />
+                      <div className="print-table">
+                        <h2 className="print-header">Existing Conditions</h2>
+                        <FloorMatsSummary />
+                        <CeilingMatsSummary />
+                        <WallMatsSummary />
+                        <OtherMatsSummary />
+                      </div>
+                      <div className="print-table">
+                        <h2 className="print-header">Recommended Treatments</h2>
+                        <CeilingProdsSummary />
+                        <WallProdsSummary />
+                        <BaffleUnitsSummary />
+                      </div>
                     </div>
+
+                    <h3>
+                      Average Existing Reverb Time (sec):{' '}
+                      {avgExistingReverbTime.toFixed(1)}
+                    </h3>
+                    <h3>
+                      Specified Average Reverb Time (sec): {selectedReverbTime}
+                    </h3>
+                    <h3>
+                      Average Time After Treatment (sec):{' '}
+                      {avgTreatedReverbTime.toFixed(1)}
+                    </h3>
                   </div>
                 </div>
               );

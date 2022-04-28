@@ -1,5 +1,5 @@
 import React from 'react';
-import Context from '../../contexts/ReverbContext';
+import Context from '../../contexts/ApiContext';
 
 export default class Cover extends React.Component {
   constructor(props) {
@@ -29,14 +29,6 @@ export default class Cover extends React.Component {
     this.context.updateDate(date);
     return date;
   }
-
-  // clearData() {
-  //   this.setState({
-  //     date: '',
-  //     customerName: '',
-  //     projectName: '',
-  //   });
-  // }
 
   handleFocus = (event) => event.target.select();
 

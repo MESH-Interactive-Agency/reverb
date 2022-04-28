@@ -1,6 +1,5 @@
 import Context from '../../contexts/ApiContext';
 import React, { Component } from 'react';
-import { toHaveDisplayValue } from '@testing-library/jest-dom/dist/matchers';
 
 export default class WallMatsSelector extends Component {
   constructor(props) {
@@ -130,18 +129,22 @@ export default class WallMatsSelector extends Component {
       this.updateWall3Selection(selection);
       this.updateWall4Selection(selection);
     }
+    return selection;
   }
   updateWall2Selection(selection) {
     this.setState({ wall2: selection - 1 });
     this.context.updateSelectedWall2Material(selection - 1);
+    return selection;
   }
   updateWall3Selection(selection) {
     this.setState({ wall3: selection - 1 });
     this.context.updateSelectedWall3Material(selection - 1);
+    return selection;
   }
   updateWall4Selection(selection) {
     this.setState({ wall4: selection - 1 });
     this.context.updateSelectedWall4Material(selection - 1);
+    return selection;
   }
 
   expand = (e) => {
@@ -152,10 +155,6 @@ export default class WallMatsSelector extends Component {
       wall2: this.context.selectedWall2Material,
       wall3: this.context.selectedWall3Material,
       wall4: this.context.selectedWall4Material,
-      // wall1sqft: this.context.wall1sqft,
-      // wall2sqft: this.context.wall2sqft,
-      // wall3sqft: this.context.wall3sqft,
-      // wall4sqft: this.context.wall4sqft,
 
       wall1sqft: this.context.length * this.context.height,
       wall2sqft: this.context.width * this.context.height,
@@ -182,8 +181,8 @@ export default class WallMatsSelector extends Component {
   handleFocus = (event) => event.target.select();
 
   removeSpecialChars(num) {
-    if (num < 0) num = 0;
-    return num.replace(/[^0-9.]/g, '');
+    if (num < 0) return 0;
+    else return num.replace(/[^0-9.]/g, '');
   }
 
   render() {

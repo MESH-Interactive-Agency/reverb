@@ -5,7 +5,7 @@ import TokenService from '../services/token-service';
 import Context from '../contexts/ApiContext';
 import RegistrationPage from './RegistrationPage';
 import LoginPage from './LoginPage';
-import logo from '../images/Lamvin Logo.png';
+import logo from '../paper-dashboard/images/Lamvin Logo.png';
 
 export default class NavWindow extends React.Component {
   static defaultProps = {
