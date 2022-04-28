@@ -73,114 +73,200 @@ export default class WallProdsSelector extends Component {
 
   updateWallProd1Selection(selection) {
     this.setState({ selectedWall1Product: selection - 1 });
+
+    console.log(this.context.wallProducts[selection]);
+
+    if (
+      !!this.context.wallProducts[selection - 1].w &&
+      !!this.context.wallProducts[selection - 1].l
+    ) {
+      this.setState({
+        wallProd1length: this.context.wallProducts[selection - 1].l,
+        wallProd1width: this.context.wallProducts[selection - 1].w,
+      });
+    }
+
     this.context.updateSelectedWall1Product(selection - 1);
   }
   updateWallProd2Selection(selection) {
     this.setState({ selectedWall2Product: selection - 1 });
+
+    if (
+      !!this.context.wallProducts[selection - 1].w &&
+      !!this.context.wallProducts[selection - 1].l
+    ) {
+      this.setState({
+        wallProd2length: this.context.wallProducts[selection - 1].l,
+        wallProd2width: this.context.wallProducts[selection - 1].w,
+      });
+    }
+
     this.context.updateSelectedWall2Product(selection - 1);
   }
   updateWallProd3Selection(selection) {
     this.setState({ selectedWall3Product: selection - 1 });
+    if (
+      !!this.context.wallProducts[selection - 1].w &&
+      !!this.context.wallProducts[selection - 1].l
+    ) {
+      this.setState({
+        wallProd3length: this.context.wallProducts[selection - 1].l,
+        wallProd3width: this.context.wallProducts[selection - 1].w,
+      });
+    }
     this.context.updateSelectedWall3Product(selection - 1);
   }
   updateWallProd4Selection(selection) {
     this.setState({ selectedWall4Product: selection - 1 });
+    if (
+      !!this.context.wallProducts[selection - 1].w &&
+      !!this.context.wallProducts[selection - 1].l
+    ) {
+      this.setState({
+        wallProd4length: this.context.wallProducts[selection - 1].l,
+        wallProd4width: this.context.wallProducts[selection - 1].w,
+      });
+    }
     this.context.updateSelectedWall4Product(selection - 1);
   }
   updateWallProd5Selection(selection) {
     this.setState({ selectedWall5Product: selection - 1 });
+    if (
+      !!this.context.wallProducts[selection - 1].w &&
+      !!this.context.wallProducts[selection - 1].l
+    ) {
+      this.setState({
+        wallProd5length: this.context.wallProducts[selection - 1].l,
+        wallProd5width: this.context.wallProducts[selection - 1].w,
+      });
+    }
     this.context.updateSelectedWall5Product(selection - 1);
   }
   updateWallProd6Selection(selection) {
     this.setState({ selectedWall6Product: selection - 1 });
+    if (
+      !!this.context.wallProducts[selection - 1].w &&
+      !!this.context.wallProducts[selection - 1].l
+    ) {
+      this.setState({
+        wallProd6length: this.context.wallProducts[selection - 1].l,
+        wallProd6width: this.context.wallProducts[selection - 1].w,
+      });
+    }
     this.context.updateSelectedWall6Product(selection - 1);
   }
   updateWallProd7Selection(selection) {
     this.setState({ selectedWall7Product: selection - 1 });
+    if (
+      !!this.context.wallProducts[selection - 1].w &&
+      !!this.context.wallProducts[selection - 1].l
+    ) {
+      this.setState({
+        wallProd7length: this.context.wallProducts[selection - 1].l,
+        wallProd7width: this.context.wallProducts[selection - 1].w,
+      });
+    }
     this.context.updateSelectedWall7Product(selection - 1);
   }
   updateWallProd8Selection(selection) {
     this.setState({ selectedWall8Product: selection - 1 });
+    if (
+      !!this.context.wallProducts[selection - 1].w &&
+      !!this.context.wallProducts[selection - 1].l
+    ) {
+      this.setState({
+        wallProd8length: this.context.wallProducts[selection - 1].l,
+        wallProd8width: this.context.wallProducts[selection - 1].w,
+      });
+    }
     this.context.updateSelectedWall8Product(selection - 1);
   }
 
   updateWallProd1Length(l) {
     this.setState({
       wallProd1length: l,
-      wallProd1sqft: this.state.wallProd1width * this.state.wallProd1qty * l,
+      wallProd1sqft:
+        (this.state.wallProd1width * this.state.wallProd1qty * l) / 144,
     });
     this.context.updateWallProd1sqft(
-      this.state.wallProd1width * this.state.wallProd1qty * l
+      (this.state.wallProd1width * this.state.wallProd1qty * l) / 144
     );
     return l;
   }
   updateWallProd2Length(l) {
     this.setState({
       wallProd2length: l,
-      wallProd2sqft: this.state.wallProd2width * this.state.wallProd2qty * l,
+      wallProd2sqft:
+        (this.state.wallProd2width * this.state.wallProd2qty * l) / 144,
     });
     this.context.updateWallProd2sqft(
-      this.state.wallProd2width * this.state.wallProd2qty * l
+      (this.state.wallProd2width * this.state.wallProd2qty * l) / 144
     );
     return l;
   }
   updateWallProd3Length(l) {
     this.setState({
       wallProd3length: l,
-      wallProd3sqft: this.state.wallProd3width * this.state.wallProd3qty * l,
+      wallProd3sqft:
+        (this.state.wallProd3width * this.state.wallProd3qty * l) / 144,
     });
     this.context.updateWallProd3sqft(
-      this.state.wallProd3width * this.state.wallProd3qty * l
+      (this.state.wallProd3width * this.state.wallProd3qty * l) / 144
     );
     return l;
   }
   updateWallProd4Length(l) {
     this.setState({
       wallProd4length: l,
-      wallProd4sqft: this.state.wallProd4width * this.state.wallProd4qty * l,
+      wallProd4sqft:
+        (this.state.wallProd4width * this.state.wallProd4qty * l) / 144,
     });
     this.context.updateWallProd4sqft(
-      this.state.wallProd4width * this.state.wallProd4qty * l
+      (this.state.wallProd4width * this.state.wallProd4qty * l) / 144
     );
     return l;
   }
   updateWallProd5Length(l) {
     this.setState({
       wallProd5length: l,
-      wallProd5sqft: this.state.wallProd5width * this.state.wallProd5qty * l,
+      wallProd5sqft:
+        (this.state.wallProd5width * this.state.wallProd5qty * l) / 144,
     });
     this.context.updateWallProd5sqft(
-      this.state.wallProd5width * this.state.wallProd5qty * l
+      (this.state.wallProd5width * this.state.wallProd5qty * l) / 144
     );
     return l;
   }
   updateWallProd6Length(l) {
     this.setState({
       wallProd6length: l,
-      wallProd6sqft: this.state.wallProd6width * this.state.wallProd6qty * l,
+      wallProd6sqft:
+        (this.state.wallProd6width * this.state.wallProd6qty * l) / 144,
     });
     this.context.updateWallProd6sqft(
-      this.state.wallProd6width * this.state.wallProd6qty * l
+      (this.state.wallProd6width * this.state.wallProd6qty * l) / 144
     );
     return l;
   }
   updateWallProd7Length(l) {
     this.setState({
       wallProd7length: l,
-      wallProd7sqft: this.state.wallProd7width * this.state.wallProd7qty * l,
+      wallProd7sqft:
+        (this.state.wallProd7width * this.state.wallProd7qty * l) / 144,
     });
     this.context.updateWallProd7sqft(
-      this.state.wallProd7width * this.state.wallProd7qty * l
+      (this.state.wallProd7width * this.state.wallProd7qty * l) / 144
     );
     return l;
   }
   updateWallProd8Length(l) {
     this.setState({
       wallProd8length: l,
-      wallProd8sqft: this.state.wallProd8width * this.state.wallProd8qty * l,
+      wallProd8sqft:
+        (this.state.wallProd8width * this.state.wallProd8qty * l) / 144,
     });
     this.context.updateWallProd8sqft(
-      this.state.wallProd8width * this.state.wallProd8qty * l
+      (this.state.wallProd8width * this.state.wallProd8qty * l) / 144
     );
     return l;
   }
@@ -188,80 +274,88 @@ export default class WallProdsSelector extends Component {
   updateWallProd1Width(w) {
     this.setState({
       wallProd1width: w,
-      wallProd1sqft: this.state.wallProd1length * this.state.wallProd1qty * w,
+      wallProd1sqft:
+        (this.state.wallProd1length * this.state.wallProd1qty * w) / 144,
     });
     this.context.updateWallProd1sqft(
-      this.state.wallProd1length * this.state.wallProd1qty * w
+      (this.state.wallProd1length * this.state.wallProd1qty * w) / 144
     );
     return w;
   }
   updateWallProd2Width(w) {
     this.setState({
       wallProd2width: w,
-      wallProd2sqft: this.state.wallProd2length * this.state.wallProd2qty * w,
+      wallProd2sqft:
+        (this.state.wallProd2length * this.state.wallProd2qty * w) / 144,
     });
     this.context.updateWallProd2sqft(
-      this.state.wallProd12ength * this.state.wallProd2qty * w
+      (this.state.wallProd12ength * this.state.wallProd2qty * w) / 144
     );
     return w;
   }
   updateWallProd3Width(w) {
     this.setState({
       wallProd3width: w,
-      wallProd3sqft: this.state.wallProd3length * this.state.wallProd3qty * w,
+      wallProd3sqft:
+        (this.state.wallProd3length * this.state.wallProd3qty * w) / 144,
     });
     this.context.updateWallProd3sqft(
-      this.state.wallProd3length * this.state.wallProd3qty * w
+      (this.state.wallProd3length * this.state.wallProd3qty * w) / 144
     );
     return w;
   }
   updateWallProd4Width(w) {
     this.setState({
       wallProd4width: w,
-      wallProd4sqft: this.state.wallProd4length * this.state.wallProd4qty * w,
+      wallProd4sqft:
+        (this.state.wallProd4length * this.state.wallProd4qty * w) / 144,
     });
     this.context.updateWallProd4sqft(
-      this.state.wallProd4length * this.state.wallProd4qty * w
+      (this.state.wallProd4length * this.state.wallProd4qty * w) / 144
     );
     return w;
   }
   updateWallProd5Width(w) {
     this.setState({
       wallProd5width: w,
-      wallProd5sqft: this.state.wallProd5length * this.state.wallProd5qty * w,
+      wallProd5sqft:
+        (this.state.wallProd5length * this.state.wallProd5qty * w) / 144,
     });
     this.context.updateWallProd5sqft(
-      this.state.wallProd5length * this.state.wallProd5qty * w
+      (this.state.wallProd5length * this.state.wallProd5qty * w) / 144
     );
     return w;
   }
   updateWallProd6Width(w) {
     this.setState({
       wallProd6width: w,
-      wallProd6sqft: this.state.wallProd6length * this.state.wallProd6qty * w,
+      wallProd6sqft:
+        (this.state.wallProd6length * this.state.wallProd6qty * w) / 144,
     });
     this.context.updateWallProd6sqft(
-      this.state.wallProd6length * this.state.wallProd6qty * w
+      (this.state.wallProd6length * this.state.wallProd6qty * w) / 144
     );
     return w;
   }
   updateWallProd7Width(w) {
     this.setState({
       wallProd7width: w,
-      wallProd7sqft: this.state.wallProd7length * this.state.wallProd7qty * w,
+      wallProd7sqft:
+        (this.state.wallProd7length * this.state.wallProd7qty * w) / 144,
     });
     this.context.updateWallProd7sqft(
-      this.state.wallProd7length * this.state.wallProd7qty * w
+      (this.state.wallProd7length * this.state.wallProd7qty * w) / 144
     );
     return w;
   }
   updateWallProd8Width(w) {
     this.setState({
       wallProd8width: w,
-      wallProd8sqft: this.state.wallProd8length * this.state.wallProd8qty * w,
+      wallProd8sqft:
+        (this.state.wallProd8length * this.state.wallProd8qty * w) / 144,
     });
     this.context.updateWallProd8sqft(
-      this.state.wallProd8length * this.state.wallProd8qty * w
+      (this.state.wallProd8length * this.state.wallProd8qty * w) / 144
     );
     return w;
   }
@@ -270,10 +364,10 @@ export default class WallProdsSelector extends Component {
     this.setState({
       wallProd1qty: qty,
       wallProd1sqft:
-        this.state.wallProd1length * this.state.wallProd1width * qty,
+        (this.state.wallProd1length * this.state.wallProd1width * qty) / 144,
     });
     this.context.updateWallProd1sqft(
-      this.state.wallProd1length * this.state.wallProd1width * qty
+      (this.state.wallProd1length * this.state.wallProd1width * qty) / 144
     );
     return qty;
   }
@@ -281,10 +375,10 @@ export default class WallProdsSelector extends Component {
     this.setState({
       wallProd2qty: qty,
       wallProd2sqft:
-        this.state.wallProd2length * this.state.wallProd2width * qty,
+        (this.state.wallProd2length * this.state.wallProd2width * qty) / 144,
     });
     this.context.updateWallProd2sqft(
-      this.state.wallProd2length * this.state.wallProd2width * qty
+      (this.state.wallProd2length * this.state.wallProd2width * qty) / 144
     );
     return qty;
   }
@@ -292,10 +386,10 @@ export default class WallProdsSelector extends Component {
     this.setState({
       wallProd3qty: qty,
       wallProd3sqft:
-        this.state.wallProd3length * this.state.wallProd3width * qty,
+        (this.state.wallProd3length * this.state.wallProd3width * qty) / 144,
     });
     this.context.updateWallProd3sqft(
-      this.state.wallProd3length * this.state.wallProd3width * qty
+      (this.state.wallProd3length * this.state.wallProd3width * qty) / 144
     );
     return qty;
   }
@@ -303,10 +397,10 @@ export default class WallProdsSelector extends Component {
     this.setState({
       wallProd4qty: qty,
       wallProd4sqft:
-        this.state.wallProd4length * this.state.wallProd4width * qty,
+        (this.state.wallProd4length * this.state.wallProd4width * qty) / 144,
     });
     this.context.updateWallProd4sqft(
-      this.state.wallProd4length * this.state.wallProd4width * qty
+      (this.state.wallProd4length * this.state.wallProd4width * qty) / 144
     );
     return qty;
   }
@@ -314,10 +408,10 @@ export default class WallProdsSelector extends Component {
     this.setState({
       wallProd5qty: qty,
       wallProd5sqft:
-        this.state.wallProd5length * this.state.wallProd5width * qty,
+        (this.state.wallProd5length * this.state.wallProd5width * qty) / 144,
     });
     this.context.updateWallProd5sqft(
-      this.state.wallProd5length * this.state.wallProd5width * qty
+      (this.state.wallProd5length * this.state.wallProd5width * qty) / 144
     );
     return qty;
   }
@@ -325,10 +419,10 @@ export default class WallProdsSelector extends Component {
     this.setState({
       wallProd6qty: qty,
       wallProd6sqft:
-        this.state.wallProd6length * this.state.wallProd6width * qty,
+        (this.state.wallProd6length * this.state.wallProd6width * qty) / 144,
     });
     this.context.updateWallProd6sqft(
-      this.state.wallProd6length * this.state.wallProd6width * qty
+      (this.state.wallProd6length * this.state.wallProd6width * qty) / 144
     );
     return qty;
   }
@@ -336,10 +430,10 @@ export default class WallProdsSelector extends Component {
     this.setState({
       wallProd7qty: qty,
       wallProd7sqft:
-        this.state.wallProd7length * this.state.wallProd7width * qty,
+        (this.state.wallProd7length * this.state.wallProd7width * qty) / 144,
     });
     this.context.updateWallProd7sqft(
-      this.state.wallProd7length * this.state.wallProd7width * qty
+      (this.state.wallProd7length * this.state.wallProd7width * qty) / 144
     );
     return qty;
   }
@@ -347,10 +441,10 @@ export default class WallProdsSelector extends Component {
     this.setState({
       wallProd8qty: qty,
       wallProd8sqft:
-        this.state.wallProd8length * this.state.wallProd8width * qty,
+        (this.state.wallProd8length * this.state.wallProd8width * qty) / 144,
     });
     this.context.updateWallProd8sqft(
-      this.state.wallProd8length * this.state.wallProd8width * qty
+      (this.state.wallProd8length * this.state.wallProd8width * qty) / 144
     );
     return qty;
   }

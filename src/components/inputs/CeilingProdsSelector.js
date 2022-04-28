@@ -53,18 +53,56 @@ export default class CeilingProdsSelector extends Component {
 
   updateCeilingProd1Selection(selection) {
     this.setState({ selectedCeiling1Product: selection - 1 });
+
+    if (
+      !!this.context.ceilingProducts[selection - 1].w &&
+      !!this.context.ceilingProducts[selection - 1].l
+    ) {
+      this.setState({
+        ceilingProd1length: this.context.ceilingProducts[selection - 1].l,
+        ceilingProd1width: this.context.ceilingProducts[selection - 1].w,
+      });
+    }
+
     this.context.updateSelectedCeiling1Product(selection - 1);
   }
   updateCeilingProd2Selection(selection) {
     this.setState({ selectedCeiling2Product: selection - 1 });
+    if (
+      !!this.context.ceilingProducts[selection - 1].w &&
+      !!this.context.ceilingProducts[selection - 1].l
+    ) {
+      this.setState({
+        ceilingProd2length: this.context.ceilingProducts[selection - 1].l,
+        ceilingProd2width: this.context.ceilingProducts[selection - 1].w,
+      });
+    }
     this.context.updateSelectedCeiling2Product(selection - 1);
   }
   updateCeilingProd3Selection(selection) {
     this.setState({ selectedCeiling3Product: selection - 1 });
+    if (
+      !!this.context.ceilingProducts[selection - 1].w &&
+      !!this.context.ceilingProducts[selection - 1].l
+    ) {
+      this.setState({
+        ceilingProd3length: this.context.ceilingProducts[selection - 1].l,
+        ceilingProd3width: this.context.ceilingProducts[selection - 1].w,
+      });
+    }
     this.context.updateSelectedCeiling3Product(selection - 1);
   }
   updateCeilingProd4Selection(selection) {
     this.setState({ selectedCeiling4Product: selection - 1 });
+    if (
+      !!this.context.ceilingProducts[selection - 1].w &&
+      !!this.context.ceilingProducts[selection - 1].l
+    ) {
+      this.setState({
+        ceilingProd4length: this.context.ceilingProducts[selection - 1].l,
+        ceilingProd4width: this.context.ceilingProducts[selection - 1].w,
+      });
+    }
     this.context.updateSelectedCeiling4Product(selection - 1);
   }
 
@@ -72,10 +110,10 @@ export default class CeilingProdsSelector extends Component {
     this.setState({
       ceilingProd1length: l,
       ceilingProd1sqft:
-        this.state.ceilingProd1width * this.state.ceilingProd1qty * l,
+        (this.state.ceilingProd1width * this.state.ceilingProd1qty * l) / 144,
     });
     this.context.updateCeilingProd1sqft(
-      this.state.ceilingProd1width * this.state.ceilingProd1qty * l
+      (this.state.ceilingProd1width * this.state.ceilingProd1qty * l) / 144
     );
     return l;
   }
@@ -83,10 +121,10 @@ export default class CeilingProdsSelector extends Component {
     this.setState({
       ceilingProd2length: l,
       ceilingProd2sqft:
-        this.state.ceilingProd2width * this.state.ceilingProd2qty * l,
+        (this.state.ceilingProd2width * this.state.ceilingProd2qty * l) / 144,
     });
     this.context.updateCeilingProd2sqft(
-      this.state.ceilingProd2width * this.state.ceilingProd2qty * l
+      (this.state.ceilingProd2width * this.state.ceilingProd2qty * l) / 144
     );
     return l;
   }
@@ -94,10 +132,10 @@ export default class CeilingProdsSelector extends Component {
     this.setState({
       ceilingProd3length: l,
       ceilingProd3sqft:
-        this.state.ceilingProd3width * this.state.ceilingProd3qty * l,
+        (this.state.ceilingProd3width * this.state.ceilingProd3qty * l) / 144,
     });
     this.context.updateCeilingProd3sqft(
-      this.state.ceilingProd3width * this.state.ceilingProd3qty * l
+      (this.state.ceilingProd3width * this.state.ceilingProd3qty * l) / 144
     );
     return l;
   }
@@ -105,10 +143,10 @@ export default class CeilingProdsSelector extends Component {
     this.setState({
       ceilingProd4length: l,
       ceilingProd4sqft:
-        this.state.ceilingProd4width * this.state.ceilingProd4qty * l,
+        (this.state.ceilingProd4width * this.state.ceilingProd4qty * l) / 144,
     });
     this.context.updateCeilingProd4sqft(
-      this.state.ceilingProd4width * this.state.ceilingProd4qty * l
+      (this.state.ceilingProd4width * this.state.ceilingProd4qty * l) / 144
     );
     return l;
   }
@@ -117,10 +155,10 @@ export default class CeilingProdsSelector extends Component {
     this.setState({
       ceilingProd1width: w,
       ceilingProd1sqft:
-        this.state.ceilingProd1length * this.state.ceilingProd1qty * w,
+        (this.state.ceilingProd1length * this.state.ceilingProd1qty * w) / 144,
     });
     this.context.updateCeilingProd1sqft(
-      this.state.ceilingProd1length * this.state.ceilingProd1qty * w
+      (this.state.ceilingProd1length * this.state.ceilingProd1qty * w) / 144
     );
     return w;
   }
@@ -128,10 +166,10 @@ export default class CeilingProdsSelector extends Component {
     this.setState({
       ceilingProd2width: w,
       ceilingProd2sqft:
-        this.state.ceilingProd2length * this.state.ceilingProd2qty * w,
+        (this.state.ceilingProd2length * this.state.ceilingProd2qty * w) / 144,
     });
     this.context.updateCeilingProd2sqft(
-      this.state.ceilingProd2length * this.state.ceilingProd2qty * w
+      (this.state.ceilingProd2length * this.state.ceilingProd2qty * w) / 144
     );
     return w;
   }
@@ -139,10 +177,10 @@ export default class CeilingProdsSelector extends Component {
     this.setState({
       ceilingProd3width: w,
       ceilingProd3sqft:
-        this.state.ceilingProd3length * this.state.ceilingProd3qty * w,
+        (this.state.ceilingProd3length * this.state.ceilingProd3qty * w) / 144,
     });
     this.context.updateCeilingProd3sqft(
-      this.state.ceilingProd3length * this.state.ceilingProd3qty * w
+      (this.state.ceilingProd3length * this.state.ceilingProd3qty * w) / 144
     );
     return w;
   }
@@ -150,10 +188,10 @@ export default class CeilingProdsSelector extends Component {
     this.setState({
       ceilingProd4width: w,
       ceilingProd4sqft:
-        this.state.ceilingProd4length * this.state.ceilingProd4qty * w,
+        (this.state.ceilingProd4length * this.state.ceilingProd4qty * w) / 144,
     });
     this.context.updateCeilingProd4sqft(
-      this.state.ceilingProd4length * this.state.ceilingProd4qty * w
+      (this.state.ceilingProd4length * this.state.ceilingProd4qty * w) / 144
     );
     return w;
   }
@@ -162,10 +200,11 @@ export default class CeilingProdsSelector extends Component {
     this.setState({
       ceilingProd1qty: qty,
       ceilingProd1sqft:
-        this.state.ceilingProd1length * this.state.ceilingProd1width * qty,
+        (this.state.ceilingProd1length * this.state.ceilingProd1width * qty) /
+        144,
     });
     this.context.updateCeilingProd1sqft(
-      this.state.ceilingProd1length * this.state.ceilingProd1width * qty
+      (this.state.ceilingProd1length * this.state.ceilingProd1width * qty) / 144
     );
     return qty;
   }
@@ -173,10 +212,11 @@ export default class CeilingProdsSelector extends Component {
     this.setState({
       ceilingProd2qty: qty,
       ceilingProd2sqft:
-        this.state.ceilingProd2length * this.state.ceilingProd2width * qty,
+        (this.state.ceilingProd2length * this.state.ceilingProd2width * qty) /
+        144,
     });
     this.context.updateCeilingProd2sqft(
-      this.state.ceilingProd2length * this.state.ceilingProd2width * qty
+      (this.state.ceilingProd2length * this.state.ceilingProd2width * qty) / 144
     );
     return qty;
   }
@@ -184,10 +224,11 @@ export default class CeilingProdsSelector extends Component {
     this.setState({
       ceilingProd3qty: qty,
       ceilingProd3sqft:
-        this.state.ceilingProd3length * this.state.ceilingProd3width * qty,
+        (this.state.ceilingProd3length * this.state.ceilingProd3width * qty) /
+        144,
     });
     this.context.updateCeilingProd3sqft(
-      this.state.ceilingProd3length * this.state.ceilingProd3width * qty
+      (this.state.ceilingProd3length * this.state.ceilingProd3width * qty) / 144
     );
     return qty;
   }
@@ -195,10 +236,11 @@ export default class CeilingProdsSelector extends Component {
     this.setState({
       ceilingProd4qty: qty,
       ceilingProd4sqft:
-        this.state.ceilingProd4length * this.state.ceilingProd4width * qty,
+        (this.state.ceilingProd4length * this.state.ceilingProd4width * qty) /
+        144,
     });
     this.context.updateCeilingProd4sqft(
-      this.state.ceilingProd4length * this.state.ceilingProd4width * qty
+      (this.state.ceilingProd4length * this.state.ceilingProd4width * qty) / 144
     );
     return qty;
   }

@@ -48,21 +48,51 @@ export default class BaffleUnitSelector extends Component {
 
   updateBaffleUnit1Selection(selection) {
     this.setState({ selectedBaffle1Unit: selection - 1 });
+
+    if (
+      !!this.context.baffleUnits[selection - 1].w &&
+      !!this.context.baffleUnits[selection - 1].l
+    ) {
+      this.setState({
+        baffleUnit1length: this.context.baffleUnits[selection - 1].l,
+        baffleUnit1width: this.context.baffleUnits[selection - 1].w,
+      });
+    }
+
     this.context.updateSelectedBaffleUnit1(selection - 1);
   }
   updateBaffleUnit2Selection(selection) {
     this.setState({ selectedBaffle2Unit: selection - 1 });
+    if (
+      !!this.context.baffleUnits[selection - 1].w &&
+      !!this.context.baffleUnits[selection - 1].l
+    ) {
+      this.setState({
+        baffleUnit2length: this.context.baffleUnits[selection - 1].l,
+        baffleUnit2width: this.context.baffleUnits[selection - 1].w,
+      });
+    }
     this.context.updateSelectedBaffleUnit2(selection - 1);
   }
   updateBaffleUnit3Selection(selection) {
     this.setState({ selectedBaffle3Unit: selection - 1 });
+    if (
+      !!this.context.baffleUnits[selection - 1].w &&
+      !!this.context.baffleUnits[selection - 1].l
+    ) {
+      this.setState({
+        baffleUnit3length: this.context.baffleUnits[selection - 1].l,
+        baffleUnit3width: this.context.baffleUnits[selection - 1].w,
+      });
+    }
     this.context.updateSelectedBaffleUnit3(selection - 1);
   }
 
   updateBaffleUnit1Length(l) {
     this.setState({
       baffleUnit1length: l,
-      baffle1sqft: this.state.baffleUnit1width * this.state.baffleUnit1qty * l,
+      baffle1sqft:
+        (this.state.baffleUnit1width * this.state.baffleUnit1qty * l) / 144,
     });
     this.context.updateBaffle1sqft(
       (this.state.baffleUnit1width * this.state.baffleUnit1qty * l) / 144
@@ -73,7 +103,8 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit2Length(l) {
     this.setState({
       baffleUnit2length: l,
-      baffle2sqft: this.state.baffleUnit2width * this.state.baffleUnit2qty * l,
+      baffle2sqft:
+        (this.state.baffleUnit2width * this.state.baffleUnit2qty * l) / 144,
     });
     this.context.updateBaffle2sqft(
       (this.state.baffleUnit2width * this.state.baffleUnit2qty * l) / 144
@@ -83,7 +114,8 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit3Length(l) {
     this.setState({
       baffleUnit3length: l,
-      baffle3sqft: this.state.baffleUnit3width * this.state.baffleUnit3qty * l,
+      baffle3sqft:
+        (this.state.baffleUnit3width * this.state.baffleUnit3qty * l) / 144,
     });
     this.context.updateBaffle3sqft(
       (this.state.baffleUnit3width * this.state.baffleUnit3qty * l) / 144
@@ -94,7 +126,8 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit1Width(w) {
     this.setState({
       baffleUnit1width: w,
-      baffle1sqft: this.state.baffleUnit1length * this.state.baffleUnit1qty * w,
+      baffle1sqft:
+        (this.state.baffleUnit1length * this.state.baffleUnit1qty * w) / 144,
     });
     this.context.updateBaffle1sqft(
       (this.state.baffleUnit1length * this.state.baffleUnit1qty * w) / 144
@@ -104,7 +137,8 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit2Width(w) {
     this.setState({
       baffleUnit2width: w,
-      baffle2sqft: this.state.baffleUnit2length * this.state.baffleUnit2qty * w,
+      baffle2sqft:
+        (this.state.baffleUnit2length * this.state.baffleUnit2qty * w) / 144,
     });
     this.context.updateBaffle2sqft(
       (this.state.baffleUnit2length * this.state.baffleUnit2qty * w) / 144
@@ -114,7 +148,8 @@ export default class BaffleUnitSelector extends Component {
   updateBaffleUnit3Width(w) {
     this.setState({
       baffleUnit3width: w,
-      baffle3sqft: this.state.baffleUnit3length * this.state.baffleUnit3qty * w,
+      baffle3sqft:
+        (this.state.baffleUnit3length * this.state.baffleUnit3qty * w) / 144,
     });
     this.context.updateBaffle3sqft(
       (this.state.baffleUnit3length * this.state.baffleUnit3qty * w) / 144
@@ -126,19 +161,20 @@ export default class BaffleUnitSelector extends Component {
     this.setState({
       baffleUnit1qty: qty,
       baffle1sqft:
-        this.state.baffleUnit1length * this.state.baffleUnit1width * qty,
+        (this.state.baffleUnit1length * this.state.baffleUnit1width * qty) /
+        144,
     });
     this.context.updateBaffle1sqft(
       (this.state.baffleUnit1length * this.state.baffleUnit1width * qty) / 144
     );
-
     return qty;
   }
   updateBaffleUnit2qty(qty) {
     this.setState({
       baffleUnit2qty: qty,
       baffle2sqft:
-        this.state.baffleUnit2length * this.state.baffleUnit2width * qty,
+        (this.state.baffleUnit2length * this.state.baffleUnit2width * qty) /
+        144,
     });
     this.context.updateBaffle2sqft(
       (this.state.baffleUnit2length * this.state.baffleUnit2width * qty) / 144
@@ -149,7 +185,8 @@ export default class BaffleUnitSelector extends Component {
     this.setState({
       baffleUnit3qty: qty,
       baffle3sqft:
-        this.state.baffleUnit3length * this.state.baffleUnit3width * qty,
+        (this.state.baffleUnit3length * this.state.baffleUnit3width * qty) /
+        144,
     });
     this.context.updateBaffle3sqft(
       (this.state.baffleUnit3length * this.state.baffleUnit3width * qty) / 144
