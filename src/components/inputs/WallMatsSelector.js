@@ -207,7 +207,7 @@ export default class WallMatsSelector extends Component {
       <div className="row">
         {!!mats && (
           <div className="dropdown ">
-            <label className="col-md-3 col-form-label ">Wall materials:</label>
+            <label className="col-md-3 col-form-label ">Wall materials:<span className="red-text">*</span></label>
 
             <div className="col-md-9">
               <div className="form-group">

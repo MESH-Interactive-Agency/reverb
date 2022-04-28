@@ -464,7 +464,7 @@ export default class CeilingProdsSelector extends Component {
                     value={ceilingProd1qty}
                   ></input>
 
-                  <label>Sqft:</label>
+                  <label>Sqft:<span className="red-text">*</span></label>
                   <input
                     onFocus={(e) => {
                       this.handleFocus(e);
@@ -564,7 +564,7 @@ export default class CeilingProdsSelector extends Component {
                         value={ceilingProd2qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -677,7 +677,7 @@ export default class CeilingProdsSelector extends Component {
                         value={ceilingProd3qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -790,7 +790,7 @@ export default class CeilingProdsSelector extends Component {
                         value={ceilingProd4qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);

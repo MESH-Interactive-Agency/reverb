@@ -734,7 +734,7 @@ export default class WallProdsSelector extends Component {
                     value={wallProd1qty}
                   ></input>
 
-                  <label>Sqft:</label>
+                  <label>Sqft:<span className="red-text">*</span></label>
                   <input
                     onFocus={(e) => {
                       this.handleFocus(e);
@@ -834,7 +834,7 @@ export default class WallProdsSelector extends Component {
                         value={wallProd2qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -947,7 +947,7 @@ export default class WallProdsSelector extends Component {
                         value={wallProd3qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1060,7 +1060,7 @@ export default class WallProdsSelector extends Component {
                         value={wallProd4qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1173,7 +1173,7 @@ export default class WallProdsSelector extends Component {
                         value={wallProd5qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1286,7 +1286,7 @@ export default class WallProdsSelector extends Component {
                         value={wallProd6qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1399,7 +1399,7 @@ export default class WallProdsSelector extends Component {
                         value={wallProd7qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1512,7 +1512,7 @@ export default class WallProdsSelector extends Component {
                         value={wallProd8qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);

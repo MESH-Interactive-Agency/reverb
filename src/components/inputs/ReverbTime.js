@@ -69,7 +69,7 @@ export default class ReverbTime extends Component {
                 >
                   <div className="row>">
                     <label className="col-md-3 col-form-label">
-                      Choose room type or enter value
+                      Choose room type or enter value:<span className="red-text">*</span>
                     </label>
                     <div className="col-md-9">
                       <div className="form-group">

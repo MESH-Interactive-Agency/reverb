@@ -26,7 +26,7 @@ export default class FloorMatsSelector extends Component {
         {!!mats && (
           <div className="dropdown">
             
-            <label className="col-md-3 col-form-label ">Floor material:</label>
+            <label className="col-md-3 col-form-label ">Floor material:<span className="red-text">*</span></label>
             
             <div className="col-md-9">
               <div className="form-group">

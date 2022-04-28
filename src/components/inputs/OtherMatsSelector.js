@@ -660,7 +660,7 @@ export default class OtherMatsSelector extends Component {
                     value={other1qty}
                   ></input>
 
-                  <label>Sqft:</label>
+                  <label>Sqft:<span className="red-text">*</span></label>
                   <input
                     onFocus={(e) => {
                       this.handleFocus(e);
@@ -760,7 +760,7 @@ export default class OtherMatsSelector extends Component {
                         value={other2qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -873,7 +873,7 @@ export default class OtherMatsSelector extends Component {
                         value={other3qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -986,7 +986,7 @@ export default class OtherMatsSelector extends Component {
                         value={other4qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1099,7 +1099,7 @@ export default class OtherMatsSelector extends Component {
                         value={other5qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1212,7 +1212,7 @@ export default class OtherMatsSelector extends Component {
                         value={other6qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1325,7 +1325,7 @@ export default class OtherMatsSelector extends Component {
                         value={other7qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1438,7 +1438,7 @@ export default class OtherMatsSelector extends Component {
                         value={other8qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>Sqft:<span className="red-text">*</span></label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);

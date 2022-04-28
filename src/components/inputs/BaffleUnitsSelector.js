@@ -396,7 +396,9 @@ export default class BaffleUnitSelector extends Component {
                     value={baffleUnit1qty}
                   ></input>
 
-                  <label>Sqft:</label>
+                  <label>
+                    Sqft:<span className="red-text">*</span>
+                  </label>
                   <input
                     onFocus={(e) => {
                       this.handleFocus(e);
@@ -496,7 +498,9 @@ export default class BaffleUnitSelector extends Component {
                         value={baffleUnit2qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>
+                        Sqft:<span className="red-text">*</span>
+                      </label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -609,7 +613,9 @@ export default class BaffleUnitSelector extends Component {
                         value={baffleUnit3qty}
                       ></input>
 
-                      <label>Sqft:</label>
+                      <label>
+                        Sqft:<span className="red-text">*</span>
+                      </label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);

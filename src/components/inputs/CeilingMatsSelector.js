@@ -27,7 +27,7 @@ export default class CeilingMatsSelector extends Component {
         {!!mats && (
           <div className="dropdown">
             <label className="col-md-3 col-form-label ">
-              Ceiling material:
+              Ceiling material:<span className="red-text">*</span>
             </label>
 
             <div className="col-md-9">
