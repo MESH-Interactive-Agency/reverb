@@ -1,5 +1,6 @@
 import Context from '../../contexts/ApiContext';
 import React, { Component } from 'react';
+import { toHaveDisplayValue } from '@testing-library/jest-dom/dist/matchers';
 
 export default class WallMatsSelector extends Component {
   constructor(props) {
@@ -37,6 +38,14 @@ export default class WallMatsSelector extends Component {
       wall2sqft: this.context.wall2sqft,
       wall3sqft: this.context.wall3sqft,
       wall4sqft: this.context.wall4sqft,
+      wall1length: this.context.wall1Length,
+      wall2length: this.context.wall2Length,
+      wall3length: this.context.wall3Length,
+      wall4length: this.context.wall4Length,
+      wall1Height: this.context.wall1Height,
+      wall2Height: this.context.wall2Height,
+      wall3Height: this.context.wall3Height,
+      wall4Height: this.context.wall4Height,
     });
   }
 
@@ -152,6 +161,11 @@ export default class WallMatsSelector extends Component {
 
   handleFocus = (event) => event.target.select();
 
+  removeSpecialChars(num) {
+    if (num < 0) num = 0;
+    return num.replace(/[^0-9.]/g, '');
+  }
+
   render() {
     let mats = this.context.wallMaterials;
 
@@ -212,7 +226,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall1Length = this.updateWall1Length(
-                          e.currentTarget.value
+                          this.removeSpecialChars(e.currentTarget.value)
                         );
                       }}
                       id="wall1-length"
@@ -229,7 +243,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall1Height = this.updateWall1Height(
-                          e.currentTarget.value
+                          this.removeSpecialChars(e.currentTarget.value)
                         );
                       }}
                       id="wall1-height"
@@ -246,7 +260,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall1sqft = this.updateWall1sqft(
-                          e.currentTarget.value,
+                          this.removeSpecialChars(e.currentTarget.value),
                           true
                         );
                       }}
@@ -284,7 +298,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall2Length = this.updateWall2Length(
-                          e.currentTarget.value
+                          this.removeSpecialChars(e.currentTarget.value)
                         );
                       }}
                       id="wall2-length"
@@ -301,7 +315,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall2Height = this.updateWall2Height(
-                          e.currentTarget.value
+                          this.removeSpecialChars(e.currentTarget.value)
                         );
                       }}
                       id="wall2-height"
@@ -318,7 +332,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall2sqft = this.updateWall2sqft(
-                          e.currentTarget.value,
+                          this.removeSpecialChars(e.currentTarget.value),
                           true
                         );
                       }}
@@ -356,7 +370,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall3Length = this.updateWall3Length(
-                          e.currentTarget.value
+                          this.removeSpecialChars(e.currentTarget.value)
                         );
                       }}
                       id="wall3-length"
@@ -373,7 +387,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall3Height = this.updateWall3Height(
-                          e.currentTarget.value
+                          this.removeSpecialChars(e.currentTarget.value)
                         );
                       }}
                       id="wall3-height"
@@ -390,7 +404,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall3sqft = this.updateWall3sqft(
-                          e.currentTarget.value,
+                          this.removeSpecialChars(e.currentTarget.value),
                           true
                         );
                       }}
@@ -428,7 +442,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall4Length = this.updateWall4Length(
-                          e.currentTarget.value
+                          this.removeSpecialChars(e.currentTarget.value)
                         );
                       }}
                       id="wall4-length"
@@ -445,7 +459,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall4Height = this.updateWall4Height(
-                          e.currentTarget.value
+                          this.removeSpecialChars(e.currentTarget.value)
                         );
                       }}
                       id="wall4-height"
@@ -462,7 +476,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall4sqft = this.updateWall4sqft(
-                          e.currentTarget.value,
+                          this.removeSpecialChars(e.currentTarget.value),
                           true
                         );
                       }}

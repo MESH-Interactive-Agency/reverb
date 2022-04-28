@@ -24,6 +24,7 @@ export default class NavWindow extends React.Component {
     const { location, history } = this.props;
     const destination = (location.state || {}).from || '/';
     history.push(destination);
+    window.location.reload();
   };
 
   renderLogoutLink() {
@@ -43,7 +44,9 @@ export default class NavWindow extends React.Component {
     return (
       <div className="Header__not-logged-in">
         <Route exact path={'/'}>
-          <Link to="/login">Log In</Link>
+          <Link to="/login">
+            <span className="login-link">Log In</span>
+          </Link>
         </Route>
         <Route path={'/register'} component={RegistrationPage} />
         <Route path={'/login'} component={LoginPage} />

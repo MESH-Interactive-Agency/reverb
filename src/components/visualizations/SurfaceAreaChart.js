@@ -28,10 +28,7 @@ export default class SurfaceAreaChart extends Component {
             floorMatTotal.nrc +
             ceilingMatTotal.nrc +
             wallMatTotal.nrc +
-            otherMatTotal.nrc +
-            ceilingProdTotal.nrc +
-            wallProdTotal.nrc +
-            baffleTotal.nrc;
+            otherMatTotal.nrc;
 
           let added =
             ceilingProdTotal.nrc + wallProdTotal.nrc + baffleTotal.nrc;

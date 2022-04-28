@@ -42,6 +42,11 @@ export default class CeilingProdsSelector extends Component {
   }
   static contextType = Context;
 
+  removeSpecialChars(num) {
+    if (num < 0) num = 0;
+    return num.replace(/[^0-9.]/g, '');
+  }
+
   componentDidMount() {
     this.context.getCeilingProducts();
   }
@@ -375,7 +380,7 @@ export default class CeilingProdsSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       ceilingProd1length = this.updateCeilingProd1Length(
-                        e.currentTarget.value
+                        this.removeSpecialChars(e.currentTarget.value)
                       );
                     }}
                     id="CeilingProd1-length"
@@ -392,7 +397,7 @@ export default class CeilingProdsSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       ceilingProd1width = this.updateCeilingProd1Width(
-                        e.currentTarget.value
+                        this.removeSpecialChars(e.currentTarget.value)
                       );
                     }}
                     id="ceilingProd1-width"
@@ -409,7 +414,7 @@ export default class CeilingProdsSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       ceilingProd1qty = this.updateCeilingProd1qty(
-                        e.currentTarget.value
+                        this.removeSpecialChars(e.currentTarget.value)
                       );
                     }}
                     id="ceilingProd1-qty"
@@ -426,7 +431,7 @@ export default class CeilingProdsSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       ceilingProd1sqft = this.updateCeilingProd1sqft(
-                        e.currentTarget.value,
+                        this.removeSpecialChars(e.currentTarget.value),
                         true
                       );
                     }}
@@ -475,7 +480,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd2length = this.updateCeilingProd2Length(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="CeilingProd2-length"
@@ -492,7 +497,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd2width = this.updateCeilingProd2Width(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd2-width"
@@ -509,7 +514,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd2qty = this.updateCeilingProd2qty(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd2-qty"
@@ -526,7 +531,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd2sqft = this.updateCeilingProd2sqft(
-                            e.currentTarget.value,
+                            this.removeSpecialChars(e.currentTarget.value),
                             true
                           );
                         }}
@@ -588,7 +593,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd3length = this.updateCeilingProd3Length(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="CeilingProd3-length"
@@ -605,7 +610,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd3width = this.updateCeilingProd3Width(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd3-width"
@@ -622,7 +627,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd3qty = this.updateCeilingProd3qty(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd3-qty"
@@ -639,7 +644,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd3sqft = this.updateCeilingProd3sqft(
-                            e.currentTarget.value,
+                            this.removeSpecialChars(e.currentTarget.value),
                             true
                           );
                         }}
@@ -701,7 +706,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd4length = this.updateCeilingProd4Length(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="CeilingProd4-length"
@@ -718,7 +723,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd4width = this.updateCeilingProd4Width(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd4-width"
@@ -735,7 +740,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd4qty = this.updateCeilingProd4qty(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd4-qty"
@@ -752,7 +757,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd4sqft = this.updateCeilingProd4sqft(
-                            e.currentTarget.value,
+                            this.removeSpecialChars(e.currentTarget.value),
                             true
                           );
                         }}

@@ -219,9 +219,24 @@ h1 {
 }
 
 .LoginForm {
+  position: absolute;
+  right: 0em;
+  top: 0em;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 1px solid pink;
+  background: white;
+  z-index: 9999;
+}
+
+.login-inputs {
+  color: white;
+}
+.login-button {
+  width: 4em;
+}
+.register-link {
 }
 
 .inputs {
@@ -240,25 +255,11 @@ h1 {
   border: none;
 }
 
-.login-inputs {
-  color: white;
-  position: relative;
-  top: -1em;
-  right: 5em;
-}
-
 .Button {
   align-self: center;
   width: 40%;
   margin: 1vh;
   margin-top: 2vh;
-}
-
-.login-button {
-  position: absolute;
-  top: 0em;
-  right: -6em;
-  width: 4em;
 }
 
 .existing {
@@ -376,6 +377,11 @@ nav {
   background-color: #4d5861;
   height: auto;
   padding: 0;
+}
+
+.login-link {
+  position: absolute;
+  right: 1.5em;
 }
 
 .logo {

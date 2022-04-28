@@ -16,38 +16,42 @@ export default class Dimensions extends React.Component {
   }
 
   removeSpecialChars(num) {
+    if (num < 0) num = 0;
     return num.replace(/[^0-9.]/g, '');
   }
 
   static contextType = Context;
 
   updateLength(length) {
+    if (length <= 0) length = 0;
     this.setState({ length: length });
     this.context.updateLength(length);
     this.context.updateWall1sqft(length * this.state.height);
     this.context.updateWall3sqft(length * this.state.height);
 
-    // this.context.updateWall1Length(length);
-    // this.context.updateWall3Length(length);
+    this.context.updateWall1Length(length);
+    this.context.updateWall3Length(length);
 
     this.context.updateCeilingLength(length);
 
     return length;
   }
   updateWidth(width) {
+    if (width <= 0) width = 0;
     this.setState({ width: width });
     this.context.updateWidth(width);
 
     this.context.updateWall2sqft(width * this.state.height);
     this.context.updateWall4sqft(width * this.state.height);
 
-    // this.context.updateWall2Length(width);
-    // this.context.updateWall4Length(width);
+    this.context.updateWall2Length(width);
+    this.context.updateWall4Length(width);
 
     this.context.updateCeilingWidth(width);
     return width;
   }
   updateHeight(height) {
+    if (height <= 0) height = 0;
     this.setState({ height: height });
     this.context.updateHeight(height);
 
@@ -56,10 +60,10 @@ export default class Dimensions extends React.Component {
     this.context.updateWall3sqft(height * this.state.length);
     this.context.updateWall4sqft(height * this.state.width);
 
-    // this.context.updateWall1Height(height);
-    // this.context.updateWall2Height(height);
-    // this.context.updateWall3Height(height);
-    // this.context.updateWall4Height(height);
+    this.context.updateWall1Height(height);
+    this.context.updateWall2Height(height);
+    this.context.updateWall3Height(height);
+    this.context.updateWall4Height(height);
     return height;
   }
 

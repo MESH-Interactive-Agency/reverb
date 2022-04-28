@@ -41,6 +41,11 @@ export default class BaffleUnitSelector extends Component {
     this.context.getBaffleUnits();
   }
 
+  removeSpecialChars(num) {
+    if (num < 0) num = 0;
+    return num.replace(/[^0-9.]/g, '');
+  }
+
   updateBaffleUnit1Selection(selection) {
     this.setState({ selectedBaffle1Unit: selection - 1 });
     this.context.updateSelectedBaffleUnit1(selection - 1);
@@ -312,7 +317,7 @@ export default class BaffleUnitSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       baffleUnit1length = this.updateBaffleUnit1Length(
-                        e.currentTarget.value
+                        this.removeSpecialChars(e.currentTarget.value)
                       );
                     }}
                     id="BaffleUnit1-length"
@@ -329,7 +334,7 @@ export default class BaffleUnitSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       baffleUnit1width = this.updateBaffleUnit1Width(
-                        e.currentTarget.value
+                        this.removeSpecialChars(e.currentTarget.value)
                       );
                     }}
                     id="baffleUnit1-width"
@@ -346,7 +351,7 @@ export default class BaffleUnitSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       baffleUnit1qty = this.updateBaffleUnit1qty(
-                        e.currentTarget.value
+                        this.removeSpecialChars(e.currentTarget.value)
                       );
                     }}
                     id="baffleUnit1-qty"
@@ -363,7 +368,7 @@ export default class BaffleUnitSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       baffle1sqft = this.updateBaffleUnit1sqft(
-                        e.currentTarget.value,
+                        this.removeSpecialChars(e.currentTarget.value),
                         true
                       );
                     }}
@@ -412,7 +417,7 @@ export default class BaffleUnitSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           baffleUnit2length = this.updateBaffleUnit2Length(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="BaffleUnit2-length"
@@ -429,7 +434,7 @@ export default class BaffleUnitSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           baffleUnit2width = this.updateBaffleUnit2Width(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="baffleUnit2-width"
@@ -446,7 +451,7 @@ export default class BaffleUnitSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           baffleUnit2qty = this.updateBaffleUnit2qty(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="baffleUnit2-qty"
@@ -463,7 +468,7 @@ export default class BaffleUnitSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           baffle2sqft = this.updateBaffleUnit2sqft(
-                            e.currentTarget.value,
+                            this.removeSpecialChars(e.currentTarget.value),
                             true
                           );
                         }}
@@ -525,7 +530,7 @@ export default class BaffleUnitSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           baffleUnit3length = this.updateBaffleUnit3Length(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="BaffleUnit3-length"
@@ -542,7 +547,7 @@ export default class BaffleUnitSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           baffleUnit3width = this.updateBaffleUnit3Width(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="baffleUnit3-width"
@@ -559,7 +564,7 @@ export default class BaffleUnitSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           baffleUnit3qty = this.updateBaffleUnit3qty(
-                            e.currentTarget.value
+                            this.removeSpecialChars(e.currentTarget.value)
                           );
                         }}
                         id="baffleUnit3-qty"
@@ -576,7 +581,7 @@ export default class BaffleUnitSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           baffle3sqft = this.updateBaffleUnit3sqft(
-                            e.currentTarget.value,
+                            this.removeSpecialChars(e.currentTarget.value),
                             true
                           );
                         }}

@@ -15,6 +15,11 @@ export default class ReverbTime extends Component {
     this.context.getRecommendedReverbTimes();
   }
 
+  removeSpecialChars(num) {
+    if (num < 0) num = 0;
+    return num.replace(/[^0-9.]/g, '');
+  }
+
   updateAvg(avg) {
     this.setState({
       avg: avg,
@@ -82,9 +87,14 @@ export default class ReverbTime extends Component {
                             </option>
                           ))}
                         </select>
-                       <input onFocus={(e) => {this.handleFocus(e);}}
+                        <input
+                          onFocus={(e) => {
+                            this.handleFocus(e);
+                          }}
                           onChange={(e) => {
-                            avg = this.updateAvg(e.currentTarget.value);
+                            avg = this.updateAvg(
+                              this.removeSpecialChars(e.currentTarget.value)
+                            );
                           }}
                           className="rec-reverb-input lighter-border"
                           value={avg}
