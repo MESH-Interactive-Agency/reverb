@@ -152,11 +152,31 @@ export default class WallMatsSelector extends Component {
       wall2: this.context.selectedWall2Material,
       wall3: this.context.selectedWall3Material,
       wall4: this.context.selectedWall4Material,
-      wall1sqft: this.context.wall1sqft,
-      wall2sqft: this.context.wall2sqft,
-      wall3sqft: this.context.wall3sqft,
-      wall4sqft: this.context.wall4sqft,
+      // wall1sqft: this.context.wall1sqft,
+      // wall2sqft: this.context.wall2sqft,
+      // wall3sqft: this.context.wall3sqft,
+      // wall4sqft: this.context.wall4sqft,
+
+      wall1sqft: this.context.length * this.context.height,
+      wall2sqft: this.context.width * this.context.height,
+      wall3sqft: this.context.length * this.context.height,
+      wall4sqft: this.context.width * this.context.height,
     });
+  };
+
+  contract = (e) => {
+    e.preventDefault();
+    this.setState({ isOpen: !this.state.isOpen });
+    this.setState({
+      wall1: this.context.selectedWall1Material,
+      wall2: this.context.selectedWall1Material,
+      wall3: this.context.selectedWall1Material,
+      wall4: this.context.selectedWall1Material,
+    });
+    this.updateWall1Selection(this.state.wall1);
+    this.updateWall2Selection(this.state.wall1);
+    this.updateWall3Selection(this.state.wall1);
+    this.updateWall4Selection(this.state.wall1);
   };
 
   handleFocus = (event) => event.target.select();
@@ -489,7 +509,7 @@ export default class WallMatsSelector extends Component {
 
                 {this.state.isOpen && (
                   <span className="expand-button">
-                    <button className="expand-button" onClick={this.expand}>
+                    <button className="expand-button" onClick={this.contract}>
                       - Fewer walls
                     </button>
                   </span>
