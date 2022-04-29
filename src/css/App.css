@@ -79,6 +79,7 @@ h1 {
   color: white;
   top: 0;
   font-size: 200%;
+  line-height: 2em;
 }
 
 .window {
@@ -393,7 +394,7 @@ caption {
 nav {
   grid-column: span 2;
   background-color: #4d5861;
-  height: auto;
+  height: 6em;
   padding: 0;
 }
 
