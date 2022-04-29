@@ -30,11 +30,11 @@ export default class NavWindow extends React.Component {
   renderLogoutLink() {
     return (
       <div className="Header__logged-in">
-        <h3 className="welcome center-text">
+        {/* <h3 className="welcome center-text">
           Welcome, {this.context.loggedInUser}
-        </h3>
+        </h3> */}
         <Link onClick={this.handleLogoutClick} to="/">
-          Logout
+          <span className="login-link">Log Out</span>
         </Link>
       </div>
     );
@@ -42,7 +42,7 @@ export default class NavWindow extends React.Component {
 
   renderLoginLink() {
     return (
-      <div className="Header__not-logged-in">
+      <div className="Header__not-logged-in ">
         <Route exact path={'/'}>
           <Link to="/login">
             <span className="login-link">Log In</span>
