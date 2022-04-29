@@ -119,6 +119,9 @@ export default class CeilingProdsSummary extends Component {
                               Ceiling Products
                             </th>
                             <th scope="col" className="bold right">
+                              Sqft
+                            </th>
+                            <th scope="col" className="bold right">
                               125hz
                             </th>
                             <th scope="col" className="bold right">
@@ -150,6 +153,7 @@ export default class CeilingProdsSummary extends Component {
                                   selectedCeiling1Product
                                 ].descript.substring(0, 18)}
                               </th>
+                              <th className="right">{ceilingProd1sqft}</th>
                               <th className="right">
                                 {mats[selectedCeiling1Product].hz125}
                               </th>
@@ -181,6 +185,7 @@ export default class CeilingProdsSummary extends Component {
                                   selectedCeiling2Product
                                 ].descript.substring(0, 18)}
                               </th>
+                              <th className="right">{ceilingProd2sqft}</th>
                               <th className="right">
                                 {mats[selectedCeiling2Product].hz125}
                               </th>
@@ -212,6 +217,7 @@ export default class CeilingProdsSummary extends Component {
                                   selectedCeiling3Product
                                 ].descript.substring(0, 18)}
                               </th>
+                              <th className="right">{ceilingProd3sqft}</th>
                               <th className="right">
                                 {mats[selectedCeiling3Product].hz125}
                               </th>
@@ -243,6 +249,7 @@ export default class CeilingProdsSummary extends Component {
                                   selectedCeiling4Product
                                 ].descript.substring(0, 18)}
                               </th>
+                              <th className="right">{ceilingProd4sqft}</th>
                               <th className="right">
                                 {mats[selectedCeiling4Product].hz125}
                               </th>
@@ -267,132 +274,14 @@ export default class CeilingProdsSummary extends Component {
                             </tr>
                           )}
 
-                          {ceilingProd5sqft > 0 && (
-                            <tr>
-                              <th className="left">
-                                {mats[
-                                  selectedCeiling5Product
-                                ].descript.substring(0, 18)}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling5Product].hz125}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling5Product].hz250}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling5Product].hz500}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling5Product].hz1000}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling5Product].hz2000}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling5Product].hz4000}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling5Product].nrc}
-                              </th>
-                            </tr>
-                          )}
-
-                          {ceilingProd6sqft > 0 && (
-                            <tr>
-                              <th className="left">
-                                {mats[
-                                  selectedCeiling6Product
-                                ].descript.substring(0, 18)}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling6Product].hz125}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling6Product].hz250}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling6Product].hz500}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling6Product].hz1000}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling6Product].hz2000}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling6Product].hz4000}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling6Product].nrc}
-                              </th>
-                            </tr>
-                          )}
-
-                          {ceilingProd7sqft > 0 && (
-                            <tr>
-                              <th className="left">
-                                {mats[
-                                  selectedCeiling7Product
-                                ].descript.substring(0, 18)}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling7Product].hz125}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling7Product].hz250}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling7Product].hz500}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling7Product].hz1000}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling7Product].hz2000}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling7Product].hz4000}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling7Product].nrc}
-                              </th>
-                            </tr>
-                          )}
-
-                          {ceilingProd8sqft > 0 && (
-                            <tr>
-                              <th className="left">
-                                {mats[
-                                  selectedCeiling8Product
-                                ].descript.substring(0, 18)}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling8Product].hz125}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling8Product].hz250}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling8Product].hz500}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling8Product].hz1000}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling8Product].hz2000}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling8Product].hz4000}
-                              </th>
-                              <th className="right">
-                                {mats[selectedCeiling8Product].nrc}
-                              </th>
-                            </tr>
-                          )}
-
                           <tr>
                             <th className="bold left">Total Sabines: </th>
+                            <th className="bold right">
+                              {Number(ceilingProd1sqft) +
+                                Number(ceilingProd2sqft) +
+                                Number(ceilingProd3sqft) +
+                                Number(ceilingProd4sqft)}
+                            </th>
                             <th className="bold right">
                               {this.updateTotal125(
                                 mats[selectedCeiling1Product].hz125 *

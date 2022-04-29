@@ -64,8 +64,10 @@ export default class PrintableSummary extends React.Component {
               return (
                 <div className="printable-summary ">
                   <div className="">
-                    <h2>LAMVIN</h2>
-                    <h3>Interior Room Accoustics Report</h3>
+                    <h2 className="print-header">LAMVIN</h2>
+                    <h3 className="print-header">
+                      Interior Room Accoustics Summary Report
+                    </h3>
                     <br></br>
                     <h3>Date: {date}</h3>
                     <h3>Customer Name: {customerName}</h3>
@@ -96,18 +98,37 @@ export default class PrintableSummary extends React.Component {
                         <BaffleUnitsSummary />
                       </div>
                     </div>
+                    <div className="recap">
+                      <h3>
+                        Average Existing Reverb Time (sec):{' '}
+                        {!!avgExistingReverbTime && (
+                          <span className="orange-background">
+                            {' '}
+                            {avgExistingReverbTime.toFixed(1)}{' '}
+                          </span>
+                        )}
+                      </h3>
 
-                    <h3>
-                      Average Existing Reverb Time (sec):{' '}
-                      {avgExistingReverbTime.toFixed(1)}
-                    </h3>
-                    <h3>
-                      Specified Average Reverb Time (sec): {selectedReverbTime}
-                    </h3>
-                    <h3>
-                      Average Time After Treatment (sec):{' '}
-                      {avgTreatedReverbTime.toFixed(1)}
-                    </h3>
+                      <h3>
+                        Specified Average Reverb Time (sec):{' '}
+                        {!!selectedReverbTime && (
+                          <span className="green-background">
+                            {' '}
+                            {selectedReverbTime}{' '}
+                          </span>
+                        )}
+                      </h3>
+
+                      <h3>
+                        Average Time After Treatment (sec):{' '}
+                        {!!avgTreatedReverbTime && (
+                          <span className="blue-background">
+                            {' '}
+                            {avgTreatedReverbTime.toFixed(1)}{' '}
+                          </span>
+                        )}
+                      </h3>
+                    </div>
                   </div>
                 </div>
               );

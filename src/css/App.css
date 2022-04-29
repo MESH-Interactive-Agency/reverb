@@ -68,7 +68,6 @@ body {
 }
 
 aside {
-  z-index: 999;
   background: white;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -213,18 +212,21 @@ h1 {
 .RegistrationForm {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .RegistrationPage {
+  border: 1px solid black;
   position: absolute;
-  top: 0;
-  right: 0;
-  border: 2px solid purple;
+
+  right: 1em;
+  top: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: white;
-  z-index: 999999;
-  height: 10em;
-  width: 30em;
+  z-index: 9999;
+  padding: 1em;
 }
 
 .Header__logged-in,
@@ -234,40 +236,41 @@ Header__not-logged-in {
 }
 
 .LoginPage {
+  border: 1px solid black;
   position: absolute;
+
   right: 1em;
   top: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid red;
   background: white;
   z-index: 9999;
   padding: 1em;
 }
 
 .login-inputs {
+  margin: 1em;
   color: white;
 }
+
 .login-button {
+  position: relative;
+  left: 6em;
+  border-radius: 2em;
   width: 4em;
 }
 .register-link {
-  /* position: absolute;
-  top: 1em;
-  right: 10em; */
-  border: 1px solid pink;
-
+  text-align: center;
   z-index: 99999;
 }
 
 .inputs {
-  margin-top: 0em;
-  margin-left: 5px;
+  margin: 1em;
   align-self: center;
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: space-between;
   width: 100%;
   line-height: 1.5em;
   z-index: 999;
@@ -575,6 +578,7 @@ input {
 }
 
 .dropdown-groups {
+  background-color: #f4f3ef;
   height: 48em;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -768,14 +772,14 @@ th {
 
 .printWindow {
   position: fixed;
-  top: 5em;
+  top: 6em;
   left: 12em;
-  height: 40em;
+  height: 46em;
   width: 80em;
 
   z-index: 999;
   background-color: white;
-  box-shadow: 1em 1em 10em 3em;
+  box-shadow: 1em 1em 10em 1em;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -793,13 +797,21 @@ th {
 
 .print-chart {
   border: 1px solid black;
-  margin: 0em 1em 0em 1em;
+  margin: 0em 1em 0em 0.5em;
+  box-shadow: none;
 }
 
 .print-table {
-  border: 1px solid black;
-  margin: 1em;
+  margin-top: 2em;
+
+  /* border: 1px solid black;
+  margin: 1em; */
   padding: 1.5em;
+}
+
+.print-header {
+  font-size: x-large;
+  text-align: center;
 }
 
 .round-button {
@@ -823,10 +835,22 @@ th {
 .printable-summary {
   /* display: grid;
   grid-template-columns: 1fr 1fr; */
-  font-size: larger;
-  border: 1px solid pink;
   width: 60em;
-  padding: 5em;
+  padding: 8em;
+  padding-left: 12em;
+  padding-bottom: 0em;
+}
+
+.orange-background {
+  background-color: #de6d3588;
+}
+
+.green-background {
+  background-color: #7f9e2388;
+}
+
+.blue-background {
+  background-color: #0a285988;
 }
 
 .print-summary {
@@ -836,6 +860,17 @@ th {
 
 .side-by-side {
   margin: 3em;
+}
+
+.inline {
+  display: inline;
+}
+
+.recap {
+  margin: 2em;
+  padding: 1em;
+  padding-left: 10em;
+  font-size: larger;
 }
 
 .top-right-close {

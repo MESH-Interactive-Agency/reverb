@@ -119,6 +119,9 @@ export default class WallProdsSummary extends Component {
                               Wall Products
                             </th>
                             <th scope="col" className="bold right">
+                              Sqft
+                            </th>
+                            <th scope="col" className="bold right">
                               125hz
                             </th>
                             <th scope="col" className="bold right">
@@ -151,6 +154,7 @@ export default class WallProdsSummary extends Component {
                                   18
                                 )}
                               </th>
+                              <th className="right">{wallProd1sqft}</th>
                               <th className="right">
                                 {mats[selectedWall1Product].hz125}
                               </th>
@@ -183,6 +187,7 @@ export default class WallProdsSummary extends Component {
                                   18
                                 )}
                               </th>
+                              <th className="right">{wallProd2sqft}</th>
                               <th className="right">
                                 {mats[selectedWall2Product].hz125}
                               </th>
@@ -215,6 +220,7 @@ export default class WallProdsSummary extends Component {
                                   18
                                 )}
                               </th>
+                              <th className="right">{wallProd3sqft}</th>
                               <th className="right">
                                 {mats[selectedWall3Product].hz125}
                               </th>
@@ -247,6 +253,7 @@ export default class WallProdsSummary extends Component {
                                   18
                                 )}
                               </th>
+                              <th className="right">{wallProd4sqft}</th>
                               <th className="right">
                                 {mats[selectedWall4Product].hz125}
                               </th>
@@ -279,6 +286,7 @@ export default class WallProdsSummary extends Component {
                                   18
                                 )}
                               </th>
+                              <th className="right">{wallProd5sqft}</th>
                               <th className="right">
                                 {mats[selectedWall5Product].hz125}
                               </th>
@@ -311,6 +319,7 @@ export default class WallProdsSummary extends Component {
                                   18
                                 )}
                               </th>
+                              <th className="right">{wallProd6sqft}</th>
                               <th className="right">
                                 {mats[selectedWall6Product].hz125}
                               </th>
@@ -343,6 +352,7 @@ export default class WallProdsSummary extends Component {
                                   18
                                 )}
                               </th>
+                              <th className="right">{wallProd7sqft}</th>
                               <th className="right">
                                 {mats[selectedWall7Product].hz125}
                               </th>
@@ -375,6 +385,7 @@ export default class WallProdsSummary extends Component {
                                   18
                                 )}
                               </th>
+                              <th className="right">{wallProd8sqft}</th>
                               <th className="right">
                                 {mats[selectedWall8Product].hz125}
                               </th>
@@ -401,6 +412,15 @@ export default class WallProdsSummary extends Component {
 
                           <tr>
                             <th className="bold left">Total Sabines: </th>
+                            <th className="bold right">
+                              {Number(wallProd1sqft) +
+                                Number(wallProd2sqft) +
+                                Number(wallProd3sqft) +
+                                Number(wallProd5sqft) +
+                                Number(wallProd6sqft) +
+                                Number(wallProd7sqft) +
+                                Number(wallProd8sqft)}
+                            </th>
                             <th className="bold right">
                               {this.updateTotal125(
                                 mats[selectedWall1Product].hz125 *

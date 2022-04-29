@@ -105,6 +105,9 @@ export default class BaffleUnitsSummary extends Component {
                     Baffle Products
                   </th>
                   <th scope="col" className="bold right">
+                    Sqft
+                  </th>
+                  <th scope="col" className="bold right">
                     125hz
                   </th>
                   <th scope="col" className="bold right">
@@ -134,6 +137,7 @@ export default class BaffleUnitsSummary extends Component {
                     <th className="left">
                       {mats[selectedBaffle1Unit].descript.substring(0, 18)}
                     </th>
+                    <th className="right">{baffle1sqft}</th>
                     <th className="right">{mats[selectedBaffle1Unit].hz125}</th>
                     <th className="right">{mats[selectedBaffle1Unit].hz250}</th>
                     <th className="right">{mats[selectedBaffle1Unit].hz500}</th>
@@ -155,6 +159,7 @@ export default class BaffleUnitsSummary extends Component {
                     <th className="left">
                       {mats[selectedBaffle2Unit].descript.substring(0, 18)}
                     </th>
+                    <th className="right">{baffle2sqft}</th>
                     <th className="right">{mats[selectedBaffle2Unit].hz125}</th>
                     <th className="right">{mats[selectedBaffle2Unit].hz250}</th>
                     <th className="right">{mats[selectedBaffle2Unit].hz500}</th>
@@ -176,6 +181,7 @@ export default class BaffleUnitsSummary extends Component {
                     <th className="left">
                       {mats[selectedBaffle3Unit].descript.substring(0, 18)}
                     </th>
+                    <th className="right">{baffle3sqft}</th>
                     <th className="right">{mats[selectedBaffle3Unit].hz125}</th>
                     <th className="right">{mats[selectedBaffle3Unit].hz250}</th>
                     <th className="right">{mats[selectedBaffle3Unit].hz500}</th>
@@ -194,6 +200,11 @@ export default class BaffleUnitsSummary extends Component {
 
                 <tr>
                   <th className="bold left">Total Sabines: </th>
+                  <th className="bold right">
+                    {Number(baffle1sqft) +
+                      Number(baffle2sqft) +
+                      Number(baffle3sqft)}
+                  </th>
                   <th className="bold right">
                     {this.updateTotal125(
                       mats[selectedBaffle1Unit].hz125 * baffle1sqft +
