@@ -64,7 +64,9 @@ export default class NavWindow extends React.Component {
     return (
       <nav className="nav window">
         <h1 className="">Reverb</h1>
-        <img src={logo} alt="Logo" className="logo" />
+        <a href="https://lamvin.com/rep-portal">
+          <img src={logo} alt="Logo" className="logo" />
+        </a>
 
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
