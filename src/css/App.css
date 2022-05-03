@@ -417,6 +417,13 @@ nav {
   top: 0.4em;
 }
 
+.cata-logo {
+  position: absolute;
+  bottom: 4em;
+  right: 2em;
+  height: 5em;
+}
+
 h3 {
   height: 1em;
   padding: 0.25em;

@@ -11,6 +11,7 @@ import OtherMatsSummary from '../components/outputs/OtherMatsSummary';
 import CeilingProdsSummary from '../components/outputs/CeilingProdsSummary';
 import BaffleUnitsSummary from '../components/outputs/BaffleUnitsSummary';
 import WallProdsSummary from '../components/outputs/WallProdsSummary';
+import logo from '../../src/images/CAG_logo.svg';
 
 export default class DetailsWindow extends React.Component {
   static contextType = Context;
@@ -34,6 +35,7 @@ export default class DetailsWindow extends React.Component {
             <BaffleUnitsSummary />
           </div>
         </div>
+        <img className="cata-logo" src={logo} alt="logo"></img>
       </aside>
     );
   }
