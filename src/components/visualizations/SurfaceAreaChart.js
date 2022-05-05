@@ -4,10 +4,8 @@ import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 import ApiContext from '../../contexts/ApiContext';
 
 export default class SurfaceAreaChart extends Component {
+  static contextType = ApiContext;
   render() {
-    return (
-      <ApiContext.Consumer>
-        {(apiContext) => {
           const {
             floorMatTotal,
             ceilingMatTotal,
@@ -20,7 +18,7 @@ export default class SurfaceAreaChart extends Component {
             length,
             width,
             height,
-          } = apiContext;
+          } = this.context;
 
           const volume = length * width * height * 0.049;
 
@@ -86,9 +84,7 @@ export default class SurfaceAreaChart extends Component {
                 </ResponsiveContainer>
               </div>
             </div>
-          );
-        }}
-      </ApiContext.Consumer>
+
     );
   }
 }

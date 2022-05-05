@@ -80,7 +80,7 @@ export default class FloorMatsSummary extends Component {
   }
 
   render() {
-    const { selectedFloorMaterial, floorMaterials, length, width } = ApiContext;
+    const { selectedFloorMaterial, floorMaterials, length, width } = this.context;
     const mats = floorMaterials;
     const selected = selectedFloorMaterial;
     const area = length * width;

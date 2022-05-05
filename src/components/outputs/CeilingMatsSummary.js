@@ -80,13 +80,14 @@ export default class CeilingMatsSummary extends Component {
   }
 
   render() {
-    const { selectedCeilingMaterial, ceilingMaterials } = ApiContext;
+    const { selectedCeilingMaterial, ceilingMaterials } = this.context;
     const mats = ceilingMaterials;
     const selected = selectedCeilingMaterial;
-    const { length, width } = ApiContext;
+    const { length, width } = this.context;
     const area = length * width;
+
     return (
-      <div className="">
+      <div className="test">
         {!!mats && (
           <div>
             <table width="480px">

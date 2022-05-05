@@ -4,14 +4,14 @@ import { LineChart, Line, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 import ApiContext from '../../contexts/ApiContext';
 
 export default class SabineChart extends Component {
+
+  static contextType = ApiContext;
   render() {
     let sabines = {};
     let treatment = {};
     let rec = 0;
-    return (
-      <ApiContext.Consumer>
-        {(apiContext) => {
-          const { length, width, height } = apiContext;
+
+          const { length, width, height } = this.context;
 
           const volume = length * width * height * 0.049;
 
@@ -24,7 +24,7 @@ export default class SabineChart extends Component {
             ceilingProdTotal,
             baffleTotal,
             selectedReverbTime,
-          } = apiContext;
+          } = this.context;
 
           if (
             floorMatTotal.hz125 > 0 ||
@@ -247,9 +247,7 @@ export default class SabineChart extends Component {
                 </ResponsiveContainer>
               </div>
             </div>
-          );
-        }}
-      </ApiContext.Consumer>
+
     );
   }
 }

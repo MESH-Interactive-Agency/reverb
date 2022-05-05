@@ -91,7 +91,7 @@ export default class CeilingProdsSummary extends Component {
       ceilingProd2sqft,
       ceilingProd3sqft,
       ceilingProd4sqft,
-    } = ApiContext;
+    } = this.context;
 
     const mats = ceilingProducts;
 

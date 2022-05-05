@@ -98,7 +98,7 @@ export default class WallProdsSummary extends Component {
       wallProd6sqft,
       wallProd7sqft,
       wallProd8sqft,
-    } = ApiContext;
+    } = this.context;
 
     const mats = wallProducts;
 

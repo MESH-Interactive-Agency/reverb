@@ -1,17 +1,17 @@
 import React from 'react';
 
-import Charts from '../components/Pages/Charts';
+import Charts from './Charts';
 
-import Context from '../contexts/ApiContext';
+import Context from '../../contexts/ApiContext';
 
-import FloorMatsSummary from '../components/outputs/FloorMatsSummary';
-import CeilingMatsSummary from '../components/outputs/CeilingMatsSummary';
-import WallMatsSummary from '../components/outputs/WallMatsSummary';
-import OtherMatsSummary from '../components/outputs/OtherMatsSummary';
-import CeilingProdsSummary from '../components/outputs/CeilingProdsSummary';
-import BaffleUnitsSummary from '../components/outputs/BaffleUnitsSummary';
-import WallProdsSummary from '../components/outputs/WallProdsSummary';
-import logo from '../../src/images/CAG_logo.svg';
+import FloorMatsSummary from '../outputs/FloorMatsSummary';
+import CeilingMatsSummary from '../outputs/CeilingMatsSummary';
+import WallMatsSummary from '../outputs/WallMatsSummary';
+import OtherMatsSummary from '../outputs/OtherMatsSummary';
+import CeilingProdsSummary from '../outputs/CeilingProdsSummary';
+import BaffleUnitsSummary from '../outputs/BaffleUnitsSummary';
+import WallProdsSummary from '../outputs/WallProdsSummary';
+import logo from '../../images/CAG_logo.svg';
 
 export default class DetailsWindow extends React.Component {
   static contextType = Context;

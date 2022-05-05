@@ -31,9 +31,7 @@ export default class PrintableSummary extends React.Component {
       customerName,
       projectName,
       date,
-    } = ApiContext;
-
-    console.log(date, customerName, projectName);
+    } = this.context;
 
     const volume = length * width * height;
 

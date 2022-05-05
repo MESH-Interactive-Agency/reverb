@@ -4,7 +4,7 @@ import ErrorBoundary from '../components/Tools/ErrorBoundary';
 
 import NavWindow from '../routes/NavWindow';
 import MainWindow from '../routes/MainWindow';
-import DetailsWindow from '../routes/DetailsWindow';
+import DetailsWindow from '../components/Pages/DetailsWindow';
 import Footer from './Footer';
 
 import '../css/setup.css';
