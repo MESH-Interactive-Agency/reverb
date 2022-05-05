@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Context from '../../contexts/ApiContext';
+import { ValidatePosNum } from '../../utils/lib';
 
 import ReverbTime from './ReverbTime';
 
@@ -13,11 +14,6 @@ export default class Dimensions extends React.Component {
       height: 0,
       isOpen: true,
     };
-  }
-
-  removeSpecialChars(num) {
-    if (num < 0) return 0;
-    else return num.replace(/[^0-9.]/g, '');
   }
 
   static contextType = Context;
@@ -104,7 +100,7 @@ export default class Dimensions extends React.Component {
                       type="number"
                       onChange={(e) => {
                         length = this.updateLength(
-                          this.removeSpecialChars(e.currentTarget.value)
+                          ValidatePosNum(e.currentTarget.value)
                         );
                       }}
                       id="length"
@@ -129,7 +125,7 @@ export default class Dimensions extends React.Component {
                       type="number"
                       onChange={(e) => {
                         width = this.updateWidth(
-                          this.removeSpecialChars(e.currentTarget.value)
+                          ValidatePosNum(e.currentTarget.value)
                         );
                       }}
                       id="width"
@@ -154,7 +150,7 @@ export default class Dimensions extends React.Component {
                       type="number"
                       onChange={(e) => {
                         height = this.updateHeight(
-                          this.removeSpecialChars(e.currentTarget.value)
+                          ValidatePosNum(e.currentTarget.value)
                         );
                       }}
                       id="height"

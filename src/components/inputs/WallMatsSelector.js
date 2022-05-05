@@ -1,5 +1,6 @@
 import Context from '../../contexts/ApiContext';
 import React, { Component } from 'react';
+import { ValidatePosNum } from '../../utils/lib';
 
 export default class WallMatsSelector extends Component {
   constructor(props) {
@@ -180,11 +181,6 @@ export default class WallMatsSelector extends Component {
 
   handleFocus = (event) => event.target.select();
 
-  removeSpecialChars(num) {
-    if (num < 0) return 0;
-    else return num.replace(/[^0-9.]/g, '');
-  }
-
   render() {
     let mats = this.context.wallMaterials;
 
@@ -245,7 +241,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall1Length = this.updateWall1Length(
-                          this.removeSpecialChars(e.currentTarget.value)
+                          ValidatePosNum(e.currentTarget.value)
                         );
                       }}
                       id="wall1-length"
@@ -262,7 +258,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall1Height = this.updateWall1Height(
-                          this.removeSpecialChars(e.currentTarget.value)
+                          ValidatePosNum(e.currentTarget.value)
                         );
                       }}
                       id="wall1-height"
@@ -279,7 +275,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall1sqft = this.updateWall1sqft(
-                          this.removeSpecialChars(e.currentTarget.value),
+                          ValidatePosNum(e.currentTarget.value),
                           true
                         );
                       }}
@@ -317,7 +313,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall2Length = this.updateWall2Length(
-                          this.removeSpecialChars(e.currentTarget.value)
+                          ValidatePosNum(e.currentTarget.value)
                         );
                       }}
                       id="wall2-length"
@@ -334,7 +330,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall2Height = this.updateWall2Height(
-                          this.removeSpecialChars(e.currentTarget.value)
+                          ValidatePosNum(e.currentTarget.value)
                         );
                       }}
                       id="wall2-height"
@@ -351,7 +347,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall2sqft = this.updateWall2sqft(
-                          this.removeSpecialChars(e.currentTarget.value),
+                          ValidatePosNum(e.currentTarget.value),
                           true
                         );
                       }}
@@ -389,7 +385,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall3Length = this.updateWall3Length(
-                          this.removeSpecialChars(e.currentTarget.value)
+                          ValidatePosNum(e.currentTarget.value)
                         );
                       }}
                       id="wall3-length"
@@ -406,7 +402,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall3Height = this.updateWall3Height(
-                          this.removeSpecialChars(e.currentTarget.value)
+                          ValidatePosNum(e.currentTarget.value)
                         );
                       }}
                       id="wall3-height"
@@ -423,7 +419,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall3sqft = this.updateWall3sqft(
-                          this.removeSpecialChars(e.currentTarget.value),
+                          ValidatePosNum(e.currentTarget.value),
                           true
                         );
                       }}
@@ -461,7 +457,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall4Length = this.updateWall4Length(
-                          this.removeSpecialChars(e.currentTarget.value)
+                          ValidatePosNum(e.currentTarget.value)
                         );
                       }}
                       id="wall4-length"
@@ -478,7 +474,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall4Height = this.updateWall4Height(
-                          this.removeSpecialChars(e.currentTarget.value)
+                          ValidatePosNum(e.currentTarget.value)
                         );
                       }}
                       id="wall4-height"
@@ -495,7 +491,7 @@ export default class WallMatsSelector extends Component {
                       type="number"
                       onChange={(e) => {
                         wall4sqft = this.updateWall4sqft(
-                          this.removeSpecialChars(e.currentTarget.value),
+                          ValidatePosNum(e.currentTarget.value),
                           true
                         );
                       }}

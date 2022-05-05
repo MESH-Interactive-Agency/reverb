@@ -1,5 +1,6 @@
 import Context from '../../contexts/ApiContext';
 import React, { Component } from 'react';
+import { ValidatePosNum } from '../../utils/lib';
 
 export default class OtherMatsSelector extends Component {
   constructor(props) {
@@ -61,11 +62,6 @@ export default class OtherMatsSelector extends Component {
     };
   }
   static contextType = Context;
-
-  removeSpecialChars(num) {
-    if (num < 0) return 0;
-    else return num.replace(/[^0-9.]/g, '');
-  }
 
   componentDidMount() {
     this.context.getOtherMaterials();
@@ -618,7 +614,7 @@ export default class OtherMatsSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       other1length = this.updateOther1Length(
-                        this.removeSpecialChars(e.currentTarget.value)
+                        ValidatePosNum(e.currentTarget.value)
                       );
                     }}
                     id="Other1-length"
@@ -635,7 +631,7 @@ export default class OtherMatsSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       other1width = this.updateOther1Width(
-                        this.removeSpecialChars(e.currentTarget.value)
+                        ValidatePosNum(e.currentTarget.value)
                       );
                     }}
                     id="other1-width"
@@ -652,7 +648,7 @@ export default class OtherMatsSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       other1qty = this.updateOther1qty(
-                        this.removeSpecialChars(e.currentTarget.value)
+                        ValidatePosNum(e.currentTarget.value)
                       );
                     }}
                     id="other1-qty"
@@ -669,7 +665,7 @@ export default class OtherMatsSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       other1sqft = this.updateOther1sqft(
-                        this.removeSpecialChars(e.currentTarget.value),
+                        ValidatePosNum(e.currentTarget.value),
                         true
                       );
                     }}
@@ -718,7 +714,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other2length = this.updateOther2Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="Other2-length"
@@ -735,7 +731,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other2width = this.updateOther2Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other2-width"
@@ -752,7 +748,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other2qty = this.updateOther2qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other2-qty"
@@ -769,7 +765,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other2sqft = this.updateOther2sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -831,7 +827,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other3length = this.updateOther3Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="Other3-length"
@@ -848,7 +844,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other3width = this.updateOther3Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other3-width"
@@ -865,7 +861,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other3qty = this.updateOther3qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other3-qty"
@@ -882,7 +878,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other3sqft = this.updateOther3sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -944,7 +940,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other4length = this.updateOther4Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="Other4-length"
@@ -961,7 +957,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other4width = this.updateOther4Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other4-width"
@@ -978,7 +974,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other4qty = this.updateOther4qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other4-qty"
@@ -995,7 +991,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other4sqft = this.updateOther4sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -1057,7 +1053,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other5length = this.updateOther5Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="Other5-length"
@@ -1074,7 +1070,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other5width = this.updateOther5Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other5-width"
@@ -1091,7 +1087,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other5qty = this.updateOther5qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other5-qty"
@@ -1108,7 +1104,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other5sqft = this.updateOther5sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -1170,7 +1166,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other6length = this.updateOther6Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="Other6-length"
@@ -1187,7 +1183,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other6width = this.updateOther6Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other6-width"
@@ -1204,7 +1200,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other6qty = this.updateOther6qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other6-qty"
@@ -1221,7 +1217,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other6sqft = this.updateOther6sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -1283,7 +1279,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other7length = this.updateOther7Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="Other7-length"
@@ -1300,7 +1296,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other7width = this.updateOther7Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other7-width"
@@ -1317,7 +1313,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other7qty = this.updateOther7qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other7-qty"
@@ -1334,7 +1330,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other7sqft = this.updateOther7sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -1396,7 +1392,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other8length = this.updateOther8Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="Other8-length"
@@ -1413,7 +1409,7 @@ export default class OtherMatsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           other8width = this.updateOther8Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other8-width"
@@ -1430,7 +1426,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other8qty = this.updateOther8qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="other8-qty"
@@ -1447,7 +1443,7 @@ export default class OtherMatsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           other8sqft = this.updateOther8sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}

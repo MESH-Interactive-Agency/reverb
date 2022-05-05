@@ -1,5 +1,6 @@
 import Context from '../../contexts/ApiContext';
 import React, { Component } from 'react';
+import { ValidatePosNum } from '../../utils/lib';
 
 export default class ReverbTime extends Component {
   constructor(props) {
@@ -13,11 +14,6 @@ export default class ReverbTime extends Component {
 
   componentDidMount() {
     this.context.getRecommendedReverbTimes();
-  }
-
-  removeSpecialChars(num) {
-    if (num < 0) return 0;
-    else return num.replace(/[^0-9.]/g, '');
   }
 
   updateAvg(avg) {
@@ -69,7 +65,8 @@ export default class ReverbTime extends Component {
                 >
                   <div className="row>">
                     <label className="col-md-3 col-form-label">
-                      Choose room type or enter value:<span className="red-text">*</span>
+                      Choose room type or enter value:
+                      <span className="red-text">*</span>
                     </label>
                     <div className="col-md-9">
                       <div className="form-group">
@@ -93,7 +90,7 @@ export default class ReverbTime extends Component {
                           }}
                           onChange={(e) => {
                             avg = this.updateAvg(
-                              this.removeSpecialChars(e.currentTarget.value)
+                              ValidatePosNum(e.currentTarget.value)
                             );
                           }}
                           className="rec-reverb-input lighter-border"

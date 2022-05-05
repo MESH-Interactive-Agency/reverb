@@ -1,5 +1,6 @@
 import Context from '../../contexts/ApiContext';
 import React, { Component } from 'react';
+import { ValidatePosNum } from '../../utils/lib';
 
 export default class BaffleUnitSelector extends Component {
   constructor(props) {
@@ -39,11 +40,6 @@ export default class BaffleUnitSelector extends Component {
 
   componentDidMount() {
     this.context.getBaffleUnits();
-  }
-
-  removeSpecialChars(num) {
-    if (num < 0) return 0;
-    else return num.replace(/[^0-9.]/g, '');
   }
 
   updateBaffleUnit1Selection(selection) {
@@ -354,7 +350,7 @@ export default class BaffleUnitSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       baffleUnit1length = this.updateBaffleUnit1Length(
-                        this.removeSpecialChars(e.currentTarget.value)
+                        ValidatePosNum(e.currentTarget.value)
                       );
                     }}
                     id="BaffleUnit1-length"
@@ -371,7 +367,7 @@ export default class BaffleUnitSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       baffleUnit1width = this.updateBaffleUnit1Width(
-                        this.removeSpecialChars(e.currentTarget.value)
+                        ValidatePosNum(e.currentTarget.value)
                       );
                     }}
                     id="baffleUnit1-width"
@@ -388,7 +384,7 @@ export default class BaffleUnitSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       baffleUnit1qty = this.updateBaffleUnit1qty(
-                        this.removeSpecialChars(e.currentTarget.value)
+                        ValidatePosNum(e.currentTarget.value)
                       );
                     }}
                     id="baffleUnit1-qty"
@@ -407,7 +403,7 @@ export default class BaffleUnitSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       baffle1sqft = this.updateBaffleUnit1sqft(
-                        this.removeSpecialChars(e.currentTarget.value),
+                        ValidatePosNum(e.currentTarget.value),
                         true
                       );
                     }}
@@ -456,7 +452,7 @@ export default class BaffleUnitSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           baffleUnit2length = this.updateBaffleUnit2Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="BaffleUnit2-length"
@@ -473,7 +469,7 @@ export default class BaffleUnitSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           baffleUnit2width = this.updateBaffleUnit2Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="baffleUnit2-width"
@@ -490,7 +486,7 @@ export default class BaffleUnitSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           baffleUnit2qty = this.updateBaffleUnit2qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="baffleUnit2-qty"
@@ -509,7 +505,7 @@ export default class BaffleUnitSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           baffle2sqft = this.updateBaffleUnit2sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -571,7 +567,7 @@ export default class BaffleUnitSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           baffleUnit3length = this.updateBaffleUnit3Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="BaffleUnit3-length"
@@ -588,7 +584,7 @@ export default class BaffleUnitSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           baffleUnit3width = this.updateBaffleUnit3Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="baffleUnit3-width"
@@ -605,7 +601,7 @@ export default class BaffleUnitSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           baffleUnit3qty = this.updateBaffleUnit3qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="baffleUnit3-qty"
@@ -624,7 +620,7 @@ export default class BaffleUnitSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           baffle3sqft = this.updateBaffleUnit3sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}

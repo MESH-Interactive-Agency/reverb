@@ -1,5 +1,6 @@
 import Context from '../../contexts/ApiContext';
 import React, { Component } from 'react';
+import { ValidatePosNum } from '../../utils/lib';
 
 export default class WallProdsSelector extends Component {
   constructor(props) {
@@ -61,11 +62,6 @@ export default class WallProdsSelector extends Component {
     };
   }
   static contextType = Context;
-
-  removeSpecialChars(num) {
-    if (num < 0) return 0;
-    else return num.replace(/[^0-9.]/g, '');
-  }
 
   componentDidMount() {
     this.context.getWallProducts();
@@ -692,7 +688,7 @@ export default class WallProdsSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       wallProd1length = this.updateWallProd1Length(
-                        this.removeSpecialChars(e.currentTarget.value)
+                        ValidatePosNum(e.currentTarget.value)
                       );
                     }}
                     id="WallProd1-length"
@@ -709,7 +705,7 @@ export default class WallProdsSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       wallProd1width = this.updateWallProd1Width(
-                        this.removeSpecialChars(e.currentTarget.value)
+                        ValidatePosNum(e.currentTarget.value)
                       );
                     }}
                     id="wallProd1-width"
@@ -726,7 +722,7 @@ export default class WallProdsSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       wallProd1qty = this.updateWallProd1qty(
-                        this.removeSpecialChars(e.currentTarget.value)
+                        ValidatePosNum(e.currentTarget.value)
                       );
                     }}
                     id="wallProd1-qty"
@@ -734,7 +730,9 @@ export default class WallProdsSelector extends Component {
                     value={wallProd1qty}
                   ></input>
 
-                  <label>Sqft:<span className="red-text">*</span></label>
+                  <label>
+                    Sqft:<span className="red-text">*</span>
+                  </label>
                   <input
                     onFocus={(e) => {
                       this.handleFocus(e);
@@ -743,7 +741,7 @@ export default class WallProdsSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       wallProd1sqft = this.updateWallProd1sqft(
-                        this.removeSpecialChars(e.currentTarget.value),
+                        ValidatePosNum(e.currentTarget.value),
                         true
                       );
                     }}
@@ -792,7 +790,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd2length = this.updateWallProd2Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="WallProd2-length"
@@ -809,7 +807,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd2width = this.updateWallProd2Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd2-width"
@@ -826,7 +824,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd2qty = this.updateWallProd2qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd2-qty"
@@ -834,7 +832,9 @@ export default class WallProdsSelector extends Component {
                         value={wallProd2qty}
                       ></input>
 
-                      <label>Sqft:<span className="red-text">*</span></label>
+                      <label>
+                        Sqft:<span className="red-text">*</span>
+                      </label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -843,7 +843,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd2sqft = this.updateWallProd2sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -905,7 +905,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd3length = this.updateWallProd3Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="WallProd3-length"
@@ -922,7 +922,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd3width = this.updateWallProd3Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd3-width"
@@ -939,7 +939,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd3qty = this.updateWallProd3qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd3-qty"
@@ -947,7 +947,9 @@ export default class WallProdsSelector extends Component {
                         value={wallProd3qty}
                       ></input>
 
-                      <label>Sqft:<span className="red-text">*</span></label>
+                      <label>
+                        Sqft:<span className="red-text">*</span>
+                      </label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -956,7 +958,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd3sqft = this.updateWallProd3sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -1018,7 +1020,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd4length = this.updateWallProd4Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="WallProd4-length"
@@ -1035,7 +1037,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd4width = this.updateWallProd4Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd4-width"
@@ -1052,7 +1054,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd4qty = this.updateWallProd4qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd4-qty"
@@ -1060,7 +1062,9 @@ export default class WallProdsSelector extends Component {
                         value={wallProd4qty}
                       ></input>
 
-                      <label>Sqft:<span className="red-text">*</span></label>
+                      <label>
+                        Sqft:<span className="red-text">*</span>
+                      </label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1069,7 +1073,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd4sqft = this.updateWallProd4sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -1131,7 +1135,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd5length = this.updateWallProd5Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="WallProd5-length"
@@ -1148,7 +1152,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd5width = this.updateWallProd5Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd5-width"
@@ -1165,7 +1169,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd5qty = this.updateWallProd5qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd5-qty"
@@ -1173,7 +1177,9 @@ export default class WallProdsSelector extends Component {
                         value={wallProd5qty}
                       ></input>
 
-                      <label>Sqft:<span className="red-text">*</span></label>
+                      <label>
+                        Sqft:<span className="red-text">*</span>
+                      </label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1182,7 +1188,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd5sqft = this.updateWallProd5sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -1244,7 +1250,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd6length = this.updateWallProd6Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="WallProd6-length"
@@ -1261,7 +1267,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd6width = this.updateWallProd6Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd6-width"
@@ -1278,7 +1284,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd6qty = this.updateWallProd6qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd6-qty"
@@ -1286,7 +1292,9 @@ export default class WallProdsSelector extends Component {
                         value={wallProd6qty}
                       ></input>
 
-                      <label>Sqft:<span className="red-text">*</span></label>
+                      <label>
+                        Sqft:<span className="red-text">*</span>
+                      </label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1295,7 +1303,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd6sqft = this.updateWallProd6sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -1357,7 +1365,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd7length = this.updateWallProd7Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="WallProd7-length"
@@ -1374,7 +1382,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd7width = this.updateWallProd7Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd7-width"
@@ -1391,7 +1399,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd7qty = this.updateWallProd7qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd7-qty"
@@ -1399,7 +1407,9 @@ export default class WallProdsSelector extends Component {
                         value={wallProd7qty}
                       ></input>
 
-                      <label>Sqft:<span className="red-text">*</span></label>
+                      <label>
+                        Sqft:<span className="red-text">*</span>
+                      </label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1408,7 +1418,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd7sqft = this.updateWallProd7sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -1470,7 +1480,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd8length = this.updateWallProd8Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="WallProd8-length"
@@ -1487,7 +1497,7 @@ export default class WallProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           wallProd8width = this.updateWallProd8Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd8-width"
@@ -1504,7 +1514,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd8qty = this.updateWallProd8qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="wallProd8-qty"
@@ -1512,7 +1522,9 @@ export default class WallProdsSelector extends Component {
                         value={wallProd8qty}
                       ></input>
 
-                      <label>Sqft:<span className="red-text">*</span></label>
+                      <label>
+                        Sqft:<span className="red-text">*</span>
+                      </label>
                       <input
                         onFocus={(e) => {
                           this.handleFocus(e);
@@ -1521,7 +1533,7 @@ export default class WallProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           wallProd8sqft = this.updateWallProd8sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}

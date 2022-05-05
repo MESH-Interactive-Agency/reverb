@@ -1,5 +1,6 @@
 import Context from '../../contexts/ApiContext';
 import React, { Component } from 'react';
+import { ValidatePosNum } from '../../utils/lib';
 
 export default class CeilingProdsSelector extends Component {
   constructor(props) {
@@ -41,11 +42,6 @@ export default class CeilingProdsSelector extends Component {
     };
   }
   static contextType = Context;
-
-  removeSpecialChars(num) {
-    if (num < 0) return 0;
-    else return num.replace(/[^0-9.]/g, '');
-  }
 
   componentDidMount() {
     this.context.getCeilingProducts();
@@ -422,7 +418,7 @@ export default class CeilingProdsSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       ceilingProd1length = this.updateCeilingProd1Length(
-                        this.removeSpecialChars(e.currentTarget.value)
+                        ValidatePosNum(e.currentTarget.value)
                       );
                     }}
                     id="CeilingProd1-length"
@@ -439,7 +435,7 @@ export default class CeilingProdsSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       ceilingProd1width = this.updateCeilingProd1Width(
-                        this.removeSpecialChars(e.currentTarget.value)
+                        ValidatePosNum(e.currentTarget.value)
                       );
                     }}
                     id="ceilingProd1-width"
@@ -456,7 +452,7 @@ export default class CeilingProdsSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       ceilingProd1qty = this.updateCeilingProd1qty(
-                        this.removeSpecialChars(e.currentTarget.value)
+                        ValidatePosNum(e.currentTarget.value)
                       );
                     }}
                     id="ceilingProd1-qty"
@@ -473,7 +469,7 @@ export default class CeilingProdsSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       ceilingProd1sqft = this.updateCeilingProd1sqft(
-                        this.removeSpecialChars(e.currentTarget.value),
+                        ValidatePosNum(e.currentTarget.value),
                         true
                       );
                     }}
@@ -522,7 +518,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd2length = this.updateCeilingProd2Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="CeilingProd2-length"
@@ -539,7 +535,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd2width = this.updateCeilingProd2Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd2-width"
@@ -556,7 +552,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd2qty = this.updateCeilingProd2qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd2-qty"
@@ -573,7 +569,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd2sqft = this.updateCeilingProd2sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -635,7 +631,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd3length = this.updateCeilingProd3Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="CeilingProd3-length"
@@ -652,7 +648,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd3width = this.updateCeilingProd3Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd3-width"
@@ -669,7 +665,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd3qty = this.updateCeilingProd3qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd3-qty"
@@ -686,7 +682,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd3sqft = this.updateCeilingProd3sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -748,7 +744,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd4length = this.updateCeilingProd4Length(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="CeilingProd4-length"
@@ -765,7 +761,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd4width = this.updateCeilingProd4Width(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd4-width"
@@ -782,7 +778,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd4qty = this.updateCeilingProd4qty(
-                            this.removeSpecialChars(e.currentTarget.value)
+                            ValidatePosNum(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd4-qty"
@@ -799,7 +795,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd4sqft = this.updateCeilingProd4sqft(
-                            this.removeSpecialChars(e.currentTarget.value),
+                            ValidatePosNum(e.currentTarget.value),
                             true
                           );
                         }}
