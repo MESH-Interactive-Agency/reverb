@@ -1,6 +1,6 @@
 import Context from '../../contexts/ApiContext';
 import React, { Component } from 'react';
-import { ValidatePosNum } from '../../utils/lib';
+import val from '../../utils/val';
 
 export default class CeilingProdsSelector extends Component {
   constructor(props) {
@@ -418,7 +418,7 @@ export default class CeilingProdsSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       ceilingProd1length = this.updateCeilingProd1Length(
-                        ValidatePosNum(e.currentTarget.value)
+                        val.PosNum(e.currentTarget.value)
                       );
                     }}
                     id="CeilingProd1-length"
@@ -435,7 +435,7 @@ export default class CeilingProdsSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       ceilingProd1width = this.updateCeilingProd1Width(
-                        ValidatePosNum(e.currentTarget.value)
+                        val.PosNum(e.currentTarget.value)
                       );
                     }}
                     id="ceilingProd1-width"
@@ -452,7 +452,7 @@ export default class CeilingProdsSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       ceilingProd1qty = this.updateCeilingProd1qty(
-                        ValidatePosNum(e.currentTarget.value)
+                        val.PosNum(e.currentTarget.value)
                       );
                     }}
                     id="ceilingProd1-qty"
@@ -469,7 +469,7 @@ export default class CeilingProdsSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       ceilingProd1sqft = this.updateCeilingProd1sqft(
-                        ValidatePosNum(e.currentTarget.value),
+                        val.PosNum(e.currentTarget.value),
                         true
                       );
                     }}
@@ -518,7 +518,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd2length = this.updateCeilingProd2Length(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="CeilingProd2-length"
@@ -535,7 +535,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd2width = this.updateCeilingProd2Width(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd2-width"
@@ -552,7 +552,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd2qty = this.updateCeilingProd2qty(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd2-qty"
@@ -569,7 +569,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd2sqft = this.updateCeilingProd2sqft(
-                            ValidatePosNum(e.currentTarget.value),
+                            val.PosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -631,7 +631,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd3length = this.updateCeilingProd3Length(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="CeilingProd3-length"
@@ -648,7 +648,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd3width = this.updateCeilingProd3Width(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd3-width"
@@ -665,7 +665,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd3qty = this.updateCeilingProd3qty(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd3-qty"
@@ -682,7 +682,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd3sqft = this.updateCeilingProd3sqft(
-                            ValidatePosNum(e.currentTarget.value),
+                            val.PosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -744,7 +744,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd4length = this.updateCeilingProd4Length(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="CeilingProd4-length"
@@ -761,7 +761,7 @@ export default class CeilingProdsSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           ceilingProd4width = this.updateCeilingProd4Width(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd4-width"
@@ -778,7 +778,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd4qty = this.updateCeilingProd4qty(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="ceilingProd4-qty"
@@ -795,7 +795,7 @@ export default class CeilingProdsSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           ceilingProd4sqft = this.updateCeilingProd4sqft(
-                            ValidatePosNum(e.currentTarget.value),
+                            val.PosNum(e.currentTarget.value),
                             true
                           );
                         }}

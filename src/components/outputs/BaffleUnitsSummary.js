@@ -1,4 +1,3 @@
-import ReverbContext from '../../contexts/ReverbContext';
 import ApiContext from '../../contexts/ApiContext';
 import React, { Component } from 'react';
 import { toHaveDisplayValue } from '@testing-library/jest-dom/dist/matchers';

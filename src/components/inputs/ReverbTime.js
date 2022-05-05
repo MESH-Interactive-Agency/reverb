@@ -1,6 +1,6 @@
 import Context from '../../contexts/ApiContext';
 import React, { Component } from 'react';
-import { ValidatePosNum } from '../../utils/lib';
+import val from '../../utils/val';
 
 export default class ReverbTime extends Component {
   constructor(props) {
@@ -90,7 +90,7 @@ export default class ReverbTime extends Component {
                           }}
                           onChange={(e) => {
                             avg = this.updateAvg(
-                              ValidatePosNum(e.currentTarget.value)
+                              val.PosNum(e.currentTarget.value)
                             );
                           }}
                           className="rec-reverb-input lighter-border"

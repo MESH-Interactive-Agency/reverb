@@ -1,6 +1,6 @@
 import Context from '../../contexts/ApiContext';
 import React, { Component } from 'react';
-import { ValidatePosNum } from '../../utils/lib';
+import val from '../../utils/val';
 
 export default class BaffleUnitSelector extends Component {
   constructor(props) {
@@ -350,7 +350,7 @@ export default class BaffleUnitSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       baffleUnit1length = this.updateBaffleUnit1Length(
-                        ValidatePosNum(e.currentTarget.value)
+                        val.PosNum(e.currentTarget.value)
                       );
                     }}
                     id="BaffleUnit1-length"
@@ -367,7 +367,7 @@ export default class BaffleUnitSelector extends Component {
                     type="text"
                     onChange={(e) => {
                       baffleUnit1width = this.updateBaffleUnit1Width(
-                        ValidatePosNum(e.currentTarget.value)
+                        val.PosNum(e.currentTarget.value)
                       );
                     }}
                     id="baffleUnit1-width"
@@ -384,7 +384,7 @@ export default class BaffleUnitSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       baffleUnit1qty = this.updateBaffleUnit1qty(
-                        ValidatePosNum(e.currentTarget.value)
+                        val.PosNum(e.currentTarget.value)
                       );
                     }}
                     id="baffleUnit1-qty"
@@ -403,7 +403,7 @@ export default class BaffleUnitSelector extends Component {
                     type="number"
                     onChange={(e) => {
                       baffle1sqft = this.updateBaffleUnit1sqft(
-                        ValidatePosNum(e.currentTarget.value),
+                        val.PosNum(e.currentTarget.value),
                         true
                       );
                     }}
@@ -452,7 +452,7 @@ export default class BaffleUnitSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           baffleUnit2length = this.updateBaffleUnit2Length(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="BaffleUnit2-length"
@@ -469,7 +469,7 @@ export default class BaffleUnitSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           baffleUnit2width = this.updateBaffleUnit2Width(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="baffleUnit2-width"
@@ -486,7 +486,7 @@ export default class BaffleUnitSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           baffleUnit2qty = this.updateBaffleUnit2qty(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="baffleUnit2-qty"
@@ -505,7 +505,7 @@ export default class BaffleUnitSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           baffle2sqft = this.updateBaffleUnit2sqft(
-                            ValidatePosNum(e.currentTarget.value),
+                            val.PosNum(e.currentTarget.value),
                             true
                           );
                         }}
@@ -567,7 +567,7 @@ export default class BaffleUnitSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           baffleUnit3length = this.updateBaffleUnit3Length(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="BaffleUnit3-length"
@@ -584,7 +584,7 @@ export default class BaffleUnitSelector extends Component {
                         type="text"
                         onChange={(e) => {
                           baffleUnit3width = this.updateBaffleUnit3Width(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="baffleUnit3-width"
@@ -601,7 +601,7 @@ export default class BaffleUnitSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           baffleUnit3qty = this.updateBaffleUnit3qty(
-                            ValidatePosNum(e.currentTarget.value)
+                            val.PosNum(e.currentTarget.value)
                           );
                         }}
                         id="baffleUnit3-qty"
@@ -620,7 +620,7 @@ export default class BaffleUnitSelector extends Component {
                         type="number"
                         onChange={(e) => {
                           baffle3sqft = this.updateBaffleUnit3sqft(
-                            ValidatePosNum(e.currentTarget.value),
+                            val.PosNum(e.currentTarget.value),
                             true
                           );
                         }}

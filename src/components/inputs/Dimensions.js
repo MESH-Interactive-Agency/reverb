@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Context from '../../contexts/ApiContext';
-import { ValidatePosNum } from '../../utils/lib';
+import val from '../../utils/val';
 
 import ReverbTime from './ReverbTime';
 
@@ -100,7 +100,7 @@ export default class Dimensions extends React.Component {
                       type="number"
                       onChange={(e) => {
                         length = this.updateLength(
-                          ValidatePosNum(e.currentTarget.value)
+                          val.PosNum(e.currentTarget.value)
                         );
                       }}
                       id="length"
@@ -125,7 +125,7 @@ export default class Dimensions extends React.Component {
                       type="number"
                       onChange={(e) => {
                         width = this.updateWidth(
-                          ValidatePosNum(e.currentTarget.value)
+                          val.PosNum(e.currentTarget.value)
                         );
                       }}
                       id="width"
@@ -150,7 +150,7 @@ export default class Dimensions extends React.Component {
                       type="number"
                       onChange={(e) => {
                         height = this.updateHeight(
-                          ValidatePosNum(e.currentTarget.value)
+                          val.PosNum(e.currentTarget.value)
                         );
                       }}
                       id="height"
@@ -163,23 +163,6 @@ export default class Dimensions extends React.Component {
             </form>
           </div>
         )}
-        {/* {!this.state.isOpen && (
-          <div>
-            <button
-              onClick={() => this.setState({ isOpen: !this.state.isOpen })}
-            >
-              edit
-            </button>
-            <p>
-              L: {this.state.length} W: {this.state.width} H:{' '}
-              {this.state.height}
-            </p>
-            <p>
-              Total Volume:{' '}
-              {this.state.length * this.state.width * this.state.height}
-            </p>
-          </div>
-        )} */}
       </div>
     );
   }

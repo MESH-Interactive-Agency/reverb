@@ -1,5 +1,6 @@
 import React from 'react';
 import Context from '../../contexts/ApiContext';
+import val from '../../utils/val';
 
 export default class Cover extends React.Component {
   constructor(props) {
@@ -81,7 +82,9 @@ export default class Cover extends React.Component {
                     type="text"
                     placeholder="Customer Name"
                     onChange={(e) => {
-                      this.updateCustomerName(e.currentTarget.value);
+                      this.updateCustomerName(
+                        val.TextNoSpecNoNum(e.currentTarget.value)
+                      );
                     }}
                     id="customer-name"
                     name="customer-name"
@@ -106,7 +109,9 @@ export default class Cover extends React.Component {
                     type="text"
                     placeholder="Project Name"
                     onChange={(e) => {
-                      this.updateProjectName(e.currentTarget.value);
+                      this.updateProjectName(
+                        val.TextNoSpecNoNum(e.currentTarget.value)
+                      );
                     }}
                     id="project-name"
                     name="project-name"
