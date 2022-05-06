@@ -53,4 +53,4 @@ jobs:
           app-name: 'Lamvin-Reverb-Frontend'
           #slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EDE2F443916F460D9F8D01A0DFF79076 }}
-          package: ./dist/reverb
+          package: .
