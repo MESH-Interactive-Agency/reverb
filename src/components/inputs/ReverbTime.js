@@ -22,7 +22,7 @@ export default class ReverbTime extends Component {
         avg: avg,
         selected: 0,
       },
-      this.forceUpdate()
+      () => this.forceUpdate()
     );
 
     this.context.updateSelectedReverbTime(avg);
@@ -36,12 +36,16 @@ export default class ReverbTime extends Component {
 
     if (!!mats) value = (mats[selection - 1].min + mats[selection - 1].max) / 2;
 
-    this.setState({
-      selected: selection - 1,
-      avg: value,
-      min: mats[selection].min,
-      max: mats[selection].max,
-    });
+    this.setState(
+      {
+        selected: selection - 1,
+        avg: value,
+        min: mats[selection].min,
+        max: mats[selection].max,
+      },
+
+      () => this.forceUpdate()
+    );
 
     this.context.updateSelectedReverbTime(value);
   }

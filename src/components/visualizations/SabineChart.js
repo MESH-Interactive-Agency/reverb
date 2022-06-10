@@ -15,12 +15,20 @@ export default class SabineChart extends Component {
 
   render() {
     const CustomTooltip = ({ active, payload, label }) => {
-      if (active && payload && payload.length) {
+      if (active && payload && payload.length === 3) {
         return (
           <div className="custom-tooltip">
-            <p className="label">{`${label} : ${payload[0].value.toFixed(
-              0
-            )}`}</p>
+            {!!payload[0] && (
+              <p className="orange">{`${payload[0].value.toFixed(2)} `}</p>
+            )}
+
+            {!!payload[1] && (
+              <p className="green">{`${payload[1].value.toFixed(2)} `}</p>
+            )}
+
+            {!!payload[2] && (
+              <p className="label">{`${payload[2].value.toFixed(2)} `}</p>
+            )}
           </div>
         );
       }
