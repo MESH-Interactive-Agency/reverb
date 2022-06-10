@@ -17,10 +17,13 @@ export default class ReverbTime extends Component {
   }
 
   updateAvg(avg) {
-    this.setState({
-      avg: avg,
-      selected: 0,
-    });
+    this.setState(
+      {
+        avg: avg,
+        selected: 0,
+      },
+      this.forceUpdate()
+    );
 
     this.context.updateSelectedReverbTime(avg);
     return avg;
