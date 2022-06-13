@@ -7,12 +7,10 @@ import {
   YAxis,
   Tooltip,
 } from 'recharts';
-
 import ApiContext from '../../contexts/ApiContext';
 
 export default class SabineChart extends Component {
   static contextType = ApiContext;
-
   render() {
     const CustomTooltip = ({ active, payload, label }) => {
       if (active && payload && payload.length === 3) {
@@ -104,9 +102,21 @@ export default class SabineChart extends Component {
             wallMatTotal.hz4000 +
             otherMatTotal.hz4000),
       };
+    } else {
+      sabines = {
+        hz125: 0,
+        hz250: 0,
+        hz500: 0,
+        hz1000: 0,
+        hz2000: 0,
+        hz4000: 0,
+      };
     }
 
-    rec = volume / selectedReverbTime;
+    if (selectedReverbTime > 0) rec = volume / selectedReverbTime;
+    else rec = 0;
+
+    console.log(rec);
 
     if (
       ceilingProdTotal.hz125 > 0 ||
@@ -174,6 +184,15 @@ export default class SabineChart extends Component {
             wallProdTotal.hz4000 +
             baffleTotal.hz4000),
       };
+    } else {
+      treatment = {
+        hz125: 0,
+        hz250: 0,
+        hz500: 0,
+        hz1000: 0,
+        hz2000: 0,
+        hz4000: 0,
+      };
     }
 
     const data = [
@@ -181,39 +200,40 @@ export default class SabineChart extends Component {
         name: '125',
         altv: treatment.hz125,
         uv: sabines.hz125,
-        recommended: volume / (rec * 0.492),
+        recommended: rec > 0 ? volume / (rec * 0.492) : 0,
       },
       {
         name: '250',
         altv: treatment.hz250,
         uv: sabines.hz250,
-        recommended: volume / (rec * 0.594),
+        recommended: rec > 0 ? volume / (rec * 0.594) : 0,
       },
       {
         name: '500',
         altv: treatment.hz500,
         uv: sabines.hz500,
-        recommended: volume / (rec * 1.188),
+        recommended: rec > 0 ? volume / (rec * 1.188) : 0,
       },
       {
         name: '1000',
         altv: treatment.hz1000,
         uv: sabines.hz1000,
-        recommended: volume / (rec * 1.391),
+        recommended: rec > 0 ? volume / (rec * 1.391) : 0,
       },
       {
         name: '2000',
         altv: treatment.hz2000,
         uv: sabines.hz2000,
-        recommended: volume / (rec * 1.594),
+        recommended: rec > 0 ? volume / (rec * 1.594) : 0,
       },
       {
         name: '4000',
         altv: treatment.hz4000,
         uv: sabines.hz4000,
-        recommended: volume / (rec * 1.797),
+        recommended: rec > 0 ? volume / (rec * 1.797) : 0,
       },
     ];
+
     return (
       <div className="card">
         <div className="card-header">
